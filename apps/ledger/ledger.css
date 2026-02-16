@@ -1,0 +1,225 @@
+﻿body.ledger{
+  --primary: #0b5fff;
+  --secondary: #12b886;
+  --bg: #f7f8fc;
+  --surface: #ffffff;
+  --text: #0b1220;
+  --muted: #5f6b7a;
+  --border: rgba(11, 18, 32, 0.12);
+
+  background: var(--bg);
+}
+
+.app-header .brand-mark,
+.app-footer .brand-mark{
+  color: var(--primary);
+}
+
+.app-hero{
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(var(--header-h) + 20px);
+}
+
+.app-hero .hero-grid{ gap: 36px; }
+
+.app-hero .headline{
+  font-size: clamp(2.3rem, 1.6rem + 3.2vw, 3.8rem);
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.app-hero .subheadline{
+  font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.25rem);
+  max-width: 62ch;
+}
+
+.hero-glow{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-orb{
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 999px;
+  filter: blur(40px);
+  opacity: 0.45;
+}
+
+.orb-a{ background: rgba(11, 95, 255, 0.3); top: -120px; left: -80px; }
+.orb-b{ background: rgba(18, 184, 134, 0.3); top: 40px; right: -140px; }
+.orb-c{ background: rgba(255, 179, 0, 0.2); bottom: -140px; left: 25%; }
+
+.hero-grid,
+.app-hero .hero-copy,
+.app-hero .hero-visual{
+  position: relative;
+  z-index: 1;
+}
+
+.mockup-stack{
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 18px;
+}
+
+.mockup{
+  position: relative;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 30px 80px rgba(14, 20, 60, 0.2);
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.mockup img{
+  width: min(260px, 55vw);
+  display: block;
+}
+
+.mockup.tablet{
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  transform: rotate(-6deg);
+  opacity: 0.9;
+}
+
+.mockup.phone{ transform: rotate(2deg); }
+
+.mockup-gloss{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.55), transparent 55%);
+  opacity: 0.6;
+}
+
+.hero-card{
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 50px rgba(15, 20, 35, 0.2);
+  max-width: 320px;
+}
+
+.glass{ backdrop-filter: blur(18px); }
+
+.feature-card{
+  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+
+.feature-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(20, 34, 80, 0.18);
+}
+
+.audience-card{ padding: 18px; }
+
+.testimonial-card .stars{
+  color: #ffb400;
+  font-size: 1.1rem;
+}
+
+.proof-row{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.proof-card{
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  display: grid;
+  gap: 6px;
+  text-align: center;
+}
+
+.proof-card strong{
+  font-size: 1.6rem;
+}
+
+.pricing-card{ position: relative; }
+
+.pricing-card .price{
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.pricing-card.featured{
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--border));
+  box-shadow: 0 24px 60px rgba(15, 30, 60, 0.2);
+}
+
+.pricing-card .pill{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  font-weight: 700;
+}
+
+.download{
+  background: linear-gradient(120deg, rgba(11, 95, 255, 0.08), rgba(18, 184, 134, 0.12));
+}
+
+.download-grid{
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 900px){
+  .download-grid{ grid-template-columns: 1.1fr 0.9fr; }
+}
+
+.store-badge{
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #0f172a;
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+  min-width: 190px;
+}
+
+.store-badge + .store-badge{ margin-left: 10px; }
+
+.store-badge.is-soon{
+  opacity: 0.75;
+}
+
+.badge-title{ font-weight: 700; }
+
+.badge-sub{ font-size: 0.9rem; opacity: 0.72; }
+
+.download-card{ padding: 22px; }
+
+.app-footer{ margin-top: 40px; }
+
+@media (max-width: 700px){
+  .mockup.tablet{ display: none; }
+  .store-badge + .store-badge{ margin-left: 0; margin-top: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .mockup{ transform: none !important; }
+}
