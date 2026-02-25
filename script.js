@@ -1,4 +1,4 @@
-// script.js
+﻿// script.js
 
 (() => {
   "use strict";
@@ -246,12 +246,12 @@
     } else setError("name", "");
 
     if (!isEmail(email)) {
-      setError("email", "Bitte gib eine gültige E-Mail-Adresse an.");
+      setError("email", "Bitte gib eine gÃ¼ltige E-Mail-Adresse an.");
       ok = false;
     } else setError("email", "");
 
     if (!isPhoneLoose(phone)) {
-      setError("phone", "Bitte gib eine gültige Telefonnummer an (oder lass das Feld leer).");
+      setError("phone", "Bitte gib eine gÃ¼ltige Telefonnummer an (oder lass das Feld leer).");
       ok = false;
     } else setError("phone", "");
 
@@ -270,34 +270,47 @@
       if (!el) return;
       el.addEventListener("blur", validate);
       el.addEventListener("input", () => {
-        // clear message quickly on input (don’t be annoying)
+        // clear message quickly on input (donâ€™t be annoying)
         if (id !== "message") setError(id, "");
       });
     });
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const ok = validate();
       if (!ok) {
-        showToast("Bitte prüfe die markierten Felder.", 2600);
+        showToast("Bitte prÃ¼fe die markierten Felder.", 2600);
         // focus first invalid field
         const firstInvalid = ["name", "email", "phone", "message"].find((id) => ($("#err-" + id)?.textContent || "").trim().length);
         if (firstInvalid) $("#" + firstInvalid)?.focus();
         return;
       }
 
-      // Demo success
-      form.reset();
-      if (successEl) {
-        successEl.hidden = false;
-        // Hide after a while
-        window.clearTimeout(form._successT);
-        form._successT = window.setTimeout(() => {
-          successEl.hidden = true;
-        }, 5200);
+      const formData = new FormData(form);
+      const action = form.getAttribute("action") || "";
+
+      try {
+        const res = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
+
+        if (!res.ok) throw new Error("formspree");
+
+        form.reset();
+        if (successEl) {
+          successEl.hidden = false;
+          window.clearTimeout(form._successT);
+          form._successT = window.setTimeout(() => {
+            successEl.hidden = true;
+          }, 5200);
+        }
+        showToast("Danke! Deine Anfrage wurde gesendet.", 3200);
+      } catch (err) {
+        showToast("Senden fehlgeschlagen. Bitte später erneut versuchen.", 3200);
       }
-      showToast("Danke! Deine Anfrage wurde (demo) erfolgreich geprüft.", 3200);
     });
   }
 
@@ -351,3 +364,4 @@
     });
   }
 })();
+

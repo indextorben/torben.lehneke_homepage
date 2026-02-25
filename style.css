@@ -273,7 +273,10 @@ html[data-theme="dark"] .icon-moon{ display: block; }
 
 /* Mobile menu (opened via JS adding .is-open on .nav-menu) */
 .nav-menu.is-open{
-  display: grid;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   position: absolute;
   top: calc(var(--header-h) - 6px);
   right: var(--pad);
@@ -284,6 +287,13 @@ html[data-theme="dark"] .icon-moon{ display: block; }
   background: var(--bg);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-md);
+}
+.nav-menu.is-open::-webkit-scrollbar{
+  height: 6px;
+}
+.nav-menu.is-open::-webkit-scrollbar-thumb{
+  background: color-mix(in srgb, var(--text) 25%, transparent);
+  border-radius: 999px;
 }
 
 @media (min-width: 980px){

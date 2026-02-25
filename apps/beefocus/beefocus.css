@@ -25,6 +25,17 @@ html[data-theme="dark"] body.beefocus{
   color: var(--primary);
 }
 
+/* Brand mark uses emoji now */
+body.beefocus .brand-mark{
+  background: transparent;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 .app-hero{
   position: relative;
   overflow: hidden;
@@ -276,8 +287,14 @@ html[data-theme="dark"] body.beefocus{
 
 @media (max-width: 700px){
   .app-header .header-actions{
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .app-header .header-actions .btn{
+    padding: 10px 12px;
+    font-size: 0.9rem;
   }
   .app-hero .hero-grid{ gap: 24px; }
   .mockup-stack{ gap: 12px; }
@@ -286,6 +303,17 @@ html[data-theme="dark"] body.beefocus{
   .feature-walk{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
   .feature-shot img{ max-height: 420px; }
   .legal-card{ padding: 18px; }
+}
+
+@media (max-width: 520px){
+  .app-hero .hero-actions{
+    flex-wrap: nowrap;
+  }
+  .app-hero .hero-actions .btn{
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce){

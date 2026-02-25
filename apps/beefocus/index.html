@@ -21,7 +21,7 @@
     <header class="site-header app-header" id="top">
       <div class="container header-inner">
         <a class="brand" href="../../index.html" aria-label="BeeFocus Startseite">
-          <span class="brand-mark" aria-hidden="true">#</span>
+          <span class="brand-mark" aria-hidden="true">📝</span>
           <span class="brand-text">
             <span class="brand-name">BeeFocus</span>
             <span class="brand-sub">Fokus - To-do - Kalender</span>
@@ -29,6 +29,17 @@
         </a>
 
         <nav class="nav" aria-label="BeeFocus Navigation">
+          <div class="nav-menu" id="navMenu">
+            <a class="nav-link" href="#benefits">Vorteile</a>
+            <a class="nav-link" href="#features">Features</a>
+            <a class="nav-link" href="#testimonials">Stimmen</a>
+            <a class="nav-link" href="#download">Download</a>
+            <a class="nav-link" href="#faq">FAQ</a>
+            <a class="nav-link nav-cta" href="#download">Jetzt herunterladen</a>
+          </div>
+        </nav>
+
+        <div class="header-actions">
           <button
             class="nav-toggle"
             type="button"
@@ -38,18 +49,6 @@
             <span class="sr-only">Menue oeffnen</span>
             <span aria-hidden="true" class="hamburger"></span>
           </button>
-
-          <div class="nav-menu" id="navMenu">
-            <a class="nav-link" href="#features">Features</a>
-            <a class="nav-link" href="#benefits">Vorteile</a>
-            <a class="nav-link" href="#testimonials">Stimmen</a>
-            <a class="nav-link" href="#download">Download</a>
-            <a class="nav-link" href="#faq">FAQ</a>
-            <a class="nav-link nav-cta" href="#download">Jetzt herunterladen</a>
-          </div>
-        </nav>
-
-        <div class="header-actions">
           <a class="btn btn-ghost" href="../../index.html">Zur Homepage</a>
           <button
             class="icon-btn"
@@ -236,13 +235,13 @@
             <figure class="feature-shot">
               <img src="assets/Iphone/Simulator%20Screenshot%20-%20iPhone%2012%20Pro%20Max%20-%202025-10-16%20at%2022.14.34.png" alt="Morgen-Uebersicht der BeeFocus App" />
               <figcaption>
-                <strong>Intelligente Morgen-Übersicht</strong>
+                  <strong>Intelligente Übersicht</strong>
                 <span>Klare Zusammenfassung: Aufgaben, Termine, Prioritäten.</span>
               </figcaption>
             </figure>
 
             <figure class="feature-shot">
-              <img src="assets/Iphone/Simulator%20Screenshot%20-%20iPhone%2012%20Pro%20Max%20-%202025-10-16%20at%2022.14.44.png" alt="Pomodoro-Timer in BeeFocus" />
+              <img src="assets/Iphone/Simulator%20Screenshot%20-%20iPhone%2012%20Pro%20Max%20-%202025-10-16%20at%2022.14.39.png" alt="Pomodoro-Timer in BeeFocus" />
               <figcaption>
                 <strong>Fokus mit System</strong>
                 <span>Pomodoro mit Sessions, Pausen und optionalen Alerts.</span>
@@ -367,7 +366,7 @@
             <div class="acc-item">
               <h3 class="acc-head">
                 <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq1" id="faq1-btn">
-                  Wie funktioniert die Morgen-Übersicht?
+                  Wie funktioniert die Übersicht?
                   <span class="acc-icon" aria-hidden="true"></span>
                 </button>
               </h3>
@@ -434,6 +433,32 @@
               <div class="acc-panel" id="faq5" role="region" aria-labelledby="faq5-btn" hidden>
                 <p>
                   Ja, BeeFocus ist aktuell auf Deutsch und Englisch verfügbar. Weitere Sprachen sind geplant.
+                </p>
+              </div>
+            </div>
+            <div class="acc-item">
+              <h3 class="acc-head">
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq5" id="faq5-btn">
+                  Werde ich auch erinnert?
+                  <span class="acc-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc-panel" id="faq5" role="region" aria-labelledby="faq5-btn" hidden>
+                <p>
+                  Ja, du kannst Benachrichtigungen für anstehende Aufgaben, Timer-Sessions und Kalendertermine aktivieren, damit du immer im Fokus bleibst.
+                </p>
+              </div>
+            </div>
+            <div class="acc-item">
+              <h3 class="acc-head">
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq6" id="faq6-btn">
+                  Wie kann ich meine Aufgaben teilen?
+                  <span class="acc-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc-panel" id="faq6" role="region" aria-labelledby="faq6-btn" hidden>
+                <p>
+                  Du kannst deine Aufgaben jederzeit exportieren, indem du die jeweilige Aufgabe auswählst und lange gedrückt hältst und auf Teilen klickst. Deine Aufgaben und Timer-Daten werden in einer JSON Datei bereitgestellt, um die Aufgabe mit anderen Personen zu teilen.
                 </p>
               </div>
             </div>
