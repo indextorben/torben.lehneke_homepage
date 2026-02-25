@@ -10,6 +10,14 @@
   background: var(--bg);
 }
 
+html[data-theme="dark"] body.ledger{
+  --bg: #0b1020;
+  --surface: rgba(255,255,255,0.06);
+  --text: #eaf0ff;
+  --muted: rgba(234,240,255,0.72);
+  --border: rgba(234,240,255,0.14);
+}
+
 .app-header .brand-mark,
 .app-footer .brand-mark{
   color: var(--primary);
@@ -222,4 +230,16 @@
 
 @media (prefers-reduced-motion: reduce){
   .mockup{ transform: none !important; }
+}
+
+html[data-theme="dark"] body.ledger .mockup,
+html[data-theme="dark"] body.ledger .hero-card,
+html[data-theme="dark"] body.ledger .feature-shot,
+html[data-theme="dark"] body.ledger .logo-pill{
+  background: rgba(12, 16, 28, 0.75);
+  border-color: rgba(234, 240, 255, 0.14);
+}
+
+html[data-theme="dark"] body.ledger .mockup-gloss{
+  background: linear-gradient(120deg, rgba(255,255,255,0.08), transparent 60%);
 }
