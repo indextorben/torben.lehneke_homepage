@@ -228,6 +228,13 @@ html[data-theme="dark"] body.ledger{
   .store-badge + .store-badge{ margin-left: 0; margin-top: 10px; }
 }
 
+@media (max-width: 700px){
+  .app-hero .hero-grid{ gap: 24px; }
+  .mockup-stack{ gap: 12px; }
+  .mockup img{ width: min(220px, 70vw); }
+  .hero-card{ max-width: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce){
   .mockup{ transform: none !important; }
 }

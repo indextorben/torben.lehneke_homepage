@@ -299,6 +299,31 @@ html[data-theme="dark"] .icon-moon{ display: block; }
   .nav-menu.is-open{ display: flex; }
 }
 
+@media (max-width: 700px){
+  .header-inner{
+    height: auto;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .brand{ min-width: 0; }
+  .brand-name{ font-size: 0.95rem; }
+  .brand-sub{ font-size: 0.78rem; }
+  .nav{
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+  }
+  .nav-menu.is-open{
+    top: calc(100% + 8px);
+  }
+  .header-actions{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
 /* ------------------------------
    Buttons / Chips
 --------------------------------*/

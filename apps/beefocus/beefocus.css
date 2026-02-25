@@ -274,6 +274,20 @@ html[data-theme="dark"] body.beefocus{
   .store-badge + .store-badge{ margin-left: 0; margin-top: 10px; }
 }
 
+@media (max-width: 700px){
+  .app-header .header-actions{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .app-hero .hero-grid{ gap: 24px; }
+  .mockup-stack{ gap: 12px; }
+  .mockup img{ width: min(210px, 70vw); }
+  .hero-card{ max-width: 100%; }
+  .feature-walk{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .feature-shot img{ max-height: 420px; }
+  .legal-card{ padding: 18px; }
+}
+
 @media (prefers-reduced-motion: reduce){
   .mockup{ transform: none !important; }
 }
