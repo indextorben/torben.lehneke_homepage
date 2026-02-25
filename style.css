@@ -321,12 +321,14 @@ html[data-theme="dark"] .icon-moon{ display: block; }
     min-width: 0;
     flex: 1 1 auto;
   }
+  .brand-text{ min-width: 0; }
   .brand-name{ font-size: 0.95rem; }
   .brand-sub{ font-size: 0.78rem; }
   .nav{
     width: auto;
     justify-content: flex-end;
     position: relative;
+    margin-left: auto;
   }
   .nav-menu.is-open{
     position: fixed;
@@ -343,6 +345,7 @@ html[data-theme="dark"] .icon-moon{ display: block; }
     width: auto;
     flex-wrap: nowrap;
     justify-content: flex-start;
+    margin-left: 8px;
   }
 }
 
