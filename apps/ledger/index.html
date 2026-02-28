@@ -1,14 +1,14 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Ledger ist die Notiz-App für schnelle Erfassung, klare Organisation und geschützte Gedanken. Notizen, Tags, Favoriten, Erinnerungen und sichere Bereiche."
+      content="Ledger bringt Finanzen, Budgets und Freigaben in ein klares, teamtaugliches Dashboard."
     />
     <meta name="theme-color" content="#0b5fff" />
-    <title>Ledger - Die Notiz-App für klare Gedanken</title>
+    <title>Ledger - Finanz-Dashboard fuer Teams</title>
 
     <link rel="preconnect" href=".." />
     <link rel="stylesheet" href="../../style.css" />
@@ -21,36 +21,34 @@
     <header class="site-header app-header" id="top">
       <div class="container header-inner">
         <a class="brand" href="../../index.html" aria-label="Ledger Startseite">
-          <span class="brand-mark" aria-hidden="true">■</span>
+          <span class="brand-mark" aria-hidden="true">◆</span>
           <span class="brand-text">
             <span class="brand-name">Ledger</span>
-            <span class="brand-sub">Notizen · Ordnung · Sicherheit</span>
+            <span class="brand-sub">Finanzen fuer klare Entscheidungen</span>
           </span>
         </a>
 
         <nav class="nav" aria-label="Ledger Navigation">
+          <div class="nav-menu" id="navMenu">
+            <a class="nav-link" href="#overview">Vorteile</a>
+            <a class="nav-link" href="#workflow">Ablauf</a>
+            <a class="nav-link" href="#security">Sicherheit</a>
+            <a class="nav-link" href="#faq">FAQ</a>
+            <a class="nav-link nav-cta" href="#contact">Demo anfragen</a>
+          </div>
+        </nav>
+
+        <div class="header-actions">
           <button
             class="nav-toggle"
             type="button"
             aria-expanded="false"
             aria-controls="navMenu"
           >
-            <span class="sr-only">Menü öffnen</span>
+            <span class="sr-only">Menue oeffnen</span>
             <span aria-hidden="true" class="hamburger"></span>
           </button>
-
-          <div class="nav-menu" id="navMenu">
-            <a class="nav-link" href="#features">Funktionen</a>
-            <a class="nav-link" href="#organization">Organisation</a>
-            <a class="nav-link" href="#proof">Vertrauen</a>
-            <a class="nav-link" href="#pricing">Preise</a>
-            <a class="nav-link" href="#faq">FAQ</a>
-            <a class="nav-link nav-cta" href="#download" style="padding: 9px 12px; font-size: 0.92rem;">Jetzt starten</a>
-          </div>
-        </nav>
-
-        <div class="header-actions">
-          <a class="btn btn-ghost" href="../../index.html" style="padding: 9px 12px; font-size: 0.92rem;">Zur Homepage</a>
+          <a class="btn btn-ghost" href="../../index.html">Zur Homepage</a>
           <button
             class="icon-btn"
             id="themeToggle"
@@ -93,364 +91,175 @@
     </header>
 
     <main id="main">
-      <section class="hero section app-hero" aria-label="Ledger Hero">
-        <div class="hero-glow" aria-hidden="true">
-          <span class="glow-orb orb-a"></span>
-          <span class="glow-orb orb-b"></span>
-        </div>
-
+      <section class="hero section ledger-hero" aria-label="Ledger Hero">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow">Ledger App</p>
-            <h1 class="headline">Notizen, die mitdenken.</h1>
+            <p class="eyebrow">Ledger fuer Teams</p>
+            <h1 class="headline">Budget, Freigaben und Cashflow an einem Ort.</h1>
             <p class="subheadline">
-              Ledger ist die Notiz-App für schnelle Erfassung, klare Organisation und sichere
-              Aufbewahrung - damit Gedanken nie verloren gehen.
+              Ledger verbindet Finanzdaten, Freigabeprozesse und Forecasts in
+              einem ruhigen Dashboard. Kein Tabellenchaos, keine verlorenen
+              Freigaben, keine dunklen Ecken.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#download">Jetzt starten</a>
-              <a class="btn btn-ghost" href="#features">Mehr erfahren</a>
+              <a class="btn btn-primary" href="#contact">Demo anfragen</a>
+              <a class="btn btn-ghost" href="#workflow">Mehr erfahren</a>
             </div>
 
-            <div class="trust-row" role="list" aria-label="Vertrauen">
-              <span class="trust-item" role="listitem">✓ Sicher geschützt</span>
-              <span class="trust-item" role="listitem">✓ Schnell erfasst</span>
-              <span class="trust-item" role="listitem">✓ Klar organisiert</span>
+            <div class="trust-row" role="list" aria-label="Vorteile">
+              <span class="trust-item" role="listitem">✓ Live-Budgets</span>
+              <span class="trust-item" role="listitem">✓ Rollen & Freigaben</span>
+              <span class="trust-item" role="listitem">✓ Audit-Trail</span>
             </div>
           </div>
 
           <div class="hero-visual reveal" aria-hidden="true">
-            <div class="mockup-stack" id="mockupStack">
-              <figure class="mockup phone tilt" data-parallax="0.22">
-                <img src="assets/ledger-phone.svg" alt="Ledger App auf einem Smartphone" />
-                <span class="mockup-gloss"></span>
-              </figure>
-              <figure class="mockup tablet" data-parallax="0.12">
-                <img src="assets/ledger-tablet.svg" alt="Ledger App auf einem Tablet" />
-                <span class="mockup-gloss"></span>
-              </figure>
-            </div>
-            <div class="hero-card glass" data-parallax="0.08">
-              <strong>Deine Notizen in 3 Minuten</strong>
-              <p>Erfassen, sortieren, wiederfinden - alles in einem Flow.</p>
+            <div class="ledger-frame">
+              <img
+                src="assets/ledger-tablet.svg"
+                alt=""
+                class="ledger-tablet"
+              />
+              <div class="ledger-stat stat-a">
+                <span class="stat-label">Budgetstatus</span>
+                <strong>92% im Plan</strong>
+              </div>
+              <div class="ledger-stat stat-b">
+                <span class="stat-label">Offene Freigaben</span>
+                <strong>3 heute</strong>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="features" aria-label="Funktionen">
+      <section class="section" id="overview" aria-label="Vorteile">
         <div class="container">
           <div class="section-head reveal">
-            <h2>Funktionen, die deinen Kopf frei machen</h2>
+            <h2>Ein Blick und die Zahlen sind klar</h2>
             <p class="lead">
-              Ledger kombiniert schnelle Erfassung mit starker Organisation und Schutz.
+              Ledger reduziert Finanzprozesse auf den Kern: sichtbar, steuerbar,
+              nachvollziehbar.
             </p>
           </div>
 
           <div class="cards-grid reveal">
-            <article class="card feature-card">
+            <article class="card overview-card">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 6h16"></path>
-                  <path d="M4 12h10"></path>
-                  <path d="M4 18h6"></path>
+                  <path d="M4 19h16"></path>
+                  <path d="M7 15V9"></path>
+                  <path d="M12 15V5"></path>
+                  <path d="M17 15v-3"></path>
                 </svg>
               </div>
-              <h3>Notizen in Sekunden</h3>
-              <p>Titel und Inhalte erfassen, ohne den Flow zu verlieren.</p>
+              <h3>Live-Cashflow</h3>
+              <p>Einzahlungen, Ausgaben und Forecasts laufen in einem Feed zusammen.</p>
             </article>
 
-            <article class="card feature-card">
+            <article class="card overview-card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="5" width="16" height="14" rx="3"></rect>
+                  <path d="M8 10h8"></path>
+                  <path d="M8 14h5"></path>
+                </svg>
+              </div>
+              <h3>Budgets pro Team</h3>
+              <p>Marketing, Operations und Projekte arbeiten mit sauberen Grenzen.</p>
+            </article>
+
+            <article class="card overview-card">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M12 3v18"></path>
-                  <path d="M5 7h7"></path>
-                  <path d="M5 17h7"></path>
-                  <path d="M16 7h3"></path>
-                  <path d="M16 17h3"></path>
+                  <path d="M7 8h7a3 3 0 1 1 0 6H9a3 3 0 1 0 0 6h8"></path>
                 </svg>
               </div>
-              <h3>Ordner, Tags, Favoriten</h3>
-              <p>Ordne Themen sauber ein, pinne Wichtiges und finde alles sofort.</p>
-            </article>
-
-            <article class="card feature-card">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M3 3v18h18"></path>
-                  <path d="M7 15l4-4 3 3 4-6"></path>
-                </svg>
-              </div>
-              <h3>Erinnerungen mit Wiederholung</h3>
-              <p>Nie wieder vergessen - mit smarten Wiederholungen für Routinen.</p>
-            </article>
-
-            <article class="card feature-card">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="8"></circle>
-                  <path d="M12 8v5l3 2"></path>
-                </svg>
-              </div>
-              <h3>Templates & Tabellen</h3>
-              <p>Starte schneller mit Vorlagen und strukturierten Listen.</p>
-            </article>
-
-            <article class="card feature-card">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="4"></rect>
-                  <path d="M7 10h10"></path>
-                  <path d="M7 14h6"></path>
-                </svg>
-              </div>
-              <h3>Skizzen, Anhänge, Audio</h3>
-              <p>Mehr als Text: Ideen als Skizze, Datei oder Sprach-Notiz.</p>
-            </article>
-
-            <article class="card feature-card">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
-                </svg>
-              </div>
-              <h3>Private Notizen</h3>
-              <p>Geschützt per Biometrie oder PIN - für sensible Inhalte.</p>
+              <h3>Freigaben ohne Reibung</h3>
+              <p>Beträge, Limits und Zuständigkeiten sind sofort nachvollziehbar.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="organization" aria-label="Organisation">
+      <section class="section" id="workflow" aria-label="Ablauf">
         <div class="container">
           <div class="section-head reveal">
-            <h2>Organisation & Produktivität</h2>
-            <p class="lead">Ordnung, die dir Arbeit abnimmt - und dich schneller ans Ziel bringt.</p>
-          </div>
-
-          <div class="cards-grid reveal">
-            <article class="card audience-card">
-              <h3>Ordner & Tags</h3>
-              <p>Struktur, die sich deinem Kopf anpasst - nach Projekten oder Themen.</p>
-            </article>
-
-            <article class="card audience-card">
-              <h3>Favoriten & Pinning</h3>
-              <p>Wichtige Notizen immer oben, ohne langes Suchen.</p>
-            </article>
-
-            <article class="card audience-card">
-              <h3>Templates</h3>
-              <p>Wochenplanung, Meeting-Notizen oder Ideenlisten sofort startklar.</p>
-            </article>
-
-            <article class="card audience-card">
-              <h3>Erinnerungen</h3>
-              <p>Wiederkehrend oder einmalig - Ledger erinnert dich zuverlässig.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="security" aria-label="Datenschutz und Sicherheit">
-        <div class="container">
-          <div class="section-head reveal">
-            <h2>Datenschutz & Sicherheit</h2>
-            <p class="lead">Deine Notizen bleiben privat - mit starkem Schutz auf dem Gerät.</p>
-          </div>
-          <div class="cards-grid reveal">
-            <article class="card feature-card">
-              <h3>Private Bereiche</h3>
-              <p>Schütze sensible Inhalte per Face ID, Touch ID oder PIN.</p>
-            </article>
-            <article class="card feature-card">
-              <h3>Lokaler Schutz</h3>
-              <p>Notizen werden sicher gespeichert - auch ohne Cloud.</p>
-            </article>
-            <article class="card feature-card">
-              <h3>Papierkorb</h3>
-              <p>Gelöschtes bleibt wiederherstellbar - nichts geht versehentlich verloren.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="proof" aria-label="Vertrauen">
-        <div class="container">
-          <div class="section-head reveal">
-            <h2>Vertrauen, das du spürst</h2>
-            <p class="lead">Echte Stimmen und klare Zahlen (Platzhalter).</p>
-          </div>
-
-          <div class="cards-grid reveal">
-            <article class="card testimonial-card">
-              <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-              <p>"Ledger ist die erste Notiz-App, die wirklich aufgeräumt bleibt."</p>
-              <div class="who">
-                <svg class="avatar-img" style="width:42px;height:42px;flex:0 0 42px;display:block;" role="img" aria-label="Martin P." xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <rect width="200" height="200" rx="100" fill="#FFE7A3"/>
-  <text x="100" y="118" font-family="Arial, sans-serif" font-size="96" text-anchor="middle" fill="#1a1f2e">M</text>
-</svg>
-                <div>
-                  <strong>Martin P.</strong>
-                  <span class="muted">Nutzer seit 2024</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="card testimonial-card">
-              <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-              <p>"Meine Ideen sind sofort erfasst - kein Suchen, kein Chaos."</p>
-              <div class="who">
-                <svg class="avatar-img" style="width:42px;height:42px;flex:0 0 42px;display:block;" role="img" aria-label="Sabrina L." xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <rect width="200" height="200" rx="100" fill="#D7E4FF"/>
-  <text x="100" y="118" font-family="Arial, sans-serif" font-size="96" text-anchor="middle" fill="#1a1f2e">S</text>
-</svg>
-                <div>
-                  <strong>Sabrina L.</strong>
-                  <span class="muted">Produktmanagerin</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="card testimonial-card">
-              <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-              <p>"Die Templates sparen mir jede Woche Stunden."</p>
-              <div class="who">
-                <svg class="avatar-img" style="width:42px;height:42px;flex:0 0 42px;display:block;" role="img" aria-label="Thomas R." xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <rect width="200" height="200" rx="100" fill="#E6D6FF"/>
-  <text x="100" y="118" font-family="Arial, sans-serif" font-size="96" text-anchor="middle" fill="#1a1f2e">T</text>
-</svg>
-                <div>
-                  <strong>Thomas R.</strong>
-                  <span class="muted">Selbstständig</span>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="proof-row reveal">
-            <div class="proof-card">
-              <strong>120k+</strong>
-              <span>aktive Nutzer</span>
-            </div>
-            <div class="proof-card">
-              <strong>4.9/5</strong>
-              <span>Durchschnittsbewertung</span>
-            </div>
-            <div class="proof-card">
-              <strong>18 Mio.</strong>
-              <span>gespeicherte Notizen</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="how" aria-label="So funktioniert es">
-        <div class="container">
-          <div class="section-head reveal">
-            <h2>So startest du in 3 Schritten</h2>
-            <p class="lead">Von der ersten Idee bis zur täglichen Nutzung.</p>
+            <h2>So arbeitet dein Team mit Ledger</h2>
+            <p class="lead">
+              Jeder Schritt ist klar definiert, damit Entscheidungen schneller
+              getroffen werden.
+            </p>
           </div>
 
           <ol class="steps reveal">
             <li class="step">
               <div class="step-badge">1</div>
               <div class="step-body">
-                <h3>Notiz erfassen</h3>
-                <p>Text, Audio oder Skizze - so schnell wie ein Gedanke.</p>
+                <h3>Konten verbinden</h3>
+                <p>Banken, Karten und wiederkehrende Kostenquellen werden eingebunden.</p>
               </div>
             </li>
             <li class="step">
               <div class="step-badge">2</div>
               <div class="step-body">
-                <h3>Organisieren</h3>
-                <p>Ordner, Tags, Favoriten und Templates bringen Ordnung.</p>
+                <h3>Budgets definieren</h3>
+                <p>Teams erhalten klare Limits, Labels und Forecast-Ziele.</p>
               </div>
             </li>
             <li class="step">
               <div class="step-badge">3</div>
               <div class="step-body">
-                <h3>Überall verfügbar</h3>
-                <p>Mit Sync und Export bleibt alles auf allen Geräten bereit.</p>
+                <h3>Freigaben steuern</h3>
+                <p>Anfragen laufen automatisch an die richtigen Entscheider.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-badge">4</div>
+              <div class="step-body">
+                <h3>Entscheiden</h3>
+                <p>Berichte zeigen sofort, wo Geld gebunden oder eingespart wird.</p>
               </div>
             </li>
           </ol>
         </div>
       </section>
 
-      <section class="section" id="pricing" aria-label="Preise">
-        <div class="container">
-          <div class="section-head reveal">
-            <h2>Transparente Preise</h2>
-            <p class="lead">Starte kostenlos und upgrade, wenn du mehr willst.</p>
-          </div>
-
-          <div class="cards-grid reveal">
-            <article class="card pricing-card">
-              <h3>Free</h3>
-              <p class="price">0 €</p>
-              <ul class="bullets">
-                <li><span aria-hidden="true">✓</span> Notizen, Ordner, Tags</li>
-                <li><span aria-hidden="true">✓</span> Favoriten & Pinning</li>
-                <li><span aria-hidden="true">✓</span> Erinnerungen</li>
-              </ul>
-              <a class="btn btn-ghost" href="#download">Kostenlos starten</a>
-            </article>
-
-            <article class="card pricing-card featured">
-              <div class="pill">Beliebt</div>
-              <h3>Premium</h3>
-              <p class="price">4,99 € / Monat</p>
-              <ul class="bullets">
-                <li><span aria-hidden="true">✓</span> iCloud Sync</li>
-                <li><span aria-hidden="true">✓</span> Export (PDF/PNG)</li>
-                <li><span aria-hidden="true">✓</span> Audio-Notizen</li>
-              </ul>
-              <a class="btn btn-primary" href="#download">Premium testen</a>
-            </article>
-
-            <article class="card pricing-card">
-              <h3>Einmalig</h3>
-              <p class="price">7,99 € / Monat</p>
-              <ul class="bullets">
-                <li><span aria-hidden="true">✓</span> Gemeinsame Notizräume</li>
-                <li><span aria-hidden="true">✓</span> Mehrere Profile</li>
-                <li><span aria-hidden="true">✓</span> Geteilte Templates</li>
-              </ul>
-              <a class="btn btn-ghost" href="#download">Family wählen</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section download" id="download" aria-label="Download">
-        <div class="container download-grid">
-          <div class="download-copy reveal">
-            <h2>Jetzt Ledger herunterladen</h2>
-            <p class="lead">Starte heute mit klaren, sicheren Notizen.</p>
-            <div class="download-actions">
-              <div class="store-badge is-soon" aria-label="App Store demnächst">
-                <span class="badge-title">App Store</span>
-                <span class="badge-sub">Coming soon</span>
-              </div>
-              <div class="store-badge is-soon" aria-label="Google Play demnächst">
-                <span class="badge-title">Google Play</span>
-                <span class="badge-sub">Coming soon</span>
-              </div>
+      <section class="section" id="security" aria-label="Sicherheit">
+        <div class="container split">
+          <div class="reveal">
+            <div class="section-head">
+              <h2>Sicher, nachvollziehbar, revisionsfest</h2>
+              <p class="lead">
+                Ledger ist fuer sensible Finanzprozesse ausgelegt, ohne die
+                Bedienung schwer zu machen.
+              </p>
             </div>
-            <p class="fineprint">Deine Daten bleiben privat und verschlüsselt gespeichert.</p>
-          </div>
-          <div class="download-card reveal glass">
-            <h3>Ledger in 5 Minuten</h3>
+
             <ul class="bullets">
-              <li><span aria-hidden="true">✓</span> Erste Notiz erfassen</li>
-              <li><span aria-hidden="true">✓</span> Ordnung anlegen</li>
-              <li><span aria-hidden="true">✓</span> Sync aktivieren</li>
+              <li><span aria-hidden="true">✓</span> Rollenbasierte Zugriffe fuer Finanzen, Teamleads und Management</li>
+              <li><span aria-hidden="true">✓</span> Vollstaendiger Audit-Trail je Buchung, Freigabe und Kommentar</li>
+              <li><span aria-hidden="true">✓</span> Exportierbare Monatsreports fuer Steuerberater oder Controlling</li>
             </ul>
-            <a class="btn btn-primary" href="#download">Jetzt starten</a>
           </div>
+
+          <aside class="card security-panel reveal">
+            <h3>Was Teams sofort merken</h3>
+            <div class="info-row">
+              <span class="info-label">Weniger Rueckfragen</span>
+              <span class="info-value">-41%</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Schnellere Freigaben</span>
+              <span class="info-value">am selben Tag</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Reporting</span>
+              <span class="info-value">1 Klick</span>
+            </div>
+          </aside>
         </div>
       </section>
 
@@ -458,80 +267,74 @@
         <div class="container">
           <div class="section-head reveal">
             <h2>FAQ</h2>
-            <p class="lead">Antworten auf die häufigsten Fragen.</p>
+            <p class="lead">Die wichtigsten Fragen kurz beantwortet.</p>
           </div>
 
           <div class="accordion reveal" data-accordion>
             <div class="acc-item">
               <h3 class="acc-head">
-                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq1" id="faq1-btn">
-                  Wie sicher sind meine Daten?
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="ledger-faq-1" id="ledger-faq-1-btn">
+                  Ist Ledger fuer kleine Teams geeignet?
                   <span class="acc-icon" aria-hidden="true"></span>
                 </button>
               </h3>
-              <div class="acc-panel" id="faq1" role="region" aria-labelledby="faq1-btn" hidden>
-                <p>Ledger speichert deine Notizen verschlüsselt und kann lokal auf dem Gerät arbeiten.</p>
+              <div class="acc-panel" id="ledger-faq-1" role="region" aria-labelledby="ledger-faq-1-btn" hidden>
+                <p>Ja. Gerade kleine Teams profitieren davon, dass Budgets und Freigaben nicht mehr in Chats oder Tabellen verloren gehen.</p>
               </div>
             </div>
 
             <div class="acc-item">
               <h3 class="acc-head">
-                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq2" id="faq2-btn">
-                  Was kostet die App?
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="ledger-faq-2" id="ledger-faq-2-btn">
+                  Kann ich Reports exportieren?
                   <span class="acc-icon" aria-hidden="true"></span>
                 </button>
               </h3>
-              <div class="acc-panel" id="faq2" role="region" aria-labelledby="faq2-btn" hidden>
-                <p>Es gibt einen kostenlosen Plan. Premium-Features sind monatlich kündbar.</p>
+              <div class="acc-panel" id="ledger-faq-2" role="region" aria-labelledby="ledger-faq-2-btn" hidden>
+                <p>Ja. Monats- und Budgetberichte lassen sich fuer Controlling, Steuerberatung und interne Reviews exportieren.</p>
               </div>
             </div>
 
             <div class="acc-item">
               <h3 class="acc-head">
-                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq3" id="faq3-btn">
-                  Unterstützt Ledger Geräte-Sync?
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="ledger-faq-3" id="ledger-faq-3-btn">
+                  Gibt es Rollen und Freigabelimits?
                   <span class="acc-icon" aria-hidden="true"></span>
                 </button>
               </h3>
-              <div class="acc-panel" id="faq3" role="region" aria-labelledby="faq3-btn" hidden>
-                <p>Ja, Sync ist im Premium-Plan enthalten. Du kannst die App auf mehreren Geräten nutzen.</p>
+              <div class="acc-panel" id="ledger-faq-3" role="region" aria-labelledby="ledger-faq-3-btn" hidden>
+                <p>Ja. Du definierst je Team, Rolle oder Kostenstelle, wer was sehen, anfragen und freigeben darf.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="acc-item">
-              <h3 class="acc-head">
-                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq4" id="faq4-btn">
-                  Kann ich jederzeit kündigen?
-                  <span class="acc-icon" aria-hidden="true"></span>
-                </button>
-              </h3>
-              <div class="acc-panel" id="faq4" role="region" aria-labelledby="faq4-btn" hidden>
-                <p>Ja. Du kannst dein Abo jederzeit in den Store-Einstellungen kündigen.</p>
-              </div>
+      <section class="section" id="contact" aria-label="Kontakt">
+        <div class="container contact-grid">
+          <div class="card reveal">
+            <h2>Demo anfragen</h2>
+            <p class="lead">
+              Wenn du Ledger fuer dein Team einsetzen willst, melde dich direkt.
+            </p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:lehneketorben@gmail.com?subject=Ledger%20Demo">E-Mail senden</a>
+              <a class="btn btn-ghost" href="tel:01733734023">Anrufen</a>
             </div>
+          </div>
 
-            <div class="acc-item">
-              <h3 class="acc-head">
-                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq5" id="faq5-btn">
-                  Funktioniert Ledger offline?
-                  <span class="acc-icon" aria-hidden="true"></span>
-                </button>
-              </h3>
-              <div class="acc-panel" id="faq5" role="region" aria-labelledby="faq5-btn" hidden>
-                <p>Ja. Du kannst Notizen offline erstellen und später synchronisieren.</p>
-              </div>
+          <div class="card contact-info reveal">
+            <h3>Direkter Kontakt</h3>
+            <div class="info-row">
+              <span class="info-label">E-Mail</span>
+              <span class="info-value">lehneketorben@gmail.com</span>
             </div>
-
-            <div class="acc-item">
-              <h3 class="acc-head">
-                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq6" id="faq6-btn">
-                  Kann ich meine Notizen exportieren?
-                  <span class="acc-icon" aria-hidden="true"></span>
-                </button>
-              </h3>
-              <div class="acc-panel" id="faq6" role="region" aria-labelledby="faq6-btn" hidden>
-                <p>Ja. Export als PDF oder PNG ist in Premium enthalten.</p>
-              </div>
+            <div class="info-row">
+              <span class="info-label">Telefon</span>
+              <span class="info-value">01733734023</span>
+            </div>
+            <div class="note">
+              Schnelle Rueckmeldung, klare Einschätzung und ein sauberer Setup-Vorschlag.
             </div>
           </div>
         </div>
@@ -542,57 +345,28 @@
       <div class="container footer-grid">
         <div class="footer-brand">
           <div class="brand-line">
-            <span class="brand-mark" aria-hidden="true">■</span>
+            <span class="brand-mark" aria-hidden="true">◆</span>
             <strong>Ledger</strong>
           </div>
-          <p class="muted">Notizen klar, Gedanken sicher.</p>
+          <p class="muted">Finanzprozesse mit klarer Struktur.</p>
         </div>
 
         <div class="footer-links" aria-label="Navigation">
-          <a href="#features" class="footer-link">Funktionen</a>
-          <a href="#pricing" class="footer-link">Preise</a>
-          <a href="#" class="footer-link">Datenschutz</a>
-          <a href="#" class="footer-link">Impressum</a>
-          <a href="#" class="footer-link">Support</a>
-        </div>
-
-        <div class="footer-social" aria-label="Social Media">
-          <a class="social" href="#" aria-label="Instagram (Platzhalter)">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-              <path d="M16 11.37a4 4 0 1 1-7.74 1.26A4 4 0 0 1 16 11.37Z"></path>
-              <path d="M17.5 6.5h.01"></path>
-            </svg>
-          </a>
-          <a class="social" href="#" aria-label="LinkedIn (Platzhalter)">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v2"></path>
-              <path d="M2 9h4v12H2z"></path>
-              <path d="M4 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"></path>
-            </svg>
-          </a>
-          <a class="social" href="#" aria-label="Facebook (Platzhalter)">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
+          <a href="#overview" class="footer-link">Vorteile</a>
+          <a href="#workflow" class="footer-link">Ablauf</a>
+          <a href="#security" class="footer-link">Sicherheit</a>
+          <a href="../../index.html#kontakt" class="footer-link">Impressum</a>
+          <a href="mailto:lehneketorben@gmail.com" class="footer-link">Support</a>
         </div>
       </div>
 
       <div class="container footer-bottom">
-        <small>© <span id="year"></span> Ledger. Alle Rechte vorbehalten.</small>
+        <small>(c) <span id="year"></span> Ledger. Alle Rechte vorbehalten.</small>
       </div>
 
       <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
     </footer>
 
     <script src="../../script.js" defer></script>
-    <script src="ledger.js" defer></script>
   </body>
 </html>
-
-
-
-
-
-
