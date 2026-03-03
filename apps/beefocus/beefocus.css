@@ -216,7 +216,23 @@ body.beefocus .brand-mark{
   font-size: 1.1rem;
 }
 
-.logo-row{
+
+.testimonial-card .who{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.testimonial-card .avatar-img{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e9eef7;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 6px 14px rgba(10, 20, 40, 0.16);
+}.logo-row{
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -369,3 +385,4 @@ html[data-theme="dark"] body.beefocus .logo-pill{
 html[data-theme="dark"] body.beefocus .mockup-gloss{
   background: linear-gradient(120deg, rgba(255,255,255,0.08), transparent 60%);
 }
+

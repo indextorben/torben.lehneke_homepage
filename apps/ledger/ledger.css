@@ -136,7 +136,23 @@ html[data-theme="dark"] body.ledger{
   font-size: 1.1rem;
 }
 
-.proof-row{
+
+.testimonial-card .who{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.testimonial-card .avatar-img{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e9eef7;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 6px 14px rgba(10, 20, 40, 0.16);
+}.proof-row{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 14px;
@@ -250,3 +266,4 @@ html[data-theme="dark"] body.ledger .logo-pill{
 html[data-theme="dark"] body.ledger .mockup-gloss{
   background: linear-gradient(120deg, rgba(255,255,255,0.08), transparent 60%);
 }
+
