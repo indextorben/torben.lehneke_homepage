@@ -125,6 +125,7 @@ p{ margin: 0 0 12px; }
   position: sticky;
   top: 0;
   z-index: 900;
+  overflow: visible;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
@@ -289,6 +290,7 @@ html[data-theme="dark"] .icon-moon{ display: block; }
   background: var(--bg);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-md);
+  z-index: 980;
 }
 .nav-menu.is-open .nav-link{
   width: 100%;
@@ -324,10 +326,11 @@ html[data-theme="dark"] .icon-moon{ display: block; }
     position: relative;
   }
   .nav-menu.is-open{
-    top: calc(100% + 8px);
-    left: auto;
-    right: 0;
-    width: min(320px, calc(100vw - (var(--pad) * 2)));
+    position: fixed;
+    top: calc(var(--header-h) + 10px);
+    left: var(--pad);
+    right: var(--pad);
+    width: auto;
     max-height: 70vh;
   }
   .header-actions{
