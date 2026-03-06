@@ -490,12 +490,13 @@
   // -----------------------------
   // Image lightbox (app screenshots)
   // -----------------------------
-  const lightboxTargets = $$(".feature-shot img, .mockup img, .ledger-tablet");
+  const lightboxTargets = $$("main img").filter(
+    (img) => !img.classList.contains("no-lightbox")
+  );
 
   if (lightboxTargets.length) {
     const lightbox = document.createElement("div");
     lightbox.className = "img-lightbox";
-    lightbox.hidden = true;
     lightbox.setAttribute("aria-hidden", "true");
 
     const closeBtn = document.createElement("button");
@@ -518,9 +519,8 @@
       active = false;
       lightbox.classList.remove("is-open");
       document.body.classList.remove("lightbox-open");
+      lightbox.setAttribute("aria-hidden", "true");
       window.setTimeout(() => {
-        lightbox.hidden = true;
-        lightbox.setAttribute("aria-hidden", "true");
         lightboxImg.removeAttribute("src");
       }, 180);
     };
@@ -531,19 +531,23 @@
       active = true;
       lightboxImg.src = src;
       lightboxImg.alt = img.alt || "Vergrößerte Ansicht";
-      lightbox.hidden = false;
       lightbox.setAttribute("aria-hidden", "false");
       document.body.classList.add("lightbox-open");
       requestAnimationFrame(() => lightbox.classList.add("is-open"));
     };
 
-    lightboxTargets.forEach((img) => {
-      img.classList.add("is-lightboxable");
-      img.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        openLightbox(img);
-      });
+    lightboxTargets.forEach((img) => img.classList.add("is-lightboxable"));
+
+    document.addEventListener("click", (e) => {
+      const img = e.target.closest("main img");
+      if (!img || img.classList.contains("no-lightbox")) return;
+      if (img.closest(".img-lightbox")) return;
+      // Keep normal navigation when image is inside a link/card.
+      const linkedParent = img.closest("a[href]");
+      if (linkedParent && !img.classList.contains("allow-lightbox-link")) return;
+      e.preventDefault();
+      e.stopPropagation();
+      openLightbox(img);
     });
 
     closeBtn.addEventListener("click", closeLightbox);
