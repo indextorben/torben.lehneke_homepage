@@ -215,6 +215,16 @@ body{
   color: var(--bg);
 }
 
+html[data-theme="dark"] .nav-cta{
+  color: #ffffff;
+  background: #0b5fff;
+  border-color: color-mix(in srgb, #0b5fff 78%, #000 22%);
+}
+html[data-theme="dark"] .nav-cta:hover{
+  background: #0950d6;
+  color: #ffffff;
+}
+
 .header-actions{
   display: flex;
   align-items: center;
@@ -235,6 +245,20 @@ body{
 }
 .icon-btn:hover{ transform: translateY(-1px); }
 .icon-btn:active{ transform: translateY(0px) scale(0.98); }
+
+html[data-theme="dark"] .icon-btn{
+  border-color: rgba(234, 240, 255, 0.34);
+  background: rgba(18, 27, 50, 0.9);
+  color: #eaf0ff;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.38);
+}
+html[data-theme="dark"] .icon-btn:hover{
+  background: rgba(27, 38, 66, 0.96);
+  border-color: rgba(234, 240, 255, 0.48);
+}
+html[data-theme="dark"] .icon-btn .icon{
+  color: #ffffff;
+}
 
 .icon{
   display: grid;
@@ -293,16 +317,28 @@ html[data-theme="dark"] .icon-moon{ display: block; }
   top: calc(var(--header-h) - 6px);
   right: var(--pad);
   left: var(--pad);
-  gap: 6px;
-  padding: 10px;
-  border-radius: var(--radius-lg);
-  background: color-mix(in srgb, var(--bg) 96%, #000 4%);
+  gap: 4px;
+  padding: 8px;
+  border-radius: 16px;
+  background: var(--bg);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-md);
   z-index: 2200;
+  opacity: 1;
+  isolation: isolate;
+  backdrop-filter: none;
 }
 .nav-menu.is-open .nav-link{
   width: 100%;
+  padding: 11px 12px;
+  border: 1px solid transparent;
+  background: transparent;
+}
+.nav-menu.is-open .nav-link:hover{
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+}
+.nav-menu.is-open .nav-cta{
+  margin-top: 4px;
 }
 
 @media (min-width: 980px){
@@ -335,11 +371,12 @@ html[data-theme="dark"] .icon-moon{ display: block; }
   }
   .nav-menu.is-open{
     position: absolute;
-    top: calc(100% + 8px);
+    top: calc(100% + 10px);
     left: auto;
     right: 0;
-    width: min(320px, calc(100vw - (var(--pad) * 2)));
-    max-height: 70vh;
+    width: min(300px, calc(100vw - (var(--pad) * 2)));
+    max-height: min(70vh, 420px);
+    overflow-y: auto;
   }
   .header-actions{
     width: auto;
@@ -1046,7 +1083,6 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
   perspective: 1200px;
 }
 
-.site-header,
 main,
 .site-footer,
 .skip-link{
