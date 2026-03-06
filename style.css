@@ -1071,6 +1071,63 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
 }
 
 /* ------------------------------
+   Image Lightbox
+--------------------------------*/
+body.lightbox-open{
+  overflow: hidden;
+}
+
+.is-lightboxable{
+  cursor: zoom-in;
+}
+
+.img-lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(5, 10, 20, 0.84);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.img-lightbox.is-open{
+  opacity: 1;
+}
+
+.img-lightbox-img{
+  width: min(1200px, calc(100vw - 40px));
+  max-height: calc(100vh - 90px);
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
+  background: color-mix(in srgb, var(--bg) 92%, #000 8%);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.img-lightbox-close{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid color-mix(in srgb, #fff 28%, transparent);
+  border-radius: 999px;
+  background: rgba(7, 14, 28, 0.82);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.img-lightbox-close:hover{
+  background: rgba(16, 26, 48, 0.94);
+}
+
+/* ------------------------------
    Mouse-reactive 3D orbs
 --------------------------------*/
 .orb-scene{

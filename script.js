@@ -488,6 +488,74 @@
   }
 
   // -----------------------------
+  // Image lightbox (app screenshots)
+  // -----------------------------
+  const lightboxTargets = $$(".feature-shot img, .mockup img, .ledger-tablet");
+
+  if (lightboxTargets.length) {
+    const lightbox = document.createElement("div");
+    lightbox.className = "img-lightbox";
+    lightbox.hidden = true;
+    lightbox.setAttribute("aria-hidden", "true");
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "img-lightbox-close";
+    closeBtn.type = "button";
+    closeBtn.setAttribute("aria-label", "Bild schließen");
+    closeBtn.textContent = "×";
+
+    const lightboxImg = document.createElement("img");
+    lightboxImg.className = "img-lightbox-img";
+    lightboxImg.alt = "";
+
+    lightbox.append(closeBtn, lightboxImg);
+    document.body.append(lightbox);
+
+    let active = false;
+
+    const closeLightbox = () => {
+      if (!active) return;
+      active = false;
+      lightbox.classList.remove("is-open");
+      document.body.classList.remove("lightbox-open");
+      window.setTimeout(() => {
+        lightbox.hidden = true;
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImg.removeAttribute("src");
+      }, 180);
+    };
+
+    const openLightbox = (img) => {
+      const src = img.currentSrc || img.getAttribute("src");
+      if (!src) return;
+      active = true;
+      lightboxImg.src = src;
+      lightboxImg.alt = img.alt || "Vergrößerte Ansicht";
+      lightbox.hidden = false;
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("lightbox-open");
+      requestAnimationFrame(() => lightbox.classList.add("is-open"));
+    };
+
+    lightboxTargets.forEach((img) => {
+      img.classList.add("is-lightboxable");
+      img.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox(img);
+      });
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  }
+
+  // -----------------------------
   // 3D orb background (mouse reactive)
   // -----------------------------
   const orbScene = $(".orb-scene");

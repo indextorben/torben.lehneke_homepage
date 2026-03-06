@@ -16,19 +16,40 @@
   </head>
 
   <body class="ledger">
-    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+    <div class="symbol-scene" aria-hidden="true">
+      <span class="note-symbol sym-a" data-depth="1.2">NOTE</span>
+      <span class="note-symbol sym-b" data-depth="0.9">TODO</span>
+      <span class="note-symbol sym-c" data-depth="1.4">REM</span>
+      <span class="note-symbol sym-d" data-depth="1.1">✓</span>
+      <span class="note-symbol sym-e" data-depth="1.7">!</span>
+      <span class="note-symbol sym-f" data-depth="1.3">#</span>
+      <span class="note-symbol sym-g" data-depth="0.8">+</span>
+      <span class="note-symbol sym-h" data-depth="1.5">IDEA</span>
+      <span class="note-symbol sym-i" data-depth="1.6">PIN</span>
+      <span class="note-symbol sym-j" data-depth="1">TXT</span>
+      <span class="note-symbol sym-k" data-depth="1.9">✎</span>
+    </div>
 
     <header class="site-header app-header" id="top">
       <div class="container header-inner">
         <a class="brand" href="../../index.html" aria-label="Ledger Startseite">
-          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text">
             <span class="brand-name">Ledger</span>
-            <span class="brand-sub">Finanzen fuer klare Entscheidungen</span>
+            <span class="brand-sub">App · Finanzen</span>
           </span>
         </a>
 
         <nav class="nav" aria-label="Ledger Navigation">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="sr-only">Menue oeffnen</span>
+            <span aria-hidden="true" class="hamburger"></span>
+          </button>
           <div class="nav-menu" id="navMenu">
             <a class="nav-link" href="#overview">Vorteile</a>
             <a class="nav-link" href="#workflow">Ablauf</a>
@@ -39,16 +60,6 @@
         </nav>
 
         <div class="header-actions">
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="navMenu"
-          >
-            <span class="sr-only">Menue oeffnen</span>
-            <span aria-hidden="true" class="hamburger"></span>
-          </button>
-          <a class="btn btn-ghost" href="../../index.html">Zur Homepage</a>
           <button
             class="icon-btn"
             id="themeToggle"
@@ -345,7 +356,7 @@
       <div class="container footer-grid">
         <div class="footer-brand">
           <div class="brand-line">
-            <span class="brand-mark" aria-hidden="true">◆</span>
+            <span class="brand-mark" aria-hidden="true"></span>
             <strong>Ledger</strong>
           </div>
           <p class="muted">Finanzprozesse mit klarer Struktur.</p>
@@ -368,5 +379,6 @@
     </footer>
 
     <script src="../../script.js" defer></script>
+    <script src="ledger.js" defer></script>
   </body>
 </html>
