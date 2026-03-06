@@ -18,12 +18,13 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 2;
+  z-index: 0;
   overflow: hidden;
 }
 
 .note-symbol {
   --size: 240px;
+  pointer-events: none;
   position: absolute;
   width: var(--size);
   height: var(--size);
