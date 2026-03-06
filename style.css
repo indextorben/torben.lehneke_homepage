@@ -126,7 +126,7 @@ p{ margin: 0 0 12px; }
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2000;
+  z-index: 10000;
   overflow: visible;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(10px);
@@ -177,7 +177,7 @@ body{
   justify-content: flex-end;
   gap: 10px;
   position: relative;
-  z-index: 2100;
+  z-index: 10010;
 }
 
 .nav-menu{
@@ -313,17 +313,17 @@ html[data-theme="dark"] .icon-moon{ display: block; }
   overflow-x: visible;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  position: absolute;
-  top: calc(var(--header-h) - 6px);
+  position: fixed;
+  top: var(--menu-top, calc(var(--header-h) + 10px));
   right: var(--pad);
-  left: var(--pad);
+  left: auto;
   gap: 4px;
   padding: 8px;
   border-radius: 16px;
   background: var(--bg);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-md);
-  z-index: 2200;
+  z-index: 10100;
   opacity: 1;
   isolation: isolate;
   backdrop-filter: none;
@@ -370,10 +370,9 @@ html[data-theme="dark"] .icon-moon{ display: block; }
     margin-left: auto;
   }
   .nav-menu.is-open{
-    position: absolute;
-    top: calc(100% + 10px);
-    left: auto;
-    right: 0;
+    position: fixed;
+    top: var(--menu-top, calc(var(--header-h) + 10px));
+    right: var(--pad);
     width: min(300px, calc(100vw - (var(--pad) * 2)));
     max-height: min(70vh, 420px);
     overflow-y: auto;

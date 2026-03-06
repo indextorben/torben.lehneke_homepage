@@ -37,14 +37,24 @@
   // -----------------------------
   const navToggle = $(".nav-toggle");
   const navMenu = $("#navMenu");
+  const siteHeader = $(".site-header");
+
+  const syncNavMenuTop = () => {
+    if (!navMenu || !siteHeader) return;
+    const headerBottom = Math.round(siteHeader.getBoundingClientRect().bottom);
+    navMenu.style.setProperty("--menu-top", `${headerBottom + 10}px`);
+  };
 
   const setNavOpen = (open) => {
     if (!navToggle || !navMenu) return;
+    if (open) syncNavMenuTop();
     navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     navMenu.classList.toggle("is-open", open);
   };
 
   if (navToggle && navMenu) {
+    syncNavMenuTop();
+
     navToggle.addEventListener("click", () => {
       const isOpen = navMenu.classList.contains("is-open");
       setNavOpen(!isOpen);
@@ -68,6 +78,9 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") setNavOpen(false);
     });
+
+    window.addEventListener("resize", syncNavMenuTop, { passive: true });
+    window.addEventListener("orientationchange", syncNavMenuTop, { passive: true });
   }
 
   // -----------------------------
