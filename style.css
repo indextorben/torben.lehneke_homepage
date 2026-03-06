@@ -753,6 +753,11 @@ html[data-theme="dark"] .icon-moon{ display: block; }
     radial-gradient(700px 240px at 90% 30%, color-mix(in srgb, var(--secondary) 20%, transparent), transparent 55%),
     linear-gradient(135deg, color-mix(in srgb, var(--text) 10%, transparent), transparent);
 }
+.project-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .project-meta{
   padding: 14px 14px 16px;
   display: grid;
@@ -1016,6 +1021,65 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
 }
 
 /* ------------------------------
+   Mouse-reactive 3D orbs
+--------------------------------*/
+.orb-scene{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.site-header,
+main,
+.site-footer,
+.skip-link{
+  position: relative;
+  z-index: 1;
+}
+
+.orb{
+  --size: 240px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.45), rgba(255,255,255,0.08) 38%, rgba(255,255,255,0) 58%),
+    radial-gradient(circle at 70% 70%, color-mix(in srgb, var(--primary) 62%, transparent), color-mix(in srgb, var(--secondary) 48%, transparent) 72%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text) 16%, transparent);
+  box-shadow: inset -18px -24px 46px rgba(0,0,0,0.24), 0 28px 96px rgba(0,0,0,0.34);
+  filter: blur(0.15px) saturate(1.18);
+  opacity: 0.5;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.orb-a{ --size: 320px; top: 8%; left: -110px; }
+.orb-b{ --size: 220px; top: 18%; right: -70px; }
+.orb-c{ --size: 420px; bottom: -160px; left: 26%; }
+.orb-d{ --size: 180px; bottom: 20%; right: 18%; }
+.orb-e{ --size: 260px; top: 54%; left: -100px; }
+.orb-small{
+  opacity: 0.34;
+  box-shadow: inset -10px -14px 24px rgba(0,0,0,0.2), 0 14px 44px rgba(0,0,0,0.26);
+}
+.orb-f{ --size: 130px; top: 13%; left: 18%; }
+.orb-g{ --size: 92px; top: 34%; left: 44%; }
+.orb-h{ --size: 118px; top: 64%; left: 12%; }
+.orb-i{ --size: 104px; top: 24%; right: 24%; }
+.orb-j{ --size: 88px; bottom: 16%; right: 36%; }
+.orb-k{ --size: 140px; bottom: 8%; left: 58%; }
+
+html[data-theme="dark"] .orb{
+  opacity: 0.44;
+}
+html[data-theme="dark"] .orb-small{
+  opacity: 0.3;
+}
+
+/* ------------------------------
    Reveal animations
 --------------------------------*/
 .reveal{
@@ -1032,6 +1096,7 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
+  .orb-scene{ display: none; }
   .reveal{
     opacity: 1 !important;
     transform: none !important;

@@ -18,7 +18,19 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <div class="orb-scene" aria-hidden="true">
+    <span class="orb orb-a" data-depth="1.2"></span>
+    <span class="orb orb-b" data-depth="0.9"></span>
+    <span class="orb orb-c" data-depth="1.5"></span>
+    <span class="orb orb-d" data-depth="0.7"></span>
+    <span class="orb orb-e" data-depth="1.1"></span>
+    <span class="orb orb-small orb-f" data-depth="1.8"></span>
+    <span class="orb orb-small orb-g" data-depth="1.4"></span>
+    <span class="orb orb-small orb-h" data-depth="2"></span>
+    <span class="orb orb-small orb-i" data-depth="1.6"></span>
+    <span class="orb orb-small orb-j" data-depth="1.3"></span>
+    <span class="orb orb-small orb-k" data-depth="1.9"></span>
+  </div>
 
   <!-- Header -->
   <header class="site-header" id="top">
@@ -108,7 +120,7 @@
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-hidden="true">
+        <div class="hero-visual reveal js-parallax" aria-hidden="true">
           <div class="visual-card">
             <div class="visual-top">
               <div class="pill">Top Service</div>
@@ -340,38 +352,36 @@
     </section>
 
     <!-- Referenzen / Projekte -->
-    <section class="section" id="referenzen" aria-label="Referenzen">
+    <section class="section js-sticky-section" id="referenzen" aria-label="Referenzen">
       <div class="container">
         <div class="section-head reveal">
           <h2>Referenzen</h2>
           <p class="lead">
-            Ein paar echte Beispiel-Vorlagen – ersetze Namen/Details durch
-            deine Projekte.
+            Zwei Projekte, die klare Ergebnisse zeigen.
           </p>
         </div>
 
         <div class="projects-grid reveal" aria-label="Projektübersicht">
           <!-- BeeFocus -->
           <a class="project" href="apps/beefocus/index.html" data-tags="web" aria-label="Projekt: BeeFocus App-Website">
-            <div class="project-thumb" aria-hidden="true">
-              <span class="thumb-badge">BF</span>
+            <div class="project-thumb js-parallax">
+              <img src="apps/beefocus/assets/BeeFocus.png" alt="Screenshot der BeeFocus Projektseite" loading="lazy"
+                decoding="async" />
             </div>
             <div class="project-meta">
               <strong>BeeFocus</strong>
-              <span>App-Website mit klarem Fokus: Features, Screenshots und
-                schnelle Calls-to-Action.</span>
+              <span>Fokussierte Produktseite mit klarer Struktur und starker Conversion.</span>
             </div>
           </a>
 
           <!-- Ledger -->
           <a class="project" href="apps/ledger/index.html" data-tags="web" aria-label="Projekt: Ledger App-Website">
-            <div class="project-thumb" aria-hidden="true">
-              <span class="thumb-badge">LG</span>
+            <div class="project-thumb js-parallax">
+              <img src="apps/beefocus/assets/Ledger.png" alt="Screenshot der Ledger Projektseite" loading="lazy" decoding="async" />
             </div>
             <div class="project-meta">
               <strong>Ledger</strong>
-              <span>Produktseite fuer die App: strukturierte Inhalte, klare
-                Nutzenargumente und saubere Darstellung.</span>
+              <span>Moderne App-Landingpage mit präziser Nutzenkommunikation.</span>
             </div>
           </a>
         </div>
@@ -384,7 +394,7 @@
         <div class="section-head reveal">
           <h2>Bewertungen</h2>
           <p class="lead">
-            Social Proof, der nicht nach „Fake“ schreit – einfach clean.
+            Platzhalter für echte Kundenstimmen. Wird nach ersten Projektreviews ersetzt.
           </p>
         </div>
 
@@ -392,14 +402,13 @@
           <article class="card testimonial">
             <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
             <p>
-              „Sehr schnelle Rückmeldung, top Umsetzung. Kommunikation war
-              klar und professionell.“
+              „Hier kommt später eine echte Kundenbewertung mit konkretem Ergebnis.“
             </p>
             <div class="who">
               <span class="avatar" aria-hidden="true">A</span>
               <div>
-                <strong>Kundin A.</strong>
-                <span class="muted">[ORT]</span>
+                <strong>Platzhalter 1</strong>
+                <span class="muted">Kundenname + Ort</span>
               </div>
             </div>
           </article>
@@ -407,14 +416,13 @@
           <article class="card testimonial">
             <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
             <p>
-              „Transparentes Angebot, keine Überraschungen. Ergebnis war genau
-              wie besprochen.“
+              „Hier steht künftig ein echtes Feedback zur Zusammenarbeit.“
             </p>
             <div class="who">
               <span class="avatar" aria-hidden="true">B</span>
               <div>
-                <strong>Kunde B.</strong>
-                <span class="muted">[ORT]</span>
+                <strong>Platzhalter 2</strong>
+                <span class="muted">Kundenname + Ort</span>
               </div>
             </div>
           </article>
@@ -422,14 +430,13 @@
           <article class="card testimonial">
             <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
             <p>
-              „Zuverlässig, freundlich, schnell. Würden wir jederzeit wieder
-              beauftragen.“
+              „Hier folgt ein echter Erfahrungsbericht nach Projektabschluss.“
             </p>
             <div class="who">
               <span class="avatar" aria-hidden="true">C</span>
               <div>
-                <strong>Kundin C.</strong>
-                <span class="muted">[ORT]</span>
+                <strong>Platzhalter 3</strong>
+                <span class="muted">Kundenname + Ort</span>
               </div>
             </div>
           </article>
@@ -653,6 +660,8 @@
     <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 

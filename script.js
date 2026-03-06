@@ -315,12 +315,129 @@
   }
 
   // -----------------------------
-  // Section reveal animation (IntersectionObserver)
+  // Scroll animations (GSAP + ScrollTrigger)
   // -----------------------------
   const revealEls = $$(".reveal");
   const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hasGSAP = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
 
-  if (!reducedMotion && "IntersectionObserver" in window && revealEls.length) {
+  if (!reducedMotion && hasGSAP) {
+    const gsap = window.gsap;
+    gsap.registerPlugin(window.ScrollTrigger);
+    window.ScrollTrigger.config({ ignoreMobileResize: true });
+    // ensure all reveal content starts visible before GSAP adds animations
+    revealEls.forEach((el) => el.classList.add("is-visible"));
+    gsap.set(".hero-copy, .hero .headline, .hero-visual, .section-head, .split-left, .split-right, .service-card, .testimonial, .project, .contact-card, .contact-info, .step, .trust-item, .bullets li", { autoAlpha: 1, clearProps: "transform" });
+
+    const animateIn = (targets, vars = {}) => {
+      $$(targets).forEach((el) => {
+        if (el.dataset.gsapBound === "1") return;
+        el.dataset.gsapBound = "1";
+        gsap.from(el, {
+          y: 18,
+          autoAlpha: 0,
+          duration: 0.65,
+          ease: "power2.out",
+          immediateRender: false,
+          overwrite: "auto",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            once: true,
+          },
+          ...vars,
+        });
+      });
+    };
+
+    // Text blocks
+    animateIn(".section-head, .split-left, .contact-card, .contact-info", { y: 16 });
+
+    // Cards / image-like blocks from alternating sides
+    $$(".hero-visual, .split-right, .project, .service-card, .testimonial").forEach((el, i) => {
+      if (el.dataset.gsapBound === "1") return;
+      el.dataset.gsapBound = "1";
+      gsap.from(el, {
+        x: i % 2 === 0 ? -28 : 28,
+        autoAlpha: 0,
+        duration: 0.75,
+        ease: "power2.out",
+        immediateRender: false,
+        overwrite: "auto",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+          once: true,
+        },
+      });
+    });
+
+    // Staggered lists
+    [".steps .step", ".trust-row .trust-item", ".bullets li"].forEach((sel) => {
+      const items = $$(sel).filter((el) => el.dataset.gsapBound !== "1");
+      if (!items.length) return;
+      items.forEach((el) => (el.dataset.gsapBound = "1"));
+      gsap.from(items, {
+        y: 14,
+        autoAlpha: 0,
+        duration: 0.55,
+        ease: "power2.out",
+        stagger: 0.08,
+        immediateRender: false,
+        overwrite: "auto",
+        scrollTrigger: {
+          trigger: items[0].parentElement || items[0],
+          start: "top 90%",
+          once: true,
+        },
+      });
+    });
+
+    // Very subtle hero scale effect
+    const heroHeadline = $(".hero .headline");
+    if (heroHeadline) {
+      gsap.fromTo(
+        heroHeadline,
+        { scale: 1.01 },
+        {
+          scale: 0.985,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.3,
+          },
+        }
+      );
+    }
+
+    // Lightweight parallax only on marked elements and desktop/tablet
+    window.ScrollTrigger.matchMedia({
+      "(min-width: 900px)": () => {
+        $$(".js-parallax").forEach((el) => {
+          gsap.fromTo(
+            el,
+            { y: -12 },
+            {
+              y: 12,
+              ease: "none",
+              overwrite: "auto",
+              scrollTrigger: {
+                trigger: el,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 0.35,
+              },
+            }
+          );
+        });
+      },
+    });
+
+    window.requestAnimationFrame(() => window.ScrollTrigger.refresh());
+  } else if (!reducedMotion && "IntersectionObserver" in window && revealEls.length) {
+    // Fallback if GSAP is not available
     const revObs = new IntersectionObserver(
       (entries) => {
         entries.forEach((en) => {
@@ -334,7 +451,6 @@
 
     revealEls.forEach((el) => revObs.observe(el));
   } else {
-    // If no IO or reduced motion, just show them
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
@@ -362,6 +478,55 @@
         applyFilter(tag);
       });
     });
+  }
+
+  // -----------------------------
+  // 3D orb background (mouse reactive)
+  // -----------------------------
+  const orbScene = $(".orb-scene");
+  const orbs = orbScene ? $$(".orb", orbScene) : [];
+  const finePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+
+  if (!reducedMotion && finePointer && orbScene && orbs.length) {
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    const onPointerMove = (e) => {
+      const nx = e.clientX / window.innerWidth - 0.5;
+      const ny = e.clientY / window.innerHeight - 0.5;
+      targetX = nx;
+      targetY = ny;
+    };
+
+    const onLeave = () => {
+      targetX = 0;
+      targetY = 0;
+    };
+
+    const animateOrbs = (t) => {
+      currentX += (targetX - currentX) * 0.055;
+      currentY += (targetY - currentY) * 0.055;
+
+      const drift = Math.sin(t * 0.0003) * 14;
+      orbs.forEach((orb, i) => {
+        const depth = Number(orb.dataset.depth || 1);
+        const phase = i * 1.15;
+        const floatY = Math.sin(t * 0.00035 + phase) * (7 + depth * 4);
+        const floatX = Math.cos(t * 0.00028 + phase) * (5 + depth * 3);
+        const x = currentX * depth * 125 + floatX;
+        const y = currentY * depth * 90 + floatY + drift * 0.4;
+        orb.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0)`;
+      });
+
+      window.requestAnimationFrame(animateOrbs);
+    };
+
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("pointerleave", onLeave, { passive: true });
+    window.addEventListener("blur", onLeave, { passive: true });
+    window.requestAnimationFrame(animateOrbs);
   }
 })();
 
