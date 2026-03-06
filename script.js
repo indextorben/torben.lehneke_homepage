@@ -323,74 +323,68 @@
 
   if (!reducedMotion && hasGSAP) {
     const gsap = window.gsap;
+    document.documentElement.classList.add("gsap-ready");
     gsap.registerPlugin(window.ScrollTrigger);
     window.ScrollTrigger.config({ ignoreMobileResize: true });
+    gsap.config({ force3D: true });
+    gsap.ticker.lagSmoothing(800, 24);
+
     // ensure all reveal content starts visible before GSAP adds animations
     revealEls.forEach((el) => el.classList.add("is-visible"));
-    gsap.set(".hero-copy, .hero .headline, .hero-visual, .section-head, .split-left, .split-right, .service-card, .testimonial, .project, .contact-card, .contact-info, .step, .trust-item, .bullets li", { autoAlpha: 1, clearProps: "transform" });
+    gsap.set(
+      ".hero-copy, .hero .headline, .hero-visual, .section-head, .split-left, .split-right, .service-card, .testimonial, .project, .contact-card, .contact-info, .step, .trust-item, .bullets li",
+      { autoAlpha: 1, clearProps: "transform" }
+    );
 
-    const animateIn = (targets, vars = {}) => {
-      $$(targets).forEach((el) => {
-        if (el.dataset.gsapBound === "1") return;
-        el.dataset.gsapBound = "1";
-        gsap.from(el, {
-          y: 18,
+    // Clean preset: minimal motion, fewer animated nodes, smooth stagger.
+    const cleanTextSelector = [
+      ".hero-copy",
+      ".hero-visual",
+      ".section-head",
+      ".split-left",
+      ".split-right",
+    ].join(", ");
+
+    const cleanCardSelector = [
+      ".service-card",
+      ".step",
+      ".project",
+      ".testimonial",
+      ".acc-item",
+      ".contact-card",
+      ".contact-info",
+    ].join(", ");
+
+    window.ScrollTrigger.batch(cleanTextSelector, {
+      start: "top 90%",
+      once: true,
+      onEnter: (batch) => {
+        gsap.from(batch, {
+          y: 14,
           autoAlpha: 0,
-          duration: 0.65,
-          ease: "power2.out",
+          duration: 1.45,
+          ease: "power1.out",
+          stagger: 0.13,
           immediateRender: false,
           overwrite: "auto",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 90%",
-            once: true,
-          },
-          ...vars,
         });
-      });
-    };
-
-    // Text blocks
-    animateIn(".section-head, .split-left, .contact-card, .contact-info", { y: 16 });
-
-    // Cards / image-like blocks from alternating sides
-    $$(".hero-visual, .split-right, .project, .service-card, .testimonial").forEach((el, i) => {
-      if (el.dataset.gsapBound === "1") return;
-      el.dataset.gsapBound = "1";
-      gsap.from(el, {
-        x: i % 2 === 0 ? -28 : 28,
-        autoAlpha: 0,
-        duration: 0.75,
-        ease: "power2.out",
-        immediateRender: false,
-        overwrite: "auto",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 90%",
-          once: true,
-        },
-      });
+      },
     });
 
-    // Staggered lists
-    [".steps .step", ".trust-row .trust-item", ".bullets li"].forEach((sel) => {
-      const items = $$(sel).filter((el) => el.dataset.gsapBound !== "1");
-      if (!items.length) return;
-      items.forEach((el) => (el.dataset.gsapBound = "1"));
-      gsap.from(items, {
-        y: 14,
-        autoAlpha: 0,
-        duration: 0.55,
-        ease: "power2.out",
-        stagger: 0.08,
-        immediateRender: false,
-        overwrite: "auto",
-        scrollTrigger: {
-          trigger: items[0].parentElement || items[0],
-          start: "top 90%",
-          once: true,
-        },
-      });
+    // Cards: no opacity fade to avoid bright/white "flash" impression.
+    window.ScrollTrigger.batch(cleanCardSelector, {
+      start: "top 90%",
+      once: true,
+      onEnter: (batch) => {
+        gsap.from(batch, {
+          y: 14,
+          duration: 1.7,
+          ease: "power1.out",
+          stagger: 0.16,
+          immediateRender: false,
+          overwrite: "auto",
+        });
+      },
     });
 
     // Very subtle hero scale effect
@@ -400,13 +394,13 @@
         heroHeadline,
         { scale: 1.01 },
         {
-          scale: 0.985,
+          scale: 0.995,
           ease: "none",
           scrollTrigger: {
             trigger: ".hero",
             start: "top top",
             end: "bottom top",
-            scrub: 0.3,
+            scrub: 1,
           },
         }
       );
@@ -418,16 +412,16 @@
         $$(".js-parallax").forEach((el) => {
           gsap.fromTo(
             el,
-            { y: -12 },
+            { y: -4 },
             {
-              y: 12,
+              y: 4,
               ease: "none",
               overwrite: "auto",
               scrollTrigger: {
                 trigger: el,
                 start: "top bottom",
                 end: "bottom top",
-                scrub: 0.35,
+                scrub: 1.1,
               },
             }
           );
@@ -488,10 +482,18 @@
   const finePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
 
   if (!reducedMotion && finePointer && orbScene && orbs.length) {
+    const gsap = window.gsap;
     let targetX = 0;
     let targetY = 0;
     let currentX = 0;
     let currentY = 0;
+    let driftT = 0;
+    let running = true;
+
+    const setters = orbs.map((orb) => ({
+      x: gsap.quickSetter(orb, "x", "px"),
+      y: gsap.quickSetter(orb, "y", "px"),
+    }));
 
     const onPointerMove = (e) => {
       const nx = e.clientX / window.innerWidth - 0.5;
@@ -505,28 +507,36 @@
       targetY = 0;
     };
 
-    const animateOrbs = (t) => {
-      currentX += (targetX - currentX) * 0.055;
-      currentY += (targetY - currentY) * 0.055;
+    const tick = () => {
+      if (!running) return;
+      currentX += (targetX - currentX) * 0.05;
+      currentY += (targetY - currentY) * 0.05;
+      driftT += 0.012;
+      const drift = Math.sin(driftT) * 6;
 
-      const drift = Math.sin(t * 0.0003) * 14;
-      orbs.forEach((orb, i) => {
-        const depth = Number(orb.dataset.depth || 1);
+      setters.forEach((setPos, i) => {
+        const depth = Number(orbs[i].dataset.depth || 1);
         const phase = i * 1.15;
-        const floatY = Math.sin(t * 0.00035 + phase) * (7 + depth * 4);
-        const floatX = Math.cos(t * 0.00028 + phase) * (5 + depth * 3);
-        const x = currentX * depth * 125 + floatX;
-        const y = currentY * depth * 90 + floatY + drift * 0.4;
-        orb.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0)`;
+        const floatY = Math.sin(driftT * 0.72 + phase) * (3.5 + depth * 1.8);
+        const floatX = Math.cos(driftT * 0.55 + phase) * (2 + depth * 1.4);
+        const x = currentX * depth * 60 + floatX;
+        const y = currentY * depth * 44 + floatY + drift * 0.25;
+        setPos.x(x);
+        setPos.y(y);
       });
+    };
 
-      window.requestAnimationFrame(animateOrbs);
+    const onVisibility = () => {
+      running = !document.hidden;
+      if (running) gsap.ticker.add(tick);
+      else gsap.ticker.remove(tick);
     };
 
     window.addEventListener("pointermove", onPointerMove, { passive: true });
     window.addEventListener("pointerleave", onLeave, { passive: true });
     window.addEventListener("blur", onLeave, { passive: true });
-    window.requestAnimationFrame(animateOrbs);
+    document.addEventListener("visibilitychange", onVisibility, { passive: true });
+    gsap.ticker.add(tick);
   }
 })();
 

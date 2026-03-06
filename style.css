@@ -1029,6 +1029,7 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  perspective: 1200px;
 }
 
 .site-header,
@@ -1051,9 +1052,10 @@ main,
   border: 1px solid color-mix(in srgb, var(--text) 16%, transparent);
   box-shadow: inset -18px -24px 46px rgba(0,0,0,0.24), 0 28px 96px rgba(0,0,0,0.34);
   filter: blur(0.15px) saturate(1.18);
-  opacity: 0.5;
+  opacity: 0.3;
   transform: translate3d(0, 0, 0);
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .orb-a{ --size: 320px; top: 8%; left: -110px; }
@@ -1062,7 +1064,7 @@ main,
 .orb-d{ --size: 180px; bottom: 20%; right: 18%; }
 .orb-e{ --size: 260px; top: 54%; left: -100px; }
 .orb-small{
-  opacity: 0.34;
+  opacity: 0.2;
   box-shadow: inset -10px -14px 24px rgba(0,0,0,0.2), 0 14px 44px rgba(0,0,0,0.26);
 }
 .orb-f{ --size: 130px; top: 13%; left: 18%; }
@@ -1073,10 +1075,10 @@ main,
 .orb-k{ --size: 140px; bottom: 8%; left: 58%; }
 
 html[data-theme="dark"] .orb{
-  opacity: 0.44;
+  opacity: 0.26;
 }
 html[data-theme="dark"] .orb-small{
-  opacity: 0.3;
+  opacity: 0.18;
 }
 
 /* ------------------------------
@@ -1091,6 +1093,10 @@ html[data-theme="dark"] .orb-small{
 .reveal.is-visible{
   opacity: 1;
   transform: translateY(0);
+}
+
+html.gsap-ready .reveal{
+  transition: none;
 }
 
 /* Reduced motion */
