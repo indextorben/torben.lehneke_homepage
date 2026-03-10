@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Impressum von Torben Lehneke - IT in Neubrandenburg."
+    />
+    <meta name="theme-color" content="#0b5fff" />
+    <title>Impressum | Torben Lehneke</title>
+
+    <link rel="preconnect" href="." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Torben Lehneke Startseite">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="brand-name">Torben Lehneke</span>
+            <span class="brand-sub">IT · Neubrandenburg</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Impressum Navigation">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="sr-only">Menü öffnen</span>
+            <span aria-hidden="true" class="hamburger"></span>
+          </button>
+
+          <div class="nav-menu" id="navMenu">
+            <a class="nav-link" href="index.html#leistungen">Leistungen</a>
+            <a class="nav-link" href="index.html#kontakt">Kontakt</a>
+            <a class="nav-link nav-cta" href="index.html">Zur Homepage</a>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            class="icon-btn"
+            id="themeToggle"
+            type="button"
+            aria-label="Dark Mode umschalten"
+            aria-pressed="false"
+          >
+            <span class="icon" aria-hidden="true">
+              <svg
+                class="icon-sun"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+                <path
+                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                ></path>
+              </svg>
+              <svg
+                class="icon-moon"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 13.6A8.5 8.5 0 1 1 10.4 3 6.5 6.5 0 0 0 21 13.6Z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section" aria-label="Impressum">
+        <div class="container">
+          <div class="section-head">
+            <h1>Impressum</h1>
+            <p class="lead">Angaben gemäß § 5 DDG</p>
+          </div>
+
+          <div class="card">
+            <h2>Anbieter</h2>
+            <p>
+              Torben Lehneke<br />
+              <strong>Anschrift:</strong> Neu Panstorf 38b, 17139 Malchin<br />
+              Deutschland
+            </p>
+
+            <h2>Kontakt</h2>
+            <p>
+              Telefon: <a class="inline-link" href="tel:01733734023">01733734023</a><br />
+              E-Mail:
+              <a class="inline-link" href="mailto:lehneketorben@gmail.com"
+                >lehneketorben@gmail.com</a
+              >
+            </p>
+
+            <h2>Umsatzsteuer</h2>
+            <p>
+              <strong>USt-IdNr.:</strong> nicht vorhanden.<br />
+              <strong>Steuernummer:</strong> liegt derzeit nicht vor.
+            </p>
+
+            <h2>Registereintrag</h2>
+            <p>Kein Registereintrag vorhanden.</p>
+
+            <h2>Verantwortlich für den Inhalt</h2>
+            <p>
+              Torben Lehneke (Anschrift wie oben).<br />
+              Hinweis: Angaben nach § 18 Abs. 2 MStV nur erforderlich, falls
+              journalistisch-redaktionelle Inhalte angeboten werden.
+            </p>
+
+            <p class="muted">Stand: 10. März 2026.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand-line">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <strong>Torben Lehneke</strong>
+          </div>
+          <p class="muted">
+            Schnelle IT-Lösungen für Ihr Unternehmen · IT in Neubrandenburg
+          </p>
+        </div>
+
+        <div class="footer-links" aria-label="Rechtliches">
+          <a href="impressum.html" class="footer-link">Impressum</a>
+          <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>© <span id="year"></span> Torben Lehneke. Alle Rechte vorbehalten.</small>
+      </div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
