@@ -328,113 +328,168 @@
   }
 
   // -----------------------------
-  // Scroll animations (GSAP + ScrollTrigger)
+  // Scroll animations
   // -----------------------------
   const revealEls = $$(".reveal");
   const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const hasGSAP = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
+  const currentPath = (window.location.pathname || "/").replace(/\\/g, "/");
+  const normalizedPath = currentPath.endsWith("/") ? `${currentPath}index.html` : currentPath;
+  const allowScrollAnimations = [
+    "/",
+    "/index.html",
+    "/apps/beefocus/index.html",
+    "/apps/ledger/index.html",
+  ].includes(normalizedPath);
 
-  if (!reducedMotion && hasGSAP) {
+  if (!allowScrollAnimations) {
+    revealEls.forEach((el) => el.classList.add("is-visible"));
+  } else if (!reducedMotion && hasGSAP) {
     const gsap = window.gsap;
     document.documentElement.classList.add("gsap-ready");
     gsap.registerPlugin(window.ScrollTrigger);
     window.ScrollTrigger.config({ ignoreMobileResize: true });
-    gsap.config({ force3D: true });
-    gsap.ticker.lagSmoothing(800, 24);
+    gsap.config({ force3D: false });
+    gsap.ticker.lagSmoothing(500, 33);
 
-    // ensure all reveal content starts visible before GSAP adds animations
     revealEls.forEach((el) => el.classList.add("is-visible"));
-    gsap.set(
-      ".hero-copy, .hero .headline, .hero-visual, .section-head, .split-left, .split-right, .service-card, .testimonial, .project, .contact-card, .contact-info, .step, .trust-item, .bullets li",
-      { autoAlpha: 1, clearProps: "transform" }
-    );
+    const sectionReveal = (target, vars = {}) => {
+      gsap.set(target, { autoAlpha: 0, y: 22 });
+      window.ScrollTrigger.batch(target, {
+        start: "top 76%",
+        once: true,
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.82,
+            ease: "power3.out",
+            stagger: 0.07,
+            overwrite: true,
+            ...vars,
+          });
+        },
+      });
+    };
 
-    // Clean preset: minimal motion, fewer animated nodes, smooth stagger.
-    const cleanTextSelector = [
-      ".hero-copy",
-      ".hero-visual",
-      ".section-head",
-      ".split-left",
-      ".split-right",
-    ].join(", ");
-
-    const cleanCardSelector = [
-      ".service-card",
-      ".step",
-      ".project",
-      ".testimonial",
-      ".acc-item",
-      ".contact-card",
-      ".contact-info",
-    ].join(", ");
-
-    window.ScrollTrigger.batch(cleanTextSelector, {
-      start: "top 90%",
-      once: true,
-      onEnter: (batch) => {
-        gsap.from(batch, {
-          y: 14,
-          autoAlpha: 0,
-          duration: 1.45,
-          ease: "power1.out",
-          stagger: 0.13,
-          immediateRender: false,
-          overwrite: "auto",
-        });
-      },
-    });
-
-    // Cards: no opacity fade to avoid bright/white "flash" impression.
-    window.ScrollTrigger.batch(cleanCardSelector, {
-      start: "top 90%",
-      once: true,
-      onEnter: (batch) => {
-        gsap.from(batch, {
-          y: 14,
-          duration: 1.7,
-          ease: "power1.out",
-          stagger: 0.16,
-          immediateRender: false,
-          overwrite: "auto",
-        });
-      },
-    });
-
-    // Very subtle hero scale effect
-    const heroHeadline = $(".hero .headline");
-    if (heroHeadline) {
-      gsap.fromTo(
-        heroHeadline,
-        { scale: 1.01 },
-        {
-          scale: 0.995,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: 1,
+    const staggerChildren = (containerSelector, childSelector, vars = {}) => {
+      $$(containerSelector).forEach((container) => {
+        const children = $$(childSelector, container);
+        if (!children.length) return;
+        gsap.set(children, { autoAlpha: 0, y: 20 });
+        window.ScrollTrigger.create({
+          trigger: container,
+          start: "top 74%",
+          once: true,
+          onEnter: () => {
+            gsap.to(children, {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.84,
+              ease: "power3.out",
+              stagger: 0.075,
+              overwrite: true,
+              ...vars,
+            });
           },
+        });
+      });
+    };
+
+    const heroCopy = $(".hero-copy");
+    const heroVisual = $(".hero-visual");
+    if (heroCopy || heroVisual) {
+      const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      const heroTextItems = heroCopy
+        ? [
+            $(".eyebrow", heroCopy),
+            $(".headline", heroCopy),
+            $(".subheadline", heroCopy),
+            $(".hero-actions", heroCopy),
+            ...$$(".trust-item", heroCopy),
+            $(".mini-card", heroCopy),
+          ].filter(Boolean)
+        : [];
+
+      if (heroTextItems.length) {
+        heroTl.fromTo(
+          heroTextItems,
+          { autoAlpha: 0, y: 28 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.92,
+            stagger: 0.065,
+            clearProps: "transform,opacity,visibility",
+          }
+        );
+      }
+
+      if (heroVisual) {
+        heroTl.fromTo(
+          heroVisual,
+          { autoAlpha: 0, y: 30, scale: 0.992 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.0,
+            clearProps: "transform,opacity,visibility",
+          },
+          heroTextItems.length ? 0.16 : 0
+        );
+
+        const heroDetailItems = [
+          $(".pill", heroVisual),
+          ...$$(".metric", heroVisual),
+        ].filter(Boolean);
+
+        if (heroDetailItems.length) {
+          heroTl.fromTo(
+            heroDetailItems,
+            { autoAlpha: 0, y: 14 },
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.68,
+              stagger: 0.05,
+              clearProps: "transform,opacity,visibility",
+            },
+            "-=0.56"
+          );
         }
-      );
+      }
     }
 
-    // Lightweight parallax only on marked elements and desktop/tablet
+    sectionReveal(".section-head");
+    sectionReveal(".feature-device-head", { duration: 0.88 });
+    sectionReveal(".download-copy, .download-card, .logo-row", { duration: 0.88 });
+    sectionReveal(".split-left, .split-right", { duration: 0.9 });
+    sectionReveal(".contact-card, .contact-info", { duration: 0.9 });
+    staggerChildren(".cards-grid", ".card, .service-card, .testimonial, .testimonial-card, .benefit-card, .overview-card", { stagger: 0.07 });
+    staggerChildren(".steps", ".step");
+    staggerChildren(".projects-grid", ".project");
+    staggerChildren(".feature-device-grid", ".feature-shot", { duration: 0.92, stagger: 0.06 });
+    staggerChildren(".logo-row", ".logo-pill", { duration: 0.68, stagger: 0.045 });
+    staggerChildren(".contact-grid", ".card", { duration: 0.84, stagger: 0.075 });
+    staggerChildren(".accordion", ".acc-item", { duration: 0.76, stagger: 0.055 });
+
     window.ScrollTrigger.matchMedia({
-      "(min-width: 900px)": () => {
-        $$(".js-parallax").forEach((el) => {
+      "(min-width: 960px)": () => {
+        const premiumParallaxTargets = [$(".hero-visual"), ...$$(".project-thumb.js-parallax")].filter(Boolean);
+        premiumParallaxTargets.forEach((el) => {
           gsap.fromTo(
             el,
-            { y: -4 },
+            { y: -6 },
             {
-              y: 4,
+              y: 6,
               ease: "none",
               overwrite: "auto",
               scrollTrigger: {
                 trigger: el,
                 start: "top bottom",
                 end: "bottom top",
-                scrub: 1.1,
+                scrub: 0.9,
               },
             }
           );
@@ -453,7 +508,7 @@
           revObs.unobserve(en.target);
         });
       },
-      { threshold: 0.18, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.16, rootMargin: "0px 0px -14% 0px" }
     );
 
     revealEls.forEach((el) => revObs.observe(el));
