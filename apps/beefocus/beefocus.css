@@ -99,6 +99,8 @@ html[data-theme="dark"] .sym-k {
   grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
   gap: 12px;
   align-items: stretch;
+  width: 100%;
+  min-width: 0;
 }
 
 .mockup {
@@ -109,6 +111,8 @@ html[data-theme="dark"] .sym-k {
   background: color-mix(in srgb, var(--surface) 75%, transparent);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  width: 100%;
+  min-width: 0;
 }
 
 .mockup img {
@@ -120,17 +124,20 @@ html[data-theme="dark"] .sym-k {
 }
 
 .mockup.phone {
-  min-height: 420px;
   aspect-ratio: 9 / 18;
 }
 
 .mockup.tablet {
-  min-height: 420px;
   aspect-ratio: 4 / 3;
 }
 
 .hero-card {
   margin-top: 12px;
+}
+
+.hero-visual {
+  width: 100%;
+  min-width: 0;
 }
 
 .feature-walk {
@@ -370,12 +377,12 @@ html[data-theme="dark"] .sym-k {
 
 @media (max-width: 900px) {
   .mockup-stack {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .mockup.phone,
   .mockup.tablet {
-    min-height: 340px;
+    max-width: 100%;
   }
 }
 
