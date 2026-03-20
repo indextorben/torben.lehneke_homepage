@@ -989,15 +989,6 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
   color: var(--muted);
 }
 
-.captcha-field{
-  display: grid;
-  gap: 8px;
-}
-
-.captcha-label{
-  font-weight: 700;
-}
-
 .honeypot-field{
   position: absolute;
   left: -9999px;

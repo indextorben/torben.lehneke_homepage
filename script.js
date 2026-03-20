@@ -232,12 +232,6 @@
   // -----------------------------
   const form = $("#contactForm");
   const successEl = $("#formSuccess");
-  const captchaField = () => document.querySelector('[name="h-captcha-response"]');
-  const captchaWidget = () => document.querySelector(".h-captcha");
-  const captchaSiteKey = () => captchaWidget()?.getAttribute("data-sitekey") || "";
-
-  window.onCaptchaSolved = () => setError("captcha", "");
-  window.onCaptchaExpired = () => setError("captcha", "Bitte bestätige, dass du kein Bot bist.");
 
   const setError = (id, msg) => {
     const el = $("#err-" + id);
@@ -307,8 +301,6 @@
     const emailConfirm = $("#emailConfirm")?.value.trim() || "";
     const phone = $("#phone")?.value.trim() || "";
     const message = $("#message")?.value.trim() || "";
-    const captchaValue = captchaField()?.value.trim() || "";
-    const siteKey = captchaSiteKey();
 
     let ok = true;
 
@@ -355,14 +347,6 @@
       ok = false;
     } else setError("message", "");
 
-    if (!siteKey || siteKey === "REPLACE_WITH_YOUR_HCAPTCHA_SITE_KEY") {
-      setError("captcha", "Captcha ist noch nicht fertig eingerichtet.");
-      ok = false;
-    } else if (!captchaValue) {
-      setError("captcha", "Bitte bestätige, dass du kein Bot bist.");
-      ok = false;
-    } else setError("captcha", "");
-
     return ok;
   };
 
@@ -390,7 +374,7 @@
       if (!ok) {
         showToast("Bitte prüfe die markierten Felder.", 2600);
         // focus first invalid field
-        const firstInvalid = ["name", "email", "emailConfirm", "phone", "message", "captcha"].find((id) => ($("#err-" + id)?.textContent || "").trim().length);
+        const firstInvalid = ["name", "email", "emailConfirm", "phone", "message"].find((id) => ($("#err-" + id)?.textContent || "").trim().length);
         if (firstInvalid) $("#" + firstInvalid)?.focus();
         return;
       }

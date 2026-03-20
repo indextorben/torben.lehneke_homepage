@@ -569,17 +569,6 @@
                 <small class="error" id="err-message" aria-live="polite"></small>
               </div>
 
-              <div class="field captcha-field">
-                <span class="captcha-label">Sicherheitsprüfung <span aria-hidden="true">*</span></span>
-                <div
-                  class="h-captcha"
-                  data-sitekey="REPLACE_WITH_YOUR_HCAPTCHA_SITE_KEY"
-                  data-callback="onCaptchaSolved"
-                  data-expired-callback="onCaptchaExpired"
-                  data-error-callback="onCaptchaExpired"></div>
-                <small class="error" id="err-captcha" aria-live="polite"></small>
-              </div>
-
               <div class="form-actions">
                 <button class="btn btn-primary" type="submit">
                   Anfrage senden
@@ -690,7 +679,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
-  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
   <script src="script.js" defer></script>
 </body>
 
