@@ -97,7 +97,7 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
-            <a class="btn btn-ghost" href="tel:01733734023" aria-label="Jetzt anrufen: 01733734023">Anrufen</a>
+            <a class="btn btn-ghost" href="#kontakt">Kontakt aufnehmen</a>
           </div>
 
           <div class="trust-row" role="list" aria-label="Vertrauensmerkmale">
@@ -114,8 +114,8 @@
             </div>
             <div class="mini-card-text">
               <strong>Direkt erreichbar:</strong>
-              <a class="inline-link" href="tel:01733734023">01733734023</a> ·
-              <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a>
+              <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a> ·
+              Telefonnummer auf Anfrage
             </div>
           </div>
         </div>
@@ -529,6 +529,16 @@
         <div class="contact-grid">
           <div class="card contact-card reveal">
             <form id="contactForm" action="https://formspree.io/f/xojnrvlw" method="POST" novalidate>
+              <div class="honeypot-field" aria-hidden="true">
+                <label for="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off" />
+              </div>
+
               <div class="field">
                 <label for="name">Name <span aria-hidden="true">*</span></label>
                 <input id="name" name="name" type="text" autocomplete="name" required minlength="2" />
@@ -558,7 +568,7 @@
                   Anfrage senden
                 </button>
                 <p class="fineprint">
-                  Deine Nachricht wird sicher übermittelt. Du erhältst in der Regel schnell eine Rückmeldung.
+                  Deine Nachricht wird sicher übermittelt. Telefonnummer nur bei Bedarf nach dem ersten Kontakt.
                 </p>
               </div>
 
@@ -570,11 +580,6 @@
 
           <aside class="card contact-info reveal" aria-label="Kontaktdaten">
             <h3>Direktkontakt</h3>
-
-            <div class="info-row">
-              <span class="info-label">Telefon</span>
-              <a class="info-value" href="tel:01733734023">01733734023</a>
-            </div>
 
             <div class="info-row">
               <span class="info-label">E-Mail</span>
@@ -591,9 +596,15 @@
               <span class="info-value">Mo-Fr: 17:00-22:00</span>
             </div>
 
+            <div class="info-row">
+              <span class="info-label">Telefon</span>
+              <span class="info-value">Auf Anfrage</span>
+            </div>
+
             <div class="contact-actions">
-              <a class="btn btn-secondary" href="tel:01733734023"
-                aria-label="Jetzt anrufen: 01733734023">01733734023</a>
+              <a class="btn btn-secondary" href="mailto:lehneketorben@gmail.com?subject=Kontaktanfrage">
+                E-Mail senden
+              </a>
               <a class="btn btn-ghost" href="index.html">Nach oben</a>
             </div>
 

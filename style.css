@@ -989,6 +989,14 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
   color: var(--muted);
 }
 
+.honeypot-field{
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .form-success{
   margin-top: 12px;
   padding: 12px 12px;

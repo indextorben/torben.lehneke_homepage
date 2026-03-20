@@ -291,6 +291,11 @@
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
+      const honeypot = $("#website");
+      if (honeypot?.value.trim()) {
+        return;
+      }
+
       const ok = validate();
       if (!ok) {
         showToast("Bitte prÃ¼fe die markierten Felder.", 2600);
