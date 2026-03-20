@@ -232,6 +232,12 @@
   // -----------------------------
   const form = $("#contactForm");
   const successEl = $("#formSuccess");
+  const captchaField = () => document.querySelector('[name="h-captcha-response"]');
+  const captchaWidget = () => document.querySelector(".h-captcha");
+  const captchaSiteKey = () => captchaWidget()?.getAttribute("data-sitekey") || "";
+
+  window.onCaptchaSolved = () => setError("captcha", "");
+  window.onCaptchaExpired = () => setError("captcha", "Bitte bestätige, dass du kein Bot bist.");
 
   const setError = (id, msg) => {
     const el = $("#err-" + id);
@@ -244,46 +250,130 @@
     // permissive: digits, spaces, +, -, (), /
     return /^[0-9+\-()\/\s]{6,}$/.test(v.trim());
   };
+  const isLikelyRealName = (v) => {
+    const trimmed = (v || "").trim();
+    if (trimmed.length < 5) return false;
+    if (!/^[\p{L}][\p{L}\s'-]+$/u.test(trimmed)) return false;
+    const parts = trimmed.split(/\s+/).filter(Boolean);
+    return parts.length >= 2 && parts.every((part) => part.replace(/['-]/g, "").length >= 2);
+  };
+  const blockedTerms = [
+    "arschloch",
+    "bastard",
+    "bitch",
+    "drecksau",
+    "fick",
+    "fotze",
+    "hurensohn",
+    "miststuck",
+    "nutte",
+    "schlampe",
+    "spast",
+    "verpiss",
+    "wichser",
+  ];
+  const normalizeForModeration = (v) =>
+    (v || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/ß/g, "ss");
+  const containsBlockedTerms = (v) => {
+    const normalized = normalizeForModeration(v);
+    return blockedTerms.some((term) => normalized.includes(term));
+  };
+  const ownerDataTerms = [
+    "torben lehneke",
+    "lehneketorben@gmail.com",
+    "neu panstorf 38b",
+    "neu panstorf",
+    "17139 malchin",
+    "17139",
+    "malchin",
+  ];
+  const ownerPhoneDigits = "01733734023";
+  const containsOwnerData = (...values) => {
+    const joined = values.map((value) => normalizeForModeration(value)).join(" ");
+    const digits = values.map((value) => String(value || "").replace(/\D/g, "")).join(" ");
+    return (
+      ownerDataTerms.some((term) => joined.includes(term)) ||
+      digits.includes(ownerPhoneDigits)
+    );
+  };
 
   const validate = () => {
     const name = $("#name")?.value.trim() || "";
     const email = $("#email")?.value.trim() || "";
+    const emailConfirm = $("#emailConfirm")?.value.trim() || "";
     const phone = $("#phone")?.value.trim() || "";
     const message = $("#message")?.value.trim() || "";
+    const captchaValue = captchaField()?.value.trim() || "";
+    const siteKey = captchaSiteKey();
 
     let ok = true;
 
-    if (name.length < 2) {
-      setError("name", "Bitte gib deinen Namen an (mind. 2 Zeichen).");
+    if (!isLikelyRealName(name)) {
+      setError("name", "Bitte gib deinen echten Vor- und Nachnamen an.");
+      ok = false;
+    } else if (containsOwnerData(name)) {
+      setError("name", "Bitte trage hier nur deine eigenen Daten ein.");
       ok = false;
     } else setError("name", "");
 
     if (!isEmail(email)) {
-      setError("email", "Bitte gib eine gÃ¼ltige E-Mail-Adresse an.");
+      setError("email", "Bitte gib eine gültige E-Mail-Adresse an.");
+      ok = false;
+    } else if (containsOwnerData(email)) {
+      setError("email", "Bitte trage hier nur deine eigene E-Mail-Adresse ein.");
       ok = false;
     } else setError("email", "");
 
+    if (!isEmail(emailConfirm)) {
+      setError("emailConfirm", "Bitte bestätige deine E-Mail-Adresse.");
+      ok = false;
+    } else if (emailConfirm !== email) {
+      setError("emailConfirm", "Die beiden E-Mail-Adressen müssen identisch sein.");
+      ok = false;
+    } else setError("emailConfirm", "");
+
     if (!isPhoneLoose(phone)) {
-      setError("phone", "Bitte gib eine gÃ¼ltige Telefonnummer an (oder lass das Feld leer).");
+      setError("phone", "Bitte gib eine gültige Telefonnummer an (oder lass das Feld leer).");
+      ok = false;
+    } else if (containsOwnerData(phone)) {
+      setError("phone", "Bitte trage hier nur deine eigene Telefonnummer ein.");
       ok = false;
     } else setError("phone", "");
 
     if (message.length < 10) {
       setError("message", "Bitte beschreibe dein Anliegen (mind. 10 Zeichen).");
       ok = false;
+    } else if (containsBlockedTerms(message)) {
+      setError("message", "Bitte formuliere deine Nachricht sachlich und ohne beleidigende Inhalte.");
+      ok = false;
+    } else if (containsOwnerData(message)) {
+      setError("message", "Bitte trage in der Nachricht keine Daten des Seitenbetreibers ein.");
+      ok = false;
     } else setError("message", "");
+
+    if (!siteKey || siteKey === "REPLACE_WITH_YOUR_HCAPTCHA_SITE_KEY") {
+      setError("captcha", "Captcha ist noch nicht fertig eingerichtet.");
+      ok = false;
+    } else if (!captchaValue) {
+      setError("captcha", "Bitte bestätige, dass du kein Bot bist.");
+      ok = false;
+    } else setError("captcha", "");
 
     return ok;
   };
 
   if (form) {
     // Validate on blur for nicer UX
-    ["name", "email", "phone", "message"].forEach((id) => {
+    ["name", "email", "emailConfirm", "phone", "message"].forEach((id) => {
       const el = $("#" + id);
       if (!el) return;
       el.addEventListener("blur", validate);
       el.addEventListener("input", () => {
-        // clear message quickly on input (donâ€™t be annoying)
+        // Clear field errors quickly while typing.
         if (id !== "message") setError(id, "");
       });
     });
@@ -298,9 +388,9 @@
 
       const ok = validate();
       if (!ok) {
-        showToast("Bitte prÃ¼fe die markierten Felder.", 2600);
+        showToast("Bitte prüfe die markierten Felder.", 2600);
         // focus first invalid field
-        const firstInvalid = ["name", "email", "phone", "message"].find((id) => ($("#err-" + id)?.textContent || "").trim().length);
+        const firstInvalid = ["name", "email", "emailConfirm", "phone", "message", "captcha"].find((id) => ($("#err-" + id)?.textContent || "").trim().length);
         if (firstInvalid) $("#" + firstInvalid)?.focus();
         return;
       }
