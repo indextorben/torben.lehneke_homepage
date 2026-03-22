@@ -380,6 +380,10 @@
       }
 
       const formData = new FormData(form);
+      // Ensure no captcha provider response fields are forwarded with the request.
+      formData.delete("h-captcha-response");
+      formData.delete("g-recaptcha-response");
+      formData.delete("cf-turnstile-response");
       const action = form.getAttribute("action") || "";
 
       try {
