@@ -219,7 +219,13 @@
           const platform = String(btn.getAttribute("data-cmdfind-platform") || "").toLowerCase();
           const fallback = btn.getAttribute("data-cmdfind-fallback") || btn.getAttribute("href") || "";
           const asset = pickAssetForPlatform(assets, platform);
-          btn.href = asset?.browser_download_url || fallback;
+          const tag = String(release.tag_name || "").trim();
+          const directPackageUrl = asset && tag
+            ? `https://github.com/indextorben/cmdfind/releases/download/${encodeURIComponent(tag)}/${encodeURIComponent(asset.name)}`
+            : null;
+
+          btn.href = directPackageUrl || asset?.browser_download_url || fallback;
+          if (asset?.name) btn.setAttribute("download", asset.name);
         });
 
         if (cmdfindAllFilesLink && release.html_url) {
