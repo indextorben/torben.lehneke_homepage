@@ -176,6 +176,56 @@
   }
 
   // -----------------------------
+  // Cmdfind release asset links (optional API enhancement)
+  // -----------------------------
+  const cmdfindButtons = $$("[data-cmdfind-platform]");
+  const cmdfindAllFilesLink = $(".asset-all-link");
+
+  if (cmdfindButtons.length) {
+    const extMap = {
+      windows: [".exe", ".zip"],
+      macos: [".dmg", ".zip"],
+      linux: [".appimage", ".deb", ".tar.gz"],
+    };
+
+    const pickAssetForPlatform = (assets, platform) => {
+      const wantedExt = extMap[platform] || [];
+      if (!wantedExt.length || !Array.isArray(assets)) return null;
+
+      for (const ext of wantedExt) {
+        const match = assets.find((asset) => {
+          const name = String(asset?.name || "").toLowerCase();
+          return name.endsWith(ext);
+        });
+        if (match) return match;
+      }
+      return null;
+    };
+
+    fetch("https://api.github.com/repos/indextorben/cmdfind/releases/tags/continuous")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((release) => {
+        if (!release) return;
+
+        const assets = Array.isArray(release.assets) ? release.assets : [];
+
+        cmdfindButtons.forEach((btn) => {
+          const platform = String(btn.getAttribute("data-cmdfind-platform") || "").toLowerCase();
+          const fallback = btn.getAttribute("data-cmdfind-fallback") || btn.getAttribute("href") || "";
+          const asset = pickAssetForPlatform(assets, platform);
+          btn.href = asset?.browser_download_url || fallback;
+        });
+
+        if (cmdfindAllFilesLink && release.html_url) {
+          cmdfindAllFilesLink.href = release.html_url;
+        }
+      })
+      .catch(() => {
+        // Keep static fallback links when API is not reachable.
+      });
+  }
+
+  // -----------------------------
   // FAQ Accordion (keyboard accessible)
   // -----------------------------
   const accRoot = $("[data-accordion]");
@@ -762,4 +812,3 @@
     gsap.ticker.add(tick);
   }
 })();
-

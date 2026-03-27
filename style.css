@@ -866,6 +866,57 @@ html[data-theme="dark"] .icon-moon{ display: block; }
   font-weight: 650;
 }
 
+/* Assets / Downloads */
+.asset-app-card{
+  display: grid;
+  gap: 14px;
+}
+.asset-app-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.asset-app-head h3{
+  margin: 0;
+}
+.asset-app-tag{
+  font-weight: 800;
+  font-size: 0.86rem;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--primary) 84%, var(--text));
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 24%, var(--border));
+}
+.asset-os-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 740px){
+  .asset-os-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.asset-os-card{
+  display: grid;
+  gap: 10px;
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.asset-os-card h4{
+  margin: 0;
+  font-size: 1.02rem;
+}
+.asset-os-card .btn{
+  justify-self: start;
+}
+.asset-all-link{
+  justify-self: start;
+}
+
 /* Testimonials */
 .testimonial p{
   color: var(--text);
