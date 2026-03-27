@@ -856,6 +856,21 @@ html[data-theme="dark"] .icon-moon{ display: block; }
   height: 100%;
   object-fit: cover;
 }
+.cmdfind-thumb{
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(700px 280px at 15% 20%, color-mix(in srgb, var(--secondary) 24%, transparent), transparent 56%),
+    radial-gradient(700px 280px at 86% 18%, color-mix(in srgb, var(--primary) 26%, transparent), transparent 58%),
+    linear-gradient(140deg, color-mix(in srgb, var(--text) 16%, transparent), transparent);
+}
+.cmdfind-thumb span{
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: color-mix(in srgb, var(--bg) 84%, var(--text));
+  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.24);
+}
 .project-meta{
   padding: 14px 14px 16px;
   display: grid;

@@ -1,0 +1,52 @@
+.cmdfind-page .cmdfind-hero{
+  padding-top: 44px;
+}
+
+.cmdfind-page .hero-grid{
+  align-items: start;
+}
+
+.cmdfind-page .cmdfind-terminal{
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 90%, transparent), color-mix(in srgb, var(--bg) 86%, transparent));
+}
+
+.cmdfind-page .cmdfind-dots{
+  display: flex;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cmdfind-page .cmdfind-dots span{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--muted) 35%, transparent);
+}
+
+.cmdfind-page .cmdfind-dots span:nth-child(1){
+  background: #f97316;
+}
+
+.cmdfind-page .cmdfind-dots span:nth-child(2){
+  background: #facc15;
+}
+
+.cmdfind-page .cmdfind-dots span:nth-child(3){
+  background: #22c55e;
+}
+
+.cmdfind-page .cmdfind-terminal pre{
+  margin: 0;
+  padding: 18px;
+  overflow-x: auto;
+}
+
+.cmdfind-page .cmdfind-terminal code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--text) 92%, var(--muted));
+}

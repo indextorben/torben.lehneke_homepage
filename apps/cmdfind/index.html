@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Cmdfind hilft dir, passende Befehle für Windows, macOS und Linux schnell zu finden und direkt herunterzuladen." />
+  <meta name="theme-color" content="#0b5fff" />
+  <title>Cmdfind - Befehle für alle Betriebssysteme</title>
+
+  <link rel="preconnect" href=".." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="cmdfind.css" />
+</head>
+
+<body class="cmdfind-page">
+  <header class="site-header app-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html" aria-label="Cmdfind Startseite">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Cmdfind</span>
+          <span class="brand-sub">CLI · Windows · macOS · Linux</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Cmdfind Navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="sr-only">Menü öffnen</span>
+          <span aria-hidden="true" class="hamburger"></span>
+        </button>
+        <div class="nav-menu" id="navMenu">
+          <a class="nav-link" href="#overview">Überblick</a>
+          <a class="nav-link" href="#download">Download</a>
+          <a class="nav-link nav-cta" href="#download">Jetzt laden</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a class="home-link-btn" href="../../index.html" aria-label="Zur Homepage">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 10.5 12 3l9 7.5"></path>
+              <path d="M5 9.5V21h14V9.5"></path>
+            </svg>
+          </span>
+          <span class="home-label">Zur Homepage</span>
+        </a>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Dark Mode umschalten" aria-pressed="false">
+          <span class="icon" aria-hidden="true">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41">
+              </path>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M21 13.6A8.5 8.5 0 1 1 10.4 3 6.5 6.5 0 0 0 21 13.6Z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section cmdfind-hero" id="overview" aria-label="Cmdfind Überblick">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Cmdfind</p>
+          <h1 class="headline">Befehle finden statt lange suchen.</h1>
+          <p class="subheadline">
+            Cmdfind hilft dir, CLI-Befehle für Windows, macOS und Linux schnell nachzuschlagen - wenn du etwas suchst
+            und es nicht auswendig weißt.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#download">Download öffnen</a>
+            <a class="btn btn-ghost" href="https://github.com/indextorben/cmdfind" target="_blank"
+              rel="noopener noreferrer">GitHub</a>
+          </div>
+          <div class="trust-row" role="list" aria-label="Vorteile">
+            <span class="trust-item" role="listitem">✓ Windows</span>
+            <span class="trust-item" role="listitem">✓ macOS</span>
+            <span class="trust-item" role="listitem">✓ Linux</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="cmdfind-terminal card">
+            <div class="cmdfind-dots"><span></span><span></span><span></span></div>
+            <pre><code>$ cmdfind "extract zip"
+Windows: tar -xf archive.zip
+macOS: unzip archive.zip
+Linux:  unzip archive.zip</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download" aria-label="Cmdfind Downloads">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Download</h2>
+          <p class="lead">Latest continuous build für dein Betriebssystem.</p>
+        </div>
+
+        <article class="card asset-app-card reveal" aria-label="Cmdfind Downloads">
+          <div class="asset-app-head">
+            <h3>Cmdfind</h3>
+            <span class="asset-app-tag">Continuous</span>
+          </div>
+
+          <div class="asset-os-grid">
+            <article class="card asset-os-card">
+              <h4>Windows</h4>
+              <p class="muted">Latest continuous build</p>
+              <a class="btn btn-primary" href="https://github.com/indextorben/cmdfind/releases/tag/continuous"
+                data-cmdfind-platform="windows"
+                data-cmdfind-fallback="https://github.com/indextorben/cmdfind/releases/tag/continuous" target="_blank"
+                rel="noopener noreferrer">Download</a>
+            </article>
+
+            <article class="card asset-os-card">
+              <h4>macOS</h4>
+              <p class="muted">Latest continuous build</p>
+              <a class="btn btn-primary" href="https://github.com/indextorben/cmdfind/releases/tag/continuous"
+                data-cmdfind-platform="macos"
+                data-cmdfind-fallback="https://github.com/indextorben/cmdfind/releases/tag/continuous" target="_blank"
+                rel="noopener noreferrer">Download</a>
+            </article>
+
+            <article class="card asset-os-card">
+              <h4>Linux</h4>
+              <p class="muted">Latest continuous build</p>
+              <a class="btn btn-primary" href="https://github.com/indextorben/cmdfind/releases/tag/continuous"
+                data-cmdfind-platform="linux"
+                data-cmdfind-fallback="https://github.com/indextorben/cmdfind/releases/tag/continuous" target="_blank"
+                rel="noopener noreferrer">Download</a>
+            </article>
+          </div>
+
+          <a class="inline-link asset-all-link" href="https://github.com/indextorben/cmdfind/releases/tag/continuous"
+            target="_blank" rel="noopener noreferrer">Alle Dateien anzeigen</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-line">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <strong>Cmdfind</strong>
+        </div>
+        <p class="muted">Cross-Platform Befehlsfinder für den Alltag im Terminal.</p>
+      </div>
+
+      <div class="footer-links" aria-label="Links">
+        <a href="../../index.html" class="footer-link">Zur Startseite</a>
+        <a href="https://github.com/indextorben/cmdfind" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+
+      <div class="footer-social" aria-label="Release">
+        <a class="social" href="https://github.com/indextorben/cmdfind/releases/tag/continuous" target="_blank"
+          rel="noopener noreferrer" aria-label="Cmdfind Release öffnen">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <small>© <span id="year"></span> Cmdfind</small>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+  <script src="../../script.js" defer></script>
+</body>
+
+</html>
