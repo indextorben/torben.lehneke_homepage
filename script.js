@@ -202,8 +202,14 @@
       return null;
     };
 
-    fetch("https://api.github.com/repos/indextorben/cmdfind/releases/tags/continuous")
-      .then((res) => (res.ok ? res.json() : null))
+    const releaseByTagUrl = "https://api.github.com/repos/indextorben/cmdfind/releases/tags/continuous";
+    const latestReleaseUrl = "https://api.github.com/repos/indextorben/cmdfind/releases/latest";
+
+    fetch(releaseByTagUrl)
+      .then((res) => {
+        if (res.ok) return res.json();
+        return fetch(latestReleaseUrl).then((latestRes) => (latestRes.ok ? latestRes.json() : null));
+      })
       .then((release) => {
         if (!release) return;
 
