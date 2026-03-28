@@ -1,22 +1,55 @@
 .cmdfind-page .cmdfind-hero{
   padding-top: 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cmdfind-page .cmdfind-hero::before{
+  content: "";
+  position: absolute;
+  inset: -22% -10% auto -10%;
+  height: 420px;
+  background:
+    radial-gradient(720px 300px at 20% 10%, rgba(251, 146, 60, 0.2), transparent 62%),
+    radial-gradient(760px 300px at 80% 20%, rgba(244, 114, 182, 0.18), transparent 64%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cmdfind-page .cmdfind-hero .container{
+  position: relative;
+  z-index: 1;
 }
 
 .cmdfind-page .hero-grid{
   align-items: start;
 }
 
+.cmdfind-page .headline{
+  max-width: 15ch;
+}
+
+.cmdfind-page .subheadline{
+  max-width: 58ch;
+}
+
 .cmdfind-page .cmdfind-terminal{
   padding: 0;
   overflow: hidden;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 90%, transparent), color-mix(in srgb, var(--bg) 86%, transparent));
+  border-radius: calc(var(--radius-lg) + 4px);
+  border-color: color-mix(in srgb, #f59e0b 26%, var(--border));
+  box-shadow: var(--shadow-md);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 94%, transparent), color-mix(in srgb, var(--bg) 90%, transparent)),
+    radial-gradient(500px 220px at 20% 0%, rgba(245, 158, 11, 0.12), transparent 68%);
 }
 
 .cmdfind-page .cmdfind-dots{
   display: flex;
   gap: 8px;
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--border);
+  padding: 13px 15px;
+  border-bottom: 1px solid color-mix(in srgb, #f59e0b 18%, var(--border));
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
 }
 
 .cmdfind-page .cmdfind-dots span{
@@ -40,13 +73,63 @@
 
 .cmdfind-page .cmdfind-terminal pre{
   margin: 0;
-  padding: 18px;
+  padding: 20px;
   overflow-x: auto;
 }
 
 .cmdfind-page .cmdfind-terminal code{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.92rem;
-  line-height: 1.55;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: color-mix(in srgb, var(--text) 92%, var(--muted));
+}
+
+.cmdfind-page #download .asset-app-card{
+  background:
+    radial-gradient(700px 300px at 15% 0%, rgba(245, 158, 11, 0.1), transparent 62%),
+    color-mix(in srgb, var(--surface) 80%, transparent);
+  border-color: color-mix(in srgb, #f59e0b 24%, var(--border));
+}
+
+.cmdfind-page #download .asset-os-card{
+  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease), border-color var(--speed) var(--ease);
+}
+
+.cmdfind-page #download .asset-os-card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in srgb, #f59e0b 30%, var(--border));
+}
+
+@media (min-width: 980px){
+  .cmdfind-page .cmdfind-hero{
+    padding-top: 58px;
+  }
+
+  .cmdfind-page .hero-grid{
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .cmdfind-page .headline{
+    font-size: clamp(2.3rem, 1.9rem + 1.6vw, 3.2rem);
+  }
+
+  .cmdfind-page .subheadline{
+    font-size: 1.08rem;
+  }
+
+  .cmdfind-page .cmdfind-terminal{
+    min-height: 320px;
+  }
+
+  .cmdfind-page .cmdfind-terminal pre{
+    padding: 24px 24px 26px;
+  }
+
+  .cmdfind-page #download .asset-os-grid{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
 }
