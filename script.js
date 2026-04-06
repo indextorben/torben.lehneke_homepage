@@ -338,25 +338,6 @@
     const normalized = normalizeForModeration(v);
     return blockedTerms.some((term) => normalized.includes(term));
   };
-  const ownerDataTerms = [
-    "torben lehneke",
-    "lehneketorben@gmail.com",
-    "neu panstorf 38b",
-    "neu panstorf",
-    "17139 malchin",
-    "17139",
-    "malchin",
-  ];
-  const ownerPhoneDigits = "01733734023";
-  const containsOwnerData = (...values) => {
-    const joined = values.map((value) => normalizeForModeration(value)).join(" ");
-    const digits = values.map((value) => String(value || "").replace(/\D/g, "")).join(" ");
-    return (
-      ownerDataTerms.some((term) => joined.includes(term)) ||
-      digits.includes(ownerPhoneDigits)
-    );
-  };
-
   const validate = () => {
     const name = $("#name")?.value.trim() || "";
     const email = $("#email")?.value.trim() || "";
@@ -369,16 +350,10 @@
     if (!isLikelyRealName(name)) {
       setError("name", "Bitte gib deinen echten Vor- und Nachnamen an.");
       ok = false;
-    } else if (containsOwnerData(name)) {
-      setError("name", "Bitte trage hier nur deine eigenen Daten ein.");
-      ok = false;
     } else setError("name", "");
 
     if (!isEmail(email)) {
       setError("email", "Bitte gib eine gültige E-Mail-Adresse an.");
-      ok = false;
-    } else if (containsOwnerData(email)) {
-      setError("email", "Bitte trage hier nur deine eigene E-Mail-Adresse ein.");
       ok = false;
     } else setError("email", "");
 
@@ -393,9 +368,6 @@
     if (!isPhoneLoose(phone)) {
       setError("phone", "Bitte gib eine gültige Telefonnummer an (oder lass das Feld leer).");
       ok = false;
-    } else if (containsOwnerData(phone)) {
-      setError("phone", "Bitte trage hier nur deine eigene Telefonnummer ein.");
-      ok = false;
     } else setError("phone", "");
 
     if (message.length < 10) {
@@ -403,9 +375,6 @@
       ok = false;
     } else if (containsBlockedTerms(message)) {
       setError("message", "Bitte formuliere deine Nachricht sachlich und ohne beleidigende Inhalte.");
-      ok = false;
-    } else if (containsOwnerData(message)) {
-      setError("message", "Bitte trage in der Nachricht keine Daten des Seitenbetreibers ein.");
       ok = false;
     } else setError("message", "");
 
@@ -429,6 +398,7 @@
 
       const honeypot = $("#website");
       if (honeypot?.value.trim()) {
+        showToast("Senden blockiert. Bitte Seite neu laden und erneut versuchen.", 3600);
         return;
       }
 
@@ -441,34 +411,21 @@
         return;
       }
 
-      const formData = new FormData(form);
-      // Ensure no captcha provider response fields are forwarded with the request.
-      formData.delete("h-captcha-response");
-      formData.delete("g-recaptcha-response");
-      formData.delete("cf-turnstile-response");
       const action = form.getAttribute("action") || "";
 
-      try {
-        const res = await fetch(action, {
-          method: "POST",
-          body: formData,
-          headers: { Accept: "application/json" },
-        });
-
-        if (!res.ok) throw new Error("formspree");
-
-        form.reset();
-        if (successEl) {
-          successEl.hidden = false;
-          window.clearTimeout(form._successT);
-          form._successT = window.setTimeout(() => {
-            successEl.hidden = true;
-          }, 5200);
-        }
-        showToast("Danke! Deine Anfrage wurde gesendet.", 3200);
-      } catch (err) {
-        showToast("Senden fehlgeschlagen. Bitte später erneut versuchen.", 3200);
+      if (!action) {
+        showToast("Senden fehlgeschlagen: Formularziel fehlt.", 3600);
+        return;
       }
+
+      const submitBtn = $('button[type="submit"]', form);
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Wird gesendet…";
+      }
+
+      // Native POST submit is the most reliable path with Formspree + captcha settings.
+      form.submit();
     });
   }
 
