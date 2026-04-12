@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="DeskPilot macht dein iPhone zur intelligenten Fernbedienung für deinen Mac - mit Trackpad, Tastatur, Quick Actions und Makros."
+    />
+    <meta name="theme-color" content="#0b5fff" />
+    <title>DeskPilot - Mac per iPhone steuern</title>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b5fff'/%3E%3Ctext x='50' y='64' font-size='56' text-anchor='middle' fill='white' font-family='Arial, sans-serif'%3EDP%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href=".." />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="deskpilot.css" />
+  </head>
+
+  <body class="deskpilot">
+    <div class="symbol-scene" aria-hidden="true">
+      <span class="control-symbol sym-a" data-depth="1.2">MAC</span>
+      <span class="control-symbol sym-b" data-depth="0.9">PHONE</span>
+      <span class="control-symbol sym-c" data-depth="1.4">TRACK</span>
+      <span class="control-symbol sym-d" data-depth="1.1">PLAY</span>
+      <span class="control-symbol sym-e" data-depth="1.7">ACTIONS</span>
+      <span class="control-symbol sym-f" data-depth="1.3">MACRO</span>
+      <span class="control-symbol sym-g" data-depth="0.8">LAN</span>
+      <span class="control-symbol sym-h" data-depth="1.5">FLOW</span>
+      <span class="control-symbol sym-i" data-depth="1.6">KEYS</span>
+      <span class="control-symbol sym-j" data-depth="1">MOUSE</span>
+      <span class="control-symbol sym-k" data-depth="1.9">SYNC</span>
+    </div>
+
+    <header class="site-header app-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="../../index.html" aria-label="DeskPilot Startseite">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="brand-name">DeskPilot</span>
+            <span class="brand-sub">App · iPhone + Mac · in Planung</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="DeskPilot Navigation">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="sr-only">Menü öffnen</span>
+            <span aria-hidden="true" class="hamburger"></span>
+          </button>
+          <div class="nav-menu" id="navMenu">
+            <a class="nav-link" href="#overview">Highlights</a>
+            <a class="nav-link" href="#workflow">Ablauf</a>
+            <a class="nav-link" href="#features">Features</a>
+            <a class="nav-link" href="#faq">FAQ</a>
+            <a class="nav-link nav-cta" href="#contact">Interesse anmelden</a>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <a class="home-link-btn" href="../../index.html" aria-label="Zur Homepage">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 10.5 12 3l9 7.5"></path>
+                <path d="M5 9.5V21h14V9.5"></path>
+              </svg>
+            </span>
+            <span class="home-label">Zur Homepage</span>
+          </a>
+          <button
+            class="icon-btn"
+            id="themeToggle"
+            type="button"
+            aria-label="Dark Mode umschalten"
+            aria-pressed="false"
+          >
+            <span class="icon" aria-hidden="true">
+              <svg
+                class="icon-sun"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+                <path
+                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                ></path>
+              </svg>
+              <svg
+                class="icon-moon"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 13.6A8.5 8.5 0 1 1 10.4 3 6.5 6.5 0 0 0 21 13.6Z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section deskpilot-hero" aria-label="DeskPilot Hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">DeskPilot App</p>
+            <h1 class="headline">Dein Mac, gesteuert vom iPhone.</h1>
+            <p class="subheadline">
+              DeskPilot macht dein iPhone zur intelligenten Fernbedienung für deinen Mac:
+              Medien steuern, präzises Trackpad nutzen, Text eingeben und Quick Actions ausführen.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Interesse anmelden</a>
+              <a class="btn btn-ghost" href="#overview">Mehr erfahren</a>
+            </div>
+
+            <div class="trust-row" role="list" aria-label="Vorteile">
+              <span class="trust-item" role="listitem">✓ Lokale Verbindung</span>
+              <span class="trust-item" role="listitem">✓ Makros & Quick Actions</span>
+              <span class="trust-item" role="listitem">✓ Deutsch & Englisch</span>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal" aria-hidden="true">
+            <div class="deskpilot-frame">
+              <img
+                src="assets/deskpilot-hero.png"
+                alt="DeskPilot Dashboard auf iPad"
+                class="deskpilot-visual"
+              />
+              <div class="deskpilot-stat stat-a">
+                <span class="stat-label">Geräte verbunden</span>
+                <strong>1 Mac, 1 iPhone</strong>
+              </div>
+              <div class="deskpilot-stat stat-b">
+                <span class="stat-label">Aktive Makros</span>
+                <strong>8 Automationen</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="overview" aria-label="Highlights">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Kontrolle in Sekunden</h2>
+            <p class="lead">
+              Eine App für Medien, Eingabe und smarte Automationen auf deinem Mac.
+            </p>
+          </div>
+
+          <div class="cards-grid reveal">
+            <article class="card overview-card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 6h16v12H4z"></path>
+                  <path d="M8 20h8"></path>
+                </svg>
+              </div>
+              <h3>Mediensteuerung</h3>
+              <p>Play, Pause, Lautstärke und Skip direkt vom iPhone.</p>
+            </article>
+
+            <article class="card overview-card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="3"></rect>
+                  <path d="M8 10h8M8 14h6"></path>
+                </svg>
+              </div>
+              <h3>Trackpad & Tastatur</h3>
+              <p>Präzises Zeigen, Klicken und Texteingabe aus der Ferne.</p>
+            </article>
+
+            <article class="card overview-card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 12h16"></path>
+                  <path d="M12 4v16"></path>
+                  <path d="M6 6 18 18"></path>
+                </svg>
+              </div>
+              <h3>Quick Actions & Makros</h3>
+              <p>Wiederkehrende Schritte in einem Tipp ausführen.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="workflow" aria-label="Ablauf">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>So arbeitet DeskPilot im Alltag</h2>
+            <p class="lead">
+              Schnell eingerichtet, sofort produktiv.
+            </p>
+          </div>
+
+          <ol class="steps reveal">
+            <li class="step">
+              <div class="step-badge">1</div>
+              <div class="step-body">
+                <h3>Verbinden</h3>
+                <p>Mac und iPhone im selben Netzwerk koppeln und loslegen.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-badge">2</div>
+              <div class="step-body">
+                <h3>Steuern</h3>
+                <p>Medien, Cursor und Texteingabe zentral in einer App nutzen.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-badge">3</div>
+              <div class="step-body">
+                <h3>Automatisieren</h3>
+                <p>Makros für App-Starts, Fenster-Layouts und Workflows anlegen.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-badge">4</div>
+              <div class="step-body">
+                <h3>Favorisieren</h3>
+                <p>Häufige Aktionen als Favoriten speichern und schneller arbeiten.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="features" aria-label="Features">
+        <div class="container split">
+          <div class="reveal">
+            <div class="section-head">
+              <h2>Gemacht für Fokus und Produktivität</h2>
+              <p class="lead">
+                Ideal für Homeoffice, Präsentationen und fokussierte Arbeitsabläufe.
+              </p>
+            </div>
+
+            <ul class="bullets">
+              <li><span aria-hidden="true">✓</span> Lokale Verbindung für direkte Reaktion</li>
+              <li><span aria-hidden="true">✓</span> Geräteverwaltung und flexible Einstellungen</li>
+              <li><span aria-hidden="true">✓</span> Modernes Design mit Deutsch/Englisch Support</li>
+            </ul>
+          </div>
+
+          <aside class="card security-panel reveal">
+            <h3>Was Nutzer sofort merken</h3>
+            <div class="info-row">
+              <span class="info-label">Weniger Klicks</span>
+              <span class="info-value">-42%</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Schneller bereit</span>
+              <span class="info-value">unter 1 Min</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Ablauf</span>
+              <span class="info-value">im Flow</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="faq" aria-label="FAQ">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>FAQ</h2>
+            <p class="lead">Die wichtigsten Fragen kurz beantwortet.</p>
+          </div>
+
+          <div class="accordion reveal" data-accordion>
+            <div class="acc-item">
+              <h3 class="acc-head">
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="deskpilot-faq-1" id="deskpilot-faq-1-btn">
+                  Funktioniert DeskPilot mit jedem Mac?
+                  <span class="acc-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc-panel" id="deskpilot-faq-1" role="region" aria-labelledby="deskpilot-faq-1-btn" hidden>
+                <p>DeskPilot ist für moderne macOS-Versionen geplant und wird für aktuelle Mac-Hardware optimiert.</p>
+              </div>
+            </div>
+
+            <div class="acc-item">
+              <h3 class="acc-head">
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="deskpilot-faq-2" id="deskpilot-faq-2-btn">
+                  Welche Steuerungen sind enthalten?
+                  <span class="acc-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc-panel" id="deskpilot-faq-2" role="region" aria-labelledby="deskpilot-faq-2-btn" hidden>
+                <p>Mediensteuerung, Trackpad, Tastatur-Remote, Quick Actions und Makros sind zentraler Bestandteil von DeskPilot.</p>
+              </div>
+            </div>
+
+            <div class="acc-item">
+              <h3 class="acc-head">
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="deskpilot-faq-3" id="deskpilot-faq-3-btn">
+                  Gibt es Mehrsprachigkeit?
+                  <span class="acc-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc-panel" id="deskpilot-faq-3" role="region" aria-labelledby="deskpilot-faq-3-btn" hidden>
+                <p>Ja, die App ist für Deutsch und Englisch ausgelegt.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-label="Kontakt">
+        <div class="container contact-grid">
+          <div class="card reveal">
+            <h2>DeskPilot vormerken</h2>
+            <p class="lead">
+              Wenn du deinen Mac smarter mit dem iPhone steuern willst, melde dich direkt.
+            </p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:lehneketorben@gmail.com?subject=DeskPilot%20App">E-Mail senden</a>
+              <a class="btn btn-ghost" href="mailto:lehneketorben@gmail.com?subject=R%C3%BCckruf%20zu%20DeskPilot">Rückruf anfragen</a>
+            </div>
+          </div>
+
+          <div class="card contact-info reveal">
+            <h3>Direkter Kontakt</h3>
+            <div class="info-row">
+              <span class="info-label">E-Mail</span>
+              <span class="info-value">lehneketorben@gmail.com</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Telefon</span>
+              <span class="info-value">Auf Anfrage</span>
+            </div>
+            <div class="note">
+              Schnelle Rückmeldung, klare Einschätzung und ein sauberer Einstieg in DeskPilot.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer app-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand-line">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <strong>DeskPilot</strong>
+          </div>
+          <p class="muted">iPhone-Fernsteuerung für deinen Mac mit Makros und Quick Actions.</p>
+        </div>
+
+        <div class="footer-links" aria-label="Navigation">
+          <a href="#overview" class="footer-link">Highlights</a>
+          <a href="#workflow" class="footer-link">Ablauf</a>
+          <a href="#features" class="footer-link">Features</a>
+          <a href="../../index.html#kontakt" class="footer-link">Impressum</a>
+          <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+          <a href="mailto:lehneketorben@gmail.com" class="footer-link">Support</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>(c) <span id="year"></span> DeskPilot. Alle Rechte vorbehalten.</small>
+      </div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+    <script src="../../script.js" defer></script>
+    <script src="deskpilot.js" defer></script>
+  </body>
+</html>
