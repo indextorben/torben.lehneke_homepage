@@ -980,6 +980,10 @@
       } else if (currentLanguage === "de" && originalMain) {
         mainEl.innerHTML = originalMain;
       }
+
+      // Replaced DOM blocks can contain `.reveal` elements that would otherwise
+      // stay hidden until a full reload/re-init. Make them visible directly.
+      $$(".reveal", mainEl).forEach((el) => el.classList.add("is-visible"));
     }
 
     const pageConfig = pageText[i18nPage]?.[currentLanguage];
