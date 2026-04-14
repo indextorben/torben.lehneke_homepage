@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="deskpilot.css" />
   </head>
 
-  <body class="deskpilot">
+  <body class="deskpilot" data-i18n-page="deskpilot-index">
     <div class="symbol-scene" aria-hidden="true">
       <span class="control-symbol sym-a" data-depth="1.2">MAC</span>
       <span class="control-symbol sym-b" data-depth="0.9">PHONE</span>
@@ -75,6 +75,15 @@
             </span>
             <span class="home-label">Zur Homepage</span>
           </a>
+          <button
+            class="icon-btn lang-btn"
+            id="langToggle"
+            type="button"
+            aria-label="Sprache wechseln"
+            aria-pressed="false"
+          >
+            DE
+          </button>
           <button
             class="icon-btn"
             id="themeToggle"
@@ -377,6 +386,7 @@
           <a href="#features" class="footer-link">Features</a>
           <a href="../../index.html#kontakt" class="footer-link">Impressum</a>
           <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+          <a href="agb.html" class="footer-link">AGB</a>
           <a href="mailto:lehneketorben@gmail.com" class="footer-link">Support</a>
         </div>
       </div>

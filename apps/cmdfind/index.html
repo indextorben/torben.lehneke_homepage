@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="cmdfind.css" />
 </head>
 
-<body class="cmdfind-page">
+<body class="cmdfind-page" data-i18n-page="cmdfind-index">
   <header class="site-header app-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="../../index.html" aria-label="Cmdfind Startseite">
@@ -47,6 +47,15 @@
           </span>
           <span class="home-label">Zur Homepage</span>
         </a>
+        <button
+          class="icon-btn lang-btn"
+          id="langToggle"
+          type="button"
+          aria-label="Sprache wechseln"
+          aria-pressed="false"
+        >
+          DE
+        </button>
         <button class="icon-btn" id="themeToggle" type="button" aria-label="Dark Mode umschalten" aria-pressed="false">
           <span class="icon" aria-hidden="true">
             <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
