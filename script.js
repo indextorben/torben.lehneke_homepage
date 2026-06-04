@@ -792,6 +792,8 @@
           "#benefits .benefit-card:nth-child(5) p": "Consistent everywhere.",
           "#benefits .benefit-card:nth-child(6) h3": "Multilingual",
           "#benefits .benefit-card:nth-child(6) p": "German & English.",
+          "#product-gallery h2": "BeeFocus in motion",
+          "#product-gallery .lead": "A calm pass through the app's key views.",
           "#features h2": "Features that keep you moving",
           "#features .lead":
             "Each section reduces friction so focus becomes routine.",
@@ -998,6 +1000,8 @@
         ".nav": { "aria-label": "BeeFocus navigation" },
         ".home-link-btn": { "aria-label": "Go to homepage" },
         "#themeToggle": { "aria-label": "Toggle dark mode" },
+        "#product-gallery": { "aria-label": "BeeFocus product images" },
+        ".product-canvas": { "aria-label": "Automatic BeeFocus product image slideshow" },
       },
     },
     "beefocus-privacy": {
