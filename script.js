@@ -223,6 +223,103 @@
         </div>
       </section>
     `,
+    "beefocus-terms": `
+      <section class="section legal-section" aria-label="BeeFocus Terms">
+        <div class="container">
+          <article class="legal-card">
+            <h1>Terms and Conditions for BeeFocus</h1>
+            <p class="legal-date">Version: June 2026</p>
+
+            <h2>1. Scope</h2>
+            <p>
+              These Terms and Conditions apply to the use of the BeeFocus app
+              (hereinafter referred to as the "App"), developed and operated by
+              Torben Lehneke (hereinafter referred to as the "Provider").
+            </p>
+
+            <h2>2. Description of Services</h2>
+            <p>
+              BeeFocus is a productivity app for iPhone, iPad and Apple Watch.
+              The App includes features for task management, focus support,
+              habit tracking and daily planning. Certain features are available
+              exclusively as part of a paid subscription (BeeFocus Pro).
+            </p>
+
+            <h2>3. Requirements for Use</h2>
+            <p>
+              The App requires a compatible Apple device with a current iOS
+              version and an Apple ID account. An iCloud account is required to
+              use iCloud synchronization.
+            </p>
+
+            <h2>4. Subscription &amp; Payment</h2>
+            <p>
+              BeeFocus Pro is offered as a subscription through the Apple App
+              Store. Billing is handled through the user's Apple account. The
+              subscription renews automatically unless it is cancelled in the
+              Apple ID settings at least 24 hours before the end of the current
+              period. The Provider has no influence over payment processing,
+              which is handled exclusively by Apple.
+            </p>
+
+            <h2>5. Rights of Use</h2>
+            <p>
+              The Provider grants the user a non-transferable, non-exclusive
+              right to use the App on the user's own Apple devices. Reproduction,
+              distribution or modification of the App is not permitted.
+            </p>
+
+            <h2>6. Availability</h2>
+            <p>
+              The Provider endeavors to ensure continuous availability of the
+              App, but does not guarantee uninterrupted operation. Maintenance,
+              updates or technical issues may temporarily restrict availability.
+            </p>
+
+            <h2>7. Disclaimer of Liability</h2>
+            <p>
+              The App is intended to support personal productivity. The Provider
+              assumes no liability for data loss, lost productivity or other
+              indirect damages resulting from the use or inability to use the
+              App. Use is at the user's own responsibility.
+            </p>
+
+            <h2>8. Privacy</h2>
+            <p>
+              Information on the processing of personal data can be found in the
+              privacy policy at
+              <a class="inline-link" href="https://www.torbenlehneke.de/apps/beefocus/datenschutz.html">
+                https://www.torbenlehneke.de/apps/beefocus/datenschutz.html
+              </a>.
+            </p>
+
+            <h2>9. Changes</h2>
+            <p>
+              The Provider reserves the right to change these Terms and
+              Conditions at any time. Changes will be announced in the App or on
+              the website. Continued use of the App after a change constitutes
+              acceptance of the updated Terms.
+            </p>
+
+            <h2>10. Applicable Law</h2>
+            <p>
+              The law of the Federal Republic of Germany applies. The place of
+              jurisdiction, where legally permissible, is the Provider's place of
+              residence.
+            </p>
+
+            <h2>11. Contact</h2>
+            <p>
+              Torben Lehneke<br />
+              Email:
+              <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a><br />
+              Website:
+              <a class="inline-link" href="http://www.torbenlehneke.de">http://www.torbenlehneke.de</a>
+            </p>
+          </article>
+        </div>
+      </section>
+    `,
     "deskpilot-privacy": `
       <section class="section legal-section" aria-label="DeskPilot Privacy">
         <div class="container">
@@ -645,6 +742,16 @@
         },
       },
     },
+    "beefocus-terms": {
+      en: {
+        title: "Terms and Conditions - BeeFocus",
+        description: "Terms and Conditions for the BeeFocus app.",
+        text: {},
+        html: {
+          ".footer-bottom small": "© <span id='year'></span> BeeFocus. All rights reserved.",
+        },
+      },
+    },
     "beefocus-index": {
       en: {
         title: "BeeFocus - Focus and To-do App",
@@ -712,6 +819,7 @@
           ".footer-brand .muted": "Focus app for structured days.",
           ".footer-links a[href='#download']": "Pricing",
           ".footer-links a[href='datenschutz.html']": "Privacy",
+          ".footer-links a[href='nutzungsbedingungen.html']": "Terms",
           ".footer-links a[href='../../index.html#kontakt']": "Legal notice",
           ".footer-links a[href^='mailto:']": "Support",
         },
@@ -900,6 +1008,22 @@
         ".home-label": "Home",
         ".footer-links a[href='index.html#download']": "Pricing",
         ".footer-links a[href='datenschutz.html']": "Privacy",
+        ".footer-links a[href='nutzungsbedingungen.html']": "Terms",
+        ".footer-links a[href='../../index.html#kontakt']": "Legal notice",
+        ".footer-links a[href^='mailto:']": "Support",
+        ".footer-brand .muted": "Focus app for structured days.",
+      },
+    },
+    "beefocus-terms": {
+      en: {
+        ".brand-sub": "Terms",
+        "#navMenu .nav-link:nth-child(1)": "App page",
+        "#navMenu .nav-link:nth-child(2)": "Privacy",
+        "#navMenu .nav-link:nth-child(3)": "Home",
+        ".home-label": "Home",
+        ".footer-links a[href='index.html#download']": "Pricing",
+        ".footer-links a[href='datenschutz.html']": "Privacy",
+        ".footer-links a[href='nutzungsbedingungen.html']": "Terms",
         ".footer-links a[href='../../index.html#kontakt']": "Legal notice",
         ".footer-links a[href^='mailto:']": "Support",
         ".footer-brand .muted": "Focus app for structured days.",
