@@ -305,6 +305,20 @@ html[data-theme="dark"] .sym-k {
   background: color-mix(in srgb, var(--bg) 96%, transparent);
 }
 
+.product-canvas-tablet {
+  --frame-w: clamp(190px, 24vw, 340px);
+  margin-top: 0;
+}
+
+.product-track-tablet {
+  animation-duration: 72s;
+  animation-direction: reverse;
+}
+
+.product-frame-tablet img {
+  aspect-ratio: 2064 / 2752;
+}
+
 html[data-theme="dark"] .product-canvas {
   background:
     linear-gradient(90deg, color-mix(in srgb, var(--bg) 96%, transparent), transparent 14%, transparent 86%, color-mix(in srgb, var(--bg) 96%, transparent)),
@@ -472,8 +486,16 @@ html[data-theme="dark"] .product-frame {
     mask-image: linear-gradient(90deg, transparent 0, #000 11%, #000 89%, transparent 100%);
   }
 
+  .product-canvas-tablet {
+    --frame-w: clamp(168px, 62vw, 240px);
+  }
+
   .product-track {
     animation-duration: 46s;
+  }
+
+  .product-track-tablet {
+    animation-duration: 58s;
   }
 
   .note-symbol:nth-child(n + 7) {
