@@ -1199,31 +1199,66 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
 --------------------------------*/
 .site-footer{
   border-top: 1px solid var(--border);
-  padding: 26px 0 18px;
+  padding: 34px 0 18px;
   background: color-mix(in srgb, var(--surface) 65%, transparent);
 }
 
 .footer-grid{
   display: grid;
-  gap: 14px;
+  gap: 18px;
   align-items: center;
-}
-@media (min-width: 900px){
-  .footer-grid{
-    grid-template-columns: 1.3fr 0.7fr 0.6fr;
-  }
+  justify-items: center;
+  text-align: center;
+  max-width: 760px;
+  margin-inline: auto;
 }
 
+.footer-brand{
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  max-width: 760px;
+}
 .footer-brand .brand-line{
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+}
+.footer-brand .muted{
+  margin: 0;
+  max-width: 42ch;
+}
+.brand-logo-wrap-footer{
+  padding: 14px 20px;
+  border-radius: 22px;
+}
+.brand-logo-footer{
+  height: 88px;
+  max-width: min(78vw, 640px);
 }
 .footer-links{
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  box-shadow: var(--shadow-sm);
+}
+.footer-block-title{
+  width: 100%;
+  margin: 0 0 2px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .footer-link{
   color: var(--muted);
@@ -1240,9 +1275,20 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
 .footer-social{
   display: flex;
   gap: 10px;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  box-shadow: var(--shadow-sm);
 }
 .social{
+  position: relative;
+  overflow: hidden;
   width: 42px;
   height: 42px;
   border-radius: 14px;
@@ -1250,19 +1296,169 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
   place-items: center;
   border: 1px solid var(--border);
   background: color-mix(in srgb, var(--bg) 85%, transparent);
-  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+  box-shadow: 0 10px 24px rgba(11, 95, 255, 0.08);
+  animation: social-float 4.8s ease-in-out infinite;
+  transition:
+    transform var(--speed) var(--ease),
+    box-shadow var(--speed) var(--ease),
+    border-color var(--speed) var(--ease),
+    background var(--speed) var(--ease);
+}
+.social::before{
+  content: "";
+  position: absolute;
+  inset: -35%;
+  background:
+    radial-gradient(circle at center, rgba(11, 95, 255, 0.28), transparent 58%);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 240ms var(--ease), transform 240ms var(--ease);
+}
+.social svg{
+  position: relative;
+  z-index: 1;
+  transition: transform 240ms var(--ease), stroke 240ms var(--ease);
 }
 .social:hover{
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
+  transform: translateY(-4px) scale(1.06);
+  border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+  background: color-mix(in srgb, var(--primary) 14%, var(--bg));
+  box-shadow: 0 16px 34px rgba(11, 95, 255, 0.2);
+}
+.social:hover::before{
+  opacity: 1;
+  transform: scale(1);
+}
+.social:hover svg{
+  transform: scale(1.08) rotate(-6deg);
+  stroke: var(--primary);
+}
+.social:nth-child(2){
+  animation-delay: 0.9s;
+}
+.social:nth-child(3){
+  animation-delay: 1.8s;
 }
 
 .footer-bottom{
-  margin-top: 14px;
-  padding-top: 14px;
+  margin-top: 24px;
+  padding-top: 16px;
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-weight: 700;
+  text-align: center;
+}
+
+@keyframes social-float{
+  0%, 100%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-4px);
+  }
+}
+
+@media (min-width: 1200px){
+  .site-footer{
+    padding: 40px 0 20px;
+  }
+  .footer-grid{
+    gap: 22px;
+  }
+  .footer-brand{
+    gap: 14px;
+  }
+  .footer-links,
+  .footer-social{
+    max-width: 560px;
+  }
+  .brand-logo-wrap-footer{
+    padding: 16px 22px;
+  }
+  .brand-logo-footer{
+    height: 96px;
+    max-width: min(60vw, 680px);
+  }
+}
+
+@media (max-width: 980px){
+  .site-footer{
+    padding: 30px 0 18px;
+  }
+  .footer-grid{
+    gap: 16px;
+  }
+  .footer-brand{
+    max-width: 620px;
+  }
+  .footer-links,
+  .footer-social{
+    max-width: 560px;
+    padding: 12px 14px;
+    border-radius: 18px;
+  }
+  .brand-logo-wrap-footer{
+    padding: 12px 16px;
+    border-radius: 20px;
+  }
+  .brand-logo-footer{
+    height: 76px;
+    max-width: min(84vw, 560px);
+  }
+  .footer-links{
+    gap: 10px;
+  }
+}
+
+@media (max-width: 640px){
+  .site-footer{
+    padding: 26px 0 16px;
+  }
+  .footer-grid{
+    gap: 14px;
+  }
+  .footer-brand{
+    gap: 10px;
+  }
+  .footer-brand .muted{
+    max-width: 28ch;
+    font-size: 0.94rem;
+  }
+  .brand-logo-wrap-footer{
+    width: 100%;
+    max-width: min(100%, 360px);
+    padding: 10px 12px;
+    border-radius: 18px;
+  }
+  .brand-logo-footer{
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  .footer-links{
+    width: 100%;
+    gap: 8px;
+    padding: 12px;
+  }
+  .footer-link{
+    width: 100%;
+    padding: 10px 12px;
+  }
+  .footer-social{
+    width: 100%;
+    max-width: min(100%, 360px);
+    gap: 8px;
+    padding: 12px;
+  }
+  .social{
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+  .footer-bottom{
+    margin-top: 18px;
+    padding-top: 14px;
+  }
 }
 
 /* ------------------------------
@@ -1439,6 +1635,16 @@ html.gsap-ready .reveal{
   .reveal{
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
+  }
+  .social{
+    animation: none !important;
+    transform: none !important;
+  }
+  .social::before{
+    transition: none !important;
+  }
+  .social svg{
     transition: none !important;
   }
   .btn, .chip, .service-card, .project, .social, .nav-link{ transition: none !important; }
