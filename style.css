@@ -23,7 +23,7 @@
 
   --focus: 0 0 0 3px rgba(11, 95, 255, 0.28);
 
-  --header-h: 72px;
+  --header-h: 116px;
   --speed: 180ms;
   --ease: cubic-bezier(.2,.8,.2,1);
   --reveal-ease: cubic-bezier(.16,1,.3,1);
@@ -143,6 +143,7 @@ body{
   align-items: center;
   justify-content: space-between;
   gap: 14px;
+  min-width: 0;
   overflow: visible;
 }
 
@@ -150,7 +151,33 @@ body{
   display: flex;
   align-items: center;
   gap: 10px;
-  min-width: 170px;
+  min-width: 0;
+  max-width: min(100%, 520px);
+  flex: 0 1 auto;
+}
+.brand-logo-wrap{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 20px;
+  background: #020817;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 10px 28px rgba(2, 8, 23, 0.28);
+  max-width: 100%;
+}
+.brand-logo{
+  width: 100%;
+  height: 82px;
+  max-width: min(42vw, 500px);
+  object-fit: contain;
+}
+.brand-logo-wrap-footer{
+  padding: 12px 18px;
+}
+.brand-logo-footer{
+  height: 82px;
+  max-width: min(72vw, 620px);
 }
 .brand-mark{
   width: 12px;
@@ -175,8 +202,10 @@ body{
 .nav{
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 10px;
+  flex: 1 1 auto;
+  min-width: 0;
   position: relative;
   z-index: 10010;
 }
@@ -185,6 +214,7 @@ body{
   display: none;
   align-items: center;
   gap: 4px;
+  min-width: 0;
 }
 
 .nav-link{
@@ -193,6 +223,7 @@ body{
   color: var(--muted);
   font-weight: 600;
   font-size: 0.95rem;
+  white-space: nowrap;
   transition: background var(--speed) var(--ease), color var(--speed) var(--ease);
 }
 .nav-link:hover{
@@ -230,6 +261,7 @@ html[data-theme="dark"] .nav-cta:hover{
   display: flex;
   align-items: center;
   gap: 8px;
+  flex: 0 0 auto;
 }
 
 .icon-btn{
@@ -388,17 +420,64 @@ html[data-theme="dark"] .icon-moon{ display: block; }
   margin-top: 4px;
 }
 
-@media (min-width: 980px){
+@media (min-width: 981px){
   .nav-toggle{ display: none; }
   .nav-menu{
     display: flex;
     position: static;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-inline: auto;
     padding: 0;
     border: 0;
     background: transparent;
     box-shadow: none;
   }
   .nav-menu.is-open{ display: flex; }
+}
+
+@media (min-width: 981px) and (max-width: 1180px){
+  .header-inner{
+    gap: 10px;
+  }
+  .brand{
+    max-width: 400px;
+  }
+  .brand-logo-wrap{
+    padding: 10px 14px;
+  }
+  .brand-logo{
+    height: 68px;
+    max-width: min(32vw, 360px);
+  }
+  .nav{
+    gap: 8px;
+  }
+  .nav-menu{
+    gap: 2px;
+  }
+  .nav-link{
+    padding: 8px 8px;
+    font-size: 0.88rem;
+  }
+  .header-actions{
+    gap: 6px;
+  }
+  .icon-btn{
+    width: 42px;
+    height: 42px;
+  }
+  .lang-btn{
+    min-width: 48px;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 980px){
+  .brand-logo{
+    height: 72px;
+    max-width: min(44vw, 420px);
+  }
 }
 
 @media (max-width: 700px){
@@ -409,6 +488,10 @@ html[data-theme="dark"] .icon-moon{ display: block; }
     align-items: center;
   }
   .brand{ min-width: 0; }
+  .brand-logo{
+    height: 56px;
+    max-width: min(58vw, 310px);
+  }
   .brand-name{ font-size: 0.95rem; }
   .brand-sub{ font-size: 0.78rem; }
   .nav{
