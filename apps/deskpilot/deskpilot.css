@@ -1,11 +1,16 @@
-html,
-body {
-  max-width: 100%;
+/* DeskPilot accent palette */
+.deskpilot {
+  --dp-1: #6366f1; /* indigo  – primary DeskPilot accent */
+  --dp-2: #06b6d4; /* cyan    */
+  --dp-3: #f43f5e; /* rose    */
+  --dp-4: #10b981; /* green   */
+  --dp-5: #f59e0b; /* amber   */
+  width: 100%;
   overflow-x: hidden;
 }
 
-.deskpilot {
-  width: 100%;
+html, body {
+  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -87,18 +92,62 @@ html[data-theme="dark"] .sym-k {
   opacity: 0.18;
 }
 
-.deskpilot-hero {
-  padding-top: 44px;
+/* ── Control symbol color variety ── */
+.sym-a {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.44), rgba(255,255,255,0.08) 38%, transparent 58%),
+    radial-gradient(circle at 70% 70%, color-mix(in srgb, #6366f1 60%, transparent), color-mix(in srgb, #8b5cf6 44%, transparent) 72%, transparent),
+    color-mix(in srgb, var(--bg) 84%, transparent);
+  border-color: color-mix(in srgb, #6366f1 28%, var(--border));
+}
+.sym-b {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.42), rgba(255,255,255,0.08) 36%, transparent 58%),
+    radial-gradient(circle at 70% 70%, color-mix(in srgb, #06b6d4 60%, transparent), color-mix(in srgb, #0b5fff 44%, transparent) 72%, transparent),
+    color-mix(in srgb, var(--bg) 84%, transparent);
+  border-color: color-mix(in srgb, #06b6d4 28%, var(--border));
+}
+.sym-c {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.38), rgba(255,255,255,0.06) 36%, transparent 58%),
+    radial-gradient(circle at 70% 70%, color-mix(in srgb, #f43f5e 52%, transparent), color-mix(in srgb, #f59e0b 38%, transparent) 72%, transparent),
+    color-mix(in srgb, var(--bg) 84%, transparent);
+}
+.sym-d {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.40), rgba(255,255,255,0.07) 36%, transparent 58%),
+    radial-gradient(circle at 70% 70%, color-mix(in srgb, #10b981 58%, transparent), color-mix(in srgb, #06b6d4 42%, transparent) 72%, transparent),
+    color-mix(in srgb, var(--bg) 84%, transparent);
+}
+.sym-e {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.42), rgba(255,255,255,0.08) 36%, transparent 58%),
+    radial-gradient(circle at 70% 70%, color-mix(in srgb, #f59e0b 54%, transparent), color-mix(in srgb, #f43f5e 38%, transparent) 72%, transparent),
+    color-mix(in srgb, var(--bg) 84%, transparent);
 }
 
+/* ── Hero ── */
+.deskpilot-hero {
+  padding-top: 44px;
+  background:
+    radial-gradient(900px 380px at 12% 38%, color-mix(in srgb, var(--dp-1) 9%, transparent), transparent),
+    radial-gradient(700px 320px at 88% 16%, color-mix(in srgb, var(--dp-2) 7%, transparent), transparent);
+}
+
+/* Hero frame – gradient border via pseudo-element */
 .deskpilot-frame {
   display: grid;
   gap: 12px;
   padding: 16px;
-  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: color-mix(in srgb, var(--surface) 75%, transparent);
-  box-shadow: var(--shadow-sm);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--dp-1) 7%, transparent) 0%, transparent 52%),
+    color-mix(in srgb, var(--surface) 75%, transparent);
+  box-shadow:
+    0 20px 50px rgba(99, 102, 241, 0.14),
+    0 4px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--dp-1) 28%, var(--border));
 }
 
 .deskpilot-visual {
@@ -108,25 +157,133 @@ html[data-theme="dark"] .sym-k {
   display: block;
 }
 
+/* Stat boxes – individual accent colors */
 .deskpilot-stat {
   position: static;
   padding: 14px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background: color-mix(in srgb, var(--bg) 85%, transparent);
+  display: grid;
+  gap: 4px;
 }
 
-.stat-a,
-.stat-b {
-  margin: 0;
+.stat-a {
+  border-left: 3px solid var(--dp-1);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--dp-1) 8%, transparent), transparent 60%),
+    color-mix(in srgb, var(--bg) 85%, transparent);
 }
+.stat-b {
+  border-left: 3px solid var(--dp-2);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--dp-2) 8%, transparent), transparent 60%),
+    color-mix(in srgb, var(--bg) 85%, transparent);
+}
+
+.stat-icon {
+  color: var(--muted);
+  opacity: 0.6;
+}
+.stat-a .stat-icon { color: var(--dp-1); opacity: 1; }
+.stat-b .stat-icon { color: var(--dp-2); opacity: 1; }
 
 .stat-label {
   display: block;
   color: var(--muted);
   font-size: 0.84rem;
   font-weight: 700;
-  margin-bottom: 0.2rem;
+}
+
+/* ── Overview cards – per-card accent ── */
+#overview .cards-grid > :nth-child(1) { --card-accent: var(--dp-2); } /* cyan   */
+#overview .cards-grid > :nth-child(2) { --card-accent: var(--dp-1); } /* indigo */
+#overview .cards-grid > :nth-child(3) { --card-accent: var(--dp-3); } /* rose   */
+
+.overview-card {
+  border-top: 3px solid color-mix(in srgb, var(--card-accent, var(--dp-1)) 42%, var(--border));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--card-accent, var(--dp-1)) 9%, transparent) 0%, transparent 52%),
+    color-mix(in srgb, var(--surface) 75%, transparent);
+  transition:
+    transform var(--speed) var(--ease),
+    box-shadow var(--speed) var(--ease),
+    border-color var(--speed) var(--ease);
+}
+.overview-card:hover {
+  transform: translateY(-2px);
+  border-top-color: var(--card-accent, var(--dp-1));
+  box-shadow:
+    0 10px 30px color-mix(in srgb, var(--card-accent, var(--dp-1)) 16%, transparent),
+    var(--shadow-sm);
+}
+.overview-card .card-icon {
+  color: var(--card-accent, var(--dp-1));
+  background: color-mix(in srgb, var(--card-accent, var(--dp-1)) 12%, transparent);
+  border-color: color-mix(in srgb, var(--card-accent, var(--dp-1)) 20%, var(--border));
+}
+
+/* ── Section background tints ── */
+#overview  { background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--dp-2) 4%, transparent) 45%, color-mix(in srgb, var(--dp-2) 4%, transparent) 60%, transparent); }
+#workflow  { background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--dp-1) 4%, transparent) 45%, color-mix(in srgb, var(--dp-1) 4%, transparent) 60%, transparent); }
+#features  { background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--dp-3) 3%, transparent) 45%, color-mix(in srgb, var(--dp-3) 3%, transparent) 60%, transparent); }
+#faq       { background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--dp-4) 3%, transparent) 45%, color-mix(in srgb, var(--dp-4) 3%, transparent) 60%, transparent); }
+#contact   { background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--dp-1) 5%, transparent) 45%, color-mix(in srgb, var(--dp-1) 5%, transparent) 60%, transparent); }
+
+/* ── Steps – DeskPilot accent colors ── */
+.deskpilot .steps > :nth-child(1) { border-left: 3px solid var(--dp-1); background: linear-gradient(90deg, color-mix(in srgb, var(--dp-1) 7%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+.deskpilot .steps > :nth-child(2) { border-left: 3px solid var(--dp-2); background: linear-gradient(90deg, color-mix(in srgb, var(--dp-2) 7%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+.deskpilot .steps > :nth-child(3) { border-left: 3px solid var(--dp-3); background: linear-gradient(90deg, color-mix(in srgb, var(--dp-3) 7%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+.deskpilot .steps > :nth-child(4) { border-left: 3px solid var(--dp-4); background: linear-gradient(90deg, color-mix(in srgb, var(--dp-4) 7%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+
+.deskpilot .steps > :nth-child(1) .step-badge { background: var(--dp-1); box-shadow: 0 6px 18px color-mix(in srgb, var(--dp-1) 36%, transparent); }
+.deskpilot .steps > :nth-child(2) .step-badge { background: var(--dp-2); box-shadow: 0 6px 18px color-mix(in srgb, var(--dp-2) 36%, transparent); }
+.deskpilot .steps > :nth-child(3) .step-badge { background: var(--dp-3); box-shadow: 0 6px 18px color-mix(in srgb, var(--dp-3) 36%, transparent); }
+.deskpilot .steps > :nth-child(4) .step-badge { background: var(--dp-4); box-shadow: 0 6px 18px color-mix(in srgb, var(--dp-4) 36%, transparent); }
+
+/* ── Features: security panel ── */
+.security-panel {
+  border-top: 3px solid var(--dp-1);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--dp-1) 8%, transparent) 0%, transparent 55%),
+    color-mix(in srgb, var(--surface) 75%, transparent);
+}
+
+/* Colored stat values */
+.dp-value--indigo { color: var(--dp-1); font-weight: 900; }
+.dp-value--cyan   { color: var(--dp-2); font-weight: 900; }
+.dp-value--green  { color: var(--dp-4); font-weight: 900; }
+
+/* ── Trust items – DeskPilot colors ── */
+.deskpilot .trust-row > :nth-child(1) { color: color-mix(in srgb, var(--dp-2) 82%, var(--text)); background: color-mix(in srgb, var(--dp-2) 12%, transparent); border-color: color-mix(in srgb, var(--dp-2) 22%, var(--border)); }
+.deskpilot .trust-row > :nth-child(2) { color: color-mix(in srgb, var(--dp-1) 82%, var(--text)); background: color-mix(in srgb, var(--dp-1) 12%, transparent); border-color: color-mix(in srgb, var(--dp-1) 22%, var(--border)); }
+.deskpilot .trust-row > :nth-child(3) { color: color-mix(in srgb, var(--dp-4) 82%, var(--text)); background: color-mix(in srgb, var(--dp-4) 12%, transparent); border-color: color-mix(in srgb, var(--dp-4) 22%, var(--border)); }
+
+/* ── Bullets – DeskPilot green checkmarks ── */
+.deskpilot .bullets li span { color: var(--dp-4); }
+
+/* ── Eyebrow as colored pill ── */
+.deskpilot .eyebrow {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--dp-1) 28%, var(--border));
+  background: color-mix(in srgb, var(--dp-1) 9%, transparent);
+  color: color-mix(in srgb, var(--dp-1) 80%, var(--text));
+  font-size: 0.88rem;
+}
+
+/* ── Brand mark – DeskPilot indigo ── */
+.deskpilot .brand-mark {
+  background: var(--dp-1);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--dp-1) 34%, transparent);
+}
+
+/* ── Contact card ── */
+.deskpilot #contact .card:first-child {
+  border-top: 3px solid var(--dp-1);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--dp-1) 7%, transparent) 0%, transparent 50%),
+    color-mix(in srgb, var(--surface) 75%, transparent);
 }
 
 .legal-main {
