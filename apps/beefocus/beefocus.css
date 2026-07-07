@@ -343,132 +343,194 @@ html[data-theme="dark"] .product-frame {
   color: var(--muted);
 }
 
-/* ── Feature Category Grid ─────────────────────────────────── */
+/* ── Feature Tabs ──────────────────────────────────────────── */
 
-.feat-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+.feat-tabs {
   margin-top: clamp(1.8rem, 4vw, 3rem);
 }
 
-.feat-card {
+.feat-tab-nav {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: clamp(1.1rem, 1.5vw, 1.6rem);
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-bottom: 2px;
+}
+
+.feat-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background var(--speed) var(--ease),
+    border-color var(--speed) var(--ease),
+    color var(--speed) var(--ease),
+    box-shadow var(--speed) var(--ease);
+  white-space: nowrap;
+}
+
+.feat-tab svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity var(--speed) var(--ease);
+}
+
+.feat-tab:hover {
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+  color: var(--text);
+}
+
+.feat-tab.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 32%, transparent);
+}
+
+.feat-tab.is-active svg {
+  opacity: 1;
+}
+
+.feat-panels {
+  margin-top: 20px;
+  min-height: 200px;
+}
+
+.feat-panel {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--surface) 75%, transparent);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--speed) var(--ease), border-color var(--speed) var(--ease);
+  padding: clamp(1.2rem, 2vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.feat-card:hover {
-  border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
-  box-shadow:
-    0 6px 22px color-mix(in srgb, var(--primary) 8%, transparent),
-    var(--shadow-sm);
+.feat-panel.is-active {
+  animation: feat-panel-in 0.3s var(--ease) both;
 }
 
-.feat-card--mac {
-  grid-column: 1 / -1;
+@keyframes feat-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.feat-icon {
+.feat-panel-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feat-panel-head h3 {
+  margin: 0 0 4px;
+}
+
+.feat-panel-head p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.feat-panel-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   background: color-mix(in srgb, var(--primary) 10%, var(--surface));
   color: var(--primary);
-  flex-shrink: 0;
+  border: 1px solid color-mix(in srgb, var(--primary) 16%, var(--border));
 }
 
-.feat-card h3 {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 700;
+.feat-chips {
   display: flex;
-  align-items: center;
-  gap: 8px;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
-.feat-badge {
+.feat-chip {
   display: inline-flex;
   align-items: center;
-  padding: 2px 8px;
+  gap: 6px;
+  padding: 6px 13px;
   border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  background: color-mix(in srgb, var(--primary) 12%, transparent);
-  color: var(--primary);
-  border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 60%, var(--surface));
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  transition:
+    background var(--speed) var(--ease),
+    border-color var(--speed) var(--ease),
+    transform var(--speed) var(--ease);
+  animation: chip-in 0.35s var(--ease) both;
 }
 
-.feat-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
+.feat-chip:nth-child(1)  { animation-delay: 0.04s; }
+.feat-chip:nth-child(2)  { animation-delay: 0.08s; }
+.feat-chip:nth-child(3)  { animation-delay: 0.12s; }
+.feat-chip:nth-child(4)  { animation-delay: 0.16s; }
+.feat-chip:nth-child(5)  { animation-delay: 0.20s; }
+.feat-chip:nth-child(6)  { animation-delay: 0.24s; }
+.feat-chip:nth-child(7)  { animation-delay: 0.28s; }
+.feat-chip:nth-child(8)  { animation-delay: 0.32s; }
+.feat-chip:nth-child(9)  { animation-delay: 0.36s; }
+.feat-chip:nth-child(10) { animation-delay: 0.40s; }
+
+@keyframes chip-in {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
-.feat-list li {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  font-size: 0.88rem;
-  color: var(--muted);
-  line-height: 1.45;
-}
-
-.feat-list li::before {
+.feat-chip::before {
   content: '';
   flex-shrink: 0;
-  display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b5fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.feat-list--cols {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 7px 24px;
-}
-
-html[data-theme="dark"] .feat-list li::before {
+html[data-theme="dark"] .feat-chip::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b8dff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
 }
 
-@media (max-width: 960px) {
-  .feat-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .feat-card--mac {
-    grid-column: 1 / -1;
+.feat-chip:hover {
+  background: color-mix(in srgb, var(--primary) 7%, var(--surface));
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feat-panel.is-active,
+  .feat-chip {
+    animation: none;
   }
 }
 
-@media (max-width: 600px) {
-  .feat-grid {
-    grid-template-columns: 1fr;
-  }
-  .feat-list--cols {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ── end Feature Category Grid ─────────────────────────────── */
+/* ── end Feature Tabs ──────────────────────────────────────── */
 
 @keyframes download-pulse {
   0% {

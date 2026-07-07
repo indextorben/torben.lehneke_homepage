@@ -371,164 +371,203 @@
           <p class="lead">Jede Funktion ist so gestaltet, dass sie deinen Fokus stärkt – nicht lenkt.</p>
         </div>
 
-        <div class="feat-grid reveal">
+        <div class="feat-tabs reveal" id="featTabs">
 
-          <article class="feat-card">
-            <div class="feat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="3"></rect>
-                <path d="M9 12l2 2 4-4"></path>
-              </svg>
+          <nav class="feat-tab-nav" role="tablist" aria-label="Feature-Kategorien">
+            <button class="feat-tab is-active" role="tab" aria-selected="true" aria-controls="ftab-tasks" id="ftab-tasks-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M9 12l2 2 4-4"></path></svg>
+              Aufgaben
+            </button>
+            <button class="feat-tab" role="tab" aria-selected="false" aria-controls="ftab-focus" id="ftab-focus-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+              Fokus & Timer
+            </button>
+            <button class="feat-tab" role="tab" aria-selected="false" aria-controls="ftab-habits" id="ftab-habits-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+              Habits & Wellness
+            </button>
+            <button class="feat-tab" role="tab" aria-selected="false" aria-controls="ftab-journal" id="ftab-journal-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              Journaling
+            </button>
+            <button class="feat-tab" role="tab" aria-selected="false" aria-controls="ftab-goals" id="ftab-goals-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1" fill="currentColor"></circle></svg>
+              Ziele
+            </button>
+            <button class="feat-tab" role="tab" aria-selected="false" aria-controls="ftab-stats" id="ftab-stats-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"></path></svg>
+              Statistiken
+            </button>
+            <button class="feat-tab" role="tab" aria-selected="false" aria-controls="ftab-creative" id="ftab-creative-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path></svg>
+              Kreativität
+            </button>
+            <button class="feat-tab" role="tab" aria-selected="false" aria-controls="ftab-misc" id="ftab-misc-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg>
+              Sonstiges
+            </button>
+          </nav>
+
+          <div class="feat-panels">
+
+            <div class="feat-panel is-active" id="ftab-tasks" role="tabpanel" aria-labelledby="ftab-tasks-btn" tabindex="0">
+              <div class="feat-panel-head">
+                <div class="feat-panel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M9 12l2 2 4-4"></path></svg>
+                </div>
+                <div>
+                  <h3>Aufgabenverwaltung</h3>
+                  <p class="muted">Alles von der schnellen Idee bis zur strukturierten Planung.</p>
+                </div>
+              </div>
+              <div class="feat-chips">
+                <span class="feat-chip">Subtasks & Kategorien</span>
+                <span class="feat-chip">Fälligkeitsdaten</span>
+                <span class="feat-chip">Ordner-Struktur</span>
+                <span class="feat-chip">Task Templates</span>
+                <span class="feat-chip">Quick-Add</span>
+                <span class="feat-chip">Eisenhower-Matrix</span>
+                <span class="feat-chip">Tagesplaner</span>
+                <span class="feat-chip">Kalenderansicht</span>
+                <span class="feat-chip">Papierkorb & Wiederherstellen</span>
+                <span class="feat-chip">Bilder zu Aufgaben</span>
+              </div>
             </div>
-            <h3>Aufgabenverwaltung</h3>
-            <ul class="feat-list">
-              <li>To-do-Liste mit Subtasks, Kategorien & Fälligkeitsdaten</li>
-              <li>Aufgaben in Ordner organisieren</li>
-              <li>Bearbeiten, duplizieren & Papierkorb</li>
-              <li>Aufgaben-Vorlagen für wiederkehrende Todos</li>
-              <li>Quick-Add per Schnelleingabe</li>
-              <li>Eisenhower-Matrix zur Priorisierung</li>
-              <li>Tagesplaner mit strukturierter Tagesansicht</li>
-              <li>Kalenderansicht zur zeitlichen Übersicht</li>
-            </ul>
-          </article>
 
-          <article class="feat-card">
-            <div class="feat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="9"></circle>
-                <path d="M12 7v5l3 3"></path>
-              </svg>
+            <div class="feat-panel" id="ftab-focus" role="tabpanel" aria-labelledby="ftab-focus-btn" tabindex="0" hidden>
+              <div class="feat-panel-head">
+                <div class="feat-panel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+                </div>
+                <div>
+                  <h3>Fokus & Timer</h3>
+                  <p class="muted">Tiefe Konzentration – ohne Ablenkung, mit Struktur.</p>
+                </div>
+              </div>
+              <div class="feat-chips">
+                <span class="feat-chip">Pomodoro-Timer</span>
+                <span class="feat-chip">Anpassbare Intervalle</span>
+                <span class="feat-chip">Fokus-Modus</span>
+                <span class="feat-chip">Countdown-Timer</span>
+                <span class="feat-chip">Zeiterfassung pro Aufgabe</span>
+              </div>
             </div>
-            <h3>Fokus & Timer</h3>
-            <ul class="feat-list">
-              <li>Pomodoro-Timer mit anpassbaren Intervallen</li>
-              <li>Fokus-Modus: Ablenkungsfreies Arbeiten</li>
-              <li>Countdown-Timer</li>
-              <li>Zeiterfassung pro Aufgabe</li>
-            </ul>
-          </article>
 
-          <article class="feat-card">
-            <div class="feat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-              </svg>
+            <div class="feat-panel" id="ftab-habits" role="tabpanel" aria-labelledby="ftab-habits-btn" tabindex="0" hidden>
+              <div class="feat-panel-head">
+                <div class="feat-panel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                </div>
+                <div>
+                  <h3>Habits & Wellness</h3>
+                  <p class="muted">Kleine Gewohnheiten, großer Effekt – jeden Tag.</p>
+                </div>
+              </div>
+              <div class="feat-chips">
+                <span class="feat-chip">Gewohnheits-Tracker</span>
+                <span class="feat-chip">Wasser-Tracker</span>
+                <span class="feat-chip">Schlaf-Tracker</span>
+                <span class="feat-chip">Sport-Tracker</span>
+                <span class="feat-chip">Stimmungs-Tracker</span>
+                <span class="feat-chip">Tägliche Erinnerungen</span>
+              </div>
             </div>
-            <h3>Habit Tracker & Wellness</h3>
-            <ul class="feat-list">
-              <li>Gewohnheits-Tracker für tägliche Routinen</li>
-              <li>Wasser-Tracker mit Erinnerungen</li>
-              <li>Schlaf-Tracker</li>
-              <li>Sport-Tracker</li>
-              <li>Stimmungs-Tracker</li>
-            </ul>
-          </article>
 
-          <article class="feat-card">
-            <div class="feat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                <path d="M8 9h8M8 13h5"></path>
-              </svg>
+            <div class="feat-panel" id="ftab-journal" role="tabpanel" aria-labelledby="ftab-journal-btn" tabindex="0" hidden>
+              <div class="feat-panel-head">
+                <div class="feat-panel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><path d="M8 9h8M8 13h5"></path></svg>
+                </div>
+                <div>
+                  <h3>Journaling & Reflexion</h3>
+                  <p class="muted">Gedanken sortieren, den Tag reflektieren, klar bleiben.</p>
+                </div>
+              </div>
+              <div class="feat-chips">
+                <span class="feat-chip">Fokus-Journal</span>
+                <span class="feat-chip">Dankbarkeits-Journal</span>
+                <span class="feat-chip">Brain Dump</span>
+                <span class="feat-chip">Wochenrückblick</span>
+                <span class="feat-chip">Tages-Motivation</span>
+              </div>
             </div>
-            <h3>Journaling & Reflexion</h3>
-            <ul class="feat-list">
-              <li>Fokus-Journal für tägliche Einträge</li>
-              <li>Dankbarkeits-Journal</li>
-              <li>Brain Dump: Gedanken ungefiltert festhalten</li>
-              <li>Wochenrückblick-Sheet</li>
-              <li>Tages-Motivation</li>
-            </ul>
-          </article>
 
-          <article class="feat-card">
-            <div class="feat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <circle cx="12" cy="12" r="5"></circle>
-                <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
-              </svg>
+            <div class="feat-panel" id="ftab-goals" role="tabpanel" aria-labelledby="ftab-goals-btn" tabindex="0" hidden>
+              <div class="feat-panel-head">
+                <div class="feat-panel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1" fill="currentColor"></circle></svg>
+                </div>
+                <div>
+                  <h3>Ziele</h3>
+                  <p class="muted">Langfristig denken, kurzfristig handeln.</p>
+                </div>
+              </div>
+              <div class="feat-chips">
+                <span class="feat-chip">Langzeitziele</span>
+                <span class="feat-chip">Wochenziele</span>
+                <span class="feat-chip">Lernziele</span>
+              </div>
             </div>
-            <h3>Ziele</h3>
-            <ul class="feat-list">
-              <li>Langzeitziele planen und verfolgen</li>
-              <li>Wochenziele setzen und abhaken</li>
-              <li>Lernziele definieren</li>
-            </ul>
-          </article>
 
-          <article class="feat-card">
-            <div class="feat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 20V10"></path>
-                <path d="M12 20V4"></path>
-                <path d="M6 20v-6"></path>
-              </svg>
+            <div class="feat-panel" id="ftab-stats" role="tabpanel" aria-labelledby="ftab-stats-btn" tabindex="0" hidden>
+              <div class="feat-panel-head">
+                <div class="feat-panel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 20V10M12 20V4M6 20v-6"></path></svg>
+                </div>
+                <div>
+                  <h3>Statistiken & Auswertungen</h3>
+                  <p class="muted">Verstehen, wie du wirklich arbeitest.</p>
+                </div>
+              </div>
+              <div class="feat-chips">
+                <span class="feat-chip">Produktivitäts-Score</span>
+                <span class="feat-chip">Fokus-Statistiken</span>
+                <span class="feat-chip">Pro-Statistiken</span>
+                <span class="feat-chip">Export als CSV</span>
+                <span class="feat-chip">Achievements</span>
+                <span class="feat-chip">Challenges</span>
+              </div>
             </div>
-            <h3>Statistiken & Auswertungen</h3>
-            <ul class="feat-list">
-              <li>Produktivitäts-Score mit Übersicht</li>
-              <li>Detaillierte Fokus-Statistiken</li>
-              <li>Erweiterte Pro-Statistiken</li>
-              <li>Statistik-Export (z.&nbsp;B. als CSV)</li>
-              <li>Achievements & Challenges</li>
-            </ul>
-          </article>
 
-          <article class="feat-card">
-            <div class="feat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 20h9"></path>
-                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path>
-              </svg>
+            <div class="feat-panel" id="ftab-creative" role="tabpanel" aria-labelledby="ftab-creative-btn" tabindex="0" hidden>
+              <div class="feat-panel-head">
+                <div class="feat-panel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path></svg>
+                </div>
+                <div>
+                  <h3>Kreativität & Notizen</h3>
+                  <p class="muted">Ideen landen sofort – ohne Umwege.</p>
+                </div>
+              </div>
+              <div class="feat-chips">
+                <span class="feat-chip">Freie Notizen</span>
+                <span class="feat-chip">Bilder anhängen</span>
+                <span class="feat-chip">Brain Dump</span>
+              </div>
             </div>
-            <h3>Kreativität & Notizen</h3>
-            <ul class="feat-list">
-              <li>Notiz-Bereich für freie Texte</li>
-              <li>Bilder zu Aufgaben hinzufügen</li>
-              <li>Brain Dump für spontane Ideen</li>
-            </ul>
-          </article>
 
-          <article class="feat-card">
-            <div class="feat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path>
-              </svg>
+            <div class="feat-panel" id="ftab-misc" role="tabpanel" aria-labelledby="ftab-misc-btn" tabindex="0" hidden>
+              <div class="feat-panel-head">
+                <div class="feat-panel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg>
+                </div>
+                <div>
+                  <h3>Sonstiges</h3>
+                  <p class="muted">Alles, was den Alltag ein bisschen leichter macht.</p>
+                </div>
+              </div>
+              <div class="feat-chips">
+                <span class="feat-chip">Ambient Sounds</span>
+                <span class="feat-chip">Atemübungen</span>
+                <span class="feat-chip">Finanz-Tracker</span>
+                <span class="feat-chip">Benachrichtigungen</span>
+                <span class="feat-chip">Homescreen-Widget</span>
+                <span class="feat-chip">App-Blocker</span>
+                <span class="feat-chip">Tutorial & Onboarding</span>
+              </div>
             </div>
-            <h3>Sonstiges</h3>
-            <ul class="feat-list">
-              <li>Ambient Sounds für bessere Konzentration</li>
-              <li>Atemübungen (Breathing View)</li>
-              <li>Finanz-Tracker</li>
-              <li>Benachrichtigungen & Erinnerungen</li>
-              <li>Widget-Unterstützung (Homescreen)</li>
-              <li>Website-/App-Blocker-Einstellungen</li>
-              <li>Vollständiges Tutorial & Onboarding</li>
-            </ul>
-          </article>
 
-          <article class="feat-card feat-card--mac">
-            <div class="feat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                <path d="M8 21h8M12 17v4"></path>
-              </svg>
-            </div>
-            <h3>Mac-App <span class="feat-badge">Companion</span></h3>
-            <ul class="feat-list feat-list--cols">
-              <li>Menubar-App für schnellen Zugriff</li>
-              <li>Globale Tastenkürzel (Hotkeys)</li>
-              <li>Command Palette für Navigation</li>
-              <li>Pomodoro-Timer in der Menüleiste</li>
-              <li>Wasser-Tracker & Brain Dump auf dem Mac</li>
-              <li>iCloud-Sync zwischen iPhone & Mac</li>
-            </ul>
-          </article>
-
+          </div>
         </div>
       </div>
     </section>

@@ -62,3 +62,41 @@
 
   rafId = window.requestAnimationFrame(animate);
 })();
+
+(() => {
+  "use strict";
+
+  const tabsRoot = document.getElementById("featTabs");
+  if (!tabsRoot) return;
+
+  const tabs = Array.from(tabsRoot.querySelectorAll(".feat-tab"));
+  const panels = Array.from(tabsRoot.querySelectorAll(".feat-panel"));
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const targetId = tab.getAttribute("aria-controls");
+      const targetPanel = document.getElementById(targetId);
+      if (!targetPanel || tab.classList.contains("is-active")) return;
+
+      tabs.forEach((t) => {
+        t.classList.remove("is-active");
+        t.setAttribute("aria-selected", "false");
+      });
+      panels.forEach((p) => {
+        p.classList.remove("is-active");
+        p.hidden = true;
+      });
+
+      tab.classList.add("is-active");
+      tab.setAttribute("aria-selected", "true");
+      targetPanel.hidden = false;
+      targetPanel.classList.add("is-active");
+    });
+
+    tab.addEventListener("keydown", (e) => {
+      const idx = tabs.indexOf(tab);
+      if (e.key === "ArrowRight") tabs[(idx + 1) % tabs.length].focus();
+      if (e.key === "ArrowLeft") tabs[(idx - 1 + tabs.length) % tabs.length].focus();
+    });
+  });
+})();
