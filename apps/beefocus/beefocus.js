@@ -66,37 +66,35 @@
 (() => {
   "use strict";
 
-  const tabsRoot = document.getElementById("featTabs");
-  if (!tabsRoot) return;
+  const slider = document.getElementById("featSlider");
+  const prevBtn = document.getElementById("featPrev");
+  const nextBtn = document.getElementById("featNext");
+  if (!slider || !prevBtn || !nextBtn) return;
 
-  const tabs = Array.from(tabsRoot.querySelectorAll(".feat-tab"));
-  const panels = Array.from(tabsRoot.querySelectorAll(".feat-panel"));
+  const track = slider.querySelector(".feat-slider-track");
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const targetId = tab.getAttribute("aria-controls");
-      const targetPanel = document.getElementById(targetId);
-      if (!targetPanel || tab.classList.contains("is-active")) return;
+  const cardWidth = () => {
+    const card = track.querySelector(".feat-slider-card");
+    if (!card) return 300;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    return card.offsetWidth + gap;
+  };
 
-      tabs.forEach((t) => {
-        t.classList.remove("is-active");
-        t.setAttribute("aria-selected", "false");
-      });
-      panels.forEach((p) => {
-        p.classList.remove("is-active");
-        p.hidden = true;
-      });
+  const updateButtons = () => {
+    prevBtn.disabled = slider.scrollLeft <= 4;
+    nextBtn.disabled = slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 4;
+  };
 
-      tab.classList.add("is-active");
-      tab.setAttribute("aria-selected", "true");
-      targetPanel.hidden = false;
-      targetPanel.classList.add("is-active");
-    });
-
-    tab.addEventListener("keydown", (e) => {
-      const idx = tabs.indexOf(tab);
-      if (e.key === "ArrowRight") tabs[(idx + 1) % tabs.length].focus();
-      if (e.key === "ArrowLeft") tabs[(idx - 1 + tabs.length) % tabs.length].focus();
-    });
+  prevBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: -cardWidth(), behavior: "smooth" });
   });
+
+  nextBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: cardWidth(), behavior: "smooth" });
+  });
+
+  slider.addEventListener("scroll", updateButtons, { passive: true });
+  window.addEventListener("resize", updateButtons, { passive: true });
+
+  updateButtons();
 })();
