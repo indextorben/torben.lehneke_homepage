@@ -180,11 +180,12 @@ body{
   max-width: min(72vw, 620px);
 }
 .brand-mark{
-  width: 12px;
-  height: 12px;
-  border-radius: 4px;
-  background: var(--primary);
-  box-shadow: 0 8px 22px rgba(11,95,255,0.25);
+  width: 100px;
+  height: 100px;
+  border-radius: 22px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 .brand-text{
   display: grid;
@@ -1239,6 +1240,11 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+.footer-brand .brand-mark{
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
 }
 .footer-brand .muted{
   margin: 0;
