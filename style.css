@@ -1794,4 +1794,90 @@ html.gsap-ready .reveal{
     radial-gradient(circle at 70% 70%, color-mix(in srgb, #10b981 58%, transparent), color-mix(in srgb, #0b5fff 44%, transparent) 72%, transparent);
 }
 
+/* ── Service card gradient background ── */
+.service-card{
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--card-accent, var(--primary)) 9%, transparent) 0%,
+      transparent 52%),
+    color-mix(in srgb, var(--surface) 75%, transparent);
+}
+
+/* ── Step cards – left border + gradient bg ── */
+.steps > :nth-child(1){ border-left: 3px solid var(--primary);  background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 7%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+.steps > :nth-child(2){ border-left: 3px solid #8b5cf6; background: linear-gradient(90deg, color-mix(in srgb, #8b5cf6 7%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+.steps > :nth-child(3){ border-left: 3px solid #10b981; background: linear-gradient(90deg, color-mix(in srgb, #10b981 7%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+.steps > :nth-child(4){ border-left: 3px solid #f59e0b; background: linear-gradient(90deg, color-mix(in srgb, #f59e0b 7%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+
+/* ── Trust items – individual colors ── */
+.trust-row > :nth-child(1){ color: color-mix(in srgb, var(--primary) 82%, var(--text)); background: color-mix(in srgb, var(--primary) 13%, transparent); border-color: color-mix(in srgb, var(--primary) 24%, var(--border)); }
+.trust-row > :nth-child(2){ color: color-mix(in srgb, #10b981 82%, var(--text)); background: color-mix(in srgb, #10b981 13%, transparent); border-color: color-mix(in srgb, #10b981 24%, var(--border)); }
+.trust-row > :nth-child(3){ color: color-mix(in srgb, #f59e0b 82%, var(--text)); background: color-mix(in srgb, #f59e0b 13%, transparent); border-color: color-mix(in srgb, #f59e0b 24%, var(--border)); }
+
+/* ── Section background tints per section ── */
+#leistungen{  background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, #0b5fff  4%, transparent) 40%, color-mix(in srgb, #0b5fff  4%, transparent) 60%, transparent); }
+#ueberuns{    background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, #10b981  4%, transparent) 40%, color-mix(in srgb, #10b981  4%, transparent) 60%, transparent); }
+#ablauf{      background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, #8b5cf6  4%, transparent) 40%, color-mix(in srgb, #8b5cf6  4%, transparent) 60%, transparent); }
+#referenzen{  background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, #f59e0b  3%, transparent) 40%, color-mix(in srgb, #f59e0b  3%, transparent) 60%, transparent); }
+#bewertungen{ background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, #06b6d4  4%, transparent) 40%, color-mix(in srgb, #06b6d4  4%, transparent) 60%, transparent); }
+#faq{         background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, #6366f1  3%, transparent) 40%, color-mix(in srgb, #6366f1  3%, transparent) 60%, transparent); }
+#kontakt{     background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, #10b981  3%, transparent) 40%, color-mix(in srgb, #10b981  3%, transparent) 60%, transparent); }
+
+/* ── FAQ – colored left accent when open ── */
+.acc-item:has(.acc-btn[aria-expanded="true"]){
+  border-left: 3px solid var(--primary);
+  background: color-mix(in srgb, var(--primary) 5%, var(--surface));
+}
+
+/* ── Project thumbs – individual gradient per project ── */
+.projects-grid > :nth-child(1) .project-thumb{
+  background:
+    radial-gradient(600px 240px at 18% 20%, color-mix(in srgb, var(--primary) 30%, transparent), transparent 55%),
+    radial-gradient(500px 200px at 82% 28%, color-mix(in srgb, #8b5cf6 24%, transparent), transparent 55%);
+}
+.projects-grid > :nth-child(2) .project-thumb{
+  background:
+    radial-gradient(600px 240px at 14% 18%, color-mix(in srgb, #10b981 30%, transparent), transparent 55%),
+    radial-gradient(500px 200px at 84% 24%, color-mix(in srgb, #06b6d4 24%, transparent), transparent 55%);
+}
+.projects-grid > :nth-child(3) .project-thumb{
+  background:
+    radial-gradient(600px 240px at 10% 14%, color-mix(in srgb, #8b5cf6 30%, transparent), transparent 55%),
+    radial-gradient(500px 200px at 88% 22%, color-mix(in srgb, #f43f5e 22%, transparent), transparent 55%);
+}
+
+/* ── Footer – rainbow gradient top stripe ── */
+.site-footer{
+  border-top: none;
+  position: relative;
+}
+.site-footer::before{
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary) 0%, #8b5cf6 33%, #10b981 66%, #f59e0b 100%);
+}
+
+/* ── Hero section – background glow ── */
+.hero.section{
+  background:
+    radial-gradient(900px 380px at 15% 40%, color-mix(in srgb, var(--primary) 7%, transparent), transparent),
+    radial-gradient(700px 320px at 85% 20%, color-mix(in srgb, var(--secondary) 6%, transparent), transparent);
+}
+
+/* ── Eyebrow pill – colorful gradient border ── */
+.eyebrow{
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--primary) 24%, var(--border));
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  font-size: 0.88rem;
+}
+
+/* ── Testimonial cards – subtle star color as tint ── */
+#bewertungen .cards-grid > :nth-child(1){ background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 6%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+#bewertungen .cards-grid > :nth-child(2){ background: linear-gradient(135deg, color-mix(in srgb, #10b981 6%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+#bewertungen .cards-grid > :nth-child(3){ background: linear-gradient(135deg, color-mix(in srgb, #f59e0b 6%, transparent), transparent 55%), color-mix(in srgb, var(--surface) 75%, transparent); }
+
 /* ── end Color enhancements ─────────────────────────────────── */
