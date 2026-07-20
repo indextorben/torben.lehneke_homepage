@@ -1,0 +1,17 @@
+{
+  "name": "Torben Lehneke IT",
+  "short_name": "Torben Lehneke",
+  "description": "IT-Freelancer in Neubrandenburg für App- & Webentwicklung",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#0b5fff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

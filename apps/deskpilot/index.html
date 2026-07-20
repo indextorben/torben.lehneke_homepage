@@ -3,25 +3,109 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="DeskPilot macht dein iPhone zur intelligenten Fernbedienung für deinen Mac - mit Trackpad, Tastatur, Quick Actions und Makros."
-    />
+    <meta name="description" content="DeskPilot macht dein iPhone zur intelligenten Fernbedienung für deinen Mac – Trackpad, Tastatur, Quick Actions und Makros lokal und ohne Cloud." />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="Torben Lehneke" />
     <meta name="theme-color" content="#0b5fff" />
-    <title>DeskPilot - Mac per iPhone steuern</title>
+    <link rel="canonical" href="https://torbenlehneke.de/apps/deskpilot/" />
 
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b5fff'/%3E%3Ctext x='50' y='64' font-size='56' text-anchor='middle' fill='white' font-family='Arial, sans-serif'%3EDP%3C/text%3E%3C/svg%3E"
-    />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://torbenlehneke.de/apps/deskpilot/" />
+    <meta property="og:site_name" content="DeskPilot" />
+    <meta property="og:title" content="DeskPilot – Mac per iPhone steuern | Trackpad, Makros & Quick Actions" />
+    <meta property="og:description" content="Steuere deinen Mac vom iPhone aus: Medien, Trackpad, Tastatur, Quick Actions und Makros – alles lokal, ohne Cloud." />
+    <meta property="og:image" content="https://torbenlehneke.de/apps/deskpilot/assets/deskpilot-hero.png" />
+    <meta property="og:locale" content="de_DE" />
 
-    <link rel="preconnect" href=".." />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DeskPilot – Mac per iPhone steuern" />
+    <meta name="twitter:description" content="Medien, Trackpad, Tastatur, Quick Actions und Makros – alles lokal, ohne Cloud." />
+    <meta name="twitter:image" content="https://torbenlehneke.de/apps/deskpilot/assets/deskpilot-hero.png" />
+
+    <title>DeskPilot – Mac per iPhone steuern | Trackpad, Makros & Quick Actions</title>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="stylesheet" href="../../style.css" />
     <link rel="stylesheet" href="deskpilot.css" />
+
+    <!-- Schema.org: BreadcrumbList + SoftwareApplication + FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Startseite",
+              "item": "https://torbenlehneke.de/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "DeskPilot",
+              "item": "https://torbenlehneke.de/apps/deskpilot/"
+            }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "DeskPilot",
+          "url": "https://torbenlehneke.de/apps/deskpilot/",
+          "description": "DeskPilot macht dein iPhone zur intelligenten Fernbedienung für deinen Mac – mit Trackpad, Tastatur, Quick Actions und Makros über lokale Verbindung.",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "iOS, macOS",
+          "author": {
+            "@type": "Person",
+            "name": "Torben Lehneke",
+            "url": "https://torbenlehneke.de"
+          },
+          "inLanguage": ["de", "en"],
+          "featureList": "Mediensteuerung, Trackpad, Tastatur-Remote, Quick Actions, Makros, lokale Verbindung"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Funktioniert DeskPilot mit jedem Mac?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "DeskPilot ist für moderne macOS-Versionen geplant und wird für aktuelle Mac-Hardware optimiert."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Welche Steuerungen sind in DeskPilot enthalten?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Mediensteuerung, Trackpad, Tastatur-Remote, Quick Actions und Makros sind zentraler Bestandteil von DeskPilot."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Gibt es Mehrsprachigkeit in DeskPilot?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja, die App ist für Deutsch und Englisch ausgelegt."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
 
   <body class="deskpilot" data-i18n-page="deskpilot-index">
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
     <div class="symbol-scene" aria-hidden="true">
       <span class="control-symbol sym-a" data-depth="1.2">MAC</span>
       <span class="control-symbol sym-b" data-depth="0.9">PHONE</span>
@@ -152,8 +236,9 @@
             <div class="deskpilot-frame">
               <img
                 src="assets/deskpilot-hero.png"
-                alt="DeskPilot Dashboard auf iPad"
+                alt="DeskPilot App-Dashboard auf dem iPad: Mac-Fernsteuerung mit Trackpad, Makros und Quick Actions"
                 class="deskpilot-visual"
+                decoding="async"
               />
               <div class="deskpilot-stat stat-a">
                 <div class="stat-icon" aria-hidden="true">
@@ -390,7 +475,7 @@
           <a href="#overview" class="footer-link">Highlights</a>
           <a href="#workflow" class="footer-link">Ablauf</a>
           <a href="#features" class="footer-link">Features</a>
-          <a href="../../index.html#kontakt" class="footer-link">Impressum</a>
+          <a href="../../impressum.html" class="footer-link">Impressum</a>
           <a href="datenschutz.html" class="footer-link">Datenschutz</a>
           <a href="agb.html" class="footer-link">AGB</a>
           <a href="mailto:lehneketorben@gmail.com" class="footer-link">Support</a>

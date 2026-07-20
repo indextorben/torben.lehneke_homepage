@@ -1,26 +1,147 @@
-﻿<!-- index.html -->
+<!-- index.html -->
 <!doctype html>
 <html lang="de">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="Torben Lehneke – IT in Neubrandenburg. Schnell, zuverlässig und transparent. Jetzt Kontakt anfragen." />
+  <meta name="description" content="Torben Lehneke – IT-Freelancer in Neubrandenburg für App- & Webentwicklung. Schnell, zuverlässig und transparent. Jetzt unverbindlich anfragen." />
   <meta name="robots" content="index,follow" />
+  <meta name="author" content="Torben Lehneke" />
   <meta name="theme-color" content="#0b5fff" />
   <link rel="canonical" href="https://torbenlehneke.de/" />
-  <meta property="og:url" content="https://torbenlehneke.de/" />
-  <title>
-    Torben Lehneke | IT in Neubrandenburg – Schnelle IT-Lösungen für Ihr
-    Unternehmen
-  </title>
 
-  <link rel="preconnect" href="." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://torbenlehneke.de/" />
+  <meta property="og:site_name" content="Torben Lehneke" />
+  <meta property="og:title" content="Torben Lehneke | IT in Neubrandenburg – App & Webentwicklung" />
+  <meta property="og:description" content="IT-Freelancer in Neubrandenburg für App- & Webentwicklung. Schnell, zuverlässig, transparent – jetzt unverbindlich anfragen." />
+  <meta property="og:image" content="https://torbenlehneke.de/assets/image.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="1000" />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Torben Lehneke | IT in Neubrandenburg – App & Webentwicklung" />
+  <meta name="twitter:description" content="IT-Freelancer für App- & Webentwicklung in Neubrandenburg. Schnell, zuverlässig, transparent." />
+  <meta name="twitter:image" content="https://torbenlehneke.de/assets/image.png" />
+
+  <title>Torben Lehneke | IT in Neubrandenburg – App & Webentwicklung</title>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Schema.org: WebSite + Person + LocalBusiness + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://torbenlehneke.de/#website",
+        "name": "Torben Lehneke IT",
+        "url": "https://torbenlehneke.de",
+        "inLanguage": "de",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://torbenlehneke.de/#kontakt",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://torbenlehneke.de/#person",
+        "name": "Torben Lehneke",
+        "url": "https://torbenlehneke.de",
+        "email": "lehneketorben@gmail.com",
+        "jobTitle": "IT-Freelancer",
+        "sameAs": [
+          "https://www.instagram.com/torben.lehneke_/",
+          "https://www.linkedin.com/in/torben-lehneke-46a2b82b6"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://torbenlehneke.de/#business",
+        "name": "Torben Lehneke IT",
+        "url": "https://torbenlehneke.de",
+        "email": "lehneketorben@gmail.com",
+        "description": "IT-Freelancer in Neubrandenburg für App- und Webentwicklung. Beratung, Konzept, Umsetzung und Support.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Neubrandenburg",
+          "addressRegion": "Mecklenburg-Vorpommern",
+          "addressCountry": "DE"
+        },
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.5567,
+            "longitude": 13.2603
+          }
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "17:00",
+          "closes": "22:00"
+        },
+        "founder": { "@id": "https://torbenlehneke.de/#person" },
+        "sameAs": [
+          "https://www.instagram.com/torben.lehneke_/",
+          "https://www.linkedin.com/in/torben-lehneke-46a2b82b6"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie schnell bekomme ich eine Rückmeldung?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In der Regel melde ich mich innerhalb kurzer Zeit zurück – oft noch am selben Tag."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Gibt es ein unverbindliches Angebot?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Du bekommst ein transparentes Angebot, bevor ich starte – ohne Verpflichtung."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Arbeitest du auch in meiner Region?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ich bin in Neubrandenburg aktiv und je nach Projekt auch darüber hinaus – frag einfach kurz an."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet das?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kommt auf Umfang und Anforderungen an. Du bekommst eine klare Aufschlüsselung, bevor es losgeht."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body data-i18n-page="home-index">
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <div class="orb-scene" aria-hidden="true">
     <span class="orb orb-a" data-depth="1.2"></span>
     <span class="orb orb-b" data-depth="0.9"></span>

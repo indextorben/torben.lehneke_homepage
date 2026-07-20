@@ -4,17 +4,133 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="BeeFocus ist die fokussierte To-do- und Fokus-App mit Morgen-Übersicht, Pomodoro-Timer und Kalenderansicht." />
+  <meta name="description" content="BeeFocus – die Fokus- und To-do-App für iOS mit Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker und Kalenderansicht. Jetzt kostenlos im App Store laden." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Torben Lehneke" />
   <meta name="theme-color" content="#0b5fff" />
-  <title>BeeFocus - Fokus- und To-do-App</title>
+  <link rel="canonical" href="https://torbenlehneke.de/apps/beefocus/" />
 
-  <link rel="preconnect" href=".." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://torbenlehneke.de/apps/beefocus/" />
+  <meta property="og:site_name" content="BeeFocus" />
+  <meta property="og:title" content="BeeFocus – Fokus- & To-do-App für iOS | Pomodoro & Habit-Tracker" />
+  <meta property="og:description" content="Strukturiere deinen Tag mit BeeFocus: Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker und Kalender in einer App. Kostenlos für iPhone & iPad." />
+  <meta property="og:image" content="https://torbenlehneke.de/apps/beefocus/assets/BeeFocus1.png" />
+  <meta property="og:image:width" content="1448" />
+  <meta property="og:image:height" content="1086" />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BeeFocus – Fokus- & To-do-App für iOS | Pomodoro & Habit-Tracker" />
+  <meta name="twitter:description" content="Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker und Kalender in einer App. Kostenlos für iPhone & iPad." />
+  <meta name="twitter:image" content="https://torbenlehneke.de/apps/beefocus/assets/BeeFocus1.png" />
+
+  <title>BeeFocus – Fokus- & To-do-App für iOS | Pomodoro & Habit-Tracker</title>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="beefocus.css" />
+
+  <!-- Schema.org: BreadcrumbList + MobileApplication + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startseite",
+            "item": "https://torbenlehneke.de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "BeeFocus",
+            "item": "https://torbenlehneke.de/apps/beefocus/"
+          }
+        ]
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "BeeFocus",
+        "url": "https://torbenlehneke.de/apps/beefocus/",
+        "description": "Fokus- und To-do-App für iOS mit Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker, Journaling und Kalenderansicht.",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "iOS",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "downloadUrl": "https://apps.apple.com/us/app/beefocus/id6753998003",
+        "author": {
+          "@type": "Person",
+          "name": "Torben Lehneke",
+          "url": "https://torbenlehneke.de"
+        },
+        "inLanguage": ["de", "en"],
+        "featureList": "Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker, Kalenderansicht, Cloud-Sync, Journaling, Statistiken"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie funktioniert die Übersicht in BeeFocus?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BeeFocus sammelt offene Aufgaben, Termine und Prioritäten in einem kompakten Screen. Du siehst sofort, was heute wichtig ist, und kannst direkt starten."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich Pausenlängen anpassen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Du kannst kurze und lange Pausen frei definieren und Alerts aktivieren, damit deine Sessions sauber getaktet bleiben."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie synchronisiert BeeFocus?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BeeFocus nutzt Cloud-Sync mit verschlüsseltem Abgleich. Änderungen erscheinen auf allen Geräten innerhalb weniger Sekunden."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Gibt es einen Papierkorb und Wiederherstellung?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Du kannst gelöschte Aufgaben wiederherstellen oder automatisch nach einem Zeitraum entfernen lassen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Unterstützt BeeFocus mehrere Sprachen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, BeeFocus ist aktuell auf Deutsch und Englisch verfügbar. Weitere Sprachen sind geplant."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="beefocus" data-i18n-page="beefocus-index">
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <div class="symbol-scene" aria-hidden="true">
     <span class="note-symbol sym-a" data-depth="1.2">+</span>
     <span class="note-symbol sym-b" data-depth="0.9">=</span>
@@ -122,13 +238,17 @@
             <figure class="mockup phone tilt" data-parallax="0.22">
               <img
                 src="assets/Iphone/Tagesplaner.PNG"
-                alt="BeeFocus Tagesplaner auf einem Smartphone" />
+                alt="BeeFocus Tagesplaner auf einem iPhone – Morgen-Übersicht mit Aufgaben und Timer"
+                fetchpriority="high"
+                decoding="async" />
               <span class="mockup-gloss"></span>
             </figure>
             <figure class="mockup tablet" data-parallax="0.12">
               <img
                 src="assets/Ipad/Tagesplaner.png"
-                alt="BeeFocus Tagesplaner auf dem iPad" />
+                alt="BeeFocus Tagesplaner auf dem iPad – Tagesübersicht mit Kalender"
+                loading="lazy"
+                decoding="async" />
               <span class="mockup-gloss"></span>
             </figure>
           </div>
@@ -236,31 +356,31 @@
       <div class="product-canvas reveal" aria-label="Automatische BeeFocus Produktbild-Slideshow">
         <div class="product-track">
           <figure class="product-frame">
-            <img src="assets/Iphone/Tagesplaner.PNG" alt="BeeFocus Tagesplaner auf dem iPhone" />
+            <img src="assets/Iphone/Tagesplaner.PNG" alt="BeeFocus Tagesplaner auf dem iPhone" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame">
-            <img src="assets/Iphone/Tasks.PNG" alt="BeeFocus Aufgabenliste auf dem iPhone" />
+            <img src="assets/Iphone/Tasks.PNG" alt="BeeFocus Aufgabenliste auf dem iPhone" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame">
-            <img src="assets/Iphone/Addtodo.PNG" alt="Neue Aufgabe in BeeFocus auf dem iPhone" />
+            <img src="assets/Iphone/Addtodo.PNG" alt="Neue Aufgabe in BeeFocus auf dem iPhone" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame">
-            <img src="assets/Iphone/Timer.PNG" alt="BeeFocus Timer auf dem iPhone" />
+            <img src="assets/Iphone/Timer.PNG" alt="BeeFocus Pomodoro-Timer auf dem iPhone" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame">
-            <img src="assets/Iphone/FokusMode.PNG" alt="BeeFocus Fokusmodus auf dem iPhone" />
+            <img src="assets/Iphone/FokusMode.PNG" alt="BeeFocus Fokusmodus auf dem iPhone" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame">
-            <img src="assets/Iphone/Statistik.PNG" alt="BeeFocus Statistik auf dem iPhone" />
+            <img src="assets/Iphone/Statistik.PNG" alt="BeeFocus Produktivitätsstatistik auf dem iPhone" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame">
-            <img src="assets/Iphone/FokusStore.PNG" alt="BeeFocus Fokus-Store auf dem iPhone" />
+            <img src="assets/Iphone/FokusStore.PNG" alt="BeeFocus Fokus-Store auf dem iPhone" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame">
-            <img src="assets/Iphone/Settings.PNG" alt="BeeFocus Einstellungen auf dem iPhone" />
+            <img src="assets/Iphone/Settings.PNG" alt="BeeFocus Einstellungen auf dem iPhone" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame">
-            <img src="assets/Iphone/Paywall.PNG" alt="BeeFocus Pro Ansicht auf dem iPhone" />
+            <img src="assets/Iphone/Paywall.PNG" alt="BeeFocus Pro Upgrade auf dem iPhone" loading="lazy" decoding="async" />
           </figure>
 
           <figure class="product-frame" aria-hidden="true">
@@ -296,34 +416,34 @@
       <div class="product-canvas product-canvas-tablet reveal" aria-label="Automatische BeeFocus iPad-Produktbild-Slideshow">
         <div class="product-track product-track-tablet">
           <figure class="product-frame product-frame-tablet">
-            <img src="assets/Ipad/Tagesplaner.png" alt="BeeFocus Tagesplaner auf dem iPad" />
+            <img src="assets/Ipad/Tagesplaner.png" alt="BeeFocus Tagesplaner auf dem iPad" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame product-frame-tablet">
-            <img src="assets/Ipad/Tasks.png" alt="BeeFocus Aufgabenliste auf dem iPad" />
+            <img src="assets/Ipad/Tasks.png" alt="BeeFocus Aufgabenliste auf dem iPad" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame product-frame-tablet">
-            <img src="assets/Ipad/Addtodo.png" alt="Neue Aufgabe in BeeFocus auf dem iPad" />
+            <img src="assets/Ipad/Addtodo.png" alt="Neue Aufgabe in BeeFocus auf dem iPad" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame product-frame-tablet">
-            <img src="assets/Ipad/Timer.png" alt="BeeFocus Timer auf dem iPad" />
+            <img src="assets/Ipad/Timer.png" alt="BeeFocus Pomodoro-Timer auf dem iPad" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame product-frame-tablet">
-            <img src="assets/Ipad/FokusMode.png" alt="BeeFocus Fokusmodus auf dem iPad" />
+            <img src="assets/Ipad/FokusMode.png" alt="BeeFocus Fokusmodus auf dem iPad" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame product-frame-tablet">
-            <img src="assets/Ipad/HabitTracker.png" alt="BeeFocus Habit Tracker auf dem iPad" />
+            <img src="assets/Ipad/HabitTracker.png" alt="BeeFocus Habit-Tracker auf dem iPad" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame product-frame-tablet">
-            <img src="assets/Ipad/Statistik.png" alt="BeeFocus Statistik auf dem iPad" />
+            <img src="assets/Ipad/Statistik.png" alt="BeeFocus Produktivitätsstatistik auf dem iPad" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame product-frame-tablet">
-            <img src="assets/Ipad/FokusStore.png" alt="BeeFocus Fokus-Store auf dem iPad" />
+            <img src="assets/Ipad/FokusStore.png" alt="BeeFocus Fokus-Store auf dem iPad" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame product-frame-tablet">
-            <img src="assets/Ipad/Paywall.png" alt="BeeFocus Pro Ansicht auf dem iPad" />
+            <img src="assets/Ipad/Paywall.png" alt="BeeFocus Pro Upgrade auf dem iPad" loading="lazy" decoding="async" />
           </figure>
           <figure class="product-frame product-frame-tablet">
-            <img src="assets/Ipad/Einstellungen.png" alt="BeeFocus Einstellungen auf dem iPad" />
+            <img src="assets/Ipad/Einstellungen.png" alt="BeeFocus Einstellungen auf dem iPad" loading="lazy" decoding="async" />
           </figure>
 
           <figure class="product-frame product-frame-tablet" aria-hidden="true">
@@ -714,7 +834,7 @@
         <a href="#download" class="footer-link">Preise</a>
         <a href="datenschutz.html" class="footer-link">Datenschutz</a>
         <a href="nutzungsbedingungen.html" class="footer-link">Nutzungsbedingungen</a>
-        <a href="../../index.html#kontakt" class="footer-link">Impressum</a>
+        <a href="../../impressum.html" class="footer-link">Impressum</a>
         <a href="mailto:lehneketorben@gmail.com" class="footer-link">Support</a>
       </div>
 

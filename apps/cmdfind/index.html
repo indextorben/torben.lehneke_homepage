@@ -4,17 +4,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="Cmdfind hilft dir, passende Befehle für Windows, macOS und Linux schnell zu finden und direkt herunterzuladen." />
+  <meta name="description" content="Cmdfind – Cross-Platform CLI-Tool für Windows, macOS und Linux. Shell-Befehle schnell nachschlagen, direkt herunterladen und einsetzen." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Torben Lehneke" />
   <meta name="theme-color" content="#0b5fff" />
-  <title>Cmdfind - Befehle für alle Betriebssysteme</title>
+  <link rel="canonical" href="https://torbenlehneke.de/apps/cmdfind/" />
 
-  <link rel="preconnect" href=".." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://torbenlehneke.de/apps/cmdfind/" />
+  <meta property="og:site_name" content="Cmdfind" />
+  <meta property="og:title" content="Cmdfind – CLI-Befehlsfinder für Windows, macOS & Linux" />
+  <meta property="og:description" content="Shell-Befehle für alle Plattformen schnell nachschlagen – Cmdfind ist ein kostenloses Open-Source CLI-Tool für Windows, macOS und Linux." />
+  <meta property="og:image" content="https://torbenlehneke.de/apps/cmdfind/assets/cmdfind.png" />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cmdfind – CLI-Befehlsfinder für Windows, macOS & Linux" />
+  <meta name="twitter:description" content="Shell-Befehle für alle Plattformen schnell nachschlagen – kostenlos & Open Source." />
+  <meta name="twitter:image" content="https://torbenlehneke.de/apps/cmdfind/assets/cmdfind.png" />
+
+  <title>Cmdfind – CLI-Befehlsfinder für Windows, macOS & Linux | Torben Lehneke</title>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="cmdfind.css" />
+
+  <!-- Schema.org: BreadcrumbList + SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startseite",
+            "item": "https://torbenlehneke.de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Cmdfind",
+            "item": "https://torbenlehneke.de/apps/cmdfind/"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Cmdfind",
+        "url": "https://torbenlehneke.de/apps/cmdfind/",
+        "description": "Cross-Platform CLI-Tool zum schnellen Nachschlagen von Shell-Befehlen für Windows, macOS und Linux.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "downloadUrl": "https://github.com/indextorben/cmdfind/releases/latest",
+        "author": {
+          "@type": "Person",
+          "name": "Torben Lehneke",
+          "url": "https://torbenlehneke.de"
+        },
+        "license": "https://github.com/indextorben/cmdfind",
+        "featureList": "Befehlssuche, Cross-Platform, Windows, macOS, Linux, CLI"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="cmdfind-page" data-i18n-page="cmdfind-index">
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <header class="site-header app-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="../../index.html" aria-label="Cmdfind Startseite">
@@ -182,6 +251,8 @@ Linux:  unzip archive.zip</code></pre>
       <div class="footer-links" aria-label="Links">
         <a href="../../index.html" class="footer-link">Zur Startseite</a>
         <a href="https://github.com/indextorben/cmdfind/releases/latest" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="../../impressum.html" class="footer-link">Impressum</a>
+        <a href="../../datenschutz.html" class="footer-link">Datenschutz</a>
       </div>
 
       <div class="footer-social" aria-label="Release">

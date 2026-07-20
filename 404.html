@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Diese Seite wurde nicht gefunden. Zurück zur Startseite von Torben Lehneke IT." />
+  <meta name="robots" content="noindex,follow" />
+  <title>Seite nicht gefunden | Torben Lehneke</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://torbenlehneke.de/" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .error-page{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:2rem;
+    }
+    .error-code{
+      font-size:clamp(5rem,15vw,10rem);
+      font-weight:800;
+      line-height:1;
+      color:var(--primary);
+      margin:0;
+    }
+    .error-title{
+      font-size:clamp(1.4rem,3vw,2rem);
+      font-weight:700;
+      margin:0.5rem 0 1rem;
+    }
+    .error-desc{
+      color:var(--muted);
+      max-width:480px;
+      margin:0 auto 2rem;
+    }
+    .error-actions{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+  </style>
+</head>
+<body>
+  <main class="error-page" id="main">
+    <p class="error-code">404</p>
+    <h1 class="error-title">Seite nicht gefunden</h1>
+    <p class="error-desc">Diese Seite existiert leider nicht oder wurde verschoben. Kein Problem – zurück zur Startseite.</p>
+    <div class="error-actions">
+      <a class="btn btn-primary" href="/">Zur Startseite</a>
+      <a class="btn btn-ghost" href="/index.html#kontakt">Kontakt</a>
+    </div>
+  </main>
+  <script>
+    document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+  </script>
+</body>
+</html>

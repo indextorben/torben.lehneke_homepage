@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /apps/beefocus/index%202(1).html
 
+# Sitemap
 Sitemap: https://torbenlehneke.de/sitemap.xml
+Sitemap: https://www.torbenlehneke.de/sitemap.xml
