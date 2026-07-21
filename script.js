@@ -2193,4 +2193,492 @@
     document.addEventListener("visibilitychange", onVisibility, { passive: true });
     gsap.ticker.add(tick);
   }
+
+  // -----------------------------
+  // Site search (injected into every header)
+  // -----------------------------
+  (() => {
+    const headerActions = $(".header-actions");
+    if (!headerActions) return;
+
+    // Site root relative to the current page, derived from this script's src
+    // ("script.js" on root pages, "../../script.js" on app pages).
+    const scriptSrc =
+      document.querySelector('script[src$="script.js"]')?.getAttribute("src") || "script.js";
+    const ROOT = scriptSrc.slice(0, scriptSrc.length - "script.js".length);
+
+    const SEARCH_INDEX = [
+      {
+        url: "index.html",
+        cat: { de: "Startseite", en: "Home" },
+        title: { de: "Startseite – Torben Lehneke IT", en: "Home – Torben Lehneke IT" },
+        desc: {
+          de: "IT-Freelancer in Neubrandenburg für App- & Webentwicklung. Schnell, zuverlässig und transparent.",
+          en: "IT freelancer in Neubrandenburg for app & web development. Fast, reliable and transparent.",
+        },
+        keywords: "home homepage torben lehneke it freelancer neubrandenburg webentwicklung appentwicklung",
+      },
+      {
+        url: "index.html#leistungen",
+        cat: { de: "Startseite", en: "Home" },
+        title: { de: "Leistungen", en: "Services" },
+        desc: {
+          de: "Beratung, Konzept & Planung, Umsetzung & Installation, Wartung, Projektmanagement, Support & Schulung.",
+          en: "Consulting, concept & planning, implementation, maintenance, project management, support & training.",
+        },
+        keywords: "services beratung bedarfsanalyse konzept planung umsetzung installation wartung optimierung projektmanagement support schulung angebot",
+      },
+      {
+        url: "index.html#ueberuns",
+        cat: { de: "Startseite", en: "Home" },
+        title: { de: "Über mich", en: "About me" },
+        desc: {
+          de: "Dein verlässlicher Partner für App- & Webentwicklung in Neubrandenburg.",
+          en: "Your reliable partner for app & web development in Neubrandenburg.",
+        },
+        keywords: "about ueber uns mich person partner",
+      },
+      {
+        url: "index.html#ablauf",
+        cat: { de: "Startseite", en: "Home" },
+        title: { de: "Ablauf", en: "Process" },
+        desc: {
+          de: "Von der Anfrage bis zum Ergebnis: Kontakt, Planung, Umsetzung, Übergabe.",
+          en: "From request to result: contact, planning, implementation, handover.",
+        },
+        keywords: "process ablauf schritte vorgehen planung",
+      },
+      {
+        url: "index.html#referenzen",
+        cat: { de: "Startseite", en: "Home" },
+        title: { de: "Referenzen & Projekte", en: "References & projects" },
+        desc: {
+          de: "Ausgewählte Projekte: BeeFocus, Cmdfind und DeskPilot.",
+          en: "Selected projects: BeeFocus, Cmdfind and DeskPilot.",
+        },
+        keywords: "references referenzen projekte portfolio arbeiten",
+      },
+      {
+        url: "index.html#bewertungen",
+        cat: { de: "Startseite", en: "Home" },
+        title: { de: "Bewertungen", en: "Reviews" },
+        desc: {
+          de: "Echte Kunden- und Benutzerbewertungen mit Feedback zur Zusammenarbeit.",
+          en: "Real customer and user reviews with feedback on the collaboration.",
+        },
+        keywords: "reviews bewertungen sterne feedback kunden testimonials",
+      },
+      {
+        url: "index.html#faq",
+        cat: { de: "Startseite", en: "Home" },
+        title: { de: "FAQ – Häufige Fragen", en: "FAQ – Frequently asked questions" },
+        desc: {
+          de: "Antworten zu Rückmeldung, Angebot, Region und Kosten.",
+          en: "Answers about response time, quotes, region and pricing.",
+        },
+        keywords: "faq fragen antworten kosten preis angebot region",
+      },
+      {
+        url: "index.html#kontakt",
+        cat: { de: "Startseite", en: "Home" },
+        title: { de: "Kontakt", en: "Contact" },
+        desc: {
+          de: "Anfrage senden oder direkt per E-Mail erreichen – schnelle Rückmeldung garantiert.",
+          en: "Send a request or reach out directly by email – fast reply guaranteed.",
+        },
+        keywords: "contact kontakt anfrage email mail formular telefon erreichbar",
+      },
+      {
+        url: "impressum.html",
+        cat: { de: "Rechtliches", en: "Legal" },
+        title: { de: "Impressum", en: "Legal notice" },
+        desc: {
+          de: "Angaben gemäß § 5 DDG: Anbieter, Kontakt und Verantwortlicher.",
+          en: "Information pursuant to Section 5 DDG: provider, contact and responsible person.",
+        },
+        keywords: "impressum legal notice imprint anbieter ddg",
+      },
+      {
+        url: "datenschutz.html",
+        cat: { de: "Rechtliches", en: "Legal" },
+        title: { de: "Datenschutzerklärung", en: "Privacy policy" },
+        desc: {
+          de: "Informationen gemäß Art. 13 DSGVO zur Verarbeitung personenbezogener Daten.",
+          en: "Information pursuant to Art. 13 GDPR on the processing of personal data.",
+        },
+        keywords: "datenschutz privacy dsgvo gdpr daten cookies",
+      },
+      {
+        url: "apps/beefocus/index.html",
+        cat: { de: "App", en: "App" },
+        title: { de: "BeeFocus", en: "BeeFocus" },
+        desc: {
+          de: "Fokus- und Aufgaben-App für iPhone & iPad – Produktseite mit klarer Struktur.",
+          en: "Focus and task app for iPhone & iPad – product page with a clear structure.",
+        },
+        keywords: "beefocus fokus focus aufgaben todo task app ios iphone ipad produktivität",
+      },
+      {
+        url: "apps/beefocus/datenschutz.html",
+        cat: { de: "App · Rechtliches", en: "App · Legal" },
+        title: { de: "BeeFocus – Datenschutz", en: "BeeFocus – Privacy" },
+        desc: {
+          de: "Datenschutzerklärung der BeeFocus App.",
+          en: "Privacy policy of the BeeFocus app.",
+        },
+        keywords: "beefocus datenschutz privacy app",
+      },
+      {
+        url: "apps/beefocus/nutzungsbedingungen.html",
+        cat: { de: "App · Rechtliches", en: "App · Legal" },
+        title: { de: "BeeFocus – Nutzungsbedingungen", en: "BeeFocus – Terms of use" },
+        desc: {
+          de: "Nutzungsbedingungen der BeeFocus App.",
+          en: "Terms of use of the BeeFocus app.",
+        },
+        keywords: "beefocus nutzungsbedingungen terms agb bedingungen",
+      },
+      {
+        url: "apps/cmdfind/index.html",
+        cat: { de: "App", en: "App" },
+        title: { de: "Cmdfind", en: "Cmdfind" },
+        desc: {
+          de: "Cross-Platform CLI-Befehlsfinder für Windows, macOS und Linux.",
+          en: "Cross-platform CLI command finder for Windows, macOS and Linux.",
+        },
+        keywords: "cmdfind cli terminal befehle command finder windows macos linux download",
+      },
+      {
+        url: "apps/deskpilot/index.html",
+        cat: { de: "App", en: "App" },
+        title: { de: "DeskPilot", en: "DeskPilot" },
+        desc: {
+          de: "Mac per iPhone steuern – Trackpad, Makros und Quick Actions.",
+          en: "Control your Mac from your iPhone – trackpad, macros and quick actions.",
+        },
+        keywords: "deskpilot mac iphone fernsteuerung remote trackpad makros quick actions steuern",
+      },
+      {
+        url: "apps/deskpilot/agb.html",
+        cat: { de: "App · Rechtliches", en: "App · Legal" },
+        title: { de: "DeskPilot – AGB", en: "DeskPilot – Terms" },
+        desc: {
+          de: "Allgemeine Geschäftsbedingungen der DeskPilot App.",
+          en: "Terms and conditions of the DeskPilot app.",
+        },
+        keywords: "deskpilot agb terms bedingungen",
+      },
+      {
+        url: "apps/deskpilot/datenschutz.html",
+        cat: { de: "App · Rechtliches", en: "App · Legal" },
+        title: { de: "DeskPilot – Datenschutz", en: "DeskPilot – Privacy" },
+        desc: {
+          de: "Datenschutzerklärung der DeskPilot App.",
+          en: "Privacy policy of the DeskPilot app.",
+        },
+        keywords: "deskpilot datenschutz privacy app",
+      },
+      {
+        url: "apps/ledger/index.html",
+        cat: { de: "App", en: "App" },
+        title: { de: "Ledger", en: "Ledger" },
+        desc: {
+          de: "Notizapp für iPhone & iPad mit iCloud-Sync.",
+          en: "Notes app for iPhone & iPad with iCloud sync.",
+        },
+        keywords: "ledger notizen notes app iphone ipad icloud sync",
+      },
+    ];
+
+    const SEARCH_TEXTS = {
+      de: {
+        open: "Suche öffnen",
+        close: "Suche schließen",
+        label: "Website durchsuchen",
+        placeholder: "Website durchsuchen …",
+        searching: "Suche läuft …",
+        none: "Keine passenden Ergebnisse gefunden.",
+        results: (n) => (n === 1 ? "1 Ergebnis" : `${n} Ergebnisse`),
+        hint: "↑ ↓ Navigieren · Enter Öffnen · Esc Schließen",
+      },
+      en: {
+        open: "Open search",
+        close: "Close search",
+        label: "Search this website",
+        placeholder: "Search this website …",
+        searching: "Searching …",
+        none: "No matching results found.",
+        results: (n) => (n === 1 ? "1 result" : `${n} results`),
+        hint: "↑ ↓ Navigate · Enter Open · Esc Close",
+      },
+    };
+
+    const searchLang = () =>
+      localStorage.getItem(languageKey) === "en" ? "en" : "de";
+
+    const normalize = (str) =>
+      str
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/ß/g, "ss");
+
+    const runSearch = (query, lang) => {
+      const tokens = normalize(query).split(/\s+/).filter(Boolean);
+      if (!tokens.length) return [];
+      return SEARCH_INDEX.map((entry) => {
+        const title = normalize(entry.title[lang]);
+        const desc = normalize(entry.desc[lang] + " " + entry.desc[lang === "de" ? "en" : "de"]);
+        const keywords = normalize(entry.keywords);
+        let score = 0;
+        for (const token of tokens) {
+          if (title.includes(token)) {
+            score += title.startsWith(token) ? 6 : 4;
+          } else if (keywords.includes(token)) {
+            score += 2;
+          } else if (desc.includes(token)) {
+            score += 1;
+          } else {
+            return null;
+          }
+        }
+        return { entry, score };
+      })
+        .filter(Boolean)
+        .sort((a, b) => b.score - a.score)
+        .map((r) => r.entry);
+    };
+
+    // --- UI ---
+    const trigger = document.createElement("button");
+    trigger.type = "button";
+    trigger.className = "icon-btn search-btn";
+    trigger.setAttribute("aria-haspopup", "dialog");
+    trigger.innerHTML = `
+      <span class="icon" aria-hidden="true">
+        <svg class="search-btn-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-3.6-3.6"></path>
+        </svg>
+      </span>`;
+    headerActions.insertBefore(trigger, headerActions.querySelector("#langToggle"));
+
+    const overlay = document.createElement("div");
+    overlay.className = "search-overlay";
+    overlay.hidden = true;
+    overlay.innerHTML = `
+      <div class="search-panel" role="dialog" aria-modal="true">
+        <form class="search-field" role="search" novalidate>
+          <label class="sr-only" for="siteSearchInput"></label>
+          <span class="search-field-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-3.6-3.6"></path>
+            </svg>
+          </span>
+          <input id="siteSearchInput" type="search" role="combobox" aria-expanded="false"
+            aria-controls="siteSearchResults" aria-autocomplete="list" autocomplete="off"
+            autocapitalize="off" spellcheck="false" enterkeyhint="search" />
+          <span class="search-spinner" hidden aria-hidden="true"></span>
+          <button type="button" class="icon-btn search-close-btn">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M6 6l12 12M18 6 6 18"></path>
+              </svg>
+            </span>
+          </button>
+        </form>
+        <p class="search-status" role="status" aria-live="polite"></p>
+        <ul class="search-results" id="siteSearchResults" role="listbox" hidden></ul>
+        <p class="search-hint" aria-hidden="true"></p>
+      </div>`;
+    document.body.appendChild(overlay);
+
+    const panel = $(".search-panel", overlay);
+    const input = $("#siteSearchInput", overlay);
+    const fieldLabel = $('label[for="siteSearchInput"]', overlay);
+    const spinner = $(".search-spinner", overlay);
+    const closeBtn = $(".search-close-btn", overlay);
+    const statusEl = $(".search-status", overlay);
+    const resultsEl = $(".search-results", overlay);
+    const hintEl = $(".search-hint", overlay);
+
+    let isOpen = false;
+    let activeIndex = -1;
+    let currentResults = [];
+    let debounceTimer = 0;
+
+    const applySearchTexts = () => {
+      const t = SEARCH_TEXTS[searchLang()];
+      trigger.setAttribute("aria-label", t.open);
+      trigger.title = t.open;
+      closeBtn.setAttribute("aria-label", t.close);
+      fieldLabel.textContent = t.label;
+      input.placeholder = t.placeholder;
+      input.setAttribute("aria-label", t.label);
+      resultsEl.setAttribute("aria-label", t.label);
+      panel.setAttribute("aria-label", t.label);
+      hintEl.textContent = t.hint;
+    };
+    applySearchTexts();
+    if (langToggle) langToggle.addEventListener("click", applySearchTexts);
+
+    const setActive = (index) => {
+      const options = $$(".search-result", resultsEl);
+      activeIndex = options.length ? clamp(index, 0, options.length - 1) : -1;
+      options.forEach((opt, i) => {
+        opt.classList.toggle("is-active", i === activeIndex);
+        opt.setAttribute("aria-selected", i === activeIndex ? "true" : "false");
+      });
+      if (activeIndex >= 0) {
+        input.setAttribute("aria-activedescendant", options[activeIndex].id);
+        options[activeIndex].scrollIntoView({ block: "nearest" });
+      } else {
+        input.removeAttribute("aria-activedescendant");
+      }
+    };
+
+    const renderResults = (results, query) => {
+      const t = SEARCH_TEXTS[searchLang()];
+      const lang = searchLang();
+      currentResults = results;
+      resultsEl.innerHTML = "";
+      activeIndex = -1;
+      input.removeAttribute("aria-activedescendant");
+
+      if (!query.trim()) {
+        input.setAttribute("aria-expanded", "false");
+        resultsEl.hidden = true;
+        statusEl.textContent = "";
+        return;
+      }
+
+      if (!results.length) {
+        input.setAttribute("aria-expanded", "false");
+        resultsEl.hidden = true;
+        statusEl.textContent = t.none;
+        return;
+      }
+
+      results.forEach((entry, i) => {
+        const li = document.createElement("li");
+        li.className = "search-result";
+        li.id = `search-result-${i}`;
+        li.setAttribute("role", "option");
+        li.setAttribute("aria-selected", "false");
+
+        const link = document.createElement("a");
+        link.className = "search-result-link";
+        link.href = ROOT + entry.url;
+        link.tabIndex = -1;
+
+        const head = document.createElement("span");
+        head.className = "search-result-head";
+        const title = document.createElement("strong");
+        title.className = "search-result-title";
+        title.textContent = entry.title[lang];
+        const cat = document.createElement("span");
+        cat.className = "search-result-cat";
+        cat.textContent = entry.cat[lang];
+        head.append(title, cat);
+
+        const desc = document.createElement("span");
+        desc.className = "search-result-desc";
+        desc.textContent = entry.desc[lang];
+
+        link.append(head, desc);
+        li.appendChild(link);
+        li.addEventListener("pointerenter", () => setActive(i));
+        resultsEl.appendChild(li);
+      });
+
+      resultsEl.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+      statusEl.textContent = t.results(results.length);
+    };
+
+    const onInput = () => {
+      const query = input.value;
+      window.clearTimeout(debounceTimer);
+      if (!query.trim()) {
+        spinner.hidden = true;
+        renderResults([], "");
+        return;
+      }
+      spinner.hidden = false;
+      statusEl.textContent = SEARCH_TEXTS[searchLang()].searching;
+      debounceTimer = window.setTimeout(() => {
+        renderResults(runSearch(query, searchLang()), query);
+        spinner.hidden = true;
+      }, 250);
+    };
+
+    const openSearch = () => {
+      if (isOpen) return;
+      isOpen = true;
+      applySearchTexts();
+      overlay.hidden = false;
+      document.documentElement.classList.add("search-open");
+      requestAnimationFrame(() => overlay.classList.add("is-open"));
+      input.focus();
+    };
+
+    const closeSearch = (restoreFocus = true) => {
+      if (!isOpen) return;
+      isOpen = false;
+      window.clearTimeout(debounceTimer);
+      overlay.classList.remove("is-open");
+      document.documentElement.classList.remove("search-open");
+      const finish = () => {
+        overlay.hidden = true;
+        input.value = "";
+        spinner.hidden = true;
+        renderResults([], "");
+      };
+      if (reducedMotion) finish();
+      else window.setTimeout(finish, 200);
+      if (restoreFocus) trigger.focus();
+    };
+
+    const openResult = (index) => {
+      const entry = currentResults[index];
+      if (!entry) return;
+      window.location.href = ROOT + entry.url;
+      closeSearch(false);
+    };
+
+    trigger.addEventListener("click", openSearch);
+    closeBtn.addEventListener("click", () => closeSearch());
+    input.addEventListener("input", onInput);
+
+    $(".search-field", overlay).addEventListener("submit", (e) => {
+      e.preventDefault();
+      openResult(activeIndex >= 0 ? activeIndex : 0);
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setActive(activeIndex + 1);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setActive(activeIndex - 1);
+      }
+    });
+
+    overlay.addEventListener("pointerdown", (e) => {
+      if (!panel.contains(e.target)) closeSearch();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isOpen) {
+        e.preventDefault();
+        closeSearch();
+      } else if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        if (isOpen) closeSearch();
+        else openSearch();
+      }
+    });
+  })();
 })();
