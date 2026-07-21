@@ -2399,3 +2399,17 @@ html[data-theme="dark"] .search-overlay{
     max-width: min(26vw, 300px);
   }
 }
+
+/* Wide desktop: keep nav titles clear of the header buttons */
+@media (min-width: 1181px){
+  .header-inner{
+    gap: 20px;
+  }
+  .nav-link{
+    padding: 10px 8px;
+    font-size: 0.92rem;
+  }
+  .nav-menu{
+    gap: 2px;
+  }
+}
