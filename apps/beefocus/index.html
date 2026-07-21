@@ -33,8 +33,8 @@
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="stylesheet" href="../../style.css?v=3" />
-  <link rel="stylesheet" href="beefocus.css" />
+  <link rel="stylesheet" href="../../style.css?v=5" />
+  <link rel="stylesheet" href="beefocus.css?v=2" />
 
   <!-- Schema.org: BreadcrumbList + MobileApplication + FAQ -->
   <script type="application/ld+json">
@@ -65,11 +65,26 @@
         "description": "Fokus- und To-do-App für iOS mit Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker, Journaling und Kalenderansicht.",
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": "iOS",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "EUR"
-        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "BeeFocus Pro – Monatlich",
+            "price": "2.99",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "BeeFocus Pro – Jährlich",
+            "price": "17.99",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "BeeFocus Pro – Lebenslang",
+            "price": "29.99",
+            "priceCurrency": "EUR"
+          }
+        ],
         "downloadUrl": "https://apps.apple.com/us/app/beefocus/id6753998003",
         "author": {
           "@type": "Person",
@@ -675,6 +690,39 @@
       </div>
     </section>
 
+    <section class="section" id="preise" aria-label="Preise">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Faire Preise, voller Fokus</h2>
+          <p class="lead">BeeFocus Pro – alle Funktionen, 7 Tage kostenlos testen.</p>
+        </div>
+
+        <div class="cards-grid pricing-grid reveal">
+          <article class="card price-card">
+            <h3>Monatlich</h3>
+            <p class="price-line"><span class="price-amount">2,99&nbsp;€</span><span class="price-period">/ Monat</span></p>
+            <p class="muted price-desc">Flexibel, monatlich kündbar.</p>
+          </article>
+          <article class="card price-card price-card-featured">
+            <span class="price-badge">Beliebt</span>
+            <h3>Jährlich</h3>
+            <p class="price-line"><span class="price-amount">17,99&nbsp;€</span><span class="price-period">/ Jahr</span></p>
+            <p class="muted price-desc">Entspricht ca. 1,50&nbsp;€ pro Monat.</p>
+          </article>
+          <article class="card price-card">
+            <h3>Lebenslang</h3>
+            <p class="price-line"><span class="price-amount">29,99&nbsp;€</span><span class="price-period">einmalig</span></p>
+            <p class="muted price-desc">Einmal zahlen, für immer nutzen.</p>
+          </article>
+        </div>
+
+        <p class="pricing-note reveal">
+          Alle Pläne starten mit einem kostenlosen Testzeitraum von 7 Tagen. Kauf und Abrechnung
+          erfolgen über den Apple App Store; Abos sind jederzeit dort kündbar.
+        </p>
+      </div>
+    </section>
+
     <section class="section download" id="download" aria-label="Download">
       <div class="container download-grid">
         <div class="download-copy reveal">
@@ -831,7 +879,7 @@
 
       <div class="footer-links" aria-label="Navigation">
         <a href="#features" class="footer-link">Features</a>
-        <a href="#download" class="footer-link">Preise</a>
+        <a href="#preise" class="footer-link">Preise</a>
         <a href="datenschutz.html" class="footer-link">Datenschutz</a>
         <a href="nutzungsbedingungen.html" class="footer-link">Nutzungsbedingungen</a>
         <a href="../../impressum.html" class="footer-link">Impressum</a>
@@ -872,7 +920,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
-  <script src="../../script.js?v=2" defer></script>
+  <script src="../../script.js?v=5" defer></script>
   <script src="beefocus.js" defer></script>
 </body>
 

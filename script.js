@@ -1080,6 +1080,23 @@
           "#features .feature-device:nth-child(2) .feature-shot:nth-child(10) span": "Language, design and categories are neatly brought together.",
           "#testimonials h2": "Loved by focus fans",
           "#testimonials .lead": "Short feedback from people who save time every day.",
+          "#preise h2": "Fair pricing, full focus",
+          "#preise .lead": "BeeFocus Pro – all features, 7-day free trial.",
+          "#preise .price-card:nth-child(1) h3": "Monthly",
+          "#preise .price-card:nth-child(1) .price-amount": "€2.99",
+          "#preise .price-card:nth-child(1) .price-period": "/ month",
+          "#preise .price-card:nth-child(1) .price-desc": "Flexible, cancel monthly.",
+          "#preise .price-badge": "Popular",
+          "#preise .price-card:nth-child(2) h3": "Yearly",
+          "#preise .price-card:nth-child(2) .price-amount": "€17.99",
+          "#preise .price-card:nth-child(2) .price-period": "/ year",
+          "#preise .price-card:nth-child(2) .price-desc": "That's about €1.50 per month.",
+          "#preise .price-card:nth-child(3) h3": "Lifetime",
+          "#preise .price-card:nth-child(3) .price-amount": "€29.99",
+          "#preise .price-card:nth-child(3) .price-period": "one-time",
+          "#preise .price-card:nth-child(3) .price-desc": "Pay once, use forever.",
+          "#preise .pricing-note":
+            "All plans start with a free 7-day trial. Purchases and billing are handled by the Apple App Store; subscriptions can be cancelled there at any time.",
           "#download h2": "Install BeeFocus now",
           "#download .lead":
             "Get the app for iOS and start your morning overview in less than two minutes.",
@@ -1094,7 +1111,7 @@
           "#faq h2": "FAQ",
           "#faq .lead": "Short answers to the most important questions.",
           ".footer-brand .muted": "Focus app for structured days.",
-          ".footer-links a[href='#download']": "Pricing",
+          ".footer-links a[href='#preise']": "Pricing",
           ".footer-links a[href='datenschutz.html']": "Privacy",
           ".footer-links a[href='nutzungsbedingungen.html']": "Terms",
           ".footer-links a[href='../../index.html#kontakt']": "Legal notice",
@@ -1286,7 +1303,7 @@
         "#navMenu .nav-link:nth-child(1)": "App page",
         "#navMenu .nav-link:nth-child(2)": "Home",
         ".home-label": "Home",
-        ".footer-links a[href='index.html#download']": "Pricing",
+        ".footer-links a[href='index.html#preise']": "Pricing",
         ".footer-links a[href='datenschutz.html']": "Privacy",
         ".footer-links a[href='nutzungsbedingungen.html']": "Terms",
         ".footer-links a[href='../../index.html#kontakt']": "Legal notice",
@@ -1301,7 +1318,7 @@
         "#navMenu .nav-link:nth-child(2)": "Privacy",
         "#navMenu .nav-link:nth-child(3)": "Home",
         ".home-label": "Home",
-        ".footer-links a[href='index.html#download']": "Pricing",
+        ".footer-links a[href='index.html#preise']": "Pricing",
         ".footer-links a[href='datenschutz.html']": "Privacy",
         ".footer-links a[href='nutzungsbedingungen.html']": "Terms",
         ".footer-links a[href='../../index.html#kontakt']": "Legal notice",
@@ -2680,5 +2697,154 @@
         else openSearch();
       }
     });
+  })();
+
+  // -----------------------------
+  // Cookie consent banner (injected on every page)
+  // -----------------------------
+  (() => {
+    const CONSENT_KEY = "cookie_consent";
+
+    const scriptSrc =
+      document.querySelector('script[src*="script.js"]')?.getAttribute("src") || "script.js";
+    const ROOT = scriptSrc.replace(/script\.js(\?.*)?$/, "");
+
+    const texts = {
+      de: {
+        title: "Cookies & Datenschutz",
+        body: "Diese Website verwendet nur technisch notwendige Cookies bzw. lokale Speicherung (z. B. für Sprache und Design). Optionale Statistik-Cookies werden nur mit deiner Einwilligung gesetzt. Details findest du in der ",
+        privacy: "Datenschutzerklärung",
+        acceptAll: "Alle akzeptieren",
+        essentialOnly: "Nur notwendige",
+        settings: "Einstellungen",
+        save: "Auswahl speichern",
+        catEssential: "Notwendig",
+        catEssentialDesc: "Erforderlich für Grundfunktionen wie Sprach- und Design-Einstellungen. Immer aktiv.",
+        catStats: "Statistik",
+        catStatsDesc: "Hilft zu verstehen, wie die Website genutzt wird. Aktuell werden keine Statistik-Tools eingesetzt.",
+        saved: "Einstellungen gespeichert.",
+        footerLink: "Cookie-Einstellungen",
+      },
+      en: {
+        title: "Cookies & privacy",
+        body: "This website only uses technically necessary cookies / local storage (e.g. for language and theme). Optional statistics cookies are only set with your consent. See the ",
+        privacy: "privacy policy",
+        acceptAll: "Accept all",
+        essentialOnly: "Essential only",
+        settings: "Settings",
+        save: "Save selection",
+        catEssential: "Essential",
+        catEssentialDesc: "Required for basic features such as language and theme settings. Always active.",
+        catStats: "Statistics",
+        catStatsDesc: "Helps to understand how the website is used. No statistics tools are currently in use.",
+        saved: "Preferences saved.",
+        footerLink: "Cookie settings",
+      },
+    };
+
+    const getLang = () =>
+      (localStorage.getItem(languageKey) || currentLanguage) === "en" ? "en" : "de";
+
+    const readConsent = () => {
+      try {
+        const raw = localStorage.getItem(CONSENT_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch {
+        return null;
+      }
+    };
+
+    const saveConsent = (statistics) => {
+      localStorage.setItem(
+        CONSENT_KEY,
+        JSON.stringify({ necessary: true, statistics: !!statistics, ts: Date.now() })
+      );
+    };
+
+    const banner = document.createElement("div");
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-modal", "false");
+    banner.hidden = true;
+
+    const render = () => {
+      const t = texts[getLang()];
+      const consent = readConsent();
+      banner.setAttribute("aria-label", t.title);
+      banner.innerHTML = `
+        <div class="cookie-panel">
+          <div class="cookie-text">
+            <p class="cookie-title">${t.title}</p>
+            <p class="cookie-body">${t.body}<a class="inline-link" href="${ROOT}datenschutz.html">${t.privacy}</a>.</p>
+          </div>
+          <div class="cookie-settings" hidden>
+            <label class="cookie-cat">
+              <input type="checkbox" checked disabled />
+              <span><strong>${t.catEssential}</strong><br /><span class="cookie-cat-desc">${t.catEssentialDesc}</span></span>
+            </label>
+            <label class="cookie-cat">
+              <input type="checkbox" data-cookie-stats ${consent?.statistics ? "checked" : ""} />
+              <span><strong>${t.catStats}</strong><br /><span class="cookie-cat-desc">${t.catStatsDesc}</span></span>
+            </label>
+          </div>
+          <div class="cookie-actions">
+            <button type="button" class="btn btn-primary" data-cookie-accept>${t.acceptAll}</button>
+            <button type="button" class="btn" data-cookie-essential>${t.essentialOnly}</button>
+            <button type="button" class="btn cookie-settings-toggle" data-cookie-toggle aria-expanded="false">${t.settings}</button>
+            <button type="button" class="btn btn-primary" data-cookie-save hidden>${t.save}</button>
+          </div>
+        </div>`;
+
+      const settingsBox = $(".cookie-settings", banner);
+      const toggleBtn = $("[data-cookie-toggle]", banner);
+      const saveBtn = $("[data-cookie-save]", banner);
+
+      const finish = (statistics) => {
+        saveConsent(statistics);
+        banner.hidden = true;
+        showToast(texts[getLang()].saved);
+      };
+
+      $("[data-cookie-accept]", banner).addEventListener("click", () => finish(true));
+      $("[data-cookie-essential]", banner).addEventListener("click", () => finish(false));
+      saveBtn.addEventListener("click", () =>
+        finish($("[data-cookie-stats]", banner).checked)
+      );
+      toggleBtn.addEventListener("click", () => {
+        const open = settingsBox.hidden;
+        settingsBox.hidden = !open;
+        saveBtn.hidden = !open;
+        toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    };
+
+    const openBanner = () => {
+      render();
+      banner.hidden = false;
+    };
+
+    document.body.appendChild(banner);
+    if (!readConsent()) openBanner();
+
+    // Re-render texts when the language toggle is used while the banner is open
+    langToggle?.addEventListener("click", () => {
+      if (!banner.hidden) render();
+    });
+
+    // "Cookie settings" link in the footer legal column
+    const footerLinks = $(".footer-links");
+    if (footerLinks) {
+      const link = document.createElement("a");
+      link.href = "#";
+      link.className = "footer-link";
+      link.textContent = texts[getLang()].footerLink;
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        openBanner();
+      });
+      footerLinks.appendChild(link);
+    }
+
+    window.cookieConsent = { get: readConsent, open: openBanner };
   })();
 })();
