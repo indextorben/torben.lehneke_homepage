@@ -87,7 +87,8 @@
   <main id="main" class="legal-main">
     <section class="section legal-section" aria-label="Datenschutz DeskPilot">
       <div class="container">
-        <article class="legal-card">
+        <header class="legal-hero">
+          <span class="legal-eyebrow">Rechtliches</span>
           <h1>Datenschutz bei DeskPilot</h1>
           <p class="lead">
             Wir verarbeiten nur Daten, die für die Funktion der App notwendig sind.
@@ -98,62 +99,93 @@
             <span class="trust-item" role="listitem">✓ Lokales Netzwerk</span>
             <span class="trust-item" role="listitem">✓ StoreKit über Apple</span>
           </div>
+        </header>
 
-          <h2>1. Welche Daten verarbeitet DeskPilot?</h2>
-          <ul class="bullets legal-list">
-            <li>Lokale App-Einstellungen, z. B. Sprache, Theme, Makros und bevorzugte Geräte.</li>
-            <li>Geräteinformationen für die Verbindung, z. B. Gerätename oder Hostname im lokalen Netzwerk.</li>
-            <li>Keine dauerhafte Übertragung an eigene Server.</li>
-            <li>Keine Weitergabe an Werbenetzwerke.</li>
-          </ul>
+        <div class="legal-layout">
+          <nav class="legal-toc" aria-label="Inhaltsverzeichnis">
+            <p class="legal-toc-title">Inhalt</p>
+            <ol>
+              <li><a href="#daten">1. Welche Daten verarbeitet DeskPilot?</a></li>
+              <li><a href="#verwendung">2. Wofür werden die Daten verwendet?</a></li>
+              <li><a href="#drittanbieter">3. Drittanbieter &amp; In-App-Käufe</a></li>
+              <li><a href="#speicherdauer">4. Speicherdauer &amp; Löschung</a></li>
+              <li><a href="#rechtsgrundlagen">5. Rechtsgrundlagen (DSGVO)</a></li>
+              <li><a href="#rechte">6. Deine Rechte</a></li>
+              <li><a href="#kontakt">7. Kontakt</a></li>
+            </ol>
+          </nav>
 
-          <h2>2. Wofür werden die Daten verwendet?</h2>
-          <ul class="bullets legal-list">
-            <li>Geräteerkennung im lokalen Netzwerk (Bonjour).</li>
-            <li>Aufbau und Aufrechterhaltung der Verbindung zwischen iPhone und Mac.</li>
-            <li>Ausführung von Fernsteuerungsfunktionen.</li>
-            <li>Personalisierung über Einstellungen, Makros und Favoriten.</li>
-          </ul>
+          <article class="legal-article">
+            <section class="legal-block" id="daten">
+              <h2>1. Welche Daten verarbeitet DeskPilot?</h2>
+              <ul class="legal-list">
+                <li>Lokale App-Einstellungen, z. B. Sprache, Theme, Makros und bevorzugte Geräte.</li>
+                <li>Geräteinformationen für die Verbindung, z. B. Gerätename oder Hostname im lokalen Netzwerk.</li>
+                <li>Keine dauerhafte Übertragung an eigene Server.</li>
+                <li>Keine Weitergabe an Werbenetzwerke.</li>
+              </ul>
+            </section>
 
-          <h2>3. Drittanbieter &amp; In-App-Käufe</h2>
-          <ul class="bullets legal-list">
-            <li>In-App-Käufe laufen über Apple StoreKit.</li>
-            <li>Apple hat eigene Datenschutzbedingungen, die zusätzlich gelten.</li>
-            <li>DeskPilot enthält aktuell keine eingebetteten Drittanbieter-Tracking-SDKs.</li>
-          </ul>
+            <section class="legal-block" id="verwendung">
+              <h2>2. Wofür werden die Daten verwendet?</h2>
+              <ul class="legal-list">
+                <li>Geräteerkennung im lokalen Netzwerk (Bonjour).</li>
+                <li>Aufbau und Aufrechterhaltung der Verbindung zwischen iPhone und Mac.</li>
+                <li>Ausführung von Fernsteuerungsfunktionen.</li>
+                <li>Personalisierung über Einstellungen, Makros und Favoriten.</li>
+              </ul>
+            </section>
 
-          <h2>4. Speicherdauer &amp; Löschung</h2>
-          <ul class="bullets legal-list">
-            <li>Daten werden lokal auf dem Gerät gespeichert.</li>
-            <li>Löschung durch App-Deinstallation oder Zurücksetzen der Einstellungen.</li>
-            <li>Kein zentrales Nutzerkonto erforderlich.</li>
-          </ul>
+            <section class="legal-block" id="drittanbieter">
+              <h2>3. Drittanbieter &amp; In-App-Käufe</h2>
+              <ul class="legal-list">
+                <li>In-App-Käufe laufen über Apple StoreKit.</li>
+                <li>Apple hat eigene Datenschutzbedingungen, die zusätzlich gelten.</li>
+                <li>DeskPilot enthält aktuell keine eingebetteten Drittanbieter-Tracking-SDKs.</li>
+              </ul>
+            </section>
 
-          <h2>5. Rechtsgrundlagen (DSGVO)</h2>
-          <ul class="bullets legal-list">
-            <li>Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</li>
-            <li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherer und zuverlässiger App-Funktion).</li>
-          </ul>
+            <section class="legal-block" id="speicherdauer">
+              <h2>4. Speicherdauer &amp; Löschung</h2>
+              <ul class="legal-list">
+                <li>Daten werden lokal auf dem Gerät gespeichert.</li>
+                <li>Löschung durch App-Deinstallation oder Zurücksetzen der Einstellungen.</li>
+                <li>Kein zentrales Nutzerkonto erforderlich.</li>
+              </ul>
+            </section>
 
-          <h2>6. Deine Rechte</h2>
-          <ul class="bullets legal-list">
-            <li>Auskunft</li>
-            <li>Berichtigung</li>
-            <li>Löschung</li>
-            <li>Einschränkung der Verarbeitung</li>
-            <li>Widerspruch</li>
-            <li>Datenübertragbarkeit</li>
-            <li>Beschwerderecht bei einer Aufsichtsbehörde</li>
-          </ul>
+            <section class="legal-block" id="rechtsgrundlagen">
+              <h2>5. Rechtsgrundlagen (DSGVO)</h2>
+              <ul class="legal-list">
+                <li>Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</li>
+                <li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherer und zuverlässiger App-Funktion).</li>
+              </ul>
+            </section>
 
-          <h2 id="kontakt">7. Kontakt</h2>
-          <p>
-            <strong>Name/Firma:</strong> Torben Lehneke<br />
-            <strong>E-Mail:</strong> <a class="inline-link" href="mailto:[E-Mail]">lehneketorben@gmail.com</a><br />
-          </p>
+            <section class="legal-block" id="rechte">
+              <h2>6. Deine Rechte</h2>
+              <ul class="legal-list">
+                <li>Auskunft</li>
+                <li>Berichtigung</li>
+                <li>Löschung</li>
+                <li>Einschränkung der Verarbeitung</li>
+                <li>Widerspruch</li>
+                <li>Datenübertragbarkeit</li>
+                <li>Beschwerderecht bei einer Aufsichtsbehörde</li>
+              </ul>
+            </section>
 
-          <p class="legal-date">Stand: [12.04.2026]</p>
-        </article>
+            <section class="legal-block" id="kontakt">
+              <h2>7. Kontakt</h2>
+              <p>
+                <strong>Name/Firma:</strong> Torben Lehneke<br />
+                <strong>E-Mail:</strong> <a class="inline-link" href="mailto:[E-Mail]">lehneketorben@gmail.com</a><br />
+              </p>
+            </section>
+
+            <p class="legal-date">Stand: [12.04.2026]</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>

@@ -38,132 +38,192 @@
 
   const pageMainEn = {
     "root-imprint": `
-      <section class="section" aria-label="Legal notice">
+      <section class="section legal-section" aria-label="Legal notice">
         <div class="container">
-          <div class="section-head">
+          <header class="legal-hero">
+            <span class="legal-eyebrow">Legal</span>
             <h1>Legal Notice</h1>
             <p class="lead">Information pursuant to Section 5 DDG</p>
-          </div>
+          </header>
 
-          <div class="card">
-            <h2>Provider</h2>
-            <p>
-              Torben Lehneke<br />
-              <strong>Address:</strong> Neu Panstorf 38b, 17139 Malchin<br />
-              Germany
-            </p>
+          <div class="legal-layout">
+            <nav class="legal-toc" aria-label="Table of contents">
+              <p class="legal-toc-title">Contents</p>
+              <ol>
+                <li><a href="#anbieter">Provider</a></li>
+                <li><a href="#kontakt">Contact</a></li>
+                <li><a href="#umsatzsteuer">VAT</a></li>
+                <li><a href="#registereintrag">Commercial register</a></li>
+                <li><a href="#verantwortlich">Responsible for content</a></li>
+              </ol>
+            </nav>
 
-            <h2>Contact</h2>
-            <p>
-              Phone: <a class="inline-link" href="tel:01733734023">01733734023</a><br />
-              Email:
-              <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a>
-            </p>
+            <article class="legal-article">
+              <section class="legal-block" id="anbieter">
+                <h2>Provider</h2>
+                <p>
+                  Torben Lehneke<br />
+                  <strong>Address:</strong> Neu Panstorf 38b, 17139 Malchin<br />
+                  Germany
+                </p>
+              </section>
 
-            <h2>VAT</h2>
-            <p>
-              <strong>VAT ID:</strong> not available.<br />
-              <strong>Tax number:</strong> currently not available.
-            </p>
+              <section class="legal-block" id="kontakt">
+                <h2>Contact</h2>
+                <p>
+                  Phone: <a class="inline-link" href="tel:01733734023">01733734023</a><br />
+                  Email:
+                  <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a>
+                </p>
+              </section>
 
-            <h2>Commercial register</h2>
-            <p>No commercial register entry available.</p>
+              <section class="legal-block" id="umsatzsteuer">
+                <h2>VAT</h2>
+                <p>
+                  <strong>VAT ID:</strong> not available.<br />
+                  <strong>Tax number:</strong> currently not available.
+                </p>
+              </section>
 
-            <h2>Responsible for content</h2>
-            <p>
-              Torben Lehneke (address as above).<br />
-              Note: Information pursuant to Section 18(2) MStV is only required if journalistic-editorial content is offered.
-            </p>
+              <section class="legal-block" id="registereintrag">
+                <h2>Commercial register</h2>
+                <p>No commercial register entry available.</p>
+              </section>
 
-            <p class="muted">Version: March 10, 2026.</p>
+              <section class="legal-block" id="verantwortlich">
+                <h2>Responsible for content</h2>
+                <p>
+                  Torben Lehneke (address as above).<br />
+                  Note: Information pursuant to Section 18(2) MStV is only required if journalistic-editorial content is offered.
+                </p>
+              </section>
+
+              <p class="legal-date">Version: March 10, 2026.</p>
+            </article>
           </div>
         </div>
       </section>
     `,
     "root-privacy": `
-      <section class="section" aria-label="Privacy policy">
+      <section class="section legal-section" aria-label="Privacy policy">
         <div class="container">
-          <div class="section-head">
+          <header class="legal-hero">
+            <span class="legal-eyebrow">Legal</span>
             <h1>Privacy Policy</h1>
             <p class="lead">Information pursuant to Art. 13 GDPR</p>
-          </div>
+          </header>
 
-          <div class="card">
-            <h2>1. Controller</h2>
-            <p>
-              Torben Lehneke<br />
-              <strong>Address:</strong> Neu Panstorf 38b, 17139 Malchin<br />
-              Email:
-              <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a>
-            </p>
+          <div class="legal-layout">
+            <nav class="legal-toc" aria-label="Table of contents">
+              <p class="legal-toc-title">Contents</p>
+              <ol>
+                <li><a href="#verantwortlicher">1. Controller</a></li>
+                <li><a href="#allgemeine-hinweise">2. General information</a></li>
+                <li><a href="#hosting">3. Access data / hosting</a></li>
+                <li><a href="#kontaktformular">4. Contact form</a></li>
+                <li><a href="#externe-inhalte">5. External content &amp; CDN</a></li>
+                <li><a href="#cookies">6. Cookies / consent</a></li>
+                <li><a href="#deine-rechte">7. Your rights</a></li>
+                <li><a href="#beschwerderecht">8. Right to lodge a complaint</a></li>
+                <li><a href="#aenderungen">9. Changes</a></li>
+              </ol>
+            </nav>
 
-            <h2>2. General information</h2>
-            <p>
-              This website processes personal data only where necessary for providing content, communication or security.
-            </p>
+            <article class="legal-article">
+              <section class="legal-block" id="verantwortlicher">
+                <h2>1. Controller</h2>
+                <p>
+                  Torben Lehneke<br />
+                  <strong>Address:</strong> Neu Panstorf 38b, 17139 Malchin<br />
+                  Email:
+                  <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a>
+                </p>
+              </section>
 
-            <h2>3. Access data / hosting</h2>
-            <p>
-              When visiting this website, technically required data may be processed (e.g. IP address, date and time,
-              requested page, user agent) in order to deliver and protect the website. Legal basis: Art. 6(1)(f) GDPR.
-            </p>
-            <p>
-              <strong>Hosting:</strong> The website is hosted via GitHub Pages. Domain management is handled by STRATO AG.
-              The privacy policies of these providers apply.
-            </p>
+              <section class="legal-block" id="allgemeine-hinweise">
+                <h2>2. General information</h2>
+                <p>
+                  This website processes personal data only where necessary for providing content, communication or security.
+                </p>
+              </section>
 
-            <h2>4. Contact form</h2>
-            <p>
-              If you use the contact form, your submitted data (name, email, phone, message) is processed to handle your request.
-              Legal basis: Art. 6(1)(b) GDPR (pre-contractual measures) and/or Art. 6(1)(f) GDPR (legitimate interest in communication).
-            </p>
-            <p>
-              <strong>Formspree:</strong> The form is provided via Formspree. Data is transmitted to Formspree and forwarded by email.
-              Data is used exclusively for communication.
-            </p>
+              <section class="legal-block" id="hosting">
+                <h2>3. Access data / hosting</h2>
+                <p>
+                  When visiting this website, technically required data may be processed (e.g. IP address, date and time,
+                  requested page, user agent) in order to deliver and protect the website. Legal basis: Art. 6(1)(f) GDPR.
+                </p>
+                <p>
+                  <strong>Hosting:</strong> The website is hosted via GitHub Pages. Domain management is handled by STRATO AG.
+                  The privacy policies of these providers apply.
+                </p>
+              </section>
 
-            <h2>5. External content & CDN</h2>
-            <p>
-              External resources may be loaded for display (e.g. JavaScript via jsDelivr for GSAP).
-              This may transmit your IP address to the respective provider. Legal basis: Art. 6(1)(f) GDPR.
-              Transfers to third countries (e.g. USA) may occur depending on provider.
-            </p>
+              <section class="legal-block" id="kontaktformular">
+                <h2>4. Contact form</h2>
+                <p>
+                  If you use the contact form, your submitted data (name, email, phone, message) is processed to handle your request.
+                  Legal basis: Art. 6(1)(b) GDPR (pre-contractual measures) and/or Art. 6(1)(f) GDPR (legitimate interest in communication).
+                </p>
+                <p>
+                  <strong>Formspree:</strong> The form is provided via Formspree. Data is transmitted to Formspree and forwarded by email.
+                  Data is used exclusively for communication.
+                </p>
+              </section>
 
-            <h2>6. Cookies / consent</h2>
-            <p>
-              This website currently does not use tracking cookies. Technically necessary storage access
-              (e.g. dark mode state via localStorage) is used without consent.
-              Legal basis: Section 25 TDDDG in conjunction with Art. 6 GDPR.
-              If cookies or analytics tools are added, consent will be required.
-            </p>
+              <section class="legal-block" id="externe-inhalte">
+                <h2>5. External content & CDN</h2>
+                <p>
+                  External resources may be loaded for display (e.g. JavaScript via jsDelivr for GSAP).
+                  This may transmit your IP address to the respective provider. Legal basis: Art. 6(1)(f) GDPR.
+                  Transfers to third countries (e.g. USA) may occur depending on provider.
+                </p>
+              </section>
 
-            <h2>7. Your rights</h2>
-            <ul class="bullets">
-              <li>Access to stored data (Art. 15 GDPR)</li>
-              <li>Rectification of inaccurate data (Art. 16 GDPR)</li>
-              <li>Erasure (Art. 17 GDPR)</li>
-              <li>Restriction of processing (Art. 18 GDPR)</li>
-              <li>Data portability (Art. 20 GDPR)</li>
-              <li>Objection to processing (Art. 21 GDPR)</li>
-              <li>Withdrawal of consent (Art. 7(3) GDPR)</li>
-            </ul>
+              <section class="legal-block" id="cookies">
+                <h2>6. Cookies / consent</h2>
+                <p>
+                  This website currently does not use tracking cookies. Technically necessary storage access
+                  (e.g. dark mode state via localStorage) is used without consent.
+                  Legal basis: Section 25 TDDDG in conjunction with Art. 6 GDPR.
+                  If cookies or analytics tools are added, consent will be required.
+                </p>
+              </section>
 
-            <h2>8. Right to lodge a complaint</h2>
-            <p>
-              You have the right to lodge a complaint with the competent data protection supervisory authority.
-              Competent authority: Der Landesbeauftragte für Datenschutz und Informationsfreiheit Mecklenburg-Vorpommern (LfDI MV),
-              Werderstraße 74a, 19055 Schwerin, phone: +49 385 59494 0, email:
-              <a class="inline-link" href="mailto:info@datenschutz-mv.de">info@datenschutz-mv.de</a>.
-              More information:
-              <a class="inline-link" href="https://www.datenschutz-mv.de" rel="noopener">datenschutz-mv.de</a>
-            </p>
+              <section class="legal-block" id="deine-rechte">
+                <h2>7. Your rights</h2>
+                <ul>
+                  <li>Access to stored data (Art. 15 GDPR)</li>
+                  <li>Rectification of inaccurate data (Art. 16 GDPR)</li>
+                  <li>Erasure (Art. 17 GDPR)</li>
+                  <li>Restriction of processing (Art. 18 GDPR)</li>
+                  <li>Data portability (Art. 20 GDPR)</li>
+                  <li>Objection to processing (Art. 21 GDPR)</li>
+                  <li>Withdrawal of consent (Art. 7(3) GDPR)</li>
+                </ul>
+              </section>
 
-            <h2>9. Changes</h2>
-            <p>
-              This privacy policy is updated when needed so it remains compliant with current legal requirements.
-            </p>
+              <section class="legal-block" id="beschwerderecht">
+                <h2>8. Right to lodge a complaint</h2>
+                <p>
+                  You have the right to lodge a complaint with the competent data protection supervisory authority.
+                  Competent authority: Der Landesbeauftragte für Datenschutz und Informationsfreiheit Mecklenburg-Vorpommern (LfDI MV),
+                  Werderstraße 74a, 19055 Schwerin, phone: +49 385 59494 0, email:
+                  <a class="inline-link" href="mailto:info@datenschutz-mv.de">info@datenschutz-mv.de</a>.
+                  More information:
+                  <a class="inline-link" href="https://www.datenschutz-mv.de" rel="noopener">datenschutz-mv.de</a>
+                </p>
+              </section>
 
-            <p class="muted">Version: March 10, 2026.</p>
+              <section class="legal-block" id="aenderungen">
+                <h2>9. Changes</h2>
+                <p>
+                  This privacy policy is updated when needed so it remains compliant with current legal requirements.
+                </p>
+              </section>
+
+              <p class="legal-date">Version: March 10, 2026.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -171,65 +231,116 @@
     "beefocus-privacy": `
       <section class="section legal-section" aria-label="BeeFocus Privacy">
         <div class="container">
-          <article class="legal-card">
+          <header class="legal-hero">
+            <span class="legal-eyebrow">Legal</span>
             <h1>Privacy for BeeFocus</h1>
             <p class="lead">
               At BeeFocus, we take data protection seriously. This privacy policy explains what data we process,
               how we use it and what rights you have.
             </p>
+          </header>
 
-            <h2>1. Controller</h2>
-            <p>The controller responsible for data processing is:</p>
-            <p>
-              Torben Lehneke<br />
-              Email:
-              <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a>
-            </p>
+          <div class="legal-layout">
+            <nav class="legal-toc" aria-label="Table of contents">
+              <p class="legal-toc-title">Contents</p>
+              <ol>
+                <li><a href="#verantwortlicher">1. Controller</a></li>
+                <li><a href="#erhobene-daten">2. Data collected</a></li>
+                <li><a href="#zweck">3. Purpose of processing</a></li>
+                <li><a href="#weitergabe">4. Sharing with third parties</a></li>
+                <li><a href="#rechte">5. User rights</a></li>
+                <li><a href="#aenderungen">6. Changes</a></li>
+              </ol>
+            </nav>
 
-            <h2>2. Data collected</h2>
-            <ul class="bullets legal-list">
-              <li>Timer data (e.g. focus and break times, sessions)</li>
-              <li>Tasks / todos (stored locally on the device)</li>
-              <li>Optional: name or email, if provided by the user</li>
-            </ul>
+            <article class="legal-article">
+              <section class="legal-block" id="verantwortlicher">
+                <h2>1. Controller</h2>
+                <p>The controller responsible for data processing is:</p>
+                <p>
+                  Torben Lehneke<br />
+                  Email:
+                  <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a>
+                </p>
+              </section>
 
-            <h2>3. Purpose of processing</h2>
-            <p>The processed data is used only to provide app functionality, for example:</p>
-            <ul class="bullets legal-list">
-              <li>Storing and managing todos</li>
-              <li>Timer functions and progress display</li>
-              <li>Synchronization via iCloud (if enabled)</li>
-              <li>Notifications</li>
-            </ul>
+              <section class="legal-block" id="erhobene-daten">
+                <h2>2. Data collected</h2>
+                <ul class="legal-list">
+                  <li>Timer data (e.g. focus and break times, sessions)</li>
+                  <li>Tasks / todos (stored locally on the device)</li>
+                  <li>Optional: name or email, if provided by the user</li>
+                </ul>
+              </section>
 
-            <h2>4. Sharing with third parties</h2>
-            <p>No personal data is shared with third parties.</p>
+              <section class="legal-block" id="zweck">
+                <h2>3. Purpose of processing</h2>
+                <p>The processed data is used only to provide app functionality, for example:</p>
+                <ul class="legal-list">
+                  <li>Storing and managing todos</li>
+                  <li>Timer functions and progress display</li>
+                  <li>Synchronization via iCloud (if enabled)</li>
+                  <li>Notifications</li>
+                </ul>
+              </section>
 
-            <h2>5. User rights</h2>
-            <p>
-              You have the right to access your stored data, correct it or request deletion.
-              Please contact us at
-              <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a>.
-            </p>
+              <section class="legal-block" id="weitergabe">
+                <h2>4. Sharing with third parties</h2>
+                <p>No personal data is shared with third parties.</p>
+              </section>
 
-            <h2>6. Changes to this policy</h2>
-            <p>
-              We reserve the right to change this privacy policy at any time.
-              The latest version is always available here.
-            </p>
+              <section class="legal-block" id="rechte">
+                <h2>5. User rights</h2>
+                <p>
+                  You have the right to access your stored data, correct it or request deletion.
+                  Please contact us at
+                  <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a>.
+                </p>
+              </section>
 
-            <p class="legal-date">Version: October 2025</p>
-          </article>
+              <section class="legal-block" id="aenderungen">
+                <h2>6. Changes to this policy</h2>
+                <p>
+                  We reserve the right to change this privacy policy at any time.
+                  The latest version is always available here.
+                </p>
+              </section>
+
+              <p class="legal-date">Version: October 2025</p>
+            </article>
+          </div>
         </div>
       </section>
     `,
     "beefocus-terms": `
       <section class="section legal-section" aria-label="BeeFocus Terms">
         <div class="container">
-          <article class="legal-card">
+          <header class="legal-hero">
+            <span class="legal-eyebrow">Legal</span>
             <h1>Terms and Conditions for BeeFocus</h1>
-            <p class="legal-date">Version: June 2026</p>
+            <p class="lead">Version: June 2026</p>
+          </header>
 
+          <div class="legal-layout">
+            <nav class="legal-toc" aria-label="Table of contents">
+              <p class="legal-toc-title">Contents</p>
+              <ol>
+                <li><a href="#geltungsbereich">1. Scope</a></li>
+                <li><a href="#leistungsbeschreibung">2. Description of Services</a></li>
+                <li><a href="#voraussetzungen">3. Requirements for Use</a></li>
+                <li><a href="#abonnement">4. Subscription &amp; Payment</a></li>
+                <li><a href="#nutzungsrechte">5. Rights of Use</a></li>
+                <li><a href="#verfuegbarkeit">6. Availability</a></li>
+                <li><a href="#haftung">7. Disclaimer of Liability</a></li>
+                <li><a href="#datenschutz">8. Privacy</a></li>
+                <li><a href="#aenderungen">9. Changes</a></li>
+                <li><a href="#recht">10. Applicable Law</a></li>
+                <li><a href="#kontakt">11. Contact</a></li>
+              </ol>
+            </nav>
+
+            <article class="legal-article">
+            <section class="legal-block" id="geltungsbereich">
             <h2>1. Scope</h2>
             <p>
               These Terms and Conditions apply to the use of the BeeFocus app
@@ -237,6 +348,9 @@
               Torben Lehneke (hereinafter referred to as the "Provider").
             </p>
 
+            </section>
+
+            <section class="legal-block" id="leistungsbeschreibung">
             <h2>2. Description of Services</h2>
             <p>
               BeeFocus is a productivity app for iPhone, iPad and Apple Watch.
@@ -245,6 +359,9 @@
               exclusively as part of a paid subscription (BeeFocus Pro).
             </p>
 
+            </section>
+
+            <section class="legal-block" id="voraussetzungen">
             <h2>3. Requirements for Use</h2>
             <p>
               The App requires a compatible Apple device with a current iOS
@@ -252,6 +369,9 @@
               use iCloud synchronization.
             </p>
 
+            </section>
+
+            <section class="legal-block" id="abonnement">
             <h2>4. Subscription &amp; Payment</h2>
             <p>
               BeeFocus Pro is offered as a subscription through the Apple App
@@ -262,6 +382,9 @@
               which is handled exclusively by Apple.
             </p>
 
+            </section>
+
+            <section class="legal-block" id="nutzungsrechte">
             <h2>5. Rights of Use</h2>
             <p>
               The Provider grants the user a non-transferable, non-exclusive
@@ -269,6 +392,9 @@
               distribution or modification of the App is not permitted.
             </p>
 
+            </section>
+
+            <section class="legal-block" id="verfuegbarkeit">
             <h2>6. Availability</h2>
             <p>
               The Provider endeavors to ensure continuous availability of the
@@ -276,6 +402,9 @@
               updates or technical issues may temporarily restrict availability.
             </p>
 
+            </section>
+
+            <section class="legal-block" id="haftung">
             <h2>7. Disclaimer of Liability</h2>
             <p>
               The App is intended to support personal productivity. The Provider
@@ -284,6 +413,9 @@
               App. Use is at the user's own responsibility.
             </p>
 
+            </section>
+
+            <section class="legal-block" id="datenschutz">
             <h2>8. Privacy</h2>
             <p>
               Information on the processing of personal data can be found in the
@@ -293,6 +425,9 @@
               </a>.
             </p>
 
+            </section>
+
+            <section class="legal-block" id="aenderungen">
             <h2>9. Changes</h2>
             <p>
               The Provider reserves the right to change these Terms and
@@ -301,6 +436,9 @@
               acceptance of the updated Terms.
             </p>
 
+            </section>
+
+            <section class="legal-block" id="recht">
             <h2>10. Applicable Law</h2>
             <p>
               The law of the Federal Republic of Germany applies. The place of
@@ -308,6 +446,9 @@
               residence.
             </p>
 
+            </section>
+
+            <section class="legal-block" id="kontakt">
             <h2>11. Contact</h2>
             <p>
               Torben Lehneke<br />
@@ -316,14 +457,17 @@
               Website:
               <a class="inline-link" href="http://www.torbenlehneke.de">http://www.torbenlehneke.de</a>
             </p>
-          </article>
+            </section>
+            </article>
+          </div>
         </div>
       </section>
     `,
     "deskpilot-privacy": `
       <section class="section legal-section" aria-label="DeskPilot Privacy">
         <div class="container">
-          <article class="legal-card">
+          <header class="legal-hero">
+            <span class="legal-eyebrow">Legal</span>
             <h1>Privacy at DeskPilot</h1>
             <p class="lead">
               We only process data that is necessary for the app to work.
@@ -334,78 +478,139 @@
               <span class="trust-item" role="listitem">✓ Local network</span>
               <span class="trust-item" role="listitem">✓ StoreKit via Apple</span>
             </div>
+          </header>
 
-            <h2>1. What data does DeskPilot process?</h2>
-            <ul class="bullets legal-list">
-              <li>Local app settings, e.g. language, theme, macros and preferred devices.</li>
-              <li>Connection-related device information, e.g. device name or hostname in the local network.</li>
-              <li>No permanent transfer to own servers.</li>
-              <li>No sharing with advertising networks.</li>
-            </ul>
+          <div class="legal-layout">
+            <nav class="legal-toc" aria-label="Table of contents">
+              <p class="legal-toc-title">Contents</p>
+              <ol>
+                <li><a href="#daten">1. What data does DeskPilot process?</a></li>
+                <li><a href="#verwendung">2. What is the data used for?</a></li>
+                <li><a href="#drittanbieter">3. Third parties &amp; in-app purchases</a></li>
+                <li><a href="#speicherdauer">4. Storage period &amp; deletion</a></li>
+                <li><a href="#rechtsgrundlagen">5. Legal basis (GDPR)</a></li>
+                <li><a href="#rechte">6. Your rights</a></li>
+                <li><a href="#kontakt">7. Contact</a></li>
+              </ol>
+            </nav>
 
-            <h2>2. What is the data used for?</h2>
-            <ul class="bullets legal-list">
-              <li>Device discovery in the local network (Bonjour).</li>
-              <li>Establishing and maintaining connection between iPhone and Mac.</li>
-              <li>Executing remote control functions.</li>
-              <li>Personalization via settings, macros and favorites.</li>
-            </ul>
+            <article class="legal-article">
+              <section class="legal-block" id="daten">
+                <h2>1. What data does DeskPilot process?</h2>
+                <ul class="legal-list">
+                  <li>Local app settings, e.g. language, theme, macros and preferred devices.</li>
+                  <li>Connection-related device information, e.g. device name or hostname in the local network.</li>
+                  <li>No permanent transfer to own servers.</li>
+                  <li>No sharing with advertising networks.</li>
+                </ul>
+              </section>
 
-            <h2>3. Third parties & in-app purchases</h2>
-            <ul class="bullets legal-list">
-              <li>In-app purchases are handled via Apple StoreKit.</li>
-              <li>Apple has its own privacy terms that also apply.</li>
-              <li>DeskPilot currently includes no embedded third-party tracking SDKs.</li>
-            </ul>
+              <section class="legal-block" id="verwendung">
+                <h2>2. What is the data used for?</h2>
+                <ul class="legal-list">
+                  <li>Device discovery in the local network (Bonjour).</li>
+                  <li>Establishing and maintaining connection between iPhone and Mac.</li>
+                  <li>Executing remote control functions.</li>
+                  <li>Personalization via settings, macros and favorites.</li>
+                </ul>
+              </section>
 
-            <h2>4. Storage period & deletion</h2>
-            <ul class="bullets legal-list">
-              <li>Data is stored locally on the device.</li>
-              <li>Deletion via app uninstall or resetting settings.</li>
-              <li>No central user account is required.</li>
-            </ul>
+              <section class="legal-block" id="drittanbieter">
+                <h2>3. Third parties & in-app purchases</h2>
+                <ul class="legal-list">
+                  <li>In-app purchases are handled via Apple StoreKit.</li>
+                  <li>Apple has its own privacy terms that also apply.</li>
+                  <li>DeskPilot currently includes no embedded third-party tracking SDKs.</li>
+                </ul>
+              </section>
 
-            <h2>5. Legal basis (GDPR)</h2>
-            <ul class="bullets legal-list">
-              <li>Art. 6(1)(b) GDPR (performance of contract).</li>
-              <li>Art. 6(1)(f) GDPR (legitimate interest in secure and reliable app functionality).</li>
-            </ul>
+              <section class="legal-block" id="speicherdauer">
+                <h2>4. Storage period & deletion</h2>
+                <ul class="legal-list">
+                  <li>Data is stored locally on the device.</li>
+                  <li>Deletion via app uninstall or resetting settings.</li>
+                  <li>No central user account is required.</li>
+                </ul>
+              </section>
 
-            <h2>6. Your rights</h2>
-            <ul class="bullets legal-list">
-              <li>Access</li>
-              <li>Rectification</li>
-              <li>Erasure</li>
-              <li>Restriction of processing</li>
-              <li>Objection</li>
-              <li>Data portability</li>
-              <li>Right to lodge a complaint with a supervisory authority</li>
-            </ul>
+              <section class="legal-block" id="rechtsgrundlagen">
+                <h2>5. Legal basis (GDPR)</h2>
+                <ul class="legal-list">
+                  <li>Art. 6(1)(b) GDPR (performance of contract).</li>
+                  <li>Art. 6(1)(f) GDPR (legitimate interest in secure and reliable app functionality).</li>
+                </ul>
+              </section>
 
-            <h2 id="kontakt">7. Contact</h2>
-            <p>
-              <strong>Name/Company:</strong> Torben Lehneke<br />
-              <strong>Email:</strong> <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a><br />
-            </p>
+              <section class="legal-block" id="rechte">
+                <h2>6. Your rights</h2>
+                <ul class="legal-list">
+                  <li>Access</li>
+                  <li>Rectification</li>
+                  <li>Erasure</li>
+                  <li>Restriction of processing</li>
+                  <li>Objection</li>
+                  <li>Data portability</li>
+                  <li>Right to lodge a complaint with a supervisory authority</li>
+                </ul>
+              </section>
 
-            <p class="legal-date">Version: 12.04.2026</p>
-          </article>
+              <section class="legal-block" id="kontakt">
+                <h2>7. Contact</h2>
+                <p>
+                  <strong>Name/Company:</strong> Torben Lehneke<br />
+                  <strong>Email:</strong> <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a><br />
+                </p>
+              </section>
+
+              <p class="legal-date">Version: 12.04.2026</p>
+            </article>
+          </div>
         </div>
       </section>
     `,
     "deskpilot-terms": `
       <section class="section legal-section" aria-label="DeskPilot Terms">
         <div class="container">
-          <article class="legal-card">
+          <header class="legal-hero">
+            <span class="legal-eyebrow">Legal</span>
             <h1>Terms and Conditions (DeskPilot)</h1>
-            <p class="legal-date">Version: 14.04.2026</p>
+            <p class="lead">Version: 14.04.2026</p>
+          </header>
 
+          <div class="legal-layout">
+            <nav class="legal-toc" aria-label="Table of contents">
+              <p class="legal-toc-title">Contents</p>
+              <ol>
+                <li><a href="#geltungsbereich">1. Scope</a></li>
+                <li><a href="#vertragspartner">2. Provider</a></li>
+                <li><a href="#leistungen">3. Services (Free vs Premium)</a></li>
+                <li><a href="#voraussetzungen">4. Requirements</a></li>
+                <li><a href="#preise">5. Pricing and billing via Apple</a></li>
+                <li><a href="#laufzeit">6. Term, renewal and cancellation</a></li>
+                <li><a href="#widerruf">7. Withdrawal for digital content</a></li>
+                <li><a href="#nutzungsrechte">8. License rights</a></li>
+                <li><a href="#pflichten">9. User obligations</a></li>
+                <li><a href="#verfuegbarkeit">10. Availability</a></li>
+                <li><a href="#haftung">11. Liability</a></li>
+                <li><a href="#gewaehrleistung">12. Warranty</a></li>
+                <li><a href="#datenschutz-verweis">13. Data protection</a></li>
+                <li><a href="#agb-aenderungen">14. Changes to terms</a></li>
+                <li><a href="#recht">15. Governing law</a></li>
+                <li><a href="#schluss">16. Final provisions</a></li>
+                <li><a href="#kontakt">Contact</a></li>
+              </ol>
+            </nav>
+
+            <article class="legal-article">
+            <section class="legal-block" id="geltungsbereich">
             <h2>1. Scope</h2>
             <p>
               These Terms govern the use of DeskPilot and all related digital services in the free version and in paid
               premium subscriptions.
             </p>
+            </section>
 
+            <section class="legal-block" id="vertragspartner">
             <h2>2. Provider</h2>
             <p>
               Torben Lehneke<br />
@@ -413,77 +618,103 @@
               17139 Malchin<br />
               Email: <a class="inline-link" href="mailto:lehneketorben@gmail.com">lehneketorben@gmail.com</a>
             </p>
+            </section>
 
+            <section class="legal-block" id="leistungen">
             <h2>3. Services (Free vs Premium)</h2>
-            <ul class="bullets legal-list">
+            <ul class="legal-list">
               <li><strong>Free:</strong> basic connection and basic remote control features.</li>
               <li><strong>Premium:</strong> extended macros, pro remote features and iCloud sync where marked in the app.</li>
             </ul>
+            </section>
 
+            <section class="legal-block" id="voraussetzungen">
             <h2>4. Requirements</h2>
             <p>
               DeskPilot requires compatible Apple devices, a supported Mac, and a local network connection.
               Premium features require an Apple ID with in-app purchases enabled.
             </p>
+            </section>
 
+            <section class="legal-block" id="preise">
             <h2>5. Pricing and billing via Apple</h2>
             <p>
               Prices are shown in the Apple App Store. Purchase, billing, renewal and cancellation are handled via
               Apple StoreKit and the respective Apple account.
             </p>
+            </section>
 
+            <section class="legal-block" id="laufzeit">
             <h2>6. Term, renewal and cancellation</h2>
             <p>
               Premium subscriptions run monthly or yearly based on your selected plan and renew automatically unless
               canceled in Apple account settings.
             </p>
+            </section>
 
+            <section class="legal-block" id="widerruf">
             <h2>7. Withdrawal for digital content</h2>
             <p>
               Statutory withdrawal rights may apply. They may expire once contract performance starts with explicit
               prior consent and acknowledgement in the purchase process.
             </p>
+            </section>
 
+            <section class="legal-block" id="nutzungsrechte">
             <h2>8. License rights</h2>
             <p>
               You receive a simple, non-transferable, non-sublicensable right to use the app within its intended scope.
             </p>
+            </section>
 
+            <section class="legal-block" id="pflichten">
             <h2>9. User obligations and prohibited use</h2>
-            <ul class="bullets legal-list">
+            <ul class="legal-list">
               <li>No unlawful use.</li>
               <li>No reverse engineering, circumvention of technical protections or abusive remote control usage.</li>
               <li>Keep Apple account credentials secure.</li>
             </ul>
+            </section>
 
+            <section class="legal-block" id="verfuegbarkeit">
             <h2>10. Availability, maintenance and changes</h2>
             <p>
               Continuous, uninterrupted availability is not guaranteed. Maintenance and updates may temporarily affect
               functionality. Features may be changed if the contractual core remains reasonable.
             </p>
+            </section>
 
+            <section class="legal-block" id="haftung">
             <h2>11. Liability</h2>
             <p>
               Liability is unlimited for intent, gross negligence and injury to life, body or health. For slight
               negligence, liability is limited to foreseeable damage in case of breach of essential obligations.
             </p>
+            </section>
 
+            <section class="legal-block" id="gewaehrleistung">
             <h2>12. Warranty</h2>
             <p>
               Statutory rules for digital products apply.
             </p>
+            </section>
 
+            <section class="legal-block" id="datenschutz-verweis">
             <h2>13. Data protection</h2>
             <p>
               See <a class="inline-link" href="datenschutz.html">Privacy Policy</a>.
             </p>
+            </section>
 
+            <section class="legal-block" id="agb-aenderungen">
             <h2>14. Transfer of contract / changes to terms</h2>
             <p>
               Contractual rights and obligations may be transferred where user interests are reasonably protected.
               Changes to these terms are notified appropriately and apply only within legal limits.
             </p>
+            </section>
 
+            <section class="legal-block" id="recht">
             <h2>15. Governing law / dispute resolution</h2>
             <p>
               German law applies, excluding the UN Convention on Contracts for the International Sale of Goods.
@@ -492,13 +723,17 @@
             <p>
               The provider is not obliged and not willing to participate in consumer arbitration proceedings.
             </p>
+            </section>
 
+            <section class="legal-block" id="schluss">
             <h2>16. Final provisions</h2>
             <p>
               If individual provisions are invalid, the remaining provisions remain unaffected.
             </p>
+            </section>
 
-            <h2 id="kontakt">Contact</h2>
+            <section class="legal-block" id="kontakt">
+            <h2>Contact</h2>
             <p>
               Torben Lehneke<br />
               Neu Panstorf 38b, 17139 Malchin<br />
@@ -508,7 +743,9 @@
             <p class="lead" style="margin-top: 1rem; font-weight: 700; color: var(--primary);">
               Note: This text does not constitute legal advice and should be reviewed by a lawyer before publication.
             </p>
-          </article>
+            </section>
+            </article>
+          </div>
         </div>
       </section>
     `,
