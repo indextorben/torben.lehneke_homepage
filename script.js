@@ -2204,8 +2204,8 @@
     // Site root relative to the current page, derived from this script's src
     // ("script.js" on root pages, "../../script.js" on app pages).
     const scriptSrc =
-      document.querySelector('script[src$="script.js"]')?.getAttribute("src") || "script.js";
-    const ROOT = scriptSrc.slice(0, scriptSrc.length - "script.js".length);
+      document.querySelector('script[src*="script.js"]')?.getAttribute("src") || "script.js";
+    const ROOT = scriptSrc.replace(/script\.js(\?.*)?$/, "");
 
     const SEARCH_INDEX = [
       {
