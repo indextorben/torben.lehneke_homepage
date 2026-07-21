@@ -2132,6 +2132,10 @@ html.search-open{
   overflow: hidden;
 }
 
+.search-overlay[hidden]{
+  display: none;
+}
+
 .search-overlay{
   position: fixed;
   inset: 0;
@@ -2373,5 +2377,25 @@ html[data-theme="dark"] .search-overlay{
   }
   .search-overlay .search-panel{
     transform: none;
+  }
+}
+
+/* Tight desktop range: keep nav clear of header actions */
+@media (min-width: 981px) and (max-width: 1080px){
+  .header-inner{ gap: 8px; }
+  .nav-link{
+    padding: 8px 5px;
+    font-size: 0.84rem;
+  }
+  .icon-btn{
+    width: 40px;
+    height: 40px;
+  }
+  .lang-btn{
+    min-width: 44px;
+    padding: 0 7px;
+  }
+  .brand-logo{
+    max-width: min(26vw, 300px);
   }
 }
