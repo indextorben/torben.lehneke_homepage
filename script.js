@@ -2824,7 +2824,7 @@
     };
 
     document.body.appendChild(banner);
-    if (!readConsent()) openBanner();
+    openBanner();
 
     // Re-render texts when the language toggle is used while the banner is open
     langToggle?.addEventListener("click", () => {
