@@ -186,6 +186,8 @@
                   This website currently does not use tracking cookies. Technically necessary storage access
                   (e.g. dark mode state via localStorage) is used without consent.
                   Legal basis: Section 25 TDDDG in conjunction with Art. 6 GDPR.
+                  The cookie banner lets you enable or decline the "Statistics" and
+                  "Marketing &amp; external content" categories individually; neither is currently in use.
                   If cookies or analytics tools are added, consent will be required.
                 </p>
               </section>
@@ -2712,7 +2714,7 @@
     const texts = {
       de: {
         title: "Cookies & Datenschutz",
-        body: "Diese Website verwendet nur technisch notwendige Cookies bzw. lokale Speicherung (z. B. für Sprache und Design). Optionale Statistik-Cookies werden nur mit deiner Einwilligung gesetzt. Details findest du in der ",
+        body: "Diese Website verwendet nur technisch notwendige Cookies bzw. lokale Speicherung (z. B. für Sprache und Design). Optionale Cookies werden nur für die Kategorien gesetzt, denen du einzeln zustimmst. Details findest du in der ",
         privacy: "Datenschutzerklärung",
         acceptAll: "Alle akzeptieren",
         essentialOnly: "Nur notwendige",
@@ -2722,12 +2724,14 @@
         catEssentialDesc: "Erforderlich für Grundfunktionen wie Sprach- und Design-Einstellungen. Immer aktiv.",
         catStats: "Statistik",
         catStatsDesc: "Hilft zu verstehen, wie die Website genutzt wird. Aktuell werden keine Statistik-Tools eingesetzt.",
+        catMarketing: "Marketing & externe Inhalte",
+        catMarketingDesc: "Für eingebettete Inhalte Dritter (z. B. Karten, Videos) und Reichweitenmessung. Aktuell werden keine solchen Inhalte eingesetzt.",
         saved: "Einstellungen gespeichert.",
         footerLink: "Cookie-Einstellungen",
       },
       en: {
         title: "Cookies & privacy",
-        body: "This website only uses technically necessary cookies / local storage (e.g. for language and theme). Optional statistics cookies are only set with your consent. See the ",
+        body: "This website only uses technically necessary cookies / local storage (e.g. for language and theme). Optional cookies are only set for the categories you individually consent to. See the ",
         privacy: "privacy policy",
         acceptAll: "Accept all",
         essentialOnly: "Essential only",
@@ -2737,6 +2741,8 @@
         catEssentialDesc: "Required for basic features such as language and theme settings. Always active.",
         catStats: "Statistics",
         catStatsDesc: "Helps to understand how the website is used. No statistics tools are currently in use.",
+        catMarketing: "Marketing & external content",
+        catMarketingDesc: "For third-party embedded content (e.g. maps, videos) and reach measurement. No such content is currently in use.",
         saved: "Preferences saved.",
         footerLink: "Cookie settings",
       },
@@ -2754,10 +2760,15 @@
       }
     };
 
-    const saveConsent = (statistics) => {
+    const saveConsent = (statistics, marketing) => {
       localStorage.setItem(
         CONSENT_KEY,
-        JSON.stringify({ necessary: true, statistics: !!statistics, ts: Date.now() })
+        JSON.stringify({
+          necessary: true,
+          statistics: !!statistics,
+          marketing: !!marketing,
+          ts: Date.now(),
+        })
       );
     };
 
@@ -2786,6 +2797,10 @@
               <input type="checkbox" data-cookie-stats ${consent?.statistics ? "checked" : ""} />
               <span><strong>${t.catStats}</strong><br /><span class="cookie-cat-desc">${t.catStatsDesc}</span></span>
             </label>
+            <label class="cookie-cat">
+              <input type="checkbox" data-cookie-marketing ${consent?.marketing ? "checked" : ""} />
+              <span><strong>${t.catMarketing}</strong><br /><span class="cookie-cat-desc">${t.catMarketingDesc}</span></span>
+            </label>
           </div>
           <div class="cookie-actions">
             <button type="button" class="btn btn-primary" data-cookie-accept>${t.acceptAll}</button>
@@ -2799,16 +2814,19 @@
       const toggleBtn = $("[data-cookie-toggle]", banner);
       const saveBtn = $("[data-cookie-save]", banner);
 
-      const finish = (statistics) => {
-        saveConsent(statistics);
+      const finish = (statistics, marketing) => {
+        saveConsent(statistics, marketing);
         banner.hidden = true;
         showToast(texts[getLang()].saved);
       };
 
-      $("[data-cookie-accept]", banner).addEventListener("click", () => finish(true));
-      $("[data-cookie-essential]", banner).addEventListener("click", () => finish(false));
+      $("[data-cookie-accept]", banner).addEventListener("click", () => finish(true, true));
+      $("[data-cookie-essential]", banner).addEventListener("click", () => finish(false, false));
       saveBtn.addEventListener("click", () =>
-        finish($("[data-cookie-stats]", banner).checked)
+        finish(
+          $("[data-cookie-stats]", banner).checked,
+          $("[data-cookie-marketing]", banner).checked
+        )
       );
       toggleBtn.addEventListener("click", () => {
         const open = settingsBox.hidden;
