@@ -853,6 +853,11 @@
             "Cross-platform CLI helper for Windows, macOS and Linux.",
           "#referenzen .project:nth-child(3) .project-meta span":
             "iPhone remote control for Mac with quick actions and macros.",
+          "#zertifizierungen h2": "Certifications",
+          "#zertifizierungen .lead":
+            "Demonstrable expertise for reliable IT and networking solutions.",
+          ".certificate-card figcaption strong": "CCNA: Introduction to Networks",
+          ".certificate-card figcaption span": "Cisco Networking Academy",
           "#bewertungen h2": "Reviews",
           "#bewertungen .lead":
             "Real customer and user reviews with concrete feedback and experience.",
@@ -2276,6 +2281,16 @@
           en: "Selected projects: BeeFocus, Cmdfind and DeskPilot.",
         },
         keywords: "references referenzen projekte portfolio arbeiten",
+      },
+      {
+        url: "index.html#zertifizierungen",
+        cat: { de: "Startseite", en: "Home" },
+        title: { de: "Zertifizierungen", en: "Certifications" },
+        desc: {
+          de: "Nachweisbare Fachkenntnisse: Cisco CCNA Introduction to Networks.",
+          en: "Demonstrable expertise: Cisco CCNA Introduction to Networks.",
+        },
+        keywords: "zertifikat zertifizierung cisco ccna networking netzwerk",
       },
       {
         url: "index.html#bewertungen",
