@@ -948,22 +948,9 @@ html[data-theme="dark"] .icon-moon{ display: block; }
   object-position: center;
   padding: 0;
 }
-.project-thumb-beework{
-  display: grid;
-  place-content: center;
-  gap: 5px;
-  text-align: center;
-}
-.project-thumb-beework span{
-  color: color-mix(in srgb, var(--bg) 88%, var(--text));
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
-  font-weight: 900;
-  letter-spacing: -.06em;
-  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.24);
-}
-.project-thumb-beework small{
-  color: color-mix(in srgb, var(--bg) 72%, var(--text));
-  font-weight: 750;
+.project-thumb-beework img{
+  object-fit: contain;
+  object-position: center;
 }
 .cmdfind-thumb{
   display: grid;
