@@ -2363,6 +2363,16 @@
         keywords: "beework arbeitszeit zeiterfassung gleitzeit zeitkonto feierabend iphone ipad apple watch",
       },
       {
+        url: "apps/beework/nutzungsbedingungen.html",
+        cat: { de: "App · Rechtliches", en: "App · Legal" },
+        title: { de: "BeeWork – Nutzungsbedingungen", en: "BeeWork – Terms of use" },
+        desc: {
+          de: "Nutzungsbedingungen der BeeWork App.",
+          en: "Terms of use for the BeeWork app.",
+        },
+        keywords: "beework nutzungsbedingungen terms agb bedingungen",
+      },
+      {
         url: "apps/beefocus/datenschutz.html",
         cat: { de: "App · Rechtliches", en: "App · Legal" },
         title: { de: "BeeFocus – Datenschutz", en: "BeeFocus – Privacy" },

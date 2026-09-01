@@ -19,6 +19,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://torbenlehneke.de/apps/beework/nutzungsbedingungen.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
     <loc>https://torbenlehneke.de/apps/cmdfind/</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
