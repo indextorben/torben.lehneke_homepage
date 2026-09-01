@@ -10,4 +10,17 @@
   letter-spacing: -.04em;
 }
 
+.beework .product-frame {
+  box-sizing: border-box;
+  aspect-ratio: 1320 / 2868;
+  overflow: hidden;
+}
+
+.beework .product-frame img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+
 .store-badge.is-disabled { cursor: default; opacity: .78; }
