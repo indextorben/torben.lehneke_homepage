@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BeeWork ist der native Arbeitszeit- und Gleitzeit-Tracker für iPhone, iPad und Apple Watch – mit Zeiterfassung, Zeitkonto, Smart-Feierabend und Widgets." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Torben Lehneke" />
+  <meta name="theme-color" content="#0b5fff" />
+  <link rel="canonical" href="https://torbenlehneke.de/apps/beework/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://torbenlehneke.de/apps/beework/" />
+  <meta property="og:site_name" content="BeeWork" />
+  <meta property="og:title" content="BeeWork – Arbeitszeit, Gleitzeit & Feierabend für iOS" />
+  <meta property="og:description" content="Arbeitszeit erfassen, Zeitkonto im Blick behalten und den Feierabend planen – mit BeeWork für iPhone, iPad und Apple Watch." />
+  <meta property="og:locale" content="de_DE" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="BeeWork – Arbeitszeit & Gleitzeit für iOS" />
+  <meta name="twitter:description" content="Native Arbeitszeiterfassung mit Zeitkonto, Smart-Feierabend und Apple-Ökosystem-Integration." />
+  <title>BeeWork – Arbeitszeit, Gleitzeit & Feierabend für iOS</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="../../style.css?v=9" />
+  <link rel="stylesheet" href="beework.css?v=1" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Startseite","item":"https://torbenlehneke.de/"},
+      {"@type":"ListItem","position":2,"name":"BeeWork","item":"https://torbenlehneke.de/apps/beework/"}
+    ]},
+    {"@type":"MobileApplication","name":"BeeWork","url":"https://torbenlehneke.de/apps/beework/","description":"Native Arbeitszeit- und Gleitzeit-App für iPhone, iPad und Apple Watch.","applicationCategory":"BusinessApplication","operatingSystem":"iOS, iPadOS, watchOS","author":{"@type":"Person","name":"Torben Lehneke","url":"https://torbenlehneke.de"},"inLanguage":["de","en"],"featureList":"Arbeitszeiterfassung, Gleitzeitkonto, Smart-Feierabend, Pausenverwaltung, Standortautomatisierung, Widgets, Live Activities, Apple Watch, Siri-Kurzbefehle, Statistiken und Export"}
+  ]}
+  </script>
+</head>
+<body class="beefocus beework" data-i18n-page="beework-index">
+  <div class="symbol-scene" aria-hidden="true">
+    <span class="note-symbol sym-a" data-depth="1.2">⏱</span><span class="note-symbol sym-b" data-depth="0.9">+</span>
+    <span class="note-symbol sym-c" data-depth="1.4">✓</span><span class="note-symbol sym-d" data-depth="1.1">→</span>
+    <span class="note-symbol sym-e" data-depth="1.7">⌚</span><span class="note-symbol sym-f" data-depth="1.3">∑</span>
+    <span class="note-symbol sym-g" data-depth="0.8">%</span><span class="note-symbol sym-h" data-depth="1.5">◷</span>
+    <span class="note-symbol sym-i" data-depth="1.6">☀</span><span class="note-symbol sym-j" data-depth="1">!</span>
+    <span class="note-symbol sym-k" data-depth="1.9">⌁</span>
+  </div>
+
+  <header class="site-header app-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html" aria-label="BeeWork Startseite"><span class="brand-mark beework-mark" aria-hidden="true">BW</span><span class="brand-text"><span class="brand-name">BeeWork</span><span class="brand-sub" data-i18n="brand-sub">App · Arbeitszeit & Gleitzeit</span></span></a>
+      <nav class="nav" aria-label="BeeWork Navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu"><span class="sr-only">Menü öffnen</span><span aria-hidden="true" class="hamburger"></span></button>
+        <div class="nav-menu" id="navMenu">
+          <a class="nav-link" href="#benefits" data-i18n="nav-benefits">Vorteile</a><a class="nav-link" href="#features" data-i18n="nav-features">Features</a><a class="nav-link" href="#preise" data-i18n="nav-pricing">BeeWork Pro</a><a class="nav-link" href="#download" data-i18n="nav-download">Download</a><a class="nav-link" href="#faq">FAQ</a><a class="nav-link nav-cta" href="#download" data-i18n="nav-cta">Verfügbarkeit ansehen</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a class="home-link-btn" href="../../index.html" aria-label="Zur Homepage"><span class="icon" aria-hidden="true">←</span><span class="home-label" data-i18n="home">Zur Homepage</span></a>
+        <button class="icon-btn lang-btn" id="langToggle" type="button" aria-label="Switch to English" aria-pressed="false">EN</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Dark Mode umschalten" aria-pressed="false"><span class="icon" aria-hidden="true">◐</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section app-hero" aria-label="BeeWork Hero">
+      <div class="hero-glow" aria-hidden="true"><span class="glow-orb orb-a"></span><span class="glow-orb orb-b"></span><span class="glow-orb orb-c"></span></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-i18n="eyebrow">BeeWork App</p><h1 class="headline" data-i18n="headline">Deine Zeit. Klar im Blick.</h1>
+          <p class="subheadline" data-i18n="subheadline">Der native Arbeitszeit- und Gleitzeit-Tracker für iPhone, iPad und Apple Watch – von der ersten Minute bis zum Feierabend.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#download" data-i18n="hero-primary">Verfügbarkeit ansehen</a><a class="btn btn-ghost" href="#features" data-i18n="hero-secondary">Mehr erfahren</a></div>
+          <div class="trust-row" role="list" aria-label="Vorteile"><span class="trust-item" role="listitem" data-i18n="trust-1">✓ Lokal & privat</span><span class="trust-item" role="listitem" data-i18n="trust-2">✓ Apple-Ökosystem</span><span class="trust-item" role="listitem" data-i18n="trust-3">✓ Deutsch & Englisch</span></div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="mockup-stack">
+            <figure class="mockup phone beework-media-placeholder"><div><span data-i18n="media-phone">iPhone-Screenshot</span><small data-i18n="media-pending">Asset folgt</small></div></figure>
+            <figure class="mockup tablet beework-media-placeholder"><div><span data-i18n="media-tablet">iPad-Screenshot</span><small data-i18n="media-pending">Asset folgt</small></div></figure>
+          </div>
+          <div class="hero-card glass"><strong data-i18n="hero-card-title">Feierabend auf einen Blick</strong><p data-i18n="hero-card-copy">Sollzeit, Zeitkonto und dein voraussichtlicher Feierabend in einem klaren Ablauf.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="benefits" aria-label="Vorteile"><div class="container">
+      <div class="section-head reveal"><h2 data-i18n="benefits-title">Arbeitszeit, die mitdenkt</h2><p class="lead" data-i18n="benefits-lead">BeeWork bündelt den Arbeitstag in einem ruhigen, verständlichen Ablauf.</p></div>
+      <div class="cards-grid benefits-grid reveal">
+        <article class="card benefit-card"><div class="card-icon">⏱</div><h3 data-i18n="benefit-1-title">Live-Zeiterfassung</h3><p data-i18n="benefit-1-copy">Sekundengenau ein- und ausstempeln – mit mehreren Arbeitsblöcken und Aktivitäten pro Tag.</p></article>
+        <article class="card benefit-card"><div class="card-icon">±</div><h3 data-i18n="benefit-2-title">Gleitzeit & Zeitkonto</h3><p data-i18n="benefit-2-copy">Sollzeit, Ist-Zeit und Saldo bleiben für Tag, Woche und Monat sofort sichtbar.</p></article>
+        <article class="card benefit-card"><div class="card-icon">☀</div><h3 data-i18n="benefit-3-title">Smart-Feierabend</h3><p data-i18n="benefit-3-copy">Sieh, wann deine tägliche Sollarbeitszeit erreicht ist – inklusive Gleitzeit.</p></article>
+        <article class="card benefit-card"><div class="card-icon">⌖</div><h3 data-i18n="benefit-4-title">Automatisch am Arbeitsort</h3><p data-i18n="benefit-4-copy">Arbeitsorte per Karte festlegen und beim Ankommen oder Gehen intelligent erinnert werden.</p></article>
+        <article class="card benefit-card"><div class="card-icon">▣</div><h3 data-i18n="benefit-5-title">Immer griffbereit</h3><p data-i18n="benefit-5-copy">Widgets, Live Activities und Dynamic Island zeigen den laufenden Arbeitstag genau dort, wo du ihn brauchst.</p></article>
+        <article class="card benefit-card"><div class="card-icon">⌚</div><h3 data-i18n="benefit-6-title">Apple Watch & Siri</h3><p data-i18n="benefit-6-copy">Dein Status bleibt synchron – und Ein- oder Ausstempeln funktioniert auch per Kurzbefehlen.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section product-showcase" id="product-gallery" aria-label="BeeWork Produktbilder"><div class="container">
+      <div class="section-head reveal"><h2 data-i18n="gallery-title">BeeWork im Alltag</h2><p class="lead" data-i18n="gallery-lead">Die Produktansichten werden ergänzt, sobald die finalen BeeWork-Screenshots vorliegen.</p></div>
+      <div class="product-canvas reveal beework-gallery-placeholder"><div class="beework-placeholder-copy"><span aria-hidden="true">▣</span><strong data-i18n="gallery-placeholder-title">Produkt-Screenshots folgen</strong><p data-i18n="gallery-placeholder-copy">Benötigt werden iPhone- und iPad-Aufnahmen der Zeiterfassung, des Zeitkontos und der Auswertung.</p></div></div>
+    </div></section>
+
+    <section class="section" id="features" aria-label="Features">
+      <div class="container"><div class="section-head reveal"><h2 data-i18n="features-title">Alles für einen klaren Arbeitstag</h2><p class="lead" data-i18n="features-lead">Die wichtigsten Werkzeuge bleiben genau dort, wo sie im Alltag helfen.</p></div></div>
+      <div class="feat-slider-wrap reveal" id="featSliderWrap">
+        <button class="feat-slider-btn feat-slider-btn--prev" id="featPrev" aria-label="Zurück" disabled>‹</button>
+        <div class="feat-slider" id="featSlider"><div class="feat-slider-track">
+          <article class="feat-slider-card"><div class="feat-slider-card-icon">⏱</div><h3 data-i18n="feature-1-title">Zeiterfassung</h3><p class="muted" data-i18n="feature-1-copy">Arbeitszeit flexibel erfassen und Korrekturen sicher nachtragen.</p><div class="feat-chips"><span class="feat-chip" data-i18n="feature-1-chip-1">Arbeit & Pause</span><span class="feat-chip" data-i18n="feature-1-chip-2">Mehrere Blöcke</span><span class="feat-chip" data-i18n="feature-1-chip-3">Tag wieder öffnen</span></div></article>
+          <article class="feat-slider-card"><div class="feat-slider-card-icon">±</div><h3 data-i18n="feature-2-title">Zeitkonto</h3><p class="muted" data-i18n="feature-2-copy">Tages-, Wochen- und Monatssaldo werden automatisch berechnet.</p><div class="feat-chips"><span class="feat-chip" data-i18n="feature-2-chip-1">Soll- & Ist-Zeit</span><span class="feat-chip" data-i18n="feature-2-chip-2">Plus- & Minusstunden</span><span class="feat-chip" data-i18n="feature-2-chip-3">Korrekturbuchungen</span></div></article>
+          <article class="feat-slider-card"><div class="feat-slider-card-icon">☀</div><h3 data-i18n="feature-3-title">Smart-Feierabend</h3><p class="muted" data-i18n="feature-3-copy">BeeWork berechnet deinen voraussichtlichen Feierabend automatisch.</p><div class="feat-chips"><span class="feat-chip" data-i18n="feature-3-chip-1">Wochensaldo</span><span class="feat-chip" data-i18n="feature-3-chip-2">Pausenregeln</span><span class="feat-chip" data-i18n="feature-3-chip-3">Feierabend-Prognose</span></div></article>
+          <article class="feat-slider-card"><div class="feat-slider-card-icon">⌖</div><h3 data-i18n="feature-4-title">Automationen</h3><p class="muted" data-i18n="feature-4-copy">Arbeitsorte, Erinnerungen und Live-Status unterstützen dich ohne Umwege.</p><div class="feat-chips"><span class="feat-chip" data-i18n="feature-4-chip-1">Geofencing</span><span class="feat-chip" data-i18n="feature-4-chip-2">Live Activities</span><span class="feat-chip" data-i18n="feature-4-chip-3">Widgets</span></div></article>
+          <article class="feat-slider-card"><div class="feat-slider-card-icon">⌚</div><h3 data-i18n="feature-5-title">Apple-Integration</h3><p class="muted" data-i18n="feature-5-copy">Vom Handgelenk bis zu Siri bleibt deine Zeiterfassung synchron.</p><div class="feat-chips"><span class="feat-chip" data-i18n="feature-5-chip-1">Apple Watch</span><span class="feat-chip" data-i18n="feature-5-chip-2">Siri & Kurzbefehle</span><span class="feat-chip" data-i18n="feature-5-chip-3">CloudKit</span></div></article>
+          <article class="feat-slider-card"><div class="feat-slider-card-icon">▥</div><h3 data-i18n="feature-6-title">Auswertung & Export</h3><p class="muted" data-i18n="feature-6-copy">Langfristige Entwicklungen verständlich auswerten und Berichte exportieren.</p><div class="feat-chips"><span class="feat-chip" data-i18n="feature-6-chip-1">Statistiken</span><span class="feat-chip" data-i18n="feature-6-chip-2">PDF & PNG</span><span class="feat-chip" data-i18n="feature-6-chip-3">Gehaltsrechner</span></div></article>
+        </div></div>
+        <button class="feat-slider-btn feat-slider-btn--next" id="featNext" aria-label="Weiter">›</button>
+      </div>
+    </section>
+
+    <section class="section" id="preise" aria-label="BeeWork Pro"><div class="container">
+      <div class="section-head reveal"><h2 data-i18n="pricing-title">BeeWork Pro</h2><p class="lead" data-i18n="pricing-lead">Mehr Automatisierung, tiefere Auswertungen und unbegrenzte Historie.</p></div>
+      <div class="cards-grid pricing-grid reveal">
+        <article class="card price-card"><h3 data-i18n="pricing-monthly">Monatlich</h3><p class="price-line"><span class="price-amount" data-i18n="pricing-available">Im App Store</span></p><p class="muted price-desc" data-i18n="pricing-flexible">Flexibel abonnieren.</p></article>
+        <article class="card price-card price-card-featured"><span class="price-badge" data-i18n="pricing-popular">BeeWork Pro</span><h3 data-i18n="pricing-yearly">Jährlich</h3><p class="price-line"><span class="price-amount" data-i18n="pricing-available">Im App Store</span></p><p class="muted price-desc" data-i18n="pricing-yearly-copy">Für den langfristigen Überblick.</p></article>
+        <article class="card price-card"><h3 data-i18n="pricing-lifetime">Lifetime</h3><p class="price-line"><span class="price-amount" data-i18n="pricing-available">Im App Store</span></p><p class="muted price-desc" data-i18n="pricing-lifetime-copy">Einmaliger Kauf, sofern verfügbar.</p></article>
+      </div>
+      <p class="pricing-note reveal" data-i18n="pricing-note">Aktuelle Preise und verfügbare Optionen werden direkt im App Store angezeigt.</p>
+    </div></section>
+
+    <section class="section download" id="download" aria-label="Download"><div class="container download-grid">
+      <div class="download-copy reveal"><h2 data-i18n="download-title">BeeWork vormerken</h2><p class="lead" data-i18n="download-lead">Der App-Store-Link wird ergänzt, sobald BeeWork verfügbar ist.</p><div class="download-actions"><span class="store-badge is-disabled" aria-disabled="true"><span class="badge-title">App Store</span><span class="badge-sub" data-i18n="download-badge">Verfügbarkeit folgt</span></span></div><p class="fineprint" data-i18n="download-fineprint">Deine Daten bleiben lokal auf deinem Gerät oder werden über iCloud synchronisiert.</p></div>
+      <div class="download-card reveal glass"><h3 data-i18n="setup-title">Dein Arbeitstag, dein Überblick</h3><ul class="bullets"><li><span aria-hidden="true">✓</span><span data-i18n="setup-1">Arbeitszeit in Sekunden erfassen</span></li><li><span aria-hidden="true">✓</span><span data-i18n="setup-2">Gleitzeitkonto automatisch berechnen</span></li><li><span aria-hidden="true">✓</span><span data-i18n="setup-3">Feierabend vorausschauend planen</span></li></ul><a class="btn btn-primary" href="#top" data-i18n="setup-button">Zurück nach oben</a></div>
+    </div></section>
+
+    <section class="section" id="faq" aria-label="FAQ"><div class="container"><div class="section-head reveal"><h2>FAQ</h2><p class="lead" data-i18n="faq-lead">Kurze Antworten zu BeeWork.</p></div>
+      <div class="accordion reveal" data-accordion>
+        <div class="acc-item"><h3 class="acc-head"><button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq1" id="faq1-btn"><span data-i18n="faq-1-q">Welche Geräte unterstützt BeeWork?</span><span class="acc-icon" aria-hidden="true"></span></button></h3><div class="acc-panel" id="faq1" role="region" aria-labelledby="faq1-btn" hidden><p data-i18n="faq-1-a">BeeWork ist für iPhone und iPad ausgelegt und besitzt zusätzlich eine Apple-Watch-App. Eine eigenständige macOS-App gibt es nicht.</p></div></div>
+        <div class="acc-item"><h3 class="acc-head"><button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq2" id="faq2-btn"><span data-i18n="faq-2-q">Wie funktioniert Smart-Feierabend?</span><span class="acc-icon" aria-hidden="true"></span></button></h3><div class="acc-panel" id="faq2" role="region" aria-labelledby="faq2-btn" hidden><p data-i18n="faq-2-a">BeeWork berechnet aus Sollzeit, erfasster Zeit, Pausen und auf Wunsch dem Gleitzeit- oder Wochensaldo einen voraussichtlichen Feierabend.</p></div></div>
+        <div class="acc-item"><h3 class="acc-head"><button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq3" id="faq3-btn"><span data-i18n="faq-3-q">Werden Pausen berücksichtigt?</span><span class="acc-icon" aria-hidden="true"></span></button></h3><div class="acc-panel" id="faq3" role="region" aria-labelledby="faq3-btn" hidden><p data-i18n="faq-3-a">Ja. Pausen fließen in die Berechnung ein; BeeWork berücksichtigt dabei auch die Regeln des deutschen Arbeitszeitgesetzes.</p></div></div>
+        <div class="acc-item"><h3 class="acc-head"><button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq4" id="faq4-btn"><span data-i18n="faq-4-q">Kann BeeWork mich am Arbeitsort erinnern?</span><span class="acc-icon" aria-hidden="true"></span></button></h3><div class="acc-panel" id="faq4" role="region" aria-labelledby="faq4-btn" hidden><p data-i18n="faq-4-a">Ja. Über Core Location und Geofencing kann BeeWork an das Einstempeln erinnern oder nach einer Bestätigung die Zeiterfassung starten.</p></div></div>
+        <div class="acc-item"><h3 class="acc-head"><button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq5" id="faq5-btn"><span data-i18n="faq-5-q">Welche Sprachen gibt es?</span><span class="acc-icon" aria-hidden="true"></span></button></h3><div class="acc-panel" id="faq5" role="region" aria-labelledby="faq5-btn" hidden><p data-i18n="faq-5-a">BeeWork unterstützt Deutsch und Englisch. Die Sprache kann direkt in der App gewechselt werden.</p></div></div>
+      </div>
+    </div></section>
+  </main>
+
+  <footer class="site-footer app-footer"><div class="container footer-grid"><div class="footer-brand"><div class="brand-line"><span class="brand-mark beework-mark" aria-hidden="true">BW</span><strong>BeeWork</strong></div><p class="muted" data-i18n="footer-copy">Arbeitszeit im klaren Blick.</p></div><div class="footer-links" aria-label="Navigation"><a href="#features" class="footer-link" data-i18n="nav-features">Features</a><a href="#preise" class="footer-link" data-i18n="nav-pricing">BeeWork Pro</a><a href="../../datenschutz.html" class="footer-link" data-i18n="footer-privacy">Datenschutz</a><a href="../../impressum.html" class="footer-link" data-i18n="footer-legal">Impressum</a><a href="mailto:lehneketorben@gmail.com?subject=BeeWork" class="footer-link" data-i18n="footer-support">Support</a></div></div><div class="container footer-bottom"><small><span>© </span><span id="year"></span><span data-i18n="footer-rights"> BeeWork. Alle Rechte vorbehalten.</span></small></div><div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script><script src="../../script.js?v=9" defer></script><script src="../beefocus/beefocus.js" defer></script><script src="beework.js" defer></script>
+</body>
+</html>

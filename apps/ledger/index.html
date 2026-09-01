@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ledger – die Notizapp für iPhone, iPad und Mac. Checklisten, Erinnerungen und iCloud-Sync im klaren Apple-Notizen-Stil." />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="Torben Lehneke" />
+    <meta name="theme-color" content="#0b5fff" />
+    <link rel="canonical" href="https://torbenlehneke.de/apps/ledger/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://torbenlehneke.de/apps/ledger/" />
+    <meta property="og:site_name" content="Ledger" />
+    <meta property="og:title" content="Ledger – Notizapp für iPhone & iPad mit iCloud-Sync" />
+    <meta property="og:description" content="Schnell notieren, strukturieren und überall wiederfinden – Ledger bringt Klarheit in deinen Alltag mit Checklisten, Erinnerungen und iCloud-Sync." />
+    <meta property="og:image" content="https://torbenlehneke.de/assets/logo-cropped.png" />
+    <meta property="og:locale" content="de_DE" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ledger – Notizapp für iPhone & iPad mit iCloud-Sync" />
+    <meta name="twitter:description" content="Schnell notieren, strukturieren und überall wiederfinden – mit Checklisten, Erinnerungen und iCloud-Sync." />
+    <meta name="twitter:image" content="https://torbenlehneke.de/assets/logo-cropped.png" />
+
+    <title>Ledger – Notizapp für iPhone & iPad mit iCloud-Sync | Torben Lehneke</title>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="../../style.css?v=8" />
+    <link rel="stylesheet" href="ledger.css" />
+
+    <!-- Schema.org: BreadcrumbList + MobileApplication + FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Startseite",
+              "item": "https://torbenlehneke.de/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Ledger",
+              "item": "https://torbenlehneke.de/apps/ledger/"
+            }
+          ]
+        },
+        {
+          "@type": "MobileApplication",
+          "name": "Ledger",
+          "url": "https://torbenlehneke.de/apps/ledger/",
+          "description": "Notizapp für iPhone, iPad und Mac – schnell erfassen, sauber organisieren und überall wiederfinden. Mit Checklisten, Erinnerungen und iCloud-Sync.",
+          "applicationCategory": "ProductivityApplication",
+          "operatingSystem": "iOS, iPadOS, macOS",
+          "author": {
+            "@type": "Person",
+            "name": "Torben Lehneke",
+            "url": "https://torbenlehneke.de"
+          },
+          "featureList": "Schnelle Notizen, Checklisten, Erinnerungen, iCloud-Sync, Ordner & Tags, Teilen & Export"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Ist Ledger nur für Apple-Geräte gedacht?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ledger ist am stärksten im Apple-Ökosystem (iPhone, iPad, Mac) und orientiert sich am Notizen-Workflow von Apple."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kann ich Notizen teilen oder exportieren?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Du kannst Notizen und Listen teilen oder exportieren, z. B. für Zusammenarbeit oder Backup."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Gibt es Erinnerungen und Checklisten in Ledger?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Du kannst Erinnerungen setzen, Checklisten abhaken und den Status jederzeit nachvollziehen."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body class="ledger">
+    <div class="symbol-scene" aria-hidden="true">
+      <span class="note-symbol sym-a" data-depth="1.2">NOTE</span>
+      <span class="note-symbol sym-b" data-depth="0.9">TODO</span>
+      <span class="note-symbol sym-c" data-depth="1.4">REM</span>
+      <span class="note-symbol sym-d" data-depth="1.1">✓</span>
+      <span class="note-symbol sym-e" data-depth="1.7">!</span>
+      <span class="note-symbol sym-f" data-depth="1.3">#</span>
+      <span class="note-symbol sym-g" data-depth="0.8">+</span>
+      <span class="note-symbol sym-h" data-depth="1.5">IDEA</span>
+      <span class="note-symbol sym-i" data-depth="1.6">PIN</span>
+      <span class="note-symbol sym-j" data-depth="1">TXT</span>
+      <span class="note-symbol sym-k" data-depth="1.9">✎</span>
+    </div>
+
+    <header class="site-header app-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="../../index.html" aria-label="Ledger Startseite">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="brand-name">Ledger</span>
+            <span class="brand-sub">App · Notizen · in Planung</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Ledger Navigation">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="sr-only">Menü öffnen</span>
+            <span aria-hidden="true" class="hamburger"></span>
+          </button>
+          <div class="nav-menu" id="navMenu">
+            <a class="nav-link" href="#overview">Vorteile</a>
+            <a class="nav-link" href="#workflow">Ablauf</a>
+            <a class="nav-link" href="#security">Sync</a>
+            <a class="nav-link" href="#faq">FAQ</a>
+            <a class="nav-link nav-cta" href="#contact">Jetzt testen</a>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <a class="home-link-btn" href="../../index.html" aria-label="Zur Homepage">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 10.5 12 3l9 7.5"></path>
+                <path d="M5 9.5V21h14V9.5"></path>
+              </svg>
+            </span>
+            <span class="home-label">Zur Homepage</span>
+          </a>
+          <button
+            class="icon-btn"
+            id="themeToggle"
+            type="button"
+            aria-label="Dark Mode umschalten"
+            aria-pressed="false"
+          >
+            <span class="icon" aria-hidden="true">
+              <svg
+                class="icon-sun"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+                <path
+                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                ></path>
+              </svg>
+              <svg
+                class="icon-moon"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 13.6A8.5 8.5 0 1 1 10.4 3 6.5 6.5 0 0 0 21 13.6Z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section ledger-hero" aria-label="Ledger Hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Ledger Notizapp</p>
+            <h1 class="headline">Notizen, Checklisten und Erinnerungen an einem Ort.</h1>
+            <p class="subheadline">
+              Ledger ist eine reine Notizapp nach dem Vorbild von Apple Notizen:
+              schnell erfassen, sauber organisieren und überall wiederfinden.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Jetzt testen</a>
+              <a class="btn btn-ghost" href="#workflow">Mehr erfahren</a>
+            </div>
+
+            <div class="trust-row" role="list" aria-label="Vorteile">
+              <span class="trust-item" role="listitem">✓ Schnell notieren</span>
+              <span class="trust-item" role="listitem">✓ Erinnerungen</span>
+              <span class="trust-item" role="listitem">✓ iCloud-Sync</span>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal" aria-hidden="true">
+            <div class="ledger-frame">
+              <img
+                src="assets/ledger-tablet.svg"
+                alt="Ledger App Oberfläche auf dem iPad: Notizen und Checklisten übersichtlich organisiert"
+                class="ledger-tablet"
+                decoding="async"
+              />
+              <div class="ledger-stat stat-a">
+                <span class="stat-label">Notizen heute</span>
+                <strong>24 erstellt</strong>
+              </div>
+              <div class="ledger-stat stat-b">
+                <span class="stat-label">Erinnerungen offen</span>
+                <strong>3 heute</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="overview" aria-label="Vorteile">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Ein Blick und alles ist strukturiert</h2>
+            <p class="lead">
+              Ledger reduziert Notizen auf das Wesentliche: schnell erfassen,
+              klar organisieren, sofort wiederfinden.
+            </p>
+          </div>
+
+          <div class="cards-grid reveal">
+            <article class="card overview-card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 19h16"></path>
+                  <path d="M7 15V9"></path>
+                  <path d="M12 15V5"></path>
+                  <path d="M17 15v-3"></path>
+                </svg>
+              </div>
+              <h3>Schnelle Notizen</h3>
+              <p>Ideen, Gedanken und To-dos in Sekunden erfassen.</p>
+            </article>
+
+            <article class="card overview-card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="5" width="16" height="14" rx="3"></rect>
+                  <path d="M8 10h8"></path>
+                  <path d="M8 14h5"></path>
+                </svg>
+              </div>
+              <h3>Ordner & Tags</h3>
+              <p>Alles bleibt sauber sortiert und jederzeit auffindbar.</p>
+            </article>
+
+            <article class="card overview-card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 3v18"></path>
+                  <path d="M7 8h7a3 3 0 1 1 0 6H9a3 3 0 1 0 0 6h8"></path>
+                </svg>
+              </div>
+              <h3>Checklisten & Erinnerungen</h3>
+              <p>Aufgaben abhaken und rechtzeitig erinnert werden.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="workflow" aria-label="Ablauf">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>So nutzt du Ledger im Alltag</h2>
+            <p class="lead">
+              Ein einfacher Ablauf, damit deine Notizen nicht mehr verloren gehen.
+            </p>
+          </div>
+
+          <ol class="steps reveal">
+            <li class="step">
+              <div class="step-badge">1</div>
+              <div class="step-body">
+                <h3>Notiz erstellen</h3>
+                <p>Idee eingeben, Titel setzen und direkt speichern.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-badge">2</div>
+              <div class="step-body">
+                <h3>Strukturieren</h3>
+                <p>Mit Ordnern, Tags und Checklisten sauber organisieren.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-badge">3</div>
+              <div class="step-body">
+                <h3>Erinnerung setzen</h3>
+                <p>Fälligkeiten hinterlegen und pünktlich benachrichtigt werden.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-badge">4</div>
+              <div class="step-body">
+                <h3>Überall weiterarbeiten</h3>
+                <p>Deine Notizen sind auf iPhone, iPad und Mac synchron.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="security" aria-label="Sicherheit">
+        <div class="container split">
+          <div class="reveal">
+            <div class="section-head">
+              <h2>Synchron, sicher, zuverlässig</h2>
+              <p class="lead">
+                Wie bei Apple Notizen: schneller Zugriff, klare Struktur und
+                zuverlässige Synchronisation.
+              </p>
+            </div>
+
+            <ul class="bullets">
+              <li><span aria-hidden="true">✓</span> iCloud-Sync über alle Apple-Geräte</li>
+              <li><span aria-hidden="true">✓</span> Lock-Screen- und In-App-Erinnerungen</li>
+              <li><span aria-hidden="true">✓</span> Teilen und Export für Notizen und Listen</li>
+            </ul>
+          </div>
+
+          <aside class="card security-panel reveal">
+            <h3>Was Nutzer sofort merken</h3>
+            <div class="info-row">
+              <span class="info-label">Weniger Suchzeit</span>
+              <span class="info-value">-38%</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Schneller notiert</span>
+              <span class="info-value">in Sekunden</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Synchronisation</span>
+              <span class="info-value">automatisch</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="faq" aria-label="FAQ">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>FAQ</h2>
+            <p class="lead">Die wichtigsten Fragen kurz beantwortet.</p>
+          </div>
+
+          <div class="accordion reveal" data-accordion>
+            <div class="acc-item">
+              <h3 class="acc-head">
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="ledger-faq-1" id="ledger-faq-1-btn">
+                  Ist Ledger nur für Apple-Geräte gedacht?
+                  <span class="acc-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc-panel" id="ledger-faq-1" role="region" aria-labelledby="ledger-faq-1-btn" hidden>
+                <p>Ledger ist am stärksten im Apple-Ökosystem (iPhone, iPad, Mac) und orientiert sich am Notizen-Workflow von Apple.</p>
+              </div>
+            </div>
+
+            <div class="acc-item">
+              <h3 class="acc-head">
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="ledger-faq-2" id="ledger-faq-2-btn">
+                  Kann ich Notizen teilen oder exportieren?
+                  <span class="acc-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc-panel" id="ledger-faq-2" role="region" aria-labelledby="ledger-faq-2-btn" hidden>
+                <p>Ja. Du kannst Notizen und Listen teilen oder exportieren, z. B. für Zusammenarbeit oder Backup.</p>
+              </div>
+            </div>
+
+            <div class="acc-item">
+              <h3 class="acc-head">
+                <button class="acc-btn" type="button" aria-expanded="false" aria-controls="ledger-faq-3" id="ledger-faq-3-btn">
+                  Gibt es Erinnerungen und Checklisten?
+                  <span class="acc-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc-panel" id="ledger-faq-3" role="region" aria-labelledby="ledger-faq-3-btn" hidden>
+                <p>Ja. Du kannst Erinnerungen setzen, Checklisten abhaken und den Status jederzeit nachvollziehen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-label="Kontakt">
+        <div class="container contact-grid">
+          <div class="card reveal">
+            <h2>Ledger testen</h2>
+            <p class="lead">
+              Wenn du eine klare Notizapp im Apple-Stil willst, melde dich direkt.
+            </p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:lehneketorben@gmail.com?subject=Ledger%20Notizapp">E-Mail senden</a>
+              <a class="btn btn-ghost" href="mailto:lehneketorben@gmail.com?subject=R%C3%BCckruf%20zu%20Ledger">Rueckruf anfragen</a>
+            </div>
+          </div>
+
+          <div class="card contact-info reveal">
+            <h3>Direkter Kontakt</h3>
+            <div class="info-row">
+              <span class="info-label">E-Mail</span>
+              <span class="info-value">lehneketorben@gmail.com</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Telefon</span>
+              <span class="info-value">Auf Anfrage</span>
+            </div>
+            <div class="note">
+              Schnelle Rückmeldung, klare Einschätzung und ein sauberer Einstieg in Ledger.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer app-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand-line">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <strong>Ledger</strong>
+          </div>
+          <p class="muted">Notizen und Erinnerungen mit klarer Struktur.</p>
+        </div>
+
+        <div class="footer-links" aria-label="Navigation">
+          <a href="#overview" class="footer-link">Vorteile</a>
+          <a href="#workflow" class="footer-link">Ablauf</a>
+          <a href="#security" class="footer-link">Sync</a>
+          <a href="../../impressum.html" class="footer-link">Impressum</a>
+          <a href="../../datenschutz.html" class="footer-link">Datenschutz</a>
+          <a href="mailto:lehneketorben@gmail.com" class="footer-link">Support</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>(c) <span id="year"></span> Ledger. Alle Rechte vorbehalten.</small>
+      </div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+    <script src="../../script.js?v=8" defer></script>
+    <script src="ledger.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,926 @@
+﻿<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BeeFocus – die Fokus- und To-do-App für iOS mit Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker und Kalenderansicht. Jetzt kostenlos im App Store laden." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Torben Lehneke" />
+  <meta name="theme-color" content="#0b5fff" />
+  <link rel="canonical" href="https://torbenlehneke.de/apps/beefocus/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://torbenlehneke.de/apps/beefocus/" />
+  <meta property="og:site_name" content="BeeFocus" />
+  <meta property="og:title" content="BeeFocus – Fokus- & To-do-App für iOS | Pomodoro & Habit-Tracker" />
+  <meta property="og:description" content="Strukturiere deinen Tag mit BeeFocus: Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker und Kalender in einer App. Kostenlos für iPhone & iPad." />
+  <meta property="og:image" content="https://torbenlehneke.de/apps/beefocus/assets/BeeFocus1.png" />
+  <meta property="og:image:width" content="1448" />
+  <meta property="og:image:height" content="1086" />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BeeFocus – Fokus- & To-do-App für iOS | Pomodoro & Habit-Tracker" />
+  <meta name="twitter:description" content="Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker und Kalender in einer App. Kostenlos für iPhone & iPad." />
+  <meta name="twitter:image" content="https://torbenlehneke.de/apps/beefocus/assets/BeeFocus1.png" />
+
+  <title>BeeFocus – Fokus- & To-do-App für iOS | Pomodoro & Habit-Tracker</title>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="../../style.css?v=8" />
+  <link rel="stylesheet" href="beefocus.css?v=2" />
+
+  <!-- Schema.org: BreadcrumbList + MobileApplication + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startseite",
+            "item": "https://torbenlehneke.de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "BeeFocus",
+            "item": "https://torbenlehneke.de/apps/beefocus/"
+          }
+        ]
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "BeeFocus",
+        "url": "https://torbenlehneke.de/apps/beefocus/",
+        "description": "Fokus- und To-do-App für iOS mit Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker, Journaling und Kalenderansicht.",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "iOS",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "BeeFocus Pro – Monatlich",
+            "price": "2.99",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "BeeFocus Pro – Jährlich",
+            "price": "17.99",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "BeeFocus Pro – Lebenslang",
+            "price": "29.99",
+            "priceCurrency": "EUR"
+          }
+        ],
+        "downloadUrl": "https://apps.apple.com/us/app/beefocus/id6753998003",
+        "author": {
+          "@type": "Person",
+          "name": "Torben Lehneke",
+          "url": "https://torbenlehneke.de"
+        },
+        "inLanguage": ["de", "en"],
+        "featureList": "Pomodoro-Timer, Morgen-Übersicht, Habit-Tracker, Kalenderansicht, Cloud-Sync, Journaling, Statistiken"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie funktioniert die Übersicht in BeeFocus?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BeeFocus sammelt offene Aufgaben, Termine und Prioritäten in einem kompakten Screen. Du siehst sofort, was heute wichtig ist, und kannst direkt starten."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich Pausenlängen anpassen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Du kannst kurze und lange Pausen frei definieren und Alerts aktivieren, damit deine Sessions sauber getaktet bleiben."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie synchronisiert BeeFocus?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BeeFocus nutzt Cloud-Sync mit verschlüsseltem Abgleich. Änderungen erscheinen auf allen Geräten innerhalb weniger Sekunden."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Gibt es einen Papierkorb und Wiederherstellung?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Du kannst gelöschte Aufgaben wiederherstellen oder automatisch nach einem Zeitraum entfernen lassen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Unterstützt BeeFocus mehrere Sprachen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, BeeFocus ist aktuell auf Deutsch und Englisch verfügbar. Weitere Sprachen sind geplant."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="beefocus" data-i18n-page="beefocus-index">
+  <div class="symbol-scene" aria-hidden="true">
+    <span class="note-symbol sym-a" data-depth="1.2">+</span>
+    <span class="note-symbol sym-b" data-depth="0.9">=</span>
+    <span class="note-symbol sym-c" data-depth="1.4">x2</span>
+    <span class="note-symbol sym-d" data-depth="1.1">✓</span>
+    <span class="note-symbol sym-e" data-depth="1.7">⏰</span>
+    <span class="note-symbol sym-f" data-depth="1.3">#</span>
+    <span class="note-symbol sym-g" data-depth="0.8">∑</span>
+    <span class="note-symbol sym-h" data-depth="1.5">%</span>
+    <span class="note-symbol sym-i" data-depth="1.6">∞</span>
+    <span class="note-symbol sym-j" data-depth="1">!</span>
+    <span class="note-symbol sym-k" data-depth="1.9">∂</span>
+  </div>
+
+  <header class="site-header app-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html" aria-label="BeeFocus Startseite">
+        <img class="brand-mark" src="assets/BeeFocus.PNG" alt="BeeFocus" width="100" height="100">
+      </a>
+
+      <nav class="nav" aria-label="BeeFocus Navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="sr-only">Menü öffnen</span>
+          <span aria-hidden="true" class="hamburger"></span>
+        </button>
+        <div class="nav-menu" id="navMenu">
+          <a class="nav-link" href="#benefits">Vorteile</a>
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#testimonials">Stimmen</a>
+          <a class="nav-link" href="#download">Download</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+          <a class="nav-link nav-cta" href="#download">Jetzt herunterladen</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a class="home-link-btn" href="../../index.html" aria-label="Zur Homepage">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 10.5 12 3l9 7.5"></path>
+              <path d="M5 9.5V21h14V9.5"></path>
+            </svg>
+          </span>
+          <span class="home-label">Zur Homepage</span>
+        </a>
+        <button
+          class="icon-btn lang-btn"
+          id="langToggle"
+          type="button"
+          aria-label="Sprache wechseln"
+          aria-pressed="false"
+        >
+          DE
+        </button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Dark Mode umschalten" aria-pressed="false">
+          <span class="icon" aria-hidden="true">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41">
+              </path>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M21 13.6A8.5 8.5 0 1 1 10.4 3 6.5 6.5 0 0 0 21 13.6Z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section app-hero" aria-label="BeeFocus Hero">
+      <div class="hero-glow" aria-hidden="true">
+        <span class="glow-orb orb-a"></span>
+        <span class="glow-orb orb-b"></span>
+        <span class="glow-orb orb-c"></span>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">BeeFocus App</p>
+          <h1 class="headline">Konzentriert. Klar. BeeFocus.</h1>
+          <p class="subheadline">
+            Die To-do- und Fokus-App, die deinen Tag strukturiert - mit smarter
+            Morgen-Übersicht, Pomodoro-Timer und Kalender.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#download">Jetzt herunterladen</a>
+            <a class="btn btn-ghost" href="#features">Mehr erfahren</a>
+          </div>
+
+          <div class="trust-row" role="list" aria-label="Trust">
+            <span class="trust-item" role="listitem">✓ Synchronisiert</span>
+            <span class="trust-item" role="listitem">✓ Schnell</span>
+            <span class="trust-item" role="listitem">✓ Verständlich</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="mockup-stack" id="mockupStack">
+            <figure class="mockup phone tilt" data-parallax="0.22">
+              <img
+                src="assets/Iphone/Tagesplaner.PNG"
+                alt="BeeFocus Tagesplaner auf einem iPhone – Morgen-Übersicht mit Aufgaben und Timer"
+                fetchpriority="high"
+                decoding="async" />
+              <span class="mockup-gloss"></span>
+            </figure>
+            <figure class="mockup tablet" data-parallax="0.12">
+              <img
+                src="assets/Ipad/Tagesplaner.png"
+                alt="BeeFocus Tagesplaner auf dem iPad – Tagesübersicht mit Kalender"
+                loading="lazy"
+                decoding="async" />
+              <span class="mockup-gloss"></span>
+            </figure>
+          </div>
+          <div class="hero-card glass" data-parallax="0.08">
+            <strong>Dein Tag in 30 Sekunden</strong>
+            <p>Morgen-Übersicht, Timer und Kalender in einem Flow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="benefits" aria-label="Vorteile">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Klarer Fokus, weniger Ballast</h2>
+          <p class="lead">
+            BeeFocus reduziert alles auf das Wesentliche - damit du schneller
+            ins Tun kommst.
+          </p>
+        </div>
+
+        <div class="cards-grid benefits-grid reveal">
+          <article class="card benefit-card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16"></path>
+                <path d="M4 12h10"></path>
+                <path d="M4 18h6"></path>
+              </svg>
+            </div>
+            <h3>Morgen-Übersicht</h3>
+            <p>Starte klar: Fällige Aufgaben auf einen Blick.</p>
+          </article>
+
+          <article class="card benefit-card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="8"></circle>
+                <path d="M12 8v5l3 2"></path>
+              </svg>
+            </div>
+            <h3>Fokus-Timer</h3>
+            <p>Pomodoro mit kurzen und langen Pausen und Benachrichtigungen.</p>
+          </article>
+
+          <article class="card benefit-card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="4"></rect>
+                <path d="M7 10h10"></path>
+                <path d="M7 14h6"></path>
+              </svg>
+            </div>
+            <h3>Kalender-Ansicht</h3>
+            <p>Monatsüberblick mit Tagesaufgaben.</p>
+          </article>
+
+          <article class="card benefit-card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h6l2 2h8"></path>
+                <path d="M4 18h16"></path>
+              </svg>
+            </div>
+            <h3>Struktur & Leichtigkeit</h3>
+            <p>Kategorien, Prioritäten, Teilaufgaben - ohne Ballast.</p>
+          </article>
+
+          <article class="card benefit-card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3a6 6 0 0 0-6 6c0 5 6 12 6 12s6-7 6-12a6 6 0 0 0-6-6Z"></path>
+                <circle cx="12" cy="9" r="2"></circle>
+              </svg>
+            </div>
+            <h3>Cloud-Sync</h3>
+            <p>Überall konsistent.</p>
+          </article>
+
+          <article class="card benefit-card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3v18"></path>
+                <path d="M5 7h7"></path>
+                <path d="M5 17h7"></path>
+                <path d="M16 7h3"></path>
+                <path d="M16 17h3"></path>
+              </svg>
+            </div>
+            <h3>Mehrsprachig</h3>
+            <p>Deutsch & Englisch.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section product-showcase" id="product-gallery" aria-label="BeeFocus Produktbilder">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>BeeFocus in Bewegung</h2>
+          <p class="lead">Ein ruhiger Blick durch die wichtigsten iPhone- und iPad-Ansichten der App.</p>
+        </div>
+      </div>
+
+      <div class="product-canvas reveal" aria-label="Automatische BeeFocus Produktbild-Slideshow">
+        <div class="product-track">
+          <figure class="product-frame">
+            <img src="assets/Iphone/Tagesplaner.PNG" alt="BeeFocus Tagesplaner auf dem iPhone" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame">
+            <img src="assets/Iphone/Tasks.PNG" alt="BeeFocus Aufgabenliste auf dem iPhone" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame">
+            <img src="assets/Iphone/Addtodo.PNG" alt="Neue Aufgabe in BeeFocus auf dem iPhone" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame">
+            <img src="assets/Iphone/Timer.PNG" alt="BeeFocus Pomodoro-Timer auf dem iPhone" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame">
+            <img src="assets/Iphone/FokusMode.PNG" alt="BeeFocus Fokusmodus auf dem iPhone" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame">
+            <img src="assets/Iphone/Statistik.PNG" alt="BeeFocus Produktivitätsstatistik auf dem iPhone" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame">
+            <img src="assets/Iphone/FokusStore.PNG" alt="BeeFocus Fokus-Store auf dem iPhone" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame">
+            <img src="assets/Iphone/Settings.PNG" alt="BeeFocus Einstellungen auf dem iPhone" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame">
+            <img src="assets/Iphone/Paywall.PNG" alt="BeeFocus Pro Upgrade auf dem iPhone" loading="lazy" decoding="async" />
+          </figure>
+
+          <figure class="product-frame" aria-hidden="true">
+            <img src="assets/Iphone/Tagesplaner.PNG" alt="" />
+          </figure>
+          <figure class="product-frame" aria-hidden="true">
+            <img src="assets/Iphone/Tasks.PNG" alt="" />
+          </figure>
+          <figure class="product-frame" aria-hidden="true">
+            <img src="assets/Iphone/Addtodo.PNG" alt="" />
+          </figure>
+          <figure class="product-frame" aria-hidden="true">
+            <img src="assets/Iphone/Timer.PNG" alt="" />
+          </figure>
+          <figure class="product-frame" aria-hidden="true">
+            <img src="assets/Iphone/FokusMode.PNG" alt="" />
+          </figure>
+          <figure class="product-frame" aria-hidden="true">
+            <img src="assets/Iphone/Statistik.PNG" alt="" />
+          </figure>
+          <figure class="product-frame" aria-hidden="true">
+            <img src="assets/Iphone/FokusStore.PNG" alt="" />
+          </figure>
+          <figure class="product-frame" aria-hidden="true">
+            <img src="assets/Iphone/Settings.PNG" alt="" />
+          </figure>
+          <figure class="product-frame" aria-hidden="true">
+            <img src="assets/Iphone/Paywall.PNG" alt="" />
+          </figure>
+        </div>
+      </div>
+
+      <div class="product-canvas product-canvas-tablet reveal" aria-label="Automatische BeeFocus iPad-Produktbild-Slideshow">
+        <div class="product-track product-track-tablet">
+          <figure class="product-frame product-frame-tablet">
+            <img src="assets/Ipad/Tagesplaner.png" alt="BeeFocus Tagesplaner auf dem iPad" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame product-frame-tablet">
+            <img src="assets/Ipad/Tasks.png" alt="BeeFocus Aufgabenliste auf dem iPad" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame product-frame-tablet">
+            <img src="assets/Ipad/Addtodo.png" alt="Neue Aufgabe in BeeFocus auf dem iPad" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame product-frame-tablet">
+            <img src="assets/Ipad/Timer.png" alt="BeeFocus Pomodoro-Timer auf dem iPad" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame product-frame-tablet">
+            <img src="assets/Ipad/FokusMode.png" alt="BeeFocus Fokusmodus auf dem iPad" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame product-frame-tablet">
+            <img src="assets/Ipad/HabitTracker.png" alt="BeeFocus Habit-Tracker auf dem iPad" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame product-frame-tablet">
+            <img src="assets/Ipad/Statistik.png" alt="BeeFocus Produktivitätsstatistik auf dem iPad" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame product-frame-tablet">
+            <img src="assets/Ipad/FokusStore.png" alt="BeeFocus Fokus-Store auf dem iPad" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame product-frame-tablet">
+            <img src="assets/Ipad/Paywall.png" alt="BeeFocus Pro Upgrade auf dem iPad" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="product-frame product-frame-tablet">
+            <img src="assets/Ipad/Einstellungen.png" alt="BeeFocus Einstellungen auf dem iPad" loading="lazy" decoding="async" />
+          </figure>
+
+          <figure class="product-frame product-frame-tablet" aria-hidden="true">
+            <img src="assets/Ipad/Tagesplaner.png" alt="" />
+          </figure>
+          <figure class="product-frame product-frame-tablet" aria-hidden="true">
+            <img src="assets/Ipad/Tasks.png" alt="" />
+          </figure>
+          <figure class="product-frame product-frame-tablet" aria-hidden="true">
+            <img src="assets/Ipad/Addtodo.png" alt="" />
+          </figure>
+          <figure class="product-frame product-frame-tablet" aria-hidden="true">
+            <img src="assets/Ipad/Timer.png" alt="" />
+          </figure>
+          <figure class="product-frame product-frame-tablet" aria-hidden="true">
+            <img src="assets/Ipad/FokusMode.png" alt="" />
+          </figure>
+          <figure class="product-frame product-frame-tablet" aria-hidden="true">
+            <img src="assets/Ipad/HabitTracker.png" alt="" />
+          </figure>
+          <figure class="product-frame product-frame-tablet" aria-hidden="true">
+            <img src="assets/Ipad/Statistik.png" alt="" />
+          </figure>
+          <figure class="product-frame product-frame-tablet" aria-hidden="true">
+            <img src="assets/Ipad/FokusStore.png" alt="" />
+          </figure>
+          <figure class="product-frame product-frame-tablet" aria-hidden="true">
+            <img src="assets/Ipad/Paywall.png" alt="" />
+          </figure>
+          <figure class="product-frame product-frame-tablet" aria-hidden="true">
+            <img src="assets/Ipad/Einstellungen.png" alt="" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-label="Features">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Alles, was du brauchst</h2>
+          <p class="lead">Jede Funktion ist so gestaltet, dass sie deinen Fokus stärkt – nicht lenkt.</p>
+        </div>
+
+      </div>
+
+      <div class="feat-slider-wrap reveal" id="featSliderWrap">
+        <button class="feat-slider-btn feat-slider-btn--prev" id="featPrev" aria-label="Zurück" disabled>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+        </button>
+
+        <div class="feat-slider" id="featSlider">
+          <div class="feat-slider-track">
+
+            <article class="feat-slider-card">
+              <div class="feat-slider-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M9 12l2 2 4-4"></path></svg>
+              </div>
+              <h3>Aufgaben&shy;verwaltung</h3>
+              <p class="muted">Alles von der schnellen Idee bis zur strukturierten Planung.</p>
+              <div class="feat-chips">
+                <span class="feat-chip">Subtasks & Kategorien</span>
+                <span class="feat-chip">Fälligkeitsdaten</span>
+                <span class="feat-chip">Ordner-Struktur</span>
+                <span class="feat-chip">Task Templates</span>
+                <span class="feat-chip">Quick-Add</span>
+                <span class="feat-chip">Eisenhower-Matrix</span>
+                <span class="feat-chip">Tagesplaner</span>
+                <span class="feat-chip">Kalenderansicht</span>
+                <span class="feat-chip">Papierkorb & Wiederherstellen</span>
+                <span class="feat-chip">Bilder zu Aufgaben</span>
+              </div>
+            </article>
+
+            <article class="feat-slider-card">
+              <div class="feat-slider-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+              </div>
+              <h3>Fokus & Timer</h3>
+              <p class="muted">Tiefe Konzentration – ohne Ablenkung, mit Struktur.</p>
+              <div class="feat-chips">
+                <span class="feat-chip">Pomodoro-Timer</span>
+                <span class="feat-chip">Anpassbare Intervalle</span>
+                <span class="feat-chip">Fokus-Modus</span>
+                <span class="feat-chip">Countdown-Timer</span>
+                <span class="feat-chip">Zeiterfassung pro Aufgabe</span>
+              </div>
+            </article>
+
+            <article class="feat-slider-card">
+              <div class="feat-slider-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+              </div>
+              <h3>Habits & Wellness</h3>
+              <p class="muted">Kleine Gewohnheiten, großer Effekt – jeden Tag.</p>
+              <div class="feat-chips">
+                <span class="feat-chip">Gewohnheits-Tracker</span>
+                <span class="feat-chip">Wasser-Tracker</span>
+                <span class="feat-chip">Schlaf-Tracker</span>
+                <span class="feat-chip">Sport-Tracker</span>
+                <span class="feat-chip">Stimmungs-Tracker</span>
+                <span class="feat-chip">Tägliche Erinnerungen</span>
+              </div>
+            </article>
+
+            <article class="feat-slider-card">
+              <div class="feat-slider-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><path d="M8 9h8M8 13h5"></path></svg>
+              </div>
+              <h3>Journaling & Reflexion</h3>
+              <p class="muted">Gedanken sortieren, den Tag reflektieren, klar bleiben.</p>
+              <div class="feat-chips">
+                <span class="feat-chip">Fokus-Journal</span>
+                <span class="feat-chip">Dankbarkeits-Journal</span>
+                <span class="feat-chip">Brain Dump</span>
+                <span class="feat-chip">Wochenrückblick</span>
+                <span class="feat-chip">Tages-Motivation</span>
+              </div>
+            </article>
+
+            <article class="feat-slider-card">
+              <div class="feat-slider-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1" fill="currentColor"></circle></svg>
+              </div>
+              <h3>Ziele</h3>
+              <p class="muted">Langfristig denken, kurzfristig handeln.</p>
+              <div class="feat-chips">
+                <span class="feat-chip">Langzeitziele</span>
+                <span class="feat-chip">Wochenziele</span>
+                <span class="feat-chip">Lernziele</span>
+              </div>
+            </article>
+
+            <article class="feat-slider-card">
+              <div class="feat-slider-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 20V10M12 20V4M6 20v-6"></path></svg>
+              </div>
+              <h3>Statistiken & Auswertungen</h3>
+              <p class="muted">Verstehen, wie du wirklich arbeitest.</p>
+              <div class="feat-chips">
+                <span class="feat-chip">Produktivitäts-Score</span>
+                <span class="feat-chip">Fokus-Statistiken</span>
+                <span class="feat-chip">Pro-Statistiken</span>
+                <span class="feat-chip">Export als CSV</span>
+                <span class="feat-chip">Achievements</span>
+                <span class="feat-chip">Challenges</span>
+              </div>
+            </article>
+
+            <article class="feat-slider-card">
+              <div class="feat-slider-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path></svg>
+              </div>
+              <h3>Kreativität & Notizen</h3>
+              <p class="muted">Ideen landen sofort – ohne Umwege.</p>
+              <div class="feat-chips">
+                <span class="feat-chip">Freie Notizen</span>
+                <span class="feat-chip">Bilder anhängen</span>
+                <span class="feat-chip">Brain Dump</span>
+              </div>
+            </article>
+
+            <article class="feat-slider-card">
+              <div class="feat-slider-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg>
+              </div>
+              <h3>Sonstiges</h3>
+              <p class="muted">Alles, was den Alltag ein bisschen leichter macht.</p>
+              <div class="feat-chips">
+                <span class="feat-chip">Ambient Sounds</span>
+                <span class="feat-chip">Atemübungen</span>
+                <span class="feat-chip">Finanz-Tracker</span>
+                <span class="feat-chip">Benachrichtigungen</span>
+                <span class="feat-chip">Homescreen-Widget</span>
+                <span class="feat-chip">App-Blocker</span>
+                <span class="feat-chip">Tutorial & Onboarding</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <button class="feat-slider-btn feat-slider-btn--next" id="featNext" aria-label="Weiter">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+        </button>
+      </div>
+
+      <div class="container">
+      </div>
+    </section>
+
+    <section class="section" id="testimonials" aria-label="Stimmen">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Geliebt von Fokus-Fans</h2>
+          <p class="lead">Kurze Stimmen von Menschen, die jeden Tag Zeit sparen.</p>
+        </div>
+
+        <div class="cards-grid reveal">
+          <article class="card testimonial-card">
+            <div class="stars" aria-label="5 von 5 Sternen">*****</div>
+            <p>"kein Schnickschnack, keine Werbung oder Abonnements. Super App"</p>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">L</span>
+              <div>
+                <strong>Kareem B.</strong>
+                <span class="muted">Nutzer</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card testimonial-card">
+            <div class="stars" aria-label="5 von 5 Sternen">*****</div>
+            <p>"Super App, um Aufgabenlisten zu organisieren."</p>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">T</span>
+              <div>
+                <strong>Kutzius</strong>
+                <span class="muted">Nutzer</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="logo-row reveal" aria-label="Featured">
+          <span class="logo-pill">Featured in Journal</span>
+          <span class="logo-pill">App Pick</span>
+          <span class="logo-pill">Focus Weekly</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="preise" aria-label="Preise">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Faire Preise, voller Fokus</h2>
+          <p class="lead">BeeFocus Pro – alle Funktionen, 7 Tage kostenlos testen.</p>
+        </div>
+
+        <div class="cards-grid pricing-grid reveal">
+          <article class="card price-card">
+            <h3>Monatlich</h3>
+            <p class="price-line"><span class="price-amount">2,99&nbsp;€</span><span class="price-period">/ Monat</span></p>
+            <p class="muted price-desc">Flexibel, monatlich kündbar.</p>
+          </article>
+          <article class="card price-card price-card-featured">
+            <span class="price-badge">Beliebt</span>
+            <h3>Jährlich</h3>
+            <p class="price-line"><span class="price-amount">17,99&nbsp;€</span><span class="price-period">/ Jahr</span></p>
+            <p class="muted price-desc">Entspricht ca. 1,50&nbsp;€ pro Monat.</p>
+          </article>
+          <article class="card price-card">
+            <h3>Lebenslang</h3>
+            <p class="price-line"><span class="price-amount">29,99&nbsp;€</span><span class="price-period">einmalig</span></p>
+            <p class="muted price-desc">Einmal zahlen, für immer nutzen.</p>
+          </article>
+        </div>
+
+        <p class="pricing-note reveal">
+          Alle Pläne starten mit einem kostenlosen Testzeitraum von 7 Tagen. Kauf und Abrechnung
+          erfolgen über den Apple App Store; Abos sind jederzeit dort kündbar.
+        </p>
+      </div>
+    </section>
+
+    <section class="section download" id="download" aria-label="Download">
+      <div class="container download-grid">
+        <div class="download-copy reveal">
+          <h2>Jetzt BeeFocus installieren</h2>
+          <p class="lead">
+            Hol dir die App für iOS. Starte in unter zwei Minuten mit deiner Morgen-Übersicht.
+          </p>
+          <div class="download-actions">
+            <a class="store-badge" href="https://apps.apple.com/us/app/beefocus/id6753998003" target="_blank"
+              rel="noreferrer">
+              <span class="badge-title">App Store</span>
+              <span class="badge-sub">Download für iOS</span>
+            </a>
+          </div>
+          <p class="fineprint">Datenschutzfreundlich: Deine Daten bleiben bei dir und werden verschlüsselt
+            synchronisiert.</p>
+        </div>
+        <div class="download-card reveal glass">
+          <h3>1x Fokus-Setup</h3>
+          <ul class="bullets">
+            <li><span aria-hidden="true">✓</span> Aufgaben importieren oder neu anlegen</li>
+            <li><span aria-hidden="true">✓</span> Timer-Sessions definieren</li>
+            <li><span aria-hidden="true">✓</span> Kalender anbinden (optional)</li>
+          </ul>
+          <a class="btn btn-primary" href="#download">Jetzt herunterladen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-label="FAQ">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>FAQ</h2>
+          <p class="lead">Kurze Antworten auf die wichtigsten Fragen.</p>
+        </div>
+
+        <div class="accordion reveal" data-accordion>
+          <div class="acc-item">
+            <h3 class="acc-head">
+              <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq1" id="faq1-btn">
+                Wie funktioniert die Übersicht?
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc-panel" id="faq1" role="region" aria-labelledby="faq1-btn" hidden>
+              <p>
+                BeeFocus sammelt offene Aufgaben, Termine und Prioritäten in einem kompakten Screen. Du siehst
+                sofort, was heute wichtig ist, und kannst direkt starten.
+              </p>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <h3 class="acc-head">
+              <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq2" id="faq2-btn">
+                Kann ich Pausenlängen anpassen?
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc-panel" id="faq2" role="region" aria-labelledby="faq2-btn" hidden>
+              <p>
+                Ja. Du kannst kurze und lange Pausen frei definieren und Alerts aktivieren, damit deine
+                Sessions sauber getaktet bleiben.
+              </p>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <h3 class="acc-head">
+              <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq3" id="faq3-btn">
+                Wie synchronisiert BeeFocus?
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc-panel" id="faq3" role="region" aria-labelledby="faq3-btn" hidden>
+              <p>
+                BeeFocus nutzt Cloud-Sync mit verschlüsseltem Abgleich. Änderungen erscheinen auf allen
+                Geräten innerhalb weniger Sekunden.
+              </p>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <h3 class="acc-head">
+              <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq4" id="faq4-btn">
+                Gibt es einen Papierkorb und Wiederherstellung?
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc-panel" id="faq4" role="region" aria-labelledby="faq4-btn" hidden>
+              <p>
+                Ja. Du kannst gelöschte Aufgaben wiederherstellen oder automatisch nach einem Zeitraum
+                entfernen lassen.
+              </p>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <h3 class="acc-head">
+              <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq6" id="faq6-btn">
+                Unterstützt die App mehrere Sprachen?
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc-panel" id="faq6" role="region" aria-labelledby="faq6-btn" hidden>
+              <p>
+                Ja, BeeFocus ist aktuell auf Deutsch und Englisch verfügbar. Weitere Sprachen sind geplant.
+              </p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <h3 class="acc-head">
+              <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq5" id="faq5-btn">
+                Werde ich auch erinnert?
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc-panel" id="faq5" role="region" aria-labelledby="faq5-btn" hidden>
+              <p>
+                Ja, du kannst Benachrichtigungen für anstehende Aufgaben, Timer-Sessions und Kalendertermine aktivieren,
+                damit du immer im Fokus bleibst.
+              </p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <h3 class="acc-head">
+              <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq7" id="faq7-btn">
+                Wie kann ich meine Aufgaben teilen?
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc-panel" id="faq7" role="region" aria-labelledby="faq7-btn" hidden>
+              <p>
+                Du kannst deine Aufgaben jederzeit exportieren, indem du die jeweilige Aufgabe auswählst und lange
+                gedrückt hältst und auf Teilen klickst. Deine Aufgaben und Timer-Daten werden in einer JSON Datei
+                bereitgestellt, um die Aufgabe mit anderen Personen zu teilen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer app-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-line">
+          <img class="brand-mark" src="assets/BeeFocus.PNG" alt="" aria-hidden="true" width="28" height="28">
+          <strong>BeeFocus</strong>
+        </div>
+        <p class="muted">Fokus-App für strukturierte Tage.</p>
+      </div>
+
+      <div class="footer-links" aria-label="Navigation">
+        <a href="#features" class="footer-link">Features</a>
+        <a href="#preise" class="footer-link">Preise</a>
+        <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+        <a href="nutzungsbedingungen.html" class="footer-link">Nutzungsbedingungen</a>
+        <a href="../../impressum.html" class="footer-link">Impressum</a>
+        <a href="mailto:lehneketorben@gmail.com" class="footer-link">Support</a>
+      </div>
+
+      <div class="footer-social" aria-label="Social Media">
+        <a class="social" href="https://apps.apple.com/us/app/beefocus/id6753998003" aria-label="BeeFocus im App Store"
+          target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <path d="M16 11.37a4 4 0 1 1-7.74 1.26A4 4 0 0 1 16 11.37Z"></path>
+            <path d="M17.5 6.5h.01"></path>
+          </svg>
+        </a>
+        <a class="social" href="mailto:lehneketorben@gmail.com?subject=BeeFocus%20Support"
+          aria-label="BeeFocus Support per E-Mail">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v2"></path>
+            <path d="M2 9h4v12H2z"></path>
+            <path d="M4 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"></path>
+          </svg>
+        </a>
+        <a class="social" href="../../index.html#kontakt" aria-label="Kontakt zur Homepage">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <small>(c) <span id="year"></span> BeeFocus. Alle Rechte vorbehalten.</small>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+  <script src="../../script.js?v=8" defer></script>
+  <script src="beefocus.js" defer></script>
+</body>
+
+</html>
