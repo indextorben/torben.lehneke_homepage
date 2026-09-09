@@ -31,7 +31,7 @@
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="stylesheet" href="../../style.css?v=8" />
+  <link rel="stylesheet" href="../../style.css?v=10" />
   <link rel="stylesheet" href="cmdfind.css" />
 
   <!-- Schema.org: BreadcrumbList + SoftwareApplication -->
@@ -80,13 +80,18 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="../../portfolio/portfolio.css?v=2" />
+  <link rel="stylesheet" href="../../portfolio/showcase.css?v=3" />
+<link rel="stylesheet" href="../../experience/site.css?v=2" />
 </head>
 
-<body class="cmdfind-page" data-i18n-page="cmdfind-index">
+<body data-showcase="cyan" data-portfolio-project="cmdfind" style="--project-accent:#67e8f9" class="cmdfind-page" data-i18n-page="cmdfind-index">
   <header class="site-header app-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="../../index.html" aria-label="Cmdfind Startseite">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <!-- portfolio:icon:start -->
+<span class="portfolio-icon" aria-hidden="true"><img src="../../assets/portfolio/cmdfind-icon.svg" width="64" height="64" alt="" /></span>
+<!-- portfolio:icon:end -->
         <span class="brand-text">
           <span class="brand-name">Cmdfind</span>
           <span class="brand-sub">CLI · Windows · macOS · Linux</span>
@@ -99,7 +104,7 @@
           <span aria-hidden="true" class="hamburger"></span>
         </button>
         <div class="nav-menu" id="navMenu">
-          <a class="nav-link" href="#overview">Überblick</a>
+          <a class="nav-link" href="#showcase-top">Überblick</a>
           <a class="nav-link" href="#download">Download</a>
           <a class="nav-link nav-cta" href="#download">Jetzt laden</a>
         </div>
@@ -144,11 +149,33 @@
   </header>
 
   <main id="main">
-    <section class="hero section cmdfind-hero" id="overview" aria-label="Cmdfind Überblick">
+<!-- portfolio:showcase:start -->
+<section class="showcase-hero showcase-cyan" id="showcase-top" aria-label="Cmdfind"><div class="showcase-shell"><div class="showcase-topline"><a href="../../index.html#referenzen"><span class="" data-portfolio-de="← Alle Projekte" data-portfolio-en="← All projects">← Alle Projekte</span></a><span>Cmdfind / <span class="" data-portfolio-de="Developer Tool" data-portfolio-en="Developer tool">Developer Tool</span></span><span class="edition">PRODUCT SHOWCASE — 03</span></div><div class="hero-composition"><div class="showcase-title"><p class="showcase-eyebrow">Cmdfind</p><h1><span class="" data-portfolio-de="Weniger suchen." data-portfolio-en="Find it.">Weniger suchen.</span><span class="" data-portfolio-de="Weiterbauen_" data-portfolio-en="Keep building_">Weiterbauen_</span></h1><p class="showcase-summary" data-portfolio-de="Der passende Terminalbefehl, wenn du ihn brauchst. Ein plattformübergreifender Helfer für den Entwickleralltag." data-portfolio-en="The right terminal command when you need it. A cross-platform companion for everyday development.">Der passende Terminalbefehl, wenn du ihn brauchst. Ein plattformübergreifender Helfer für den Entwickleralltag.</p><a class="showcase-link" href="#download"><span class="" data-portfolio-de="Downloads ansehen" data-portfolio-en="View downloads">Downloads ansehen</span> <span>↗</span></a></div><div class="product-stage hero-stage" aria-label="Cmdfind Produktillustration"><div class="stage-halo"></div><div class="stage-grid"></div><div class="device-orbit"><div class="device device-terminal"><div class="device-edge"></div><div class="device-glass"><div class="window-chrome"><i></i><i></i><i></i><span>cmdfind — command search</span></div><div class="screen-stack"><div class="screen-state is-active" data-screen="0"><div class="product-screen screen-search"><div class="ui-brand"><span class="ui-brand-symbol">❯_</span>Cmdfind<span class="ui-menu">•••</span></div><div class="terminal-input"><span>❯</span><code class="typed-command">cmdfind "extract zip"</code><i class="terminal-caret"></i></div><div class="terminal-output"><p><span>Windows</span><code>tar -xf archive.zip</code></p><p><span>macOS</span><code>unzip archive.zip</code></p><p><span>Linux</span><code>unzip archive.zip</code></p></div><div class="terminal-foot"><span class="" data-portfolio-de="Aufgabe → Befehl" data-portfolio-en="Task → command">Aufgabe → Befehl</span><span>↵</span></div></div></div></div></div><div class="device-reflection"></div></div><div class="companion companion-code"><small>zsh — terminal</small><code>❯ unzip archive.zip<br><span>inflating: src/<br>inflating: README.md</span><br>❯ <i>_</i></code></div><div class="companion companion-platforms"><span>⊞ Windows</span><span>⌘ macOS</span><span>$_ Linux</span></div></div><span class="illustration-label"><span class="" data-portfolio-de="Produktillustration · Beispieldaten" data-portfolio-en="Product illustration · sample data">Produktillustration · Beispieldaten</span></span></div></div><div class="hero-baseline"><span>CLI / macOS / Windows / Linux</span><a href="#produkt-story"><span class="" data-portfolio-de="Entdecken durch Scrollen" data-portfolio-en="Scroll to explore">Entdecken durch Scrollen</span> ↓</a><span><span class="" data-portfolio-de="Downloads auf GitHub" data-portfolio-en="Downloads on GitHub">Downloads auf GitHub</span></span></div></div></section><section class="product-story" id="produkt-story" aria-label="Cmdfind Feature Story"><div class="showcase-shell story-layout"><div class="story-stage"><div class="product-stage"><div class="stage-halo"></div><div class="story-device"><div class="device device-terminal"><div class="device-edge"></div><div class="device-glass"><div class="window-chrome"><i></i><i></i><i></i><span>cmdfind — command search</span></div><div class="screen-stack"><div class="screen-state is-active" data-screen="0"><div class="product-screen screen-search"><div class="ui-brand"><span class="ui-brand-symbol">❯_</span>Cmdfind<span class="ui-menu">•••</span></div><div class="terminal-input"><span>❯</span><code class="typed-command">cmdfind "extract zip"</code><i class="terminal-caret"></i></div><div class="terminal-output"><p><span>Windows</span><code>tar -xf archive.zip</code></p><p><span>macOS</span><code>unzip archive.zip</code></p><p><span>Linux</span><code>unzip archive.zip</code></p></div><div class="terminal-foot"><span class="" data-portfolio-de="Aufgabe → Befehl" data-portfolio-en="Task → command">Aufgabe → Befehl</span><span>↵</span></div></div></div><div class="screen-state" data-screen="1"><div class="product-screen screen-filter"><div class="ui-brand"><span class="ui-brand-symbol">❯_</span>Cmdfind<span class="ui-menu">•••</span></div><div class="terminal-input"><span>⌕</span><code>extract zip</code></div><div class="terminal-filters"><span>Platform: macOS</span><span>Shell: All</span><span>Lang: All</span></div><div class="terminal-output"><p><span>macOS</span><code>unzip archive.zip</code></p></div><div class="terminal-foot"><span class="" data-portfolio-de="Der passende Kontext." data-portfolio-en="The right context.">Der passende Kontext.</span><span>↵</span></div></div></div><div class="screen-state" data-screen="2"><div class="product-screen screen-platforms"><div class="ui-brand"><span class="ui-brand-symbol">❯_</span>Cmdfind<span class="ui-menu">•••</span></div><div class="terminal-input"><span>❯</span><code>one task. three platforms.</code></div><div class="platform-grid"><div><b>⊞</b>Windows<small>.exe / .zip</small></div><div><b>⌘</b>macOS<small>.dmg / .zip</small></div><div><b>$_</b>Linux<small>.AppImage / .deb</small></div></div><div class="terminal-foot"><span class="" data-portfolio-de="Wähle deinen Download." data-portfolio-en="Choose your download.">Wähle deinen Download.</span><span>↓</span></div></div></div></div></div><div class="device-reflection"></div></div></div><div class="story-counter"><span class="scene-number">01</span><span>/ 03</span><div class="story-progress"><i></i></div></div><span class="illustration-label"><span class="" data-portfolio-de="Produktillustration · Beispieldaten" data-portfolio-en="Product illustration · sample data">Produktillustration · Beispieldaten</span></span></div></div><div class="story-copy"><article class="story-step" id="szene-1" data-step="0"><p class="showcase-eyebrow">01 / <span class="" data-portfolio-de="Command Search" data-portfolio-en="Command search">Command Search</span></p><h2 class="" data-portfolio-de="Du kennst das Ziel.
+Cmdfind den Weg." data-portfolio-en="You know the goal.
+Find the command.">Du kennst das Ziel.
+Cmdfind den Weg.</h2><p class="story-description" data-portfolio-de="Du möchtest ein Archiv entpacken, aber der Befehl fehlt? Suche nach der Aufgabe und finde den passenden Einstieg." data-portfolio-en="Need to extract an archive but cannot recall the command? Search for the task and find a starting point.">Du möchtest ein Archiv entpacken, aber der Befehl fehlt? Suche nach der Aufgabe und finde den passenden Einstieg.</p><div class="step-mobile"><div class="product-screen screen-search"><div class="ui-brand"><span class="ui-brand-symbol">❯_</span>Cmdfind<span class="ui-menu">•••</span></div><div class="terminal-input"><span>❯</span><code class="typed-command">cmdfind "extract zip"</code><i class="terminal-caret"></i></div><div class="terminal-output"><p><span>Windows</span><code>tar -xf archive.zip</code></p><p><span>macOS</span><code>unzip archive.zip</code></p><p><span>Linux</span><code>unzip archive.zip</code></p></div><div class="terminal-foot"><span class="" data-portfolio-de="Aufgabe → Befehl" data-portfolio-en="Task → command">Aufgabe → Befehl</span><span>↵</span></div></div></div></article><article class="story-step" id="szene-2" data-step="1"><p class="showcase-eyebrow">02 / <span class="" data-portfolio-de="Plattform &amp; Filter" data-portfolio-en="Platform &amp; filters">Plattform &amp; Filter</span></p><h2 class="" data-portfolio-de="Deine Plattform.
+Dein Werkzeug." data-portfolio-en="Your platform.
+Your tool.">Deine Plattform.
+Dein Werkzeug.</h2><p class="story-description" data-portfolio-de="Windows, macOS oder Linux: Die vorhandene Oberfläche ordnet Befehle nach Plattform, Sprache und Shell ein." data-portfolio-en="Windows, macOS or Linux: the existing interface organises commands by platform, language and shell.">Windows, macOS oder Linux: Die vorhandene Oberfläche ordnet Befehle nach Plattform, Sprache und Shell ein.</p><div class="step-mobile"><div class="product-screen screen-filter"><div class="ui-brand"><span class="ui-brand-symbol">❯_</span>Cmdfind<span class="ui-menu">•••</span></div><div class="terminal-input"><span>⌕</span><code>extract zip</code></div><div class="terminal-filters"><span>Platform: macOS</span><span>Shell: All</span><span>Lang: All</span></div><div class="terminal-output"><p><span>macOS</span><code>unzip archive.zip</code></p></div><div class="terminal-foot"><span class="" data-portfolio-de="Der passende Kontext." data-portfolio-en="The right context.">Der passende Kontext.</span><span>↵</span></div></div></div></article><article class="story-step" id="szene-3" data-step="2"><p class="showcase-eyebrow">03 / <span class="" data-portfolio-de="Cross Platform" data-portfolio-en="Cross-platform">Cross Platform</span></p><h2 class="" data-portfolio-de="Drei Systeme.
+Ein Gedanke." data-portfolio-en="Three systems.
+One idea.">Drei Systeme.
+Ein Gedanke.</h2><p class="story-description" data-portfolio-de="Bleib bei deiner Aufgabe, auch wenn das Betriebssystem wechselt. Die Downloads sind direkt nach Plattform geordnet." data-portfolio-en="Stay with your task even when your operating system changes. Downloads are organised by platform.">Bleib bei deiner Aufgabe, auch wenn das Betriebssystem wechselt. Die Downloads sind direkt nach Plattform geordnet.</p><div class="step-mobile"><div class="product-screen screen-platforms"><div class="ui-brand"><span class="ui-brand-symbol">❯_</span>Cmdfind<span class="ui-menu">•••</span></div><div class="terminal-input"><span>❯</span><code>one task. three platforms.</code></div><div class="platform-grid"><div><b>⊞</b>Windows<small>.exe / .zip</small></div><div><b>⌘</b>macOS<small>.dmg / .zip</small></div><div><b>$_</b>Linux<small>.AppImage / .deb</small></div></div><div class="terminal-foot"><span class="" data-portfolio-de="Wähle deinen Download." data-portfolio-en="Choose your download.">Wähle deinen Download.</span><span>↓</span></div></div></div></article></div></div></section><section class="showcase-statement"><div class="showcase-shell"><p class="showcase-eyebrow" data-portfolio-de="Entwickelt für deinen Alltag." data-portfolio-en="Designed for your everyday.">Entwickelt für deinen Alltag.</p><h2 class="statement-type" data-portfolio-de="Deine Aufgabe.
+Der passende Befehl." data-portfolio-en="Your task.
+The right command.">Deine Aufgabe.
+Der passende Befehl.</h2><p class="statement-sub" data-portfolio-de="Vom Gedanken zum Terminal." data-portfolio-en="From thought to terminal.">Vom Gedanken zum Terminal.</p></div></section><section class="platform-bridge"><div class="showcase-shell"><h2 class="" data-portfolio-de="Zu Hause. Auf deinem System." data-portfolio-en="At home. On your system.">Zu Hause. Auf deinem System.</h2><div class="platform-bridge-grid"><a href="#download"><span class="platform-glyph">⊞</span><strong>Windows</strong><span>Setup / ZIP ↗</span></a><a href="#download"><span class="platform-glyph">⌘</span><strong>macOS</strong><span>DMG / ZIP ↗</span></a><a href="#download"><span class="platform-glyph">$_</span><strong>Linux</strong><span>AppImage / DEB ↗</span></a></div></div></section><section class="showcase-gallery"><div class="showcase-shell"><div class="gallery-heading"><h2 class="" data-portfolio-de="Aus der App.
+Für deinen Alltag." data-portfolio-en="Inside the app.
+Built for your day.">Aus der App.
+Für deinen Alltag.</h2><p class="" data-portfolio-de="Die vorhandenen Produktansichten im Detail." data-portfolio-en="Explore the existing product views.">Die vorhandenen Produktansichten im Detail.</p></div><div class="showcase-shots showcase-shots-wide" tabindex="0" aria-label="Cmdfind Galerie"><figure><img src="../../apps/cmdfind/assets/cmdfind.png" alt="Cmdfind – vorhandene Produktoberfläche" loading="lazy" decoding="async" /><figcaption class="" data-portfolio-de="Cmdfind – vorhandene Produktoberfläche" data-portfolio-en="Cmdfind — existing product interface">Cmdfind – vorhandene Produktoberfläche</figcaption></figure></div></div></section>
+<!-- portfolio:showcase:end -->
+<details class="project-context-wrap"><summary><span data-portfolio-de="Projektbeschreibung &amp; ursprüngliches Produktvisual" data-portfolio-en="Project description &amp; original product visual">Projektbeschreibung &amp; ursprüngliches Produktvisual</span></summary><section class="project-context section cmdfind-hero" id="overview" aria-label="Cmdfind Überblick">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
+<!-- portfolio:identity:start -->
+<a class="portfolio-back" href="../../index.html#referenzen"><span data-portfolio-de="← Alle Projekte" data-portfolio-en="← All projects">← Alle Projekte</span></a><div class="case-identity"><span class="portfolio-icon" aria-hidden="true"><img src="../../assets/portfolio/cmdfind-icon.svg" width="64" height="64" alt="" /></span><div><p class="case-project-name">Cmdfind</p><p class="portfolio-kicker" data-portfolio-de="Developer Tool" data-portfolio-en="Developer tool">Developer Tool</p></div></div><ul class="portfolio-tags" aria-label="Plattformen"><li>CLI</li><li>macOS</li><li>Windows</li><li>Linux</li></ul>
+<!-- portfolio:identity:end -->
+
           <p class="eyebrow">Cmdfind</p>
-          <h1 class="headline">Befehle finden statt lange suchen.</h1>
+          <h2 class="headline">Befehle finden statt lange suchen.</h2
           <p class="subheadline">
             Cmdfind hilft dir, CLI-Befehle für Windows, macOS und Linux schnell nachzuschlagen - wenn du etwas suchst
             und es nicht auswendig weißt.
@@ -165,7 +192,20 @@
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-hidden="true">
+        <!-- portfolio:visual:start -->
+<div class="hero-visual portfolio-hero-visual"><figure class="case-art"><img class="portfolio-image" src="../../assets/portfolio/cmdfind-hero.png" width="1536" height="1024" alt="Cmdfind Produktvisual: schwebende Befehlssuche und Terminal mit cyanfarbener Beleuchtung." data-portfolio-alt-de="Cmdfind Produktvisual: schwebende Befehlssuche und Terminal mit cyanfarbener Beleuchtung." data-portfolio-alt-en="Cmdfind product visual: floating command search and terminal with cyan lighting." decoding="async" loading="lazy" /><figcaption><span data-portfolio-de="Produktvisualisierung · KI-generiert" data-portfolio-en="Product visualisation · AI-generated">Produktvisualisierung · KI-generiert</span></figcaption></figure></div>
+<!-- portfolio:visual:end -->
+      </div>
+    </section></details>
+<!-- portfolio:story:start -->
+<section class="section case-study" id="projekt" aria-label="Case Study"><div class="container">
+    <div class="case-facts"><div><span class="portfolio-kicker" data-portfolio-de="Projekt" data-portfolio-en="Project">Projekt</span><strong>Cmdfind</strong></div><div><span class="portfolio-kicker" data-portfolio-de="Status" data-portfolio-en="Status">Status</span><strong data-portfolio-de="Downloads auf GitHub" data-portfolio-en="Downloads on GitHub">Downloads auf GitHub</strong></div><div><span class="portfolio-kicker" data-portfolio-de="Schwerpunkte" data-portfolio-en="Focus">Schwerpunkte</span><strong>CLI · macOS · Windows · Linux</strong></div></div>
+    <div class="case-story"><div class="case-intro"><p class="portfolio-kicker" data-portfolio-de="Über das Projekt" data-portfolio-en="About the project">Über das Projekt</p><h2 data-portfolio-de="Weniger suchen. Weiterbauen." data-portfolio-en="Find it. Keep building.">Weniger suchen. Weiterbauen.</h2><p data-portfolio-de="Cmdfind hilft beim Nachschlagen von CLI-Befehlen für Windows, macOS und Linux. Die Projektseite bündelt den Einstieg und die passenden Downloads je Betriebssystem." data-portfolio-en="Cmdfind helps you look up CLI commands for Windows, macOS and Linux. Its project page brings the introduction and platform-specific downloads together.">Cmdfind hilft beim Nachschlagen von CLI-Befehlen für Windows, macOS und Linux. Die Projektseite bündelt den Einstieg und die passenden Downloads je Betriebssystem.</p><ul class="case-highlights"><li data-portfolio-de="Befehle nachschlagen" data-portfolio-en="Look up commands">Befehle nachschlagen</li><li data-portfolio-de="Drei Plattformen" data-portfolio-en="Three platforms">Drei Plattformen</li><li data-portfolio-de="Direkte Downloads" data-portfolio-en="Direct downloads">Direkte Downloads</li></ul></div>
+      <div class="case-chapters"><article><span class="chapter-number">01</span><div><h3 data-portfolio-de="Die Herausforderung" data-portfolio-en="The challenge">Die Herausforderung</h3><p data-portfolio-de="Selten genutzte Befehle bleiben nicht immer im Gedächtnis. Dazu unterscheiden sich Werkzeuge und Syntax je nach Betriebssystem – schon das Entpacken eines Archivs kann eine Suche auslösen." data-portfolio-en="Occasional commands are easy to forget. Tools and syntax also differ between operating systems—even extracting an archive can require a search.">Selten genutzte Befehle bleiben nicht immer im Gedächtnis. Dazu unterscheiden sich Werkzeuge und Syntax je nach Betriebssystem – schon das Entpacken eines Archivs kann eine Suche auslösen.</p></div></article><article><span class="chapter-number">02</span><div><h3 data-portfolio-de="Der Lösungsansatz" data-portfolio-en="The approach">Der Lösungsansatz</h3><p data-portfolio-de="Ein auf Befehle zugeschnittener Einstieg stellt die gesuchte Aufgabe in den Mittelpunkt. Das Beispiel „extract zip“ zeigt die passenden Befehle für Windows, macOS und Linux nebeneinander." data-portfolio-en="A command-focused entry point puts the task first. The “extract zip” example presents the appropriate commands for Windows, macOS and Linux side by side.">Ein auf Befehle zugeschnittener Einstieg stellt die gesuchte Aufgabe in den Mittelpunkt. Das Beispiel „extract zip“ zeigt die passenden Befehle für Windows, macOS und Linux nebeneinander.</p></div></article><article><span class="chapter-number">03</span><div><h3 data-portfolio-de="Ergebnis &amp; Projektstand" data-portfolio-en="Outcome &amp; project status">Ergebnis &amp; Projektstand</h3><p data-portfolio-de="Die Downloadseite führt direkt zu den verfügbaren GitHub-Releases. Installationspakete und portable Varianten sind nach Betriebssystem geordnet." data-portfolio-en="The download page leads directly to the available GitHub releases. Installers and portable versions are grouped by operating system.">Die Downloadseite führt direkt zu den verfügbaren GitHub-Releases. Installationspakete und portable Varianten sind nach Betriebssystem geordnet.</p></div></article></div>
+    </div><div class="case-tech"><h3 data-portfolio-de="Plattformen &amp; Integrationen" data-portfolio-en="Platforms &amp; integrations">Plattformen &amp; Integrationen</h3><ul class="portfolio-tags"><li>CLI</li><li>Windows</li><li>macOS</li><li>Linux</li><li>GitHub Releases</li></ul></div>
+  </div></section>
+<!-- portfolio:story:end -->
+<details class="project-visual-archive"><summary><span data-portfolio-de="Weitere Produktansichten" data-portfolio-en="More product views">Weitere Produktansichten</span></summary><section class="section case-existing"><div class="container"><h2 data-portfolio-de="Einblicke ins Produkt" data-portfolio-en="Inside the product">Einblicke ins Produkt</h2><div class="hero-visual reveal" >
           <div class="cmdfind-terminal card">
             <div class="cmdfind-dots"><span></span><span></span><span></span></div>
             <pre><code>$ cmdfind "extract zip"
@@ -173,9 +213,7 @@ Windows: tar -xf archive.zip
 macOS: unzip archive.zip
 Linux:  unzip archive.zip</code></pre>
           </div>
-        </div>
-      </div>
-    </section>
+        </div></div></section></details>
 
     <section class="section" id="download" aria-label="Cmdfind Downloads">
       <div class="container">
@@ -235,13 +273,18 @@ Linux:  unzip archive.zip</code></pre>
         </article>
       </div>
     </section>
-  </main>
+  <!-- portfolio:end:start -->
+<section class="section case-end"><div class="container"><div><p class="portfolio-kicker" data-portfolio-de="Weiter entdecken" data-portfolio-en="Keep exploring">Weiter entdecken</p><h2 data-portfolio-de="Gute Werkzeuge machen den Unterschied." data-portfolio-en="Good tools make a difference.">Gute Werkzeuge machen den Unterschied.</h2></div><div class="hero-actions"><a class="btn btn-primary" href="#download"><span data-portfolio-de="Downloads ansehen" data-portfolio-en="View downloads">Downloads ansehen</span></a><a class="btn btn-ghost" href="../../index.html#referenzen"><span data-portfolio-de="Alle Projekte" data-portfolio-en="All projects">Alle Projekte</span></a></div></div></section>
+<!-- portfolio:end:end -->
+</main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
         <div class="brand-line">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <!-- portfolio:icon:start -->
+<span class="portfolio-icon" aria-hidden="true"><img src="../../assets/portfolio/cmdfind-icon.svg" width="64" height="64" alt="" /></span>
+<!-- portfolio:icon:end -->
           <strong>Cmdfind</strong>
         </div>
         <p class="muted">Cross-Platform Befehlsfinder für den Alltag im Terminal.</p>
@@ -273,9 +316,11 @@ Linux:  unzip archive.zip</code></pre>
     <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
-  <script src="../../script.js?v=8" defer></script>
+  <script src="../../portfolio/vendor/gsap.min.js" defer></script>
+  <script src="../../portfolio/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../../script.js?v=13" defer></script>
+  <script src="../../portfolio/portfolio.js?v=2" defer></script>
+  <script type="module" src="../../portfolio/showcase.js?v=1"></script>
 </body>
 
 </html>

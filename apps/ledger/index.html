@@ -30,7 +30,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="stylesheet" href="../../style.css?v=8" />
+    <link rel="stylesheet" href="../../style.css?v=10" />
     <link rel="stylesheet" href="ledger.css" />
 
     <!-- Schema.org: BreadcrumbList + MobileApplication + FAQ -->
@@ -101,9 +101,11 @@
       ]
     }
     </script>
-  </head>
+    <link rel="stylesheet" href="../../portfolio/portfolio.css?v=2" />
+<link rel="stylesheet" href="../../experience/site.css?v=2" />
+</head>
 
-  <body class="ledger">
+  <body data-portfolio-project="ledger" style="--project-accent:#6ee7b7" class="ledger">
     <div class="symbol-scene" aria-hidden="true">
       <span class="note-symbol sym-a" data-depth="1.2">NOTE</span>
       <span class="note-symbol sym-b" data-depth="0.9">TODO</span>
@@ -121,7 +123,9 @@
     <header class="site-header app-header" id="top">
       <div class="container header-inner">
         <a class="brand" href="../../index.html" aria-label="Ledger Startseite">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <!-- portfolio:icon:start -->
+<span class="portfolio-icon" aria-hidden="true"><img src="../../assets/portfolio/ledger-icon.svg" width="64" height="64" alt="" /></span>
+<!-- portfolio:icon:end -->
           <span class="brand-text">
             <span class="brand-name">Ledger</span>
             <span class="brand-sub">App · Notizen · in Planung</span>
@@ -202,6 +206,10 @@
       <section class="hero section ledger-hero" aria-label="Ledger Hero">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
+<!-- portfolio:identity:start -->
+<a class="portfolio-back" href="../../index.html#referenzen"><span data-portfolio-de="← Alle Projekte" data-portfolio-en="← All projects">← Alle Projekte</span></a><div class="case-identity"><span class="portfolio-icon" aria-hidden="true"><img src="../../assets/portfolio/ledger-icon.svg" width="64" height="64" alt="" /></span><div><p class="case-project-name">Ledger</p><p class="portfolio-kicker" data-portfolio-de="Notizen &amp; Organisation" data-portfolio-en="Notes &amp; organisation">Notizen &amp; Organisation</p></div></div><ul class="portfolio-tags" aria-label="Plattformen"><li>iPhone</li><li>iPad</li><li>Mac</li></ul>
+<!-- portfolio:identity:end -->
+
             <p class="eyebrow">Ledger Notizapp</p>
             <h1 class="headline">Notizen, Checklisten und Erinnerungen an einem Ort.</h1>
             <p class="subheadline">
@@ -221,7 +229,20 @@
             </div>
           </div>
 
-          <div class="hero-visual reveal" aria-hidden="true">
+          <!-- portfolio:visual:start -->
+<div class="hero-visual portfolio-hero-visual"><figure class="case-art"><img class="portfolio-image" src="../../assets/portfolio/ledger-hero.png" width="1536" height="1024" alt="Ledger Konzeptvisual: dunkle Notizoberfläche auf einem Tablet mit Checkliste und grünen Akzenten." data-portfolio-alt-de="Ledger Konzeptvisual: dunkle Notizoberfläche auf einem Tablet mit Checkliste und grünen Akzenten." data-portfolio-alt-en="Ledger concept visual: dark notes interface on a tablet with a checklist and green accents." fetchpriority="high" decoding="async" /><figcaption><span data-portfolio-de="Produktvisualisierung · KI-generiert" data-portfolio-en="Product visualisation · AI-generated">Produktvisualisierung · KI-generiert</span></figcaption></figure></div>
+<!-- portfolio:visual:end -->
+        </div>
+      </section>
+<!-- portfolio:story:start -->
+<section class="section case-study" id="projekt" aria-label="Case Study"><div class="container">
+    <div class="case-facts"><div><span class="portfolio-kicker" data-portfolio-de="Projekt" data-portfolio-en="Project">Projekt</span><strong>Ledger</strong></div><div><span class="portfolio-kicker" data-portfolio-de="Status" data-portfolio-en="Status">Status</span><strong data-portfolio-de="In Planung" data-portfolio-en="In planning">In Planung</strong></div><div><span class="portfolio-kicker" data-portfolio-de="Schwerpunkte" data-portfolio-en="Focus">Schwerpunkte</span><strong>iPhone · iPad · Mac</strong></div></div>
+    <div class="case-story"><div class="case-intro"><p class="portfolio-kicker" data-portfolio-de="Über das Projekt" data-portfolio-en="About the project">Über das Projekt</p><h2 data-portfolio-de="Gedanken brauchen einen Ort." data-portfolio-en="A place for your thoughts.">Gedanken brauchen einen Ort.</h2><p data-portfolio-de="Ledger ist als reine Notizapp für iPhone, iPad und Mac geplant. Im Mittelpunkt stehen schnelles Erfassen, übersichtliches Organisieren und einfaches Wiederfinden." data-portfolio-en="Ledger is planned as a dedicated notes app for iPhone, iPad and Mac. Its focus is quick capture, clear organisation and easy retrieval.">Ledger ist als reine Notizapp für iPhone, iPad und Mac geplant. Im Mittelpunkt stehen schnelles Erfassen, übersichtliches Organisieren und einfaches Wiederfinden.</p><ul class="case-highlights"><li data-portfolio-de="Notizen &amp; Checklisten" data-portfolio-en="Notes &amp; checklists">Notizen &amp; Checklisten</li><li data-portfolio-de="Ordner &amp; Tags" data-portfolio-en="Folders &amp; tags">Ordner &amp; Tags</li><li data-portfolio-de="Erinnerungen" data-portfolio-en="Reminders">Erinnerungen</li></ul></div>
+      <div class="case-chapters"><article><span class="chapter-number">01</span><div><h3 data-portfolio-de="Die Herausforderung" data-portfolio-en="The challenge">Die Herausforderung</h3><p data-portfolio-de="Spontane Gedanken, Aufgaben und Erinnerungen verteilen sich schnell auf verschiedene Orte. Eine Notizapp muss das Erfassen leicht machen, ohne die spätere Ordnung zu erschweren." data-portfolio-en="Spontaneous thoughts, tasks and reminders quickly become scattered. A notes app needs to make capture easy without making later organisation difficult.">Spontane Gedanken, Aufgaben und Erinnerungen verteilen sich schnell auf verschiedene Orte. Eine Notizapp muss das Erfassen leicht machen, ohne die spätere Ordnung zu erschweren.</p></div></article><article><span class="chapter-number">02</span><div><h3 data-portfolio-de="Der Lösungsansatz" data-portfolio-en="The approach">Der Lösungsansatz</h3><p data-portfolio-de="Der Entwurf kombiniert Notizen mit Checklisten, Ordnern, Tags und Erinnerungen. Geplanter iCloud-Sync soll das Weiterarbeiten auf verschiedenen Apple-Geräten ermöglichen." data-portfolio-en="The concept combines notes with checklists, folders, tags and reminders. Planned iCloud sync is intended to support working across Apple devices.">Der Entwurf kombiniert Notizen mit Checklisten, Ordnern, Tags und Erinnerungen. Geplanter iCloud-Sync soll das Weiterarbeiten auf verschiedenen Apple-Geräten ermöglichen.</p></div></article><article><span class="chapter-number">03</span><div><h3 data-portfolio-de="Ergebnis &amp; Projektstand" data-portfolio-en="Outcome &amp; project status">Ergebnis &amp; Projektstand</h3><p data-portfolio-de="Die vorhandene Projektseite beschreibt das Konzept und den vorgesehenen Ablauf. Ledger ist noch in Planung; Fragen zum Projekt sind über den Kontaktbereich möglich." data-portfolio-en="The existing project page describes the concept and intended workflow. Ledger is still in planning; project enquiries can be made through the contact section.">Die vorhandene Projektseite beschreibt das Konzept und den vorgesehenen Ablauf. Ledger ist noch in Planung; Fragen zum Projekt sind über den Kontaktbereich möglich.</p></div></article></div>
+    </div><div class="case-tech"><h3 data-portfolio-de="Plattformen &amp; Integrationen" data-portfolio-en="Platforms &amp; integrations">Plattformen &amp; Integrationen</h3><ul class="portfolio-tags"><li>iPhone</li><li>iPad</li><li>macOS</li><li>iCloud-Sync (geplant)</li></ul></div>
+  </div></section>
+<!-- portfolio:story:end -->
+<section class="section case-existing"><div class="container"><h2 data-portfolio-de="Einblicke ins Produkt" data-portfolio-en="Inside the product">Einblicke ins Produkt</h2><div class="hero-visual reveal" >
             <div class="ledger-frame">
               <img
                 src="assets/ledger-tablet.svg"
@@ -238,9 +259,7 @@
                 <strong>3 heute</strong>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </div></div></section>
 
       <section class="section" id="overview" aria-label="Vorteile">
         <div class="container">
@@ -446,13 +465,18 @@
           </div>
         </div>
       </section>
-    </main>
+    <!-- portfolio:end:start -->
+<section class="section case-end"><div class="container"><div><p class="portfolio-kicker" data-portfolio-de="Weiter entdecken" data-portfolio-en="Keep exploring">Weiter entdecken</p><h2 data-portfolio-de="Gute Werkzeuge machen den Unterschied." data-portfolio-en="Good tools make a difference.">Gute Werkzeuge machen den Unterschied.</h2></div><div class="hero-actions"><a class="btn btn-primary" href="#contact"><span data-portfolio-de="Zum Projekt anfragen" data-portfolio-en="Enquire about the project">Zum Projekt anfragen</span></a><a class="btn btn-ghost" href="../../index.html#referenzen"><span data-portfolio-de="Alle Projekte" data-portfolio-en="All projects">Alle Projekte</span></a></div></div></section>
+<!-- portfolio:end:end -->
+</main>
 
     <footer class="site-footer app-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
           <div class="brand-line">
-            <span class="brand-mark" aria-hidden="true"></span>
+            <!-- portfolio:icon:start -->
+<span class="portfolio-icon" aria-hidden="true"><img src="../../assets/portfolio/ledger-icon.svg" width="64" height="64" alt="" /></span>
+<!-- portfolio:icon:end -->
             <strong>Ledger</strong>
           </div>
           <p class="muted">Notizen und Erinnerungen mit klarer Struktur.</p>
@@ -475,9 +499,10 @@
       <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
-    <script src="../../script.js?v=8" defer></script>
+    <script src="../../portfolio/vendor/gsap.min.js" defer></script>
+    <script src="../../portfolio/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="../../script.js?v=13" defer></script>
     <script src="ledger.js" defer></script>
-  </body>
+    <script src="../../portfolio/portfolio.js?v=2" defer></script>
+</body>
 </html>

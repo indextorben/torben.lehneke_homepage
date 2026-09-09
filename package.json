@@ -1,0 +1,24 @@
+{
+  "name": "torben-lehneke-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node portfolio/build.cjs && node -e \"require('./experience/build.cjs').renderAll(false)\"",
+    "lint": "node portfolio/lint.cjs",
+    "typecheck": "tsc -p portfolio/tsconfig.json",
+    "check": "node portfolio/build.cjs --check && node -e \"require('./experience/build.cjs').renderAll(true)\"",
+    "test:portfolio": "node portfolio/verify.cjs",
+    "test:showcase": "node portfolio/verify-showcase.cjs",
+    "test:experience": "node experience/verify.cjs",
+    "test:scroll": "node experience/verify-scroll.cjs",
+    "test:model": "node portfolio/verify-model.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.60.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "gsap": "^3.12.7"
+  }
+}

@@ -1,0 +1,14 @@
+const assert=require('node:assert/strict');
+const {normalizeProject}=require('./project-model.cjs');
+const fixture={id:'website-fixture',type:'website',title:'Website test fixture',client:'Test fixture only',featured:true,heroImage:'fixture.webp',description:{de:'Test',en:'Test'},technologies:['HTML','CSS'],url:'https://example.org',accentColor:'#123456'};
+const website=normalizeProject(fixture);
+assert.equal(website.href,'https://example.org');
+assert.equal(website.name,fixture.title);
+assert.deepEqual(website.tags,['HTML','CSS']);
+assert.match(website.category.de,/Kundenwebsite/);
+assert.equal(website.icon,undefined,'Website does not need an invented app icon');
+assert.equal(normalizeProject({...fixture,detailPath:'referenzen/kundenwebsite.html'}).href,'referenzen/kundenwebsite.html');
+assert.throws(()=>normalizeProject({...fixture,url:'javascript:alert(1)'}));
+assert.throws(()=>normalizeProject({...fixture,type:'unknown'}));
+for(const project of require('./projects.cjs'))assert.equal(normalizeProject(project).href,project.detailPath);
+console.log('Website/app/tool metadata, optional icons, client labels and independent routes passed. No fixture is published.');

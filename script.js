@@ -773,10 +773,14 @@
       },
     },
     "home-index": {
+      de: {
+        title: "Torben Lehneke | Professionelle Websites & Webentwicklung",
+        description: "Individuelle Websites für Unternehmen, Selbstständige, Vereine und Privatkunden. Webdesign, Entwicklung, Relaunch und Wartung aus Neubrandenburg.",
+      },
       en: {
-        title: "Torben Lehneke | IT in Neubrandenburg - Fast IT solutions for your company",
+        title: "Torben Lehneke | Professional websites & web development",
         description:
-          "Torben Lehneke - IT in Neubrandenburg. Fast, reliable and transparent. Get in touch now.",
+          "Individual websites for businesses, freelancers, associations and individuals. Web design, development, relaunches and maintenance from Neubrandenburg.",
         text: {
           ".brand-sub": "IT · Neubrandenburg",
           "#navMenu .nav-link:nth-child(1)": "Services",
@@ -786,10 +790,10 @@
           "#navMenu .nav-link:nth-child(5)": "Reviews",
           "#navMenu .nav-link:nth-child(6)": "FAQ",
           "#navMenu .nav-link:nth-child(7)": "Contact",
-          ".eyebrow": "IT in Neubrandenburg",
+          ".eyebrow": "Torben Lehneke / Web development in Neubrandenburg",
           ".headline": "Fast IT solutions for your company",
-          ".hero-actions .btn-primary": "Request a quote",
-          ".hero-actions .btn-ghost": "Get in touch",
+          ".hero-actions .btn-primary": "Discuss your project",
+          ".hero-actions .btn-ghost": "View projects",
           ".trust-row .trust-item:nth-child(1)": "✓ Fast",
           ".trust-row .trust-item:nth-child(2)": "✓ Reliable",
           ".trust-row .trust-item:nth-child(3)": "✓ Transparent",
@@ -845,14 +849,6 @@
           "#ablauf .step:nth-child(4) h3": "Done",
           "#ablauf .step:nth-child(4) p":
             "Review, refinement and handover - with ongoing support if needed.",
-          "#referenzen h2": "References",
-          "#referenzen .lead": "Three projects that show clear results.",
-          "#referenzen .project:nth-child(1) .project-meta span":
-            "Focused product page with clear structure and strong conversion.",
-          "#referenzen .project:nth-child(2) .project-meta span":
-            "Cross-platform CLI helper for Windows, macOS and Linux.",
-          "#referenzen .project:nth-child(3) .project-meta span":
-            "Native time tracking and flex balance for the Apple ecosystem.",
           "#zertifizierungen h2": "Certifications",
           "#zertifizierungen .lead":
             "Demonstrable expertise for reliable IT and networking solutions.",
@@ -900,7 +896,7 @@
           ".contact-actions .btn-ghost": "Back to top",
           ".note strong": "Note:",
           ".note .muted": "The more precise your message, the faster I can help.",
-          ".footer-brand .muted": "Fast IT solutions for your company · IT in Neubrandenburg",
+          ".footer-brand .muted": "Professional websites · Personal support · Neubrandenburg",
           ".footer-links a[href='impressum.html']": "Legal notice",
           ".footer-links a[href='datenschutz.html']": "Privacy",
         },
@@ -1369,11 +1365,11 @@
 
   const setText = (selector, value) => {
     const el = $(selector);
-    if (el) el.textContent = value;
+    if (el && !el.hasAttribute("data-portfolio-de") && !el.querySelector("[data-portfolio-de]")) el.textContent = value;
   };
   const setHTML = (selector, value) => {
     const el = $(selector);
-    if (el) el.innerHTML = value;
+    if (el && !el.hasAttribute("data-portfolio-de") && !el.querySelector("[data-portfolio-de]")) el.innerHTML = value;
   };
   const setAttrs = (selector, attrs) => {
     const el = $(selector);
@@ -1388,6 +1384,15 @@
     return browserLang.startsWith("en") ? "en" : "de";
   };
 
+  // Keep the new homepage's DOM and its interactive state intact on language changes.
+  const persistentHome = document.body?.dataset?.experience === "home";
+  const homeOriginals = persistentHome ? [...new Set([
+    ...Object.keys(pageText["home-index"]?.en?.text || {}),
+    ...Object.keys(pageText["home-index"]?.en?.html || {}),
+  ])].map(selector => {
+    const element = $(selector);
+    return { selector, html: element?.innerHTML };
+  }) : [];
   const applyLanguage = (lang, notify = false) => {
     currentLanguage = lang === "en" ? "en" : "de";
     localStorage.setItem(languageKey, currentLanguage);
@@ -1405,9 +1410,13 @@
     if (i18nPage && mainEl) {
       if (currentLanguage === "en" && pageMainEn[i18nPage]) {
         mainEl.innerHTML = pageMainEn[i18nPage];
-      } else if (currentLanguage === "de" && originalMain) {
+      } else if (currentLanguage === "de" && originalMain && !persistentHome) {
         mainEl.innerHTML = originalMain;
       }
+      if (persistentHome && currentLanguage === "de") homeOriginals.forEach(({selector, html}) => {
+        const element = $(selector);
+        if (element && html !== undefined && !element.hasAttribute("data-portfolio-de") && !element.querySelector("[data-portfolio-de]")) element.innerHTML = html;
+      });
 
       // Replaced DOM blocks can contain `.reveal` elements that would otherwise
       // stay hidden until a full reload/re-init. Make them visible directly.
@@ -1524,7 +1533,7 @@
       if (!target) return;
 
       e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
 
       // Update URL without jumping
       history.pushState(null, "", href);
@@ -1551,15 +1560,16 @@
 
         if (!visible) return;
         const id = visible.target.id;
-        navLinks.forEach((l) => l.classList.remove("is-active"));
+        navLinks.forEach((l) => { l.classList.remove("is-active"); l.removeAttribute("aria-current"); });
         const active = linkById.get(id);
-        if (active) active.classList.add("is-active");
+        if (active) { active.classList.add("is-active"); active.setAttribute("aria-current", "location"); }
       },
       {
         root: null,
         // Trigger when section is around the top third of the viewport
         rootMargin: "-20% 0px -60% 0px",
-        threshold: [0.1, 0.2, 0.35, 0.5, 0.65],
+        // Tall storytelling sections may never reach 10% visibility.
+        threshold: [0, 0.1, 0.2, 0.35, 0.5, 0.65],
       }
     );
 
@@ -1576,12 +1586,14 @@
   const getPreferredTheme = () => {
     const stored = localStorage.getItem(storageKey);
     if (stored === "dark" || stored === "light") return stored;
+    if (document.querySelector('link[href*="experience/site.css"]')) return "dark";
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
   };
 
   const applyTheme = (theme) => {
+    root.setAttribute("data-appearance", theme);
     if (theme === "dark") root.setAttribute("data-theme", "dark");
     else root.removeAttribute("data-theme");
 
@@ -1881,7 +1893,7 @@
     "/apps/ledger/index.html",
   ].includes(normalizedPath);
 
-  if (!allowScrollAnimations) {
+  if (!allowScrollAnimations || persistentHome) {
     revealEls.forEach((el) => el.classList.add("is-visible"));
   } else if (!reducedMotion && hasGSAP) {
     const gsap = window.gsap;
@@ -2237,18 +2249,18 @@
         cat: { de: "Startseite", en: "Home" },
         title: { de: "Startseite – Torben Lehneke IT", en: "Home – Torben Lehneke IT" },
         desc: {
-          de: "IT-Freelancer in Neubrandenburg für App- & Webentwicklung. Schnell, zuverlässig und transparent.",
-          en: "IT freelancer in Neubrandenburg for app & web development. Fast, reliable and transparent.",
+          de: "Professionelle Websites für Unternehmen, Selbstständige, Vereine und Privatkunden.",
+          en: "Professional websites for businesses, freelancers, associations and individuals.",
         },
-        keywords: "home homepage torben lehneke it freelancer neubrandenburg webentwicklung appentwicklung",
+        keywords: "home homepage torben lehneke neubrandenburg webentwicklung webdesign website unternehmen verein privatkunden",
       },
       {
         url: "index.html#leistungen",
         cat: { de: "Startseite", en: "Home" },
         title: { de: "Leistungen", en: "Services" },
         desc: {
-          de: "Beratung, Konzept & Planung, Umsetzung & Installation, Wartung, Projektmanagement, Support & Schulung.",
-          en: "Consulting, concept & planning, implementation, maintenance, project management, support & training.",
+          de: "Unternehmenswebsites, Landingpages, Responsive Webdesign, individuelle Webentwicklung, Relaunch und Wartung.",
+          en: "Business websites, landing pages, responsive web design, custom web development, relaunch and maintenance.",
         },
         keywords: "services beratung bedarfsanalyse konzept planung umsetzung installation wartung optimierung projektmanagement support schulung angebot",
       },
@@ -2257,8 +2269,8 @@
         cat: { de: "Startseite", en: "Home" },
         title: { de: "Über mich", en: "About me" },
         desc: {
-          de: "Dein verlässlicher Partner für App- & Webentwicklung in Neubrandenburg.",
-          en: "Your reliable partner for app & web development in Neubrandenburg.",
+          de: "Persönliche Betreuung, direkte Kommunikation und individuelle Websites aus Neubrandenburg.",
+          en: "Personal support, direct communication and individual websites from Neubrandenburg.",
         },
         keywords: "about ueber uns mich person partner",
       },
@@ -2741,6 +2753,8 @@
   // -----------------------------
   (() => {
     const CONSENT_KEY = "cookie_consent";
+    const PRESENTED_KEY = "site_notice_shown";
+    let memoryConsent = null;
 
     const scriptSrc =
       document.querySelector('script[src*="script.js"]')?.getAttribute("src") || "script.js";
@@ -2789,22 +2803,21 @@
     const readConsent = () => {
       try {
         const raw = localStorage.getItem(CONSENT_KEY);
-        return raw ? JSON.parse(raw) : null;
+        const value = raw ? JSON.parse(raw) : memoryConsent;
+        return value && value.necessary === true && typeof value.statistics === "boolean" && typeof value.marketing === "boolean" ? value : null;
       } catch {
-        return null;
+        return memoryConsent;
       }
     };
 
     const saveConsent = (statistics, marketing) => {
-      localStorage.setItem(
-        CONSENT_KEY,
-        JSON.stringify({
+      memoryConsent = {
           necessary: true,
           statistics: !!statistics,
           marketing: !!marketing,
           ts: Date.now(),
-        })
-      );
+        };
+      try { localStorage.setItem(CONSENT_KEY, JSON.stringify(memoryConsent)); } catch { /* Storage can be blocked. Keep the explicit choice in memory. */ }
     };
 
     const banner = document.createElement("div");
@@ -2877,7 +2890,17 @@
     };
 
     document.body.appendChild(banner);
-    openBanner();
+    // Opening settings manually is always allowed. Automatic presentation is
+    // at most once per tab session, and never after a saved choice.
+    let showAutomatically = false;
+    try {
+      showAutomatically = !readConsent() && sessionStorage.getItem(PRESENTED_KEY) !== "true";
+      sessionStorage.setItem(PRESENTED_KEY, "true");
+    } catch { /* With unavailable session storage, skip automatic repetition. */ }
+    if (showAutomatically) openBanner();
+    window.addEventListener("pageshow", event => {
+      if (event.persisted) banner.hidden = true;
+    });
 
     // Re-render texts when the language toggle is used while the banner is open
     langToggle?.addEventListener("click", () => {

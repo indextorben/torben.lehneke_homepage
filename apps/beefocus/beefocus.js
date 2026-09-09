@@ -7,7 +7,7 @@
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
 
-  if (!scene || !symbols.length || reducedMotion) return;
+  if (!scene || !symbols.length || reducedMotion || document.body.hasAttribute('data-showcase')) return;
 
   let targetX = 0;
   let targetY = 0;

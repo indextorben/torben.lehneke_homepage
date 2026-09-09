@@ -1,0 +1,40 @@
+export type Localized = {de: string; en: string};
+type Base = {
+  id: string;
+  featured: boolean;
+  heroImage: string;
+  icon?: string;
+  iconCrop?: boolean;
+  accentColor: string;
+  description: Localized;
+  technologies: string[];
+  tags?: string[];
+  detailPath?: string;
+  url?: string | null;
+  client?: string | null;
+  visualAlt?: Localized;
+  visualCredit?: Localized;
+};
+export type WebsiteProject = Base & {
+  type: 'website';
+  name?: string;
+  title: string | Localized;
+  status?: Localized;
+};
+export type ProductProject = Base & {
+  type: 'app' | 'tool';
+  name: string;
+  detailPath: string;
+  icon: string;
+  category: Localized;
+  status: Localized;
+  title: Localized;
+  highlights: Localized[];
+  about: Localized;
+  challenge: Localized;
+  solution: Localized;
+  outcome: Localized;
+  cta: {href: string; label: Localized};
+  visualAlt: Localized;
+};
+export type PortfolioProject = WebsiteProject | ProductProject;
