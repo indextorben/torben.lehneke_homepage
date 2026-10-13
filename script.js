@@ -2252,7 +2252,7 @@
           de: "Professionelle Websites für Unternehmen, Selbstständige, Vereine und Privatkunden.",
           en: "Professional websites for businesses, freelancers, associations and individuals.",
         },
-        keywords: "home homepage torben lehneke neubrandenburg webentwicklung webdesign website unternehmen verein privatkunden",
+        keywords: "home homepage torben lehneke malchin webentwicklung webdesign website unternehmen verein privatkunden",
       },
       {
         url: "index.html#leistungen",

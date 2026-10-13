@@ -18,7 +18,7 @@ function serviceStage() {
 }
 function serviceInline(index) { return `<div class="service-inline studio-window" aria-hidden="true">${chrome('WEBDESIGN / KONZEPT')}${website(index)}</div>`; }
 function aboutVisual() {
-  return `<div class="about-system"><div class="about-system-head"><span>TORBEN LEHNEKE</span><span>NEUBRANDENBURG / DE</span></div><p class="about-signature">${local('Dein Projekt.\nMein persönlicher Einsatz.','Your project.\nMy personal commitment.')}</p><div class="about-layers">${[
+  return `<div class="about-system"><div class="about-system-head"><span>TORBEN LEHNEKE</span><span>MALCHIN / DE</span></div><p class="about-signature">${local('Dein Projekt.\nMein persönlicher Einsatz.','Your project.\nMy personal commitment.')}</p><div class="about-layers">${[
     ['Direkter Draht','Direct contact','Du sprichst mit dem Menschen, der deine Website entwickelt.','You talk to the person who builds your website.'],
     ['Klare Absprachen','Clear agreements','Verständliche Angebote, nachvollziehbare Schritte und regelmäßige Einblicke.','Clear proposals, transparent steps and regular updates.'],
     ['Bis ins Detail','Down to the details','Design, Bedienbarkeit und technische Qualität gehören für mich zusammen.','Design, usability and technical quality belong together.']

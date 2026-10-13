@@ -19,7 +19,7 @@ function home(html){
   html=html.replace(/\s*<script src="portfolio\/vendor\/(?:gsap|ScrollTrigger)\.min\.js" defer><\/script>/g,'');
   if(!html.includes('data-experience="home"'))html=html.replace('<body ','<body data-experience="home" ');
   html=html.replace(/(<section class="hero section"[^>]*>)[\s\S]*?(<\/section>)/,(_,a,b)=>a+website.hero()+b);
-  html=generated(html,'hero-baseline','<div class="container studio-baseline"><span>TORBEN LEHNEKE / NEUBRANDENBURG</span><a href="#leistungen">'+local('Deine Website beginnt hier','Your website starts here')+' ↓</a><span>WEBDESIGN / ENTWICKLUNG / BETREUUNG</span></div>',(s,b)=>s.replace('    <!-- Leistungen -->',b+'\n    <!-- Leistungen -->'));
+  html=generated(html,'hero-baseline','<div class="container studio-baseline"><span>TORBEN LEHNEKE / MALCHIN</span><a href="#leistungen">'+local('Deine Website beginnt hier','Your website starts here')+' ↓</a><span>WEBDESIGN / ENTWICKLUNG / BETREUUNG</span></div>',(s,b)=>s.replace('    <!-- Leistungen -->',b+'\n    <!-- Leistungen -->'));
   html=generated(html,'why',website.why(),(s,b)=>s.replace('    <!-- Leistungen -->',b+'\n    <!-- Leistungen -->'));
   html=section(html,'leistungen',()=>website.serviceContent());
   html=generated(html,'responsive',website.responsive(),(s,b)=>s.replace(/(<section[^>]*id="ueberuns")/,b+'\n$1'));
