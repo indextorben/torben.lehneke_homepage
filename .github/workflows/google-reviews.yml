@@ -1,0 +1,70 @@
+name: Google-Bewertungen aktualisieren
+
+# Google erlaubt das Zwischenspeichern von Rezensionstexten max. 30 Tage.
+# Dieser Workflow holt sie wöchentlich neu und committet das Ergebnis.
+on:
+  schedule:
+    - cron: '0 4 * * 1' # montags 04:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: google-reviews
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Konfiguration prüfen
+        id: config
+        env:
+          API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+        run: |
+          PLACE_ID=$(node -p "require('./data/google-reviews.json').placeId || ''")
+          if [ -z "$PLACE_ID" ]; then
+            echo "::notice::placeId fehlt in data/google-reviews.json – übersprungen."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          elif [ -z "$API_KEY" ]; then
+            echo "::warning::Secret GOOGLE_MAPS_API_KEY ist nicht gesetzt – übersprungen."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.config.outputs.ready == 'true'
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        if: steps.config.outputs.ready == 'true'
+        run: npm ci --omit=dev
+
+      - name: Bewertungen holen
+        if: steps.config.outputs.ready == 'true'
+        env:
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+        run: npm run reviews:fetch
+
+      - name: Seite bauen
+        if: steps.config.outputs.ready == 'true'
+        run: npm run build
+
+      - name: Änderungen committen
+        if: steps.config.outputs.ready == 'true'
+        run: |
+          if git diff --quiet -- data/google-reviews.json index.html; then
+            echo "Keine neuen Bewertungen."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/google-reviews.json index.html
+          git commit -m "Google-Bewertungen aktualisiert"
+          git push
