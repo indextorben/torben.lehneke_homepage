@@ -757,7 +757,7 @@
     "root-imprint": {
       en: {
         title: "Legal Notice | Torben Lehneke",
-        description: "Legal notice of Torben Lehneke - IT in Neubrandenburg.",
+        description: "Legal notice of Torben Lehneke - IT in Malchin.",
         html: {
           ".footer-bottom small": "© <span id='year'></span> Torben Lehneke. All rights reserved.",
         },
@@ -766,7 +766,7 @@
     "root-privacy": {
       en: {
         title: "Privacy Policy | Torben Lehneke",
-        description: "Privacy policy of Torben Lehneke - IT in Neubrandenburg.",
+        description: "Privacy policy of Torben Lehneke - IT in Malchin.",
         html: {
           ".footer-bottom small": "© <span id='year'></span> Torben Lehneke. All rights reserved.",
         },
@@ -775,14 +775,14 @@
     "home-index": {
       de: {
         title: "Torben Lehneke | Professionelle Websites & Webentwicklung",
-        description: "Individuelle Websites für Unternehmen, Selbstständige, Vereine und Privatkunden. Webdesign, Entwicklung, Relaunch und Wartung aus Neubrandenburg.",
+        description: "Individuelle Websites für Unternehmen, Selbstständige, Vereine und Privatkunden. Webdesign, Entwicklung, Relaunch und Wartung aus Malchin.",
       },
       en: {
         title: "Torben Lehneke | Professional websites & web development",
         description:
-          "Individual websites for businesses, freelancers, associations and individuals. Web design, development, relaunches and maintenance from Neubrandenburg.",
+          "Individual websites for businesses, freelancers, associations and individuals. Web design, development, relaunches and maintenance from Malchin.",
         text: {
-          ".brand-sub": "IT · Neubrandenburg",
+          ".brand-sub": "IT · Malchin",
           "#navMenu .nav-link:nth-child(1)": "Services",
           "#navMenu .nav-link:nth-child(2)": "About me",
           "#navMenu .nav-link:nth-child(3)": "Process",
@@ -790,7 +790,7 @@
           "#navMenu .nav-link:nth-child(5)": "Reviews",
           "#navMenu .nav-link:nth-child(6)": "FAQ",
           "#navMenu .nav-link:nth-child(7)": "Contact",
-          ".eyebrow": "Torben Lehneke / Web development in Neubrandenburg",
+          ".eyebrow": "Torben Lehneke / Web development in Malchin",
           ".headline": "Fast IT solutions for your company",
           ".hero-actions .btn-primary": "Discuss your project",
           ".hero-actions .btn-ghost": "View projects",
@@ -824,7 +824,7 @@
             "Quick help and short onboarding so you and your team can work confidently.",
           "#ueberuns h2": "About me",
           "#ueberuns .lead":
-            "I am Torben - your reliable partner for app and web development in Neubrandenburg. My focus: clean results, clear communication and fast delivery.",
+            "I am Torben - your reliable partner for app and web development in Malchin. My focus: clean results, clear communication and fast delivery.",
           "#ueberuns .callout strong": "Why does this matter?",
           "#ueberuns .callout .muted":
             "You save time, avoid stress and get a solution that truly fits.",
@@ -887,7 +887,7 @@
           ".contact-info h3": "Direct contact",
           ".contact-info .info-row:nth-child(2) .info-label": "Email",
           ".contact-info .info-row:nth-child(3) .info-label": "Location",
-          ".contact-info .info-row:nth-child(3) .info-value": "Neubrandenburg",
+          ".contact-info .info-row:nth-child(3) .info-value": "Malchin",
           ".contact-info .info-row:nth-child(4) .info-label": "Business hours",
           ".contact-info .info-row:nth-child(4) .info-value": "Mon-Fri: 17:00-22:00",
           ".contact-info .info-row:nth-child(5) .info-label": "Phone",
@@ -896,7 +896,7 @@
           ".contact-actions .btn-ghost": "Back to top",
           ".note strong": "Note:",
           ".note .muted": "The more precise your message, the faster I can help.",
-          ".footer-brand .muted": "Professional websites · Personal support · Neubrandenburg",
+          ".footer-brand .muted": "Professional websites · Personal support · Malchin",
           ".footer-links a[href='impressum.html']": "Legal notice",
           ".footer-links a[href='datenschutz.html']": "Privacy",
         },
@@ -913,7 +913,7 @@
           "#faq2 p":
             "Yes. You get a transparent quote before I start - with no obligation.",
           "#faq3 p":
-            "I am active in <strong>Neubrandenburg</strong> and also beyond depending on the project - just ask briefly.",
+            "I am active in <strong>Malchin</strong> and also beyond depending on the project - just ask briefly.",
           "#faq4 p":
             "It depends on scope and requirements. You get a clear breakdown before anything starts.",
           ".field label[for='name']": "Name <span aria-hidden='true'>*</span>",
@@ -1253,7 +1253,7 @@
         "#navMenu .nav-link:nth-child(2)": "Contact",
         "#navMenu .nav-link:nth-child(3)": "Home",
         ".home-label": "Home",
-        ".footer-brand .muted": "Fast IT solutions for your company · IT in Neubrandenburg",
+        ".footer-brand .muted": "Fast IT solutions for your company · IT in Malchin",
         ".footer-links a[href='impressum.html']": "Legal notice",
         ".footer-links a[href='datenschutz.html']": "Privacy",
       },
@@ -1269,7 +1269,7 @@
         "#navMenu .nav-link:nth-child(2)": "Contact",
         "#navMenu .nav-link:nth-child(3)": "Home",
         ".home-label": "Home",
-        ".footer-brand .muted": "Fast IT solutions for your company · IT in Neubrandenburg",
+        ".footer-brand .muted": "Fast IT solutions for your company · IT in Malchin",
         ".footer-links a[href='impressum.html']": "Legal notice",
         ".footer-links a[href='datenschutz.html']": "Privacy",
       },
@@ -2269,8 +2269,8 @@
         cat: { de: "Startseite", en: "Home" },
         title: { de: "Über mich", en: "About me" },
         desc: {
-          de: "Persönliche Betreuung, direkte Kommunikation und individuelle Websites aus Neubrandenburg.",
-          en: "Personal support, direct communication and individual websites from Neubrandenburg.",
+          de: "Persönliche Betreuung, direkte Kommunikation und individuelle Websites aus Malchin.",
+          en: "Personal support, direct communication and individual websites from Malchin.",
         },
         keywords: "about ueber uns mich person partner",
       },

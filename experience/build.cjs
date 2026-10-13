@@ -35,14 +35,14 @@ function home(html){
   const certificate=html.match(/<section[^>]*id="zertifizierungen"[^>]*>[\s\S]*?<\/section>/)?.[0];
   if(certificate){html=html.replace(certificate,'');html=html.replace(/(<section[^>]*id="bewertungen"[^>]*>[\s\S]*?<\/section>)/,match=>match+certificate);}
   html=generated(html,'footer','<div class="container footer-wordmark" aria-hidden="true">Torben<span>Lehneke.</span></div><nav class="container footer-explore" aria-label="Weitere Bereiche"><a href="#leistungen">'+local('Leistungen','Services')+' ↗</a><a href="#referenzen">'+local('Referenzen','Projects')+' ↗</a><a href="#kontakt">'+local('Kontakt','Contact')+' ↗</a><a href="#top">'+local('Nach oben','Back to top')+' ↑</a></nav>',(s,b)=>s.replace('<footer class="site-footer">','<footer class="site-footer">'+b));
-  html=html.replace(/Schnelle IT-Lösungen für Ihr Unternehmen · IT in Neubrandenburg/g,'Professionelle Websites · Persönliche Betreuung · Neubrandenburg');
+  html=html.replace(/Schnelle IT-Lösungen für Ihr Unternehmen · IT in Malchin/g,'Professionelle Websites · Persönliche Betreuung · Malchin');
   const title='Torben Lehneke | Professionelle Websites & Webentwicklung';
-  const description='Individuelle Websites für Unternehmen, Selbstständige, Vereine und Privatkunden. Webdesign, Entwicklung, Relaunch und Wartung aus Neubrandenburg.';
+  const description='Individuelle Websites für Unternehmen, Selbstständige, Vereine und Privatkunden. Webdesign, Entwicklung, Relaunch und Wartung aus Malchin.';
   html=html.replace(/<title>.*?<\/title>/,'<title>'+title+'</title>')
     .replace(/(<meta (?:name|property)="(?:description|og:description|twitter:description)" content=")[^"]*/g,'$1'+description)
     .replace(/(<meta (?:name|property)="(?:og:title|twitter:title)" content=")[^"]*/g,'$1'+title)
     .replace('"jobTitle": "IT-Freelancer"','"jobTitle": "Webentwickler"')
-    .replace('IT-Freelancer in Neubrandenburg für App- und Webentwicklung. Beratung, Konzept, Umsetzung und Support.',description);
+    .replace('IT-Freelancer in Malchin für App- und Webentwicklung. Beratung, Konzept, Umsetzung und Support.',description);
   for(const file of ['home.css','web.css'])if(!html.includes('experience/'+file))html=html.replace('</head>','<link rel="stylesheet" href="experience/'+file+'?v=2" />\n</head>');
   if(!html.includes('experience/home.js'))html=html.replace('</body>','<script type="module" src="experience/home.js?v=2"></script>\n</body>');
   if(!html.includes('data-experience-fallback'))html=html.replace('</head>','<noscript data-experience-fallback><style>#faq .acc-panel[hidden]{display:block}#faq .acc-icon{display:none}</style></noscript>\n</head>');

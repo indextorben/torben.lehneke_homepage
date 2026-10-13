@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server.js",
-    "build": "node portfolio/build.cjs && node -e \"require('./experience/build.cjs').renderAll(false)\"",
+    "build": "node scripts/google-reviews.cjs && node portfolio/build.cjs && node -e \"require('./experience/build.cjs').renderAll(false)\"",
     "lint": "node portfolio/lint.cjs",
     "typecheck": "tsc -p portfolio/tsconfig.json",
     "check": "node portfolio/build.cjs --check && node -e \"require('./experience/build.cjs').renderAll(true)\"",
@@ -12,7 +12,9 @@
     "test:showcase": "node portfolio/verify-showcase.cjs",
     "test:experience": "node experience/verify.cjs",
     "test:scroll": "node experience/verify-scroll.cjs",
-    "test:model": "node portfolio/verify-model.cjs"
+    "test:model": "node portfolio/verify-model.cjs",
+    "reviews:fetch": "node scripts/google-reviews.cjs --fetch",
+    "reviews:render": "node scripts/google-reviews.cjs"
   },
   "devDependencies": {
     "playwright": "1.60.0",

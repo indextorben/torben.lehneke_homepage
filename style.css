@@ -2536,3 +2536,60 @@ html[data-theme="dark"] .search-overlay{
     flex: 1 1 auto;
   }
 }
+
+/* ── Google-Bewertungen ── */
+.google-reviews{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 28px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 16px);
+  background: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+.google-reviews-head{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.google-reviews-badge{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.google-reviews-value{
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0;
+}
+.google-reviews-value strong{
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.google-reviews-score .muted{
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+.google-reviews-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.google-reviews-grid{
+  margin-top: 18px;
+}
+#bewertungen .google-reviews-grid > :nth-child(1) .avatar{ background: #4285F4; }
+#bewertungen .google-reviews-grid > :nth-child(2) .avatar{ background: #EA4335; }
+#bewertungen .google-reviews-grid > :nth-child(3) .avatar{ background: #FBBC05; color: #0f172a; }
+@media (max-width: 640px){
+  .google-reviews{ flex-direction: column; align-items: flex-start; }
+  .google-reviews-actions .btn{ flex: 1 1 auto; }
+}
