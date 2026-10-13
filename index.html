@@ -34,7 +34,7 @@
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=11" />
 
   <!-- Schema.org: WebSite + Person + LocalBusiness + FAQ -->
   <script type="application/ld+json">
@@ -547,10 +547,55 @@ Mein persönlicher Einsatz.</span></p><div class="about-layers"><div class="abou
         </div>
       </div>
     </section>
+
+    <!-- newsletter:start — handgepflegt, nicht aus experience/ generiert -->
+    <section class="section" id="newsletter" aria-label="Newsletter">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="studio-kicker" data-portfolio-de="11 / NEWSLETTER" data-portfolio-en="11 / NEWSLETTER">11 / NEWSLETTER</p>
+          <h2 data-portfolio-de="Gelegentlich Post von mir." data-portfolio-en="An occasional note from me.">Gelegentlich Post von mir.</h2>
+          <p class="lead" data-portfolio-de="Notizen zu Webentwicklung, Projekten und Werkzeugen, die sich bewährt haben. Kein fester Rhythmus, kein Spam, Abmeldung mit einem Klick." data-portfolio-en="Notes on web development, projects and tools that have proven themselves. No fixed schedule, no spam, unsubscribe with one click.">Notizen zu Webentwicklung, Projekten und Werkzeugen, die sich bewährt haben. Kein fester Rhythmus, kein Spam, Abmeldung mit einem Klick.</p>
+        </div>
+
+        <div class="card newsletter-card reveal">
+          <form id="newsletterForm" novalidate>
+            <div class="honeypot-field" aria-hidden="true">
+              <label for="nlWebsite">Website</label>
+              <input id="nlWebsite" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="newsletter-fields">
+              <div class="field">
+                <label for="nlFirstName" data-portfolio-de="Vorname" data-portfolio-en="First name">Vorname</label>
+                <input id="nlFirstName" name="firstName" type="text" autocomplete="given-name" placeholder="Vorname (optional)" />
+              </div>
+
+              <div class="field">
+                <label for="nlEmail">E-Mail <span aria-hidden="true">*</span></label>
+                <input id="nlEmail" name="email" type="email" autocomplete="email" required placeholder="deine@e-mail.de" />
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                <span id="newsletterButtonLabel" data-portfolio-de="Eintragen" data-portfolio-en="Subscribe">Eintragen</span>
+              </button>
+              <p class="fineprint" data-portfolio-de="Du bekommst zuerst eine E-Mail zur Bestätigung. Erst danach erhältst du den Newsletter." data-portfolio-en="You will first receive a confirmation email. Only after that will you receive the newsletter.">Du bekommst zuerst eine E-Mail zur Bestätigung. Erst danach erhältst du den Newsletter.</p>
+              <p class="fineprint">
+                <a class="inline-link" href="datenschutz.html" data-portfolio-de="Datenschutzhinweise" data-portfolio-en="Privacy notice">Datenschutzhinweise</a>
+              </p>
+            </div>
+
+            <p id="newsletterStatus" class="error" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- newsletter:end -->
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer"><!-- experience:footer:start --><div class="container footer-wordmark" aria-hidden="true">Torben<span>Lehneke.</span></div><nav class="container footer-explore" aria-label="Weitere Bereiche"><a href="#leistungen"><span class="" data-portfolio-de="Leistungen" data-portfolio-en="Services">Leistungen</span> ↗</a><a href="#referenzen"><span class="" data-portfolio-de="Referenzen" data-portfolio-en="Projects">Referenzen</span> ↗</a><a href="#kontakt"><span class="" data-portfolio-de="Kontakt" data-portfolio-en="Contact">Kontakt</span> ↗</a><a href="#top"><span class="" data-portfolio-de="Nach oben" data-portfolio-en="Back to top">Nach oben</span> ↑</a></nav><!-- experience:footer:end -->
+  <footer class="site-footer"><!-- experience:footer:start --><div class="container footer-wordmark" aria-hidden="true">Torben<span>Lehneke.</span></div><nav class="container footer-explore" aria-label="Weitere Bereiche"><a href="#leistungen"><span class="" data-portfolio-de="Leistungen" data-portfolio-en="Services">Leistungen</span> ↗</a><a href="#referenzen"><span class="" data-portfolio-de="Referenzen" data-portfolio-en="Projects">Referenzen</span> ↗</a><a href="#kontakt"><span class="" data-portfolio-de="Kontakt" data-portfolio-en="Contact">Kontakt</span> ↗</a><a href="#newsletter"><span class="" data-portfolio-de="Newsletter" data-portfolio-en="Newsletter">Newsletter</span> ↗</a><a href="#top"><span class="" data-portfolio-de="Nach oben" data-portfolio-en="Back to top">Nach oben</span> ↑</a></nav><!-- experience:footer:end -->
     <div class="container footer-grid">
       <div class="footer-brand">
         <div class="brand-line">
@@ -598,8 +643,9 @@ Mein persönlicher Einsatz.</span></p><div class="about-layers"><div class="abou
     <!-- Toast -->
     <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
   </footer>
-  <script src="script.js?v=13" defer></script>
+  <script src="script.js?v=14" defer></script>
   <script src="portfolio/portfolio.js?v=2" defer></script>
+  <script src="newsletter.js?v=1" defer></script>
 <script type="module" src="experience/home.js?v=2"></script>
 </body>
 

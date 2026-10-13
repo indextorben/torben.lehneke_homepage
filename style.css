@@ -1205,6 +1205,35 @@ input::placeholder, textarea::placeholder{ color: color-mix(in srgb, var(--muted
   overflow: hidden;
 }
 
+/* ------------------------------
+   Newsletter
+--------------------------------*/
+/* Nutzt .card, .field, .btn-primary, .honeypot-field, .error und .form-success
+   unverändert mit. Neu ist nur die Breite und die zweispaltige Anordnung
+   der beiden Felder auf grossen Bildschirmen. */
+.newsletter-card{
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+@media (min-width: 720px){
+  .newsletter-fields{
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    column-gap: 16px;
+  }
+}
+
+/* Die Statuszeile erbt .error (rot) bzw. .form-success (grün) per Skript.
+   Ohne Meldung soll sie keinen Platz beanspruchen. */
+#newsletterStatus:empty{
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
 .form-success{
   margin-top: 12px;
   padding: 12px 12px;

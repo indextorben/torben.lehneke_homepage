@@ -34,7 +34,7 @@ function home(html){
   html=section(html,'kontakt',s=>s.replace(/<p class="lead"[^>]*>[\s\S]*?<\/p>/,()=>local('Was möchtest du online zeigen? Erzähl mir von deinem Vorhaben – ich melde mich mit den nächsten Schritten.','What would you like to present online? Tell me about your plans and I’ll get back to you with the next steps.','p','lead')));
   const certificate=html.match(/<section[^>]*id="zertifizierungen"[^>]*>[\s\S]*?<\/section>/)?.[0];
   if(certificate){html=html.replace(certificate,'');html=html.replace(/(<section[^>]*id="bewertungen"[^>]*>[\s\S]*?<\/section>)/,match=>match+certificate);}
-  html=generated(html,'footer','<div class="container footer-wordmark" aria-hidden="true">Torben<span>Lehneke.</span></div><nav class="container footer-explore" aria-label="Weitere Bereiche"><a href="#leistungen">'+local('Leistungen','Services')+' ↗</a><a href="#referenzen">'+local('Referenzen','Projects')+' ↗</a><a href="#kontakt">'+local('Kontakt','Contact')+' ↗</a><a href="#top">'+local('Nach oben','Back to top')+' ↑</a></nav>',(s,b)=>s.replace('<footer class="site-footer">','<footer class="site-footer">'+b));
+  html=generated(html,'footer','<div class="container footer-wordmark" aria-hidden="true">Torben<span>Lehneke.</span></div><nav class="container footer-explore" aria-label="Weitere Bereiche"><a href="#leistungen">'+local('Leistungen','Services')+' ↗</a><a href="#referenzen">'+local('Referenzen','Projects')+' ↗</a><a href="#kontakt">'+local('Kontakt','Contact')+' ↗</a><a href="#newsletter">'+local('Newsletter','Newsletter')+' ↗</a><a href="#top">'+local('Nach oben','Back to top')+' ↑</a></nav>',(s,b)=>s.replace('<footer class="site-footer">','<footer class="site-footer">'+b));
   html=html.replace(/Schnelle IT-Lösungen für Ihr Unternehmen · IT in Neubrandenburg/g,'Professionelle Websites · Persönliche Betreuung · Neubrandenburg');
   const title='Torben Lehneke | Professionelle Websites & Webentwicklung';
   const description='Individuelle Websites für Unternehmen, Selbstständige, Vereine und Privatkunden. Webdesign, Entwicklung, Relaunch und Wartung aus Neubrandenburg.';
@@ -54,8 +54,8 @@ function renderAll(check){
     const target=path.join(root,file),current=fs.readFileSync(target,'utf8'),prefix=file==='404.html'?'/':file.startsWith('apps/')?'../../':'';
     let html=file==='index.html'?home(current):current;
     if(!html.includes('experience/site.css'))html=html.replace('</head>','<link rel="stylesheet" href="'+prefix+'experience/site.css?v=1" />\n</head>');
-    html=html.replace(/(src="(?:\.\.\/\.\.\/)?script\.js)(?:\?v=\d+)?/g,'$1?v=13')
-      .replace(/style\.css\?v=\d+/g,'style.css?v=10')
+    html=html.replace(/(src="(?:\.\.\/\.\.\/)?script\.js)(?:\?v=\d+)?/g,'$1?v=14')
+      .replace(/style\.css\?v=\d+/g,'style.css?v=11')
       .replace(/experience\/((?:home|web)\.(?:css|js))\?v=\d+/g,'experience/$1?v=2')
       .replace(/portfolio\/showcase\.css\?v=\d+/g,'portfolio/showcase.css?v=3')
       .replace(/experience\/site\.css\?v=\d+/g,'experience/site.css?v=2');

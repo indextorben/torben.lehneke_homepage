@@ -33,7 +33,7 @@ function save(file, html) {
   console.log(`Rendered ${file}`);
 }
 function wire(html, prefix) {
-  html = html.replace(/(src="(?:\.\.\/\.\.\/)?script\.js)\?v=\d+/g, '$1?v=13');
+  html = html.replace(/(src="(?:\.\.\/\.\.\/)?script\.js)\?v=\d+/g, '$1?v=14');
   html = html.replace(/https:\/\/cdn\.jsdelivr\.net\/npm\/gsap@[^/]+\/dist\//g, `${prefix}portfolio/vendor/`);
   if (!html.includes('portfolio/portfolio.css')) html = html.replace('</head>', `  <link rel="stylesheet" href="${prefix}portfolio/portfolio.css?v=1" />\n</head>`);
   if (!html.includes('portfolio/portfolio.js')) html = html.replace('</body>', `  <script src="${prefix}portfolio/portfolio.js?v=1" defer></script>\n</body>`);

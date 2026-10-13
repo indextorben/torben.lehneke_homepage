@@ -121,11 +121,12 @@
                 <li><a href="#allgemeine-hinweise">2. General information</a></li>
                 <li><a href="#hosting">3. Access data / hosting</a></li>
                 <li><a href="#kontaktformular">4. Contact form</a></li>
-                <li><a href="#externe-inhalte">5. External content &amp; CDN</a></li>
-                <li><a href="#cookies">6. Cookies / consent</a></li>
-                <li><a href="#deine-rechte">7. Your rights</a></li>
-                <li><a href="#beschwerderecht">8. Right to lodge a complaint</a></li>
-                <li><a href="#aenderungen">9. Changes</a></li>
+                <li><a href="#newsletter">5. Newsletter</a></li>
+                <li><a href="#externe-inhalte">6. External content &amp; CDN</a></li>
+                <li><a href="#cookies">7. Cookies / consent</a></li>
+                <li><a href="#deine-rechte">8. Your rights</a></li>
+                <li><a href="#beschwerderecht">9. Right to lodge a complaint</a></li>
+                <li><a href="#aenderungen">10. Changes</a></li>
               </ol>
             </nav>
 
@@ -171,8 +172,55 @@
                 </p>
               </section>
 
+
+              <section class="legal-block" id="newsletter">
+                <h2>5. Newsletter</h2>
+                <p>
+                  Subscribing to the newsletter requires your email address. Providing
+                  a first name is optional and is only used for a personal salutation.
+                </p>
+                <p>
+                  <strong>Double opt-in:</strong> After submitting the form you first
+                  receive an email containing a confirmation link. Your subscription
+                  only becomes active once you click that link. Without confirmation,
+                  no newsletter is sent.
+                </p>
+                <p>
+                  <strong>Data stored:</strong> Email address, optionally a first name,
+                  the time of subscription, the time of confirmation and — if you
+                  unsubscribe — the time of unsubscription. In addition, the source of
+                  the subscription, the browser identification and an
+                  <em>encrypted check value derived from your IP address</em> are
+                  stored. The IP address itself is not stored in plain text. This
+                  serves as evidence that the subscription actually took place.
+                </p>
+                <p>
+                  <strong>Processing:</strong> The data is processed on a server
+                  operated by me. A service provider acts as a processor for sending
+                  the emails and receives the data required for delivery.
+                </p>
+                <p>
+                  <strong>Unsubscribing:</strong> Every newsletter email contains a
+                  personal unsubscribe link at the end. Delivery also supports the
+                  unsubscribe function of common email clients (List-Unsubscribe).
+                  After unsubscribing you receive no further newsletters. On request I
+                  will delete your data entirely; simply write to the address given
+                  above.
+                </p>
+                <p>
+                  <strong>Tracking:</strong> There is no analysis of whether or when
+                  you opened an email or clicked a link. No tracking pixels are used
+                  and no links are rewritten for analytics purposes.
+                </p>
+                <p>
+                  The legal basis is your consent under Art. 6(1)(a) GDPR. You may
+                  withdraw it at any time with effect for the future, without
+                  affecting the lawfulness of processing carried out until then.
+                </p>
+              </section>
+
               <section class="legal-block" id="externe-inhalte">
-                <h2>5. External content & CDN</h2>
+                <h2>6. External content & CDN</h2>
                 <p>
                   External resources may be loaded for display (e.g. JavaScript via jsDelivr for GSAP).
                   This may transmit your IP address to the respective provider. Legal basis: Art. 6(1)(f) GDPR.
@@ -181,7 +229,7 @@
               </section>
 
               <section class="legal-block" id="cookies">
-                <h2>6. Cookies / consent</h2>
+                <h2>7. Cookies / consent</h2>
                 <p>
                   This website currently does not use tracking cookies. Technically necessary storage access
                   (e.g. dark mode state via localStorage) is used without consent.
@@ -193,7 +241,7 @@
               </section>
 
               <section class="legal-block" id="deine-rechte">
-                <h2>7. Your rights</h2>
+                <h2>8. Your rights</h2>
                 <ul>
                   <li>Access to stored data (Art. 15 GDPR)</li>
                   <li>Rectification of inaccurate data (Art. 16 GDPR)</li>
@@ -206,7 +254,7 @@
               </section>
 
               <section class="legal-block" id="beschwerderecht">
-                <h2>8. Right to lodge a complaint</h2>
+                <h2>9. Right to lodge a complaint</h2>
                 <p>
                   You have the right to lodge a complaint with the competent data protection supervisory authority.
                   Competent authority: Der Landesbeauftragte für Datenschutz und Informationsfreiheit Mecklenburg-Vorpommern (LfDI MV),
@@ -218,7 +266,7 @@
               </section>
 
               <section class="legal-block" id="aenderungen">
-                <h2>9. Changes</h2>
+                <h2>10. Changes</h2>
                 <p>
                   This privacy policy is updated when needed so it remains compliant with current legal requirements.
                 </p>
@@ -921,6 +969,7 @@
           ".field label[for='emailConfirm']": "Confirm email <span aria-hidden='true'>*</span>",
           ".field label[for='phone']": "Phone <span class='muted'>(optional)</span>",
           ".field label[for='message']": "Message <span aria-hidden='true'>*</span>",
+          ".field label[for='nlEmail']": "Email <span aria-hidden='true'>*</span>",
           ".footer-bottom small": "© <span id='year'></span> Torben Lehneke. All rights reserved.",
         },
       },
@@ -2333,6 +2382,16 @@
           en: "Send a request or reach out directly by email – fast reply guaranteed.",
         },
         keywords: "contact kontakt anfrage email mail formular telefon erreichbar",
+      },
+      {
+        url: "index.html#newsletter",
+        cat: { de: "Startseite", en: "Home" },
+        title: { de: "Newsletter", en: "Newsletter" },
+        desc: {
+          de: "Notizen zu Webentwicklung, Projekten und Werkzeugen – mit Bestätigungslink und jederzeit abmeldbar.",
+          en: "Notes on web development, projects and tools – with a confirmation link and unsubscribe at any time.",
+        },
+        keywords: "newsletter anmeldung abonnieren eintragen e-mail mail post notizen double opt-in abmelden subscribe",
       },
       {
         url: "impressum.html",
