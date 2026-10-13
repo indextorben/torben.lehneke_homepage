@@ -5,6 +5,10 @@ const origin=process.env.PORTFOLIO_TEST_URL||'http://localhost:3000';
 const routes=['/','/apps/beework/index.html','/apps/beefocus/index.html','/apps/cmdfind/index.html'];
 const y=p=>p.evaluate(()=>scrollY);
 const pause=p=>p.waitForTimeout(450);
+// "Zum Dokumentanfang" ist plattformabhaengig: Ctrl+Home gilt unter Windows/Linux,
+// macOS verwendet Cmd+Pfeil-oben. Ein festes Ctrl+Home laesst die Pruefung auf macOS
+// scheitern, obwohl die Tastatureingabe der Seite funktioniert.
+const TOP_KEY=process.platform==='darwin'?'Meta+ArrowUp':'Control+Home';
 (async()=>{
   const browser=await chromium.launch({channel:process.env.TEST_BROWSER_CHANNEL||'chrome',ignoreDefaultArgs:['--hide-scrollbars']});
   const watchdog=setTimeout(()=>{console.error('Native-scroll suite exceeded its time limit');void browser.close();},240000);
@@ -25,7 +29,7 @@ const pause=p=>p.waitForTimeout(450);
       const keyboard=await y(page);await page.keyboard.press('PageDown');await pause(page);
       assert.ok(await y(page)>keyboard+200,`${route} PageDown blocked`);
       await page.keyboard.press('PageUp');await pause(page);assert.ok(await y(page)<keyboard+150,`${route} PageUp blocked`);
-      await page.keyboard.press('Control+Home');await pause(page);
+      await page.keyboard.press(TOP_KEY);await pause(page);
       // Drag the real classic scrollbar thumb (Chromium headless also exposes its gutter).
       const root=await page.evaluate(()=>({viewport:innerHeight,height:document.scrollingElement.scrollHeight,width:innerWidth}));
       const thumb=Math.max(20,root.viewport*root.viewport/root.height);
@@ -59,7 +63,7 @@ const pause=p=>p.waitForTimeout(450);
           await page.waitForTimeout(100);
         }
         assert.ok(reached,`${width} ${route}: footer not reached`);
-        await page.keyboard.press('Control+Home');await pause(page);
+        await page.keyboard.press(TOP_KEY);await pause(page);
         assert.ok(await y(page)<5,`${width} ${route}: cannot return to top`);
         console.log(`${width} ${route}: native wheel traversal to footer and keyboard return passed.`);
         if(route!=='/' && width===1920){
