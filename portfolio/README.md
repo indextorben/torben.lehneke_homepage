@@ -67,7 +67,7 @@ Die Website bleibt eine statische HTML/CSS/JavaScript-Website. `style.css` und `
 - Sprachanbindung: `portfolio/portfolio.js`.
 - Statischer Generator: `portfolio/build.cjs`.
 
-BeeWork, BeeFocus und Cmdfind sind in der Übersicht sichtbar. DeskPilot und Ledger bleiben entsprechend dem bisherigen Stand nicht gelistet und werden auf ihren Detailseiten als geplant beschrieben. BeeWork ist als Veröffentlichung in Vorbereitung gekennzeichnet; es wurde kein App-Store-Link erfunden. Technologien und Produktbeschreibungen stammen aus den vorhandenen Seiten, nicht aus einer Prüfung der App-Quellcodes. Es werden keine Nutzungs- oder Erfolgszahlen behauptet.
+BeeWork, BeeFocus und Cmdfind sind in der Übersicht sichtbar. DeskPilot und Ledger bleiben entsprechend dem bisherigen Stand nicht gelistet und werden auf ihren Detailseiten als geplant beschrieben. BeeWork und BeeFocus sind im App Store veröffentlicht und verlinken dorthin. Technologien und Produktbeschreibungen stammen aus den vorhandenen Seiten, nicht aus einer Prüfung der App-Quellcodes. Es werden keine Nutzungs- oder Erfolgszahlen behauptet.
 
 ## Pflege
 

@@ -5,20 +5,20 @@ const t = (de, en) => ({ de, en });
 /** @satisfies {import('./project-types').PortfolioProject[]} */
 module.exports = [
   {
-    id: 'beework', name: 'BeeWork', type: 'app', client: null, url: null, detailPath: 'apps/beework/index.html', featured: true, accentColor: '#fbbf24',
+    id: 'beework', name: 'BeeWork', type: 'app', client: null, url: 'https://apps.apple.com/de/app/beework/id6783677195', detailPath: 'apps/beework/index.html', featured: true, accentColor: '#fbbf24',
     icon: 'assets/portfolio/beework-icon.svg', heroImage: 'assets/portfolio/beework-hero.png',
     tags: ['iOS', 'iPadOS', 'watchOS'],
     category: t('Arbeitszeit & Produktivität', 'Time tracking & productivity'),
-    status: t('Veröffentlichung in Vorbereitung', 'Release in preparation'),
+    status: t('Im App Store', 'On the App Store'),
     title: t('Deine Zeit. Klar im Blick.', 'Your time. In clear view.'),
     description: t('Vom ersten Einstempeln bis zum Feierabend: Arbeitszeit, Gleitzeit und Planung in einer nativen App für das Apple-Ökosystem.', 'From clock-in to the end of your day: working hours, flexitime and planning in a native app for the Apple ecosystem.'),
     highlights: [t('Live-Zeiterfassung', 'Live time tracking'), t('Smart-Feierabend', 'Smart end-of-day'), t('Am Handgelenk', 'On your wrist')],
     about: t('BeeWork bündelt Zeiterfassung, Zeitkonto und die Planung des Arbeitstags. Die App ist für iPhone und iPad ausgelegt und wird durch eine Apple-Watch-App ergänzt.', 'BeeWork brings time tracking, your time balance and workday planning together. Designed for iPhone and iPad, it also includes an Apple Watch app.'),
     challenge: t('Arbeitsblöcke, Pausen und Gleitzeit verändern laufend den Überblick über den Tag. Die entscheidende Frage bleibt: Wie viel habe ich gearbeitet – und wann ist Feierabend?', 'Work sessions, breaks and flexitime constantly change the shape of a day. The essential question remains: how much have I worked, and when can I finish?'),
     solution: t('Ein gemeinsamer Ablauf verbindet Ein- und Ausstempeln mit Sollzeit und Saldo. Smart-Feierabend berechnet die voraussichtliche Endzeit; Widgets und Live Activities machen den Status ohne Umwege sichtbar.', 'A unified flow connects clocking in and out with target hours and your balance. Smart end-of-day calculates your finish time; widgets and Live Activities keep the status within reach.'),
-    outcome: t('Das Produkt führt Zeiterfassung, Urlaubsplanung, Berichte und Apple-Integration zusammen. Der öffentliche App-Store-Link folgt mit der Veröffentlichung.', 'The product brings together time tracking, holiday planning, reports and Apple integration. A public App Store link will follow at release.'),
+    outcome: t('Das Produkt führt Zeiterfassung, Urlaubsplanung, Berichte und Apple-Integration zusammen. BeeWork ist im App Store für iPhone, iPad und Apple Watch verfügbar.', 'The product brings together time tracking, holiday planning, reports and Apple integration. BeeWork is available on the App Store for iPhone, iPad and Apple Watch.'),
     technologies: ['CloudKit', 'Core Location', 'Geofencing', 'Live Activities', 'Widgets', 'Siri-Kurzbefehle'],
-    cta: { href: '#download', label: t('Verfügbarkeit ansehen', 'Check availability') },
+    cta: { href: 'https://apps.apple.com/de/app/beework/id6783677195', label: t('Im App Store ansehen', 'View on the App Store') },
     visualAlt: t('BeeWork Produktvisual: iPhone und Apple Watch mit amberfarbener Zeitanzeige.', 'BeeWork product visual: iPhone and Apple Watch with an amber time display.')
   },
   {
