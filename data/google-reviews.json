@@ -1,8 +1,8 @@
 {
   "_hinweis": "placeId + profileUrl + reviewUrl aus dem Google-Unternehmensprofil eintragen, dann `npm run reviews:fetch` (braucht GOOGLE_MAPS_API_KEY) und `npm run build`. Solange placeId leer ist, wird der Block nicht gerendert.",
   "placeId": "",
-  "profileUrl": "",
-  "reviewUrl": "",
+  "profileUrl": "https://share.google/4dZfpvuU04rTXTcPK",
+  "reviewUrl": "https://g.page/r/CY1-UoFUgcbaEBM/review",
   "rating": null,
   "userRatingCount": 0,
   "fetchedAt": null,
