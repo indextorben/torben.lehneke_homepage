@@ -8,6 +8,9 @@
     document.querySelectorAll('[data-portfolio-alt-de]').forEach(element => {
       element.setAttribute('alt', element.getAttribute(`data-portfolio-alt-${language}`) || '');
     });
+    document.querySelectorAll('[data-portfolio-aria-de]').forEach(element => {
+      element.setAttribute('aria-label', element.getAttribute(`data-portfolio-aria-${language}`) || '');
+    });
     document.querySelectorAll('.work-card').forEach(card => {
       card.setAttribute('aria-label', `${card.querySelector('h3')?.textContent || ''} – ${language === 'en' ? 'View project' : 'Projekt ansehen'}`);
     });

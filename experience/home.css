@@ -130,6 +130,13 @@ body[data-experience="home"] .certificate-card figcaption {padding:35px 0 0;text
 #bewertungen .section-head {position:sticky;top:140px;}
 #bewertungen .lead {margin-top:30px;}
 body[data-experience="home"] #bewertungen .cards-grid {display:block;}
+/* The Google block and the ticker belong under the quotes, not under the
+   sticky heading, which would otherwise scroll across them. */
+#bewertungen :is(.google-reviews,.google-ticker) {grid-column:2;}
+#bewertungen .google-ticker {margin-top:clamp(26px,2.5vw,48px);}
+body[data-experience="home"] .google-ticker-card {padding:24px 26px;}
+body[data-experience="home"] .google-ticker-card blockquote {font-size:clamp(15px,.95vw,20px);line-height:1.55;letter-spacing:normal;}
+body[data-experience="home"] .google-ticker-card .avatar {display:grid;}
 body[data-experience="home"] .testimonial {border:0;border-top:1px solid var(--border);border-radius:0;background:none;box-shadow:none;min-height:48svh;padding:clamp(30px,4vw,90px) 0;}
 body[data-experience="home"] #bewertungen .cards-grid>.testimonial {background:none;}
 body[data-experience="home"] .testimonial p {font-size:clamp(30px,2.7vw,68px);line-height:1.2;letter-spacing:-.045em;margin-block:30px;}

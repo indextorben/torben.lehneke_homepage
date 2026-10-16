@@ -37,7 +37,7 @@ function wire(html, prefix) {
   html = html.replace(/https:\/\/cdn\.jsdelivr\.net\/npm\/gsap@[^/]+\/dist\//g, `${prefix}portfolio/vendor/`);
   if (!html.includes('portfolio/portfolio.css')) html = html.replace('</head>', `  <link rel="stylesheet" href="${prefix}portfolio/portfolio.css?v=1" />\n</head>`);
   if (!html.includes('portfolio/portfolio.js')) html = html.replace('</body>', `  <script src="${prefix}portfolio/portfolio.js?v=1" defer></script>\n</body>`);
-  html = html.replace(/portfolio\/portfolio\.(css|js)\?v=\d+/g, 'portfolio/portfolio.$1?v=2');
+  html = html.replace(/portfolio\/portfolio\.(css|js)\?v=\d+/g, 'portfolio/portfolio.$1?v=3');
   return html;
 }
 // Find a complete nested div, rather than truncating it at the first closing tag.

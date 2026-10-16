@@ -43,8 +43,8 @@ function home(html){
     .replace(/(<meta (?:name|property)="(?:og:title|twitter:title)" content=")[^"]*/g,'$1'+title)
     .replace('"jobTitle": "IT-Freelancer"','"jobTitle": "Webentwickler"')
     .replace('IT-Freelancer in Malchin für App- und Webentwicklung. Beratung, Konzept, Umsetzung und Support.',description);
-  for(const file of ['home.css','web.css'])if(!html.includes('experience/'+file))html=html.replace('</head>','<link rel="stylesheet" href="experience/'+file+'?v=2" />\n</head>');
-  if(!html.includes('experience/home.js'))html=html.replace('</body>','<script type="module" src="experience/home.js?v=2"></script>\n</body>');
+  for(const file of ['home.css','web.css'])if(!html.includes('experience/'+file))html=html.replace('</head>','<link rel="stylesheet" href="experience/'+file+'?v=3" />\n</head>');
+  if(!html.includes('experience/home.js'))html=html.replace('</body>','<script type="module" src="experience/home.js?v=3"></script>\n</body>');
   if(!html.includes('data-experience-fallback'))html=html.replace('</head>','<noscript data-experience-fallback><style>#faq .acc-panel[hidden]{display:block}#faq .acc-icon{display:none}</style></noscript>\n</head>');
   return html;
 }
@@ -55,8 +55,8 @@ function renderAll(check){
     let html=file==='index.html'?home(current):current;
     if(!html.includes('experience/site.css'))html=html.replace('</head>','<link rel="stylesheet" href="'+prefix+'experience/site.css?v=1" />\n</head>');
     html=html.replace(/(src="(?:\.\.\/\.\.\/)?script\.js)(?:\?v=\d+)?/g,'$1?v=13')
-      .replace(/style\.css\?v=\d+/g,'style.css?v=10')
-      .replace(/experience\/((?:home|web)\.(?:css|js))\?v=\d+/g,'experience/$1?v=2')
+      .replace(/style\.css\?v=\d+/g,'style.css?v=11')
+      .replace(/experience\/((?:home|web)\.(?:css|js))\?v=\d+/g,'experience/$1?v=3')
       .replace(/portfolio\/showcase\.css\?v=\d+/g,'portfolio/showcase.css?v=3')
       .replace(/experience\/site\.css\?v=\d+/g,'experience/site.css?v=2');
     if(file==='404.html')html=html.replace('<body>','<body data-experience="error">');

@@ -21,7 +21,14 @@ const dataFile = path.join(root, 'data', 'google-reviews.json');
 const indexFile = path.join(root, 'index.html');
 const START = '<!-- google-reviews:start -->';
 const END = '<!-- google-reviews:end -->';
-const MAX_CARDS = 3;
+// Die Places API (New) liefert pro Ort höchstens 5 Rezensionen – mehr als diese
+// 5 lassen sich also nicht anzeigen, das Limit hier ist bewusst großzügiger.
+const MAX_CARDS = 10;
+// Eine Laufband-Hälfte muss breiter sein als das Band selbst, sonst klafft eine
+// Lücke. Bei wenigen Rezensionen wird die Liste deshalb wiederholt – gerechnet
+// mit der Kartenbreite aus style.css (330px) plus 18px Abstand.
+const TICKER_CARD_WIDTH = 348;
+const MIN_TICKER_WIDTH = 1700;
 
 const readData = () => JSON.parse(fs.readFileSync(dataFile, 'utf8'));
 const esc = (s) => String(s == null ? '' : s)
@@ -61,21 +68,39 @@ async function fetchReviews() {
   console.log(`google-reviews: ${data.reviews.length} Bewertungen geholt (Ø ${data.rating ?? '–'}).`);
 }
 
+// Eine Karte im Laufband. Kompakt genug, dass mehrere nebeneinander laufen.
 function card(review) {
-  const stars = '★'.repeat(Math.round(review.rating || 5));
+  const value = Math.round(review.rating || 5);
+  const stars = `${'★'.repeat(value)}${'☆'.repeat(Math.max(0, 5 - value))}`;
   const initial = esc((review.author || '?').trim().charAt(0).toUpperCase());
-  const meta = [review.time, 'Google'].filter(Boolean).join(' · ');
-  return `          <article class="card testimonial google-review">
-            <div class="stars" aria-label="${review.rating || 5} von 5 Sternen">${stars}</div>
-            <p>„${esc(review.text)}“</p>
-            <div class="who">
-              <span class="avatar" aria-hidden="true">${initial}</span>
-              <div>
-                <strong>${esc(review.author)}</strong>
-                <span class="muted">${esc(meta)}</span>
-              </div>
-            </div>
-          </article>`;
+  return `            <figure class="google-ticker-card">
+              <div class="stars" aria-label="${value} von 5 Sternen">${stars}</div>
+              <blockquote>„${esc(review.text)}“</blockquote>
+              <figcaption>
+                <span class="avatar" aria-hidden="true">${initial}</span>
+                <span class="google-ticker-who"><strong>${esc(review.author)}</strong><span class="muted">${esc(review.time || 'Google')}</span></span>
+              </figcaption>
+            </figure>`;
+}
+
+// Das Laufband braucht zwei identische Hälften, damit der Sprung am Ende der
+// Animation nicht sichtbar ist. Bei wenigen Rezensionen wird die Liste vorher
+// wiederholt, sonst bliebe bei breiten Viewports eine Lücke im Band.
+function ticker(reviews, labelDe, labelEn) {
+  const base = reviews.slice(0, MAX_CARDS);
+  const items = [];
+  while (items.length * TICKER_CARD_WIDTH < MIN_TICKER_WIDTH) items.push(...base);
+  const half = items.map(card).join('\n');
+  const seconds = Math.max(28, items.length * 9);
+  return `
+        <div class="google-ticker reveal" style="--ticker-duration:${seconds}s" role="region" aria-label="${esc(labelDe)}" data-portfolio-aria-de="${esc(labelDe)}" data-portfolio-aria-en="${esc(labelEn)}">
+          <div class="google-ticker-track">
+${half}
+          </div>
+          <div class="google-ticker-track" aria-hidden="true">
+${half}
+          </div>
+        </div>`;
 }
 
 function render() {
@@ -119,17 +144,14 @@ function render() {
             ${actions}
           </div>
         </div>
-${data.reviews.length ? `
-        <div class="cards-grid google-reviews-grid reveal">
-${data.reviews.slice(0, MAX_CARDS).map(card).join('\n')}
-        </div>
+${data.reviews.length ? `${ticker(data.reviews, 'Google-Bewertungen', 'Google reviews')}
 ` : '\n'}`;
   }
 
   const next = `${html.slice(0, from + START.length)}${block}${html.slice(to)}`;
   if (next !== html) fs.writeFileSync(indexFile, next);
   console.log(block
-    ? `google-reviews: Block gerendert (${Math.min(data.reviews.length, MAX_CARDS)} Karten).`
+    ? `google-reviews: Block gerendert (${Math.min(data.reviews.length, MAX_CARDS)} Rezensionen im Laufband).`
     : 'google-reviews: profileUrl/reviewUrl fehlen in data/google-reviews.json – Block bleibt leer.');
 }
 

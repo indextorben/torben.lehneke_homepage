@@ -2583,12 +2583,99 @@ html[data-theme="dark"] .search-overlay{
   flex-wrap: wrap;
   gap: 10px;
 }
-.google-reviews-grid{
-  margin-top: 18px;
+
+/* Laufband: zwei identische Spuren laufen nebeneinander nach rechts. Sobald die
+   zweite Spur die Position der ersten erreicht hat, springt die Animation
+   zurueck – weil beide Spuren gleich aussehen, bleibt der Sprung unsichtbar. */
+.google-ticker{
+  --ticker-duration: 40s;
+  display: flex;
+  width: 100%;
+  margin-top: 22px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
 }
-#bewertungen .google-reviews-grid > :nth-child(1) .avatar{ background: #4285F4; }
-#bewertungen .google-reviews-grid > :nth-child(2) .avatar{ background: #EA4335; }
-#bewertungen .google-reviews-grid > :nth-child(3) .avatar{ background: #FBBC05; color: #0f172a; }
+.google-ticker-track{
+  display: flex;
+  flex: 0 0 auto;
+  gap: 18px;
+  padding-right: 18px;
+  will-change: transform;
+  animation: google-ticker-run var(--ticker-duration) linear infinite;
+}
+@keyframes google-ticker-run{
+  from{ transform: translateX(-100%); }
+  to{ transform: translateX(0); }
+}
+.google-ticker:hover .google-ticker-track,
+.google-ticker:focus-within .google-ticker-track{
+  animation-play-state: paused;
+}
+.google-ticker-card{
+  flex: 0 0 auto;
+  width: min(330px, 78vw);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 20px 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 16px);
+  background: var(--surface);
+}
+.google-ticker-card .stars{
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  color: #fbbc05;
+}
+.google-ticker-card blockquote{
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.google-ticker-card figcaption{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+.google-ticker-who{
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+  min-width: 0;
+}
+.google-ticker-who .muted{ font-size: 0.8rem; }
+.google-ticker-card .avatar{
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #4285F4;
+  color: #fff;
+  font-weight: 600;
+}
+.google-ticker-track > :nth-child(4n+2) .avatar{ background: #EA4335; }
+.google-ticker-track > :nth-child(4n+3) .avatar{ background: #FBBC05; color: #0f172a; }
+.google-ticker-track > :nth-child(4n) .avatar{ background: #34A853; }
+/* Ohne Bewegung bleibt das Band stehen und wird horizontal scrollbar. */
+@media (prefers-reduced-motion: reduce){
+  .google-ticker{
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .google-ticker-track{ animation: none; }
+  .google-ticker-track[aria-hidden="true"]{ display: none; }
+}
 @media (max-width: 640px){
   .google-reviews{ flex-direction: column; align-items: flex-start; }
   .google-reviews-actions .btn{ flex: 1 1 auto; }
